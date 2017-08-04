@@ -1,0 +1,13 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:6080/eureka/
+spring:
+  application:
+    name: Gateway
+server:
+  port: 80
+zuul:
+  routes:
+    userService: /service/user/**
+    serverService: /service/server/**
