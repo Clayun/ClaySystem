@@ -11,11 +11,13 @@
         <module name="controlcenter" />
         <module name="gateways" />
         <module name="paymentservice" />
+        <module name="securityservice" />
         <module name="serverservice" />
         <module name="userservice" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="authservice" target="1.6" />
       <module name="ClaySystem" target="1.6" />
       <module name="config" target="1.6" />
       <module name="consoleservice" target="1.6" />
@@ -24,6 +26,7 @@
       <module name="gateway" target="1.6" />
       <module name="gateways" target="1.6" />
       <module name="paymentservice" target="1.6" />
+      <module name="securityservice" target="1.6" />
       <module name="serverservice" target="1.6" />
       <module name="userservice" target="1.6" />
     </bytecodeTargetLevel>

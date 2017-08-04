@@ -10,17 +10,14 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>config</module>
-        <module>discovery</module>
-        <module>gateway</module>
         <module>userservice</module>
         <module>serverservice</module>
         <module>paymentservice</module>
         <module>consoleservice</module>
-        <module>discovery</module>
-        <module>discovery</module>
         <module>controlcenter</module>
-        <module>gateway</module>
         <module>gateways</module>
+        <module>securityservice</module>
+        <module>securityservice</module>
     </modules>
 
     <!--以下dependency来自官方-->
