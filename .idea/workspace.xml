@@ -2,69 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6a314246-48ea-4720-93fc-11f6729192a2" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_druid_1_0_14.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_buffer_4_0_14_Final.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_4_0_14_Final.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_http_4_0_14_Final.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_common_4_0_14_Final.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_handler_4_0_14_Final.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_4_0_14_Final.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_5_1_41.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_pool2_2_4_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_tomcat_jdbc_8_5_11.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_tomcat_juli_8_5_11.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_3_4_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_spring_1_3_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_spring_boot_mybatis_spring_boot_autoconfigure_1_2_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_spring_boot_mybatis_spring_boot_starter_1_2_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_redisson_redisson_1_0_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_data_redis_1_4_5_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_jdbc_1_4_5_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_commons_1_12_8_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_keyvalue_1_1_8_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_redis_1_7_8_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_4_3_7_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_oxm_4_3_7_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_4_3_7_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__redis_clients_jedis_2_8_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/normalservice/src/main/java/com/mcylm/clay/service/normalservice/config/StaticConfig.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/normalservice/src/main/resources/templates/css/jquery.range.css" afterPath="$PROJECT_DIR$/normalservice/src/main/resources/static/css/jquery.range.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/normalservice/src/main/resources/templates/css/login.css" afterPath="$PROJECT_DIR$/normalservice/src/main/resources/static/css/login.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/normalservice/src/main/resources/templates/css/orderpay.css" afterPath="$PROJECT_DIR$/normalservice/src/main/resources/static/css/orderpay.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/normalservice/src/main/resources/templates/css/register.css" afterPath="$PROJECT_DIR$/normalservice/src/main/resources/static/css/register.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/normalservice/src/main/resources/templates/css/style.css" afterPath="$PROJECT_DIR$/normalservice/src/main/resources/static/css/style.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/normalservice/src/main/resources/templates/js/banner.js" afterPath="$PROJECT_DIR$/normalservice/src/main/resources/static/js/banner.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/normalservice/src/main/resources/templates/js/create.js" afterPath="$PROJECT_DIR$/normalservice/src/main/resources/static/js/create.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/normalservice/src/main/resources/templates/js/function.js" afterPath="$PROJECT_DIR$/normalservice/src/main/resources/static/js/function.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/normalservice/src/main/resources/templates/js/gt.js" afterPath="$PROJECT_DIR$/normalservice/src/main/resources/static/js/gt.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/normalservice/src/main/resources/templates/js/home.js" afterPath="$PROJECT_DIR$/normalservice/src/main/resources/static/js/home.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/normalservice/src/main/resources/templates/js/jquery-1.7.1.min.js" afterPath="$PROJECT_DIR$/normalservice/src/main/resources/static/js/jquery-1.7.1.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/normalservice/src/main/resources/templates/js/jquery.range.js" afterPath="$PROJECT_DIR$/normalservice/src/main/resources/static/js/jquery.range.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/normalservice/src/main/resources/templates/js/labels.js" afterPath="$PROJECT_DIR$/normalservice/src/main/resources/static/js/labels.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/normalservice/src/main/resources/templates/js/login.js" afterPath="$PROJECT_DIR$/normalservice/src/main/resources/static/js/login.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/normalservice/src/main/resources/templates/js/loginout.js" afterPath="$PROJECT_DIR$/normalservice/src/main/resources/static/js/loginout.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/normalservice/src/main/resources/templates/js/md5.js" afterPath="$PROJECT_DIR$/normalservice/src/main/resources/static/js/md5.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/normalservice/src/main/resources/templates/js/message.js" afterPath="$PROJECT_DIR$/normalservice/src/main/resources/static/js/message.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/normalservice/src/main/resources/templates/js/orderPay.js" afterPath="$PROJECT_DIR$/normalservice/src/main/resources/static/js/orderPay.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/normalservice/src/main/resources/templates/js/register.js" afterPath="$PROJECT_DIR$/normalservice/src/main/resources/static/js/register.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/normalservice/src/main/resources/templates/js/renew.js" afterPath="$PROJECT_DIR$/normalservice/src/main/resources/static/js/renew.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/normalservice/src/main/resources/templates/js/renewmc.js" afterPath="$PROJECT_DIR$/normalservice/src/main/resources/static/js/renewmc.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateways/src/main/resources/application.yml" afterPath="$PROJECT_DIR$/gateways/src/main/resources/application.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateways/target/classes/application.yml" afterPath="$PROJECT_DIR$/gateways/target/classes/application.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/normalservice/src/main/java/com/mcylm/clay/service/normalservice/NormalService.java" afterPath="$PROJECT_DIR$/normalservice/src/main/java/com/mcylm/clay/service/normalservice/NormalService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/normalservice/src/main/java/com/mcylm/clay/service/normalservice/controller/NormalController.java" afterPath="$PROJECT_DIR$/normalservice/src/main/java/com/mcylm/clay/service/normalservice/controller/NormalController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/normalservice/src/main/java/com/mcylm/clay/service/normalservice/controller/PortalController.java" afterPath="$PROJECT_DIR$/normalservice/src/main/java/com/mcylm/clay/service/normalservice/controller/PortalController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/normalservice/src/main/java/com/mcylm/clay/service/normalservice/service/InterfaceService.java" afterPath="$PROJECT_DIR$/normalservice/src/main/java/com/mcylm/clay/service/normalservice/service/InterfaceService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/normalservice/src/main/java/com/mcylm/clay/service/normalservice/service/impl/InterfaceServiceImpl.java" afterPath="$PROJECT_DIR$/normalservice/src/main/java/com/mcylm/clay/service/normalservice/service/impl/InterfaceServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/normalservice/src/main/resources/application.yml" afterPath="$PROJECT_DIR$/normalservice/src/main/resources/application.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/normalservice/src/main/resources/templates/index.ftl" afterPath="$PROJECT_DIR$/normalservice/src/main/resources/templates/index.ftl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -149,9 +87,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="230">
               <caret line="11" column="104" lean-forward="false" selection-start-line="11" selection-start-column="104" selection-end-line="11" selection-end-column="104" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -191,7 +127,9 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="322">
               <caret line="18" column="48" lean-forward="false" selection-start-line="18" selection-start-column="48" selection-end-line="18" selection-end-column="48" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -1390,7 +1328,7 @@
       <workItem from="1501828996909" duration="2106000" />
       <workItem from="1501844881427" duration="21157000" />
       <workItem from="1502066334801" duration="7380000" />
-      <workItem from="1502074871053" duration="1578000" />
+      <workItem from="1502074871053" duration="1765000" />
     </task>
     <task id="LOCAL-00001" summary="新增登录验证服务，Oauth2协议">
       <created>1501846921527</created>
@@ -1413,11 +1351,18 @@
       <option name="project" value="LOCAL" />
       <updated>1502067324977</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="新增常规页面显示二次提交更新">
+      <created>1502076631467</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1502076631467</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33110000" />
+    <option name="totallyTimeSpent" value="33297000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="166" y="69" width="1640" height="914" extended-state="0" />
@@ -1465,7 +1410,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="新增登录验证服务，Oauth2协议" />
     <MESSAGE value="新增常规页面显示，官网部分" />
-    <option name="LAST_COMMIT_MESSAGE" value="新增常规页面显示，官网部分" />
+    <MESSAGE value="新增常规页面显示二次提交更新" />
+    <option name="LAST_COMMIT_MESSAGE" value="新增常规页面显示二次提交更新" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1665,8 +1611,8 @@
         <state relative-caret-position="276">
           <caret line="14" column="26" lean-forward="false" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
           <folding>
-            <element signature="e#395#396#0" expanded="true" />
-            <element signature="e#458#459#0" expanded="true" />
+            <element signature="e#395#396#0" expanded="false" />
+            <element signature="e#458#459#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1684,6 +1630,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="230">
           <caret line="13" column="22" lean-forward="false" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1691,6 +1638,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1707,6 +1655,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1714,7 +1663,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="322">
           <caret line="18" column="48" lean-forward="false" selection-start-line="18" selection-start-column="48" selection-end-line="18" selection-end-column="48" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1730,9 +1681,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="230">
           <caret line="11" column="104" lean-forward="false" selection-start-line="11" selection-start-column="104" selection-end-line="11" selection-end-column="104" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
