@@ -5,7 +5,7 @@ package com.mcylm.clay.consoleservice.entity;
  */
 public class Ucenter {
     /*
-    * 作者:邢子琛
+    * 作者:邢子琛ss
     * */
     private Integer id;
     private String uuid;
