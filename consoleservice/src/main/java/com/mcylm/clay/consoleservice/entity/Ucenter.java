@@ -4,7 +4,7 @@ package com.mcylm.clay.consoleservice.entity;
  * Created by macbook on 2017/8/7.
  */
 public class Ucenter {
-    //邢子琛--
+    //fhfghfgj
     private Integer id;
     private String uuid;
     private String username;
