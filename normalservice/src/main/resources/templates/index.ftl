@@ -5,7 +5,7 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
-		<title>${title}</title>
+		<title>${index_head_title.label}</title>
 		<link rel="stylesheet" type="text/css" href="/css/style.css">
 		<link rel="stylesheet" type="text/css" href="/css/bootstrap-grid.min.css">
 		<script src="/js/jquery-1.7.1.min.js"></script>
@@ -19,33 +19,36 @@
 			<div class="banner-info">
 				<div id="clan-1">
 					<div class="banner-info-img">
-						<img src="http://osuyq1koj.bkt.clouddn.com/17-7-10/29430561.jpg">
+						${index_banner_1_img.label}
 					</div>
 					<div class="banner-info-line">
-						<h1>输入你的需求，等待最棒的消息</h1>
-						<h1>输入你的需求，等待最棒的消息</h1>
-						<h1>输入你的需求，等待最棒的消息</h1>
+						${index_banner_1_text_1.label?if_exists}
+						${index_banner_1_text_2.label?if_exists}
+						${index_banner_1_text_3.label?if_exists}
+						${index_banner_1_text_4.label?if_exists}
 					</div>
 				</div>
 				<div id="clan-2">
 					<div class="banner-info-img">
-						<img src="http://osuyq1koj.bkt.clouddn.com/17-7-10/29430561.jpg">
+					${index_banner_2_img.label}
 					</div>
 					<div class="banner-info-line">
-						<h1>输入你的需求，等待最棒的消息</h1>
-						<h1>输入你的需求，等待最棒的消息</h1>
-						<h1>输入你的需求，等待最棒的消息</h1>
+						${index_banner_2_text_1.label?if_exists}
+						${index_banner_2_text_2.label?if_exists}
+						${index_banner_2_text_3.label?if_exists}
+						${index_banner_2_text_4.label?if_exists}
+						${index_banner_2_text_5.label?if_exists}
 					</div>
 				</div>
 				<div id="clan-3">
 					<div class="banner-info-img">
-						<img src="http://osuyq1koj.bkt.clouddn.com/17-7-10/29430561.jpg">
+					${index_banner_3_img.label}
 					</div>
 					<div class="banner-info-line">
-						<h1>输入你的需求，等待最棒的消息</h1>
-						<h1>输入你的需求，等待最棒的消息</h1>
-						<h1>输入你的需求，等待最棒的消息</h1>
-						<h1>输入你的需求，等待最棒的消息</h1>
+						${index_banner_3_text_1.label?if_exists}
+						${index_banner_3_text_2.label?if_exists}
+						${index_banner_3_text_3.label?if_exists}
+						${index_banner_3_text_4.label?if_exists}
 					</div>
 				</div>
 				<div class="banner-loc">

@@ -27,9 +27,13 @@ public class PortalController {
     @RequestMapping(value = {"/","/index"})
     public String portal(Map<String,Object> map) throws IOException {
         List<Label> index = interfaceService.selectLabelsByPage("index");
+        for(Label label : index){
+            map.put(label.getKey(),label);
+        }
         List<Label> normal = interfaceService.selectLabelsByPage("normal");
-        map.put("index",index);
-        map.put("normal",normal);
+        for(Label label : normal){
+            map.put(label.getKey(),label);
+        }
         return "index";
     }
 }

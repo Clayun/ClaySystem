@@ -17,7 +17,6 @@
         <module>controlcenter</module>
         <module>gateways</module>
         <module>securityservice</module>
-        <module>securityservice</module>
         <module>normalservice</module>
     </modules>
 

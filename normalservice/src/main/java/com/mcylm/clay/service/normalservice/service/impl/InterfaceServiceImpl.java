@@ -34,6 +34,6 @@ public class InterfaceServiceImpl implements InterfaceService {
 
     @Override
     public List<Label> selectLabelsByPage(String page) {
-        return normalDao.selectLabelsByPage("%"+page+"%");
+        return normalDao.selectLabelsByPage(page);
     }
 }
