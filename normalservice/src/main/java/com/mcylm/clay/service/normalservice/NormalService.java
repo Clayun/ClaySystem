@@ -14,7 +14,6 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 @SpringBootApplication(scanBasePackages = "com.mcylm.clay.service.normalservice.*")
 @MapperScan({"com.mcylm.clay.service.normalservice.mapper.*"})
 @EnableEurekaClient
-@EnableWebMvc
 public class NormalService {
 
     public static void main(String[] args) {

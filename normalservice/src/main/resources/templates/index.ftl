@@ -1,17 +1,17 @@
 <!doctype html>
-<html>
-
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
-		<title id="index_head_title"></title>
-		<link rel="stylesheet" type="text/css" href="css/style.css">
-		<link rel="stylesheet" type="text/css" href="css/bootstrap-grid.min.css">
-		<script src="js/jquery-1.7.1.min.js"></script>
-		<script src="js/banner.js"></script>
-		<script src="js/function.js"></script>
-		<script src="js/labels.js"></script>
+		<title>${title}</title>
+		<link rel="stylesheet" type="text/css" href="/css/style.css">
+		<link rel="stylesheet" type="text/css" href="/css/bootstrap-grid.min.css">
+		<script src="/js/jquery-1.7.1.min.js"></script>
+		<script src="/js/banner.js"></script>
+		<script src="/js/function.js"></script>
+
 	</head>
 
 	<body>
@@ -461,7 +461,7 @@
 				<span>©2012-2017 北京信联创维科技有限公司 版权所有 ICP证：京ICP备16065100号-1</span>
 			</div>
 		</div>
-		<script src="js/loginout.js"></script>
+		<script src="/js/loginout.js"></script>
 		<script type="text/javascript">
 			$(function() {
 				$("#cardArea").cardArea()

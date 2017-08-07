@@ -24,9 +24,9 @@ public class NormalController {
 
     @RequestMapping("/labels")
     public void getLabelById(HttpServletResponse response,String id) throws IOException {
-        Gson gson = new Gson();
-        response.setCharacterEncoding("UTF-8");
-        response.getWriter().print(gson.toJson(interfaceService.selectLabelByKey(id)));
+//        Gson gson = new Gson();
+//        response.setCharacterEncoding("UTF-8");
+//        response.getWriter().print(gson.toJson(interfaceService.selectLabelByKey(id)));
     }
 
 }

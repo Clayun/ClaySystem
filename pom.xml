@@ -18,6 +18,7 @@
         <module>gateways</module>
         <module>securityservice</module>
         <module>securityservice</module>
+        <module>normalservice</module>
     </modules>
 
     <!--以下dependency来自官方-->

@@ -38,5 +38,11 @@ spring.redis.pool.max-idle: 500
 spring.redis.pool.min-idle: 0
 spring.redis.timeout: 0
 
-spring.mvc.view.prefix:
-spring.mvc.view.suffix:
+spring.freemarker.allow-request-override: false
+spring.freemarker.cache: true
+spring.freemarker.check-template-location: true
+spring.freemarker.charset: UTF-8
+spring.freemarker.content-type: text/html
+spring.freemarker.expose-session-attributes: false
+spring.freemarker.expose-spring-macro-helpers: false
+spring.freemarker.request-context-attribute: request

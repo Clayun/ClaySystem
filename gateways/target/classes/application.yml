@@ -11,3 +11,4 @@ zuul:
   routes:
     userService: /service/user/**
     serverService: /service/server/**
+    normalService: /**

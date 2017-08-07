@@ -23,15 +23,13 @@ public class InterfaceServiceImpl implements InterfaceService {
     private NormalDao normalDao;
 
     @Override
-    public Label selectLabelByKey(String key) {
-        Gson gson = new Gson();
-        String json = redisDao.getValue(key);
-        if(json == null || json == "") {
-            normalDao.initRedisCache();
-            return null;
+    public Label selectLabelByKey(String key,List<Label> list) {
+        for(Label label : list){
+            if(label.equals(key)){
+                return label;
+            }
         }
-        Label label = gson.fromJson(json,Label.class);
-        return label;
+        return null;
     }
 
     @Override

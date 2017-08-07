@@ -10,6 +10,7 @@
         <module name="consoleservice" />
         <module name="controlcenter" />
         <module name="gateways" />
+        <module name="normalservice" />
         <module name="paymentservice" />
         <module name="securityservice" />
         <module name="serverservice" />
@@ -25,6 +26,7 @@
       <module name="discovery" target="1.6" />
       <module name="gateway" target="1.6" />
       <module name="gateways" target="1.6" />
+      <module name="normalservice" target="1.6" />
       <module name="paymentservice" target="1.6" />
       <module name="securityservice" target="1.6" />
       <module name="serverservice" target="1.6" />

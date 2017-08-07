@@ -9,7 +9,7 @@ import java.util.List;
  */
 public interface InterfaceService {
 
-    Label selectLabelByKey(String key);
+    Label selectLabelByKey(String key,List<Label> list);
 
     List<Label> selectLabelsByPage(String page);
 
