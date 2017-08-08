@@ -44,7 +44,6 @@
                 type: "POST",
                 url: 'doUpdateUcenter?username='+$("#change-username-"+id).val(),
                 success: function (data) {
-
                 }
             });
         }
