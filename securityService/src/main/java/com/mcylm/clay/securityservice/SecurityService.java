@@ -4,6 +4,7 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+
 /**
  * Created by Mikesam on 2017/8/4.
  */
@@ -14,6 +15,11 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 @EnableEurekaClient
 public class SecurityService {
     public static void main(String[] args) {
+
         SpringApplication.run(SecurityService.class, args);
     }
+
+
+
+
 }

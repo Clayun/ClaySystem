@@ -6,10 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
     <title>登录 - 企业级云服务器、弹性云MineCraft服务器租用服务提供商</title>
-    <script src="<%=path%>/effect/js/jquery-1.7.1.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="<%=path%>/effect/css/login.css">
-    <script src="<%=path%>/effect/js/md5.js"></script>
-    <script src="<%=path%>/effect/js/gt.js"></script>
+    <script src="/js/jquery-1.7.1.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/login.css">
+    <script src="/js/md5.js"></script>
+    <script src="/js/gt.js"></script>
 </head>
 
 	<body>
@@ -96,7 +96,7 @@
         </div>
     </div>
 </footer>
-<script type="text/javascript" src="<%=path%>/effect/js/login.js" ></script>
+<script type="text/javascript" src="/js/login.js" ></script>
 <script>
 
 </script>
