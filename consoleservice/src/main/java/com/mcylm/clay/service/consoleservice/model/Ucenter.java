@@ -1,4 +1,4 @@
-package com.mcylm.clay.consoleservice.model;
+package com.mcylm.clay.service.consoleservice.model;
 
 /**
  * Created by macbook on 2017/8/7.

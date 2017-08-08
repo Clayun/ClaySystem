@@ -1,13 +1,13 @@
 spring:
   application:
-    name: normalService
+    name: consoleService
 eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:6080/eureka/  #注册中心地址
   instance:
     hostname: localhost
-    instance-id: http://localhost:6084
+    instance-id: http://localhost:6068
 server:
   port: 6068
 #datasource config

@@ -1,4 +1,4 @@
-package com.mcylm.clay.consoleservice.mapper;
+package com.mcylm.clay.service.consoleservice.mapper;
 
 import org.apache.ibatis.annotations.Mapper;
 
