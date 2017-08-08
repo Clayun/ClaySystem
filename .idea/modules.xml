@@ -9,7 +9,7 @@
       <module fileurl="file://$PROJECT_DIR$/gateways/gateways.iml" filepath="$PROJECT_DIR$/gateways/gateways.iml" />
       <module fileurl="file://$PROJECT_DIR$/normalservice/normalservice.iml" filepath="$PROJECT_DIR$/normalservice/normalservice.iml" />
       <module fileurl="file://$PROJECT_DIR$/paymentservice/paymentservice.iml" filepath="$PROJECT_DIR$/paymentservice/paymentservice.iml" />
-      <module fileurl="file://$PROJECT_DIR$/securityservice/securityservice.iml" filepath="$PROJECT_DIR$/securityservice/securityservice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/securityService/securityService.iml" filepath="$PROJECT_DIR$/securityService/securityService.iml" />
       <module fileurl="file://$PROJECT_DIR$/serverservice/serverservice.iml" filepath="$PROJECT_DIR$/serverservice/serverservice.iml" />
       <module fileurl="file://$PROJECT_DIR$/userservice/userservice.iml" filepath="$PROJECT_DIR$/userservice/userservice.iml" />
     </modules>
