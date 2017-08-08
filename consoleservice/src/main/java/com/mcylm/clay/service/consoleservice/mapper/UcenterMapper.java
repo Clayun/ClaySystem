@@ -3,6 +3,7 @@ package com.mcylm.clay.service.consoleservice.mapper;
 import com.mcylm.clay.service.consoleservice.model.Ucenter;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
@@ -16,7 +17,10 @@ public interface UcenterMapper {
     @Select("select id,uuid,username,phone,createTime,permission,bindUser from console_common_ucenter")
     List<Ucenter> list();
 
-    @Select("select id,uuid,username,phone,createTime,permission,bindUser from console_common_ucenter where id = #{id}")
-    Ucenter toUpdateUcenter(Integer id);
+   /* @Select("select id,uuid,username,phone,createTime,permission,bindUser from console_common_ucenter where id = #{id}")
+    Ucenter toUpdateUcenter(Integer id);*/
+
+   @Update("update console_common_ucenter set username=#{username} where id = #{id}")
+   void doUpdateUcenter(String username, Integer id);
 
 }

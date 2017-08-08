@@ -40,12 +40,14 @@
         function onBlurByUsername(id) {
             $("#username-"+id).css("display","block");
             $("#change-username-"+id).css("display","none");
-            $.ajax({
+            location'doUpdateUcenter?username='+$("#change-username-"+id).val();
+           /* $.ajax({
                 type: "POST",
                 url: 'doUpdateUcenter?username='+$("#change-username-"+id).val(),
                 success: function (data) {
+                    alert("111111111111");
                 }
-            });
+            });*/
         }
     </script>
     </body>

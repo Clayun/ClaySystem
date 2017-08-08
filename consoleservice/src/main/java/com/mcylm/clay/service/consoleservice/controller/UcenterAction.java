@@ -29,9 +29,8 @@ public class UcenterAction {
     }
 
     @RequestMapping("doUpdateUcenter")
-    public String toUpdateUcenter(String username){
-//       ucenterService.toUpdateUcenter(id);
-//          map.put("u",u);
-        return "updateUcenter";
+    public String doUpdateUcenter(String username,Integer id){
+        ucenterService.doUpdateUcenter(username,id);
+        return "redrrect:/ucenterlist";
     }
 }

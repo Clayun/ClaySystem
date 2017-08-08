@@ -23,14 +23,8 @@ public class UcenterServiceImpl implements UcenterService {
     }
 
     @Override
-    public Ucenter toUpdateUcenter(Integer id) {
-        return ucenterDao.toUpdateUcenter(id);
+    public void doUpdateUcenter(String username, Integer id) {
+        ucenterDao.doUpdateUcenter(username,id);
     }
-
-  /*  @Override
-    public Ucenter toUpdateUcenter(Integer id) {
-        ucenterDao.toUpdateUcenter(id);
-        return null;
-    }*/
 
 }

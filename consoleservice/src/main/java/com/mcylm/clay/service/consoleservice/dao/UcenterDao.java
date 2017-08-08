@@ -11,5 +11,5 @@ public interface UcenterDao {
 
     List<Ucenter> ucenterlist();
 
-    Ucenter toUpdateUcenter(Integer id);
+    void doUpdateUcenter(String username, Integer id);
 }

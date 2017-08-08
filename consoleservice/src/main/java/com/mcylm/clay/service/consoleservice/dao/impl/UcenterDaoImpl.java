@@ -23,8 +23,13 @@ public class UcenterDaoImpl implements UcenterDao{
         return ucenterMapper.list();
     }
 
-    @Override
+   /* @Override
     public Ucenter toUpdateUcenter(Integer id) {
         return ucenterMapper.toUpdateUcenter(id);
+    }*/
+
+    @Override
+    public void doUpdateUcenter(String username, Integer id) {
+        ucenterMapper.doUpdateUcenter(username,id);
     }
 }

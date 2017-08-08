@@ -11,5 +11,7 @@ public interface UcenterService {
 
     List<Ucenter> ucenterlist();
 
-    Ucenter toUpdateUcenter(Integer id);
+  /*  Ucenter toUpdateUcenter(Integer id);*/
+
+    void doUpdateUcenter(String username, Integer id);
 }
