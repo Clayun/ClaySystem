@@ -1,5 +1,7 @@
 package com.mcylm.clay.service.consoleservice.model;
 
+import java.util.Date;
+
 /**
  * Created by macbook on 2017/8/7.
  */
@@ -11,8 +13,7 @@ public class Ucenter {
     private String uuid;
     private String username;
     private String phone;
-    private String password;
-    private String creatTime;
+    private Date createTime;
     private String permission;
     private String bindUser;
 
@@ -48,20 +49,12 @@ public class Ucenter {
         this.phone = phone;
     }
 
-    public String getPassword() {
-        return password;
+    public Date getCreateTime() {
+        return createTime;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getCreatTime() {
-        return creatTime;
-    }
-
-    public void setCreatTime(String creatTime) {
-        this.creatTime = creatTime;
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 
     public String getPermission() {
