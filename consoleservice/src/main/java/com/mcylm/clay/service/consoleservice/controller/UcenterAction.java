@@ -11,7 +11,7 @@ import java.util.Map;
  * Created by Mr_Shen on 2017/8/7/007.
  */
 @Controller
-@RequestMapping("/list")
+@RequestMapping("/smy")
 public class UcenterAction {
 
     @Autowired
