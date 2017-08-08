@@ -16,7 +16,7 @@
         <module>consoleservice</module>
         <module>controlcenter</module>
         <module>gateways</module>
-        <module>securityservice</module>
+        <module>securityService</module>
         <module>normalservice</module>
     </modules>
 
