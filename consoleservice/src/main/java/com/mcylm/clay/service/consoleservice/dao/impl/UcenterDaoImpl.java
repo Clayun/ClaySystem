@@ -2,6 +2,7 @@ package com.mcylm.clay.service.consoleservice.dao.impl;
 
 import com.mcylm.clay.service.consoleservice.dao.UcenterDao;
 import com.mcylm.clay.service.consoleservice.mapper.UcenterMapper;
+import com.mcylm.clay.service.consoleservice.model.Page;
 import com.mcylm.clay.service.consoleservice.model.Ucenter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -19,8 +20,8 @@ public class UcenterDaoImpl implements UcenterDao {
     private UcenterMapper ucenterMapper;
 
     @Override
-    public List<Ucenter> getList(Map<String, Object> map) {
-        List<Ucenter> list=ucenterMapper.getList(map);
+    public List<Ucenter> getList(Page page, Map<String, Object> map) {
+        List<Ucenter> list=ucenterMapper.getList(page,map);
         return list;
     }
 
@@ -44,4 +45,10 @@ public class UcenterDaoImpl implements UcenterDao {
 
     @Override
     public void doUpdatePassword(String password, Integer id) { ucenterMapper.doUpdatePassword(password,id);}
+
+    @Override
+    public int getCount() {
+        int listCount=ucenterMapper.getCount();
+        return listCount;
+    }
 }

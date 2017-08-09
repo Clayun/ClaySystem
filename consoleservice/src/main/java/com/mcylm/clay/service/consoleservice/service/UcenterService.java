@@ -1,7 +1,7 @@
 package com.mcylm.clay.service.consoleservice.service;
 
 import com.mcylm.clay.service.consoleservice.model.Ucenter;
-
+import org.apache.ibatis.annotations.Param;
 import java.util.List;
 import java.util.Map;
 
@@ -10,7 +10,7 @@ import java.util.Map;
  */
 public interface UcenterService {
 
-    List<Ucenter> getList(Map<String, Object> map);
+    List<Ucenter> getList(@Param("pageNo") Integer pageNo,@Param("pageSize") Integer pageSize, Map<String, Object> map);
 
     void ucenteradd(Ucenter ucenter);
 
@@ -21,4 +21,6 @@ public interface UcenterService {
     void doUpdateUcenterPhone(String phone, Integer id);
 
     void doUpdatePassword(String password, Integer id);
+
+    int getCount();
 }

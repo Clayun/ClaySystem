@@ -1,5 +1,6 @@
 package com.mcylm.clay.service.consoleservice.dao;
 
+import com.mcylm.clay.service.consoleservice.model.Page;
 import com.mcylm.clay.service.consoleservice.model.Ucenter;
 
 import java.util.List;
@@ -10,7 +11,7 @@ import java.util.Map;
  */
 public interface UcenterDao {
 
-    List<Ucenter> getList(Map<String, Object> map);
+    List<Ucenter> getList(Page page, Map<String, Object> map);
 
     void ucenteradd(Ucenter ucenter);
 
@@ -21,4 +22,6 @@ public interface UcenterDao {
     void doUpdateUcenterPhone(String phone, Integer id);
 
     void doUpdatePassword(String password, Integer id);
+
+    int getCount();
 }

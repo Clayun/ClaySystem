@@ -1,6 +1,7 @@
 package com.mcylm.clay.service.consoleservice.service.impl;
 
 import com.mcylm.clay.service.consoleservice.dao.UcenterDao;
+import com.mcylm.clay.service.consoleservice.model.Page;
 import com.mcylm.clay.service.consoleservice.model.Ucenter;
 import com.mcylm.clay.service.consoleservice.service.UcenterService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,8 +23,12 @@ public class UcenterServiceImpl implements UcenterService{
 
 
     @Override
-    public List<Ucenter> getList(Map<String, Object> map) {
-        List<Ucenter> list=ucenterDao.getList(map);
+    public List<Ucenter> getList(Integer pageNo,Integer pageSize,Map<String, Object> map) {
+        Page page=new Page();
+        int cPage=(pageNo - 1)*pageSize;
+        page.setcPage(cPage);
+        page.setPageSize(pageSize);
+        List<Ucenter> list=ucenterDao.getList(page,map);
         return list;
     }
 
@@ -52,5 +57,11 @@ public class UcenterServiceImpl implements UcenterService{
     @Override
     public void doUpdatePassword(String password, Integer id) {
         ucenterDao.doUpdatePassword(generate(password),id);
+    }
+
+    @Override
+    public int getCount() {
+        int listCount=ucenterDao.getCount();
+        return listCount;
     }
 }

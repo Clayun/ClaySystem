@@ -7,6 +7,7 @@
         <title>列表</title>
     </head>
     <body>
+    <center>
         <table style="text-align: center;" border="1" cellpadding="2" cellspacing="2">
             <tr>
                 <td>ID</td>
@@ -19,35 +20,39 @@
                 <td>操作|<input type="button" value="添加" onclick="toadd()">
                 </td>
             </tr>
-            <#list list as l>
-                <tr>
-                    <td>${l.id}</td>
-                    <td id="usernamelabel-${l.id}" onclick="onClickByUsername(${l.id})">
-                        <span id="username-${l.id}">${l.username}</span>
-                        <input id="change-username-${l.id}" type="text" name="username" value="${l.username}" style="display: none" onblur="onBlurByUsername(${l.id})">
-                    </td>
+        <#list list as l>
+            <tr>
+                <td>${l.id}</td>
+                <td id="usernamelabel-${l.id}" onclick="onClickByUsername(${l.id})">
+                    <span id="username-${l.id}">${l.username}</span>
+                    <input id="change-username-${l.id}" type="text" name="username" value="${l.username}" style="display: none" onblur="onBlurByUsername(${l.id})">
+                </td>
 
-                    <td id="phonelabel-${l.id}" onclick="onClickByPhone(${l.id})">
-                        <span id="phone-${l.id}">${l.phone}</span>
-                        <input id="change-phone-${l.id}" type="text" name="phone" value="${l.phone}" style="display: none" onblur="onBlurByPhone(${l.id})">
-                    </td>
+                <td id="phonelabel-${l.id}" onclick="onClickByPhone(${l.id})">
+                    <span id="phone-${l.id}">${l.phone}</span>
+                    <input id="change-phone-${l.id}" type="text" name="phone" value="${l.phone}" style="display: none" onblur="onBlurByPhone(${l.id})">
+                </td>
 
-                    <td id="passwordlabel-${l.id}" onclick="onClickByPassword(${l.id})">
-                        <span id="password-${l.id}">***</span>
-                        <input id="change-password-${l.id}" placeholder="密码不能为空" type="password" required="required" name="password" style="display: none" onblur="onBlurByPassword(${l.id}) ">
-                    </td>
-                    <td>${l.createTime?string("yyyy-MM-dd HH:mm:ss")}</td>
-                    <td>${l.permission}</td>
-                    <td>${l.bindUser}</td>
-                    <td>
-                        <input type="button" value="删除" onclick="todel(${l.id})">
-                    </td>
-                </tr>
-            </#list>
+                <td id="passwordlabel-${l.id}" onclick="onClickByPassword(${l.id})">
+                    <span id="password-${l.id}">***</span>
+                    <input id="change-password-${l.id}" placeholder="密码不能为空" type="password" required="required" name="password" style="display: none" onblur="onBlurByPassword(${l.id}) ">
+                </td>
+                <td>${l.createTime?string("yyyy-MM-dd HH:mm:ss")}</td>
+                <td>${l.permission}</td>
+                <td>${l.bindUser}</td>
+                <td>
+                    <input type="button" value="删除" onclick="todel(${l.id})">
+                </td>
+            </tr>
+        </#list>
+            <tr>
+                <td colspan="10">${page}</td>
+            </tr>
         </table>
-
         <form id="form1" style="border: 1px solid; width:250px;">
         </form>
+    </center>
+
     </body>
     <script>
         function onClickByUsername(id) {
@@ -136,7 +141,7 @@
             $("#form1").empty();
         }
         function toadd(){
-            $("#form1").show(2000);
+            $("#form1").show(1000);
             $("#form1").append('<h2 style="margin-left: 80px;">添加</h2>');
             $("#form1").append('用户姓名:<input type="text" name="username" ><br/><br/>');
             $("#form1").append('联系电话:<input type="text" name="phone" ><br/><br/>');
