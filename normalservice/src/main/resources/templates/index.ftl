@@ -60,7 +60,7 @@
 					<div class="logo">
 						<a href="/index/portal"><img src="http://osuyq1koj.bkt.clouddn.com/17-7-19/38186757.jpg"></a>
 						<div class="p">
-							<input type="button" class="nav-button" value="登录" onclick="window.location.href='/ucenter/login'">
+							<input type="button" class="nav-button" value="登录" onclick="window.location.href='/security/author/login'">
 							<input type="button" class="nav-button" value="注册有礼" onclick="window.location.href='/ucenter/register'" style="background-color:#FFF; color:#09F; border-color:#e7f0fd;">
 							<input type="button" class="nav-button" value="控制台" onclick="window.location.href='/console/home'">
 						</div>

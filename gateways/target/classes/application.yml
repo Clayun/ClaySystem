@@ -12,3 +12,6 @@ zuul:
     userService: /service/user/**
     serverService: /service/server/**
     normalService: /**
+    securityService: /security/**
+    consoleService: /console/**
+    paymentService: /pay/**
