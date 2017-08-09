@@ -18,6 +18,7 @@
         <module>gateways</module>
         <module>securityService</module>
         <module>normalservice</module>
+        <module>openstackService</module>
     </modules>
 
     <!--以下dependency来自官方-->

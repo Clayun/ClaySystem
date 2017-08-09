@@ -11,9 +11,9 @@
         <module name="controlcenter" />
         <module name="gateways" />
         <module name="normalservice" />
+        <module name="openstackService" />
         <module name="paymentservice" />
         <module name="securityService" />
-        <module name="serverservice" />
         <module name="userservice" />
       </profile>
     </annotationProcessing>
@@ -27,6 +27,7 @@
       <module name="gateway" target="1.6" />
       <module name="gateways" target="1.6" />
       <module name="normalservice" target="1.6" />
+      <module name="openstackService" target="1.6" />
       <module name="paymentservice" target="1.6" />
       <module name="securityService" target="1.6" />
       <module name="securityservice" target="1.6" />

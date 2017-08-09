@@ -7,7 +7,7 @@ spring:
     config:
       server:
         git:
-          uri: file:///${user.home}/config-repo
+          uri: https://github.com/Mikesame/ClaySystem.git
           searchPaths: '{application}'  #搜索各个以服务名命名的文件夹下的所有yml
 eureka:
   instance:
