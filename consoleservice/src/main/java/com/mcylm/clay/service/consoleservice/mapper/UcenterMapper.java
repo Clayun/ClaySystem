@@ -12,8 +12,17 @@ import java.util.Map;
 @Mapper
 public interface UcenterMapper{
 
-    @Select("select * from console_common_ucenter limit #{page.cPage},#{page.pageSize}")
+    @Select("select * from console_common_ucenter order by id limit #{page.cPage},#{page.pageSize}")
     List<Ucenter> getList(@Param("page") Page page,Map<String,Object> map);
+
+    @Select("select * from console_common_ucenter where id like #{content} order by id limit #{page.cPage},#{page.pageSize}")
+    List<Ucenter> getIDList(@Param("content") String content,@Param("page") Page page, Map<String, Object> map);
+
+    @Select("select * from console_common_ucenter where username like #{content} order by id limit #{page.cPage},#{page.pageSize}")
+    List<Ucenter> getUsernameList(@Param("content") String content,@Param("page") Page page, Map<String, Object> map);
+
+    @Select("select * from console_common_ucenter where phone like #{content} order by id limit #{page.cPage},#{page.pageSize}")
+    List<Ucenter> getPhoneList(@Param("content") String content,@Param("page") Page page, Map<String, Object> map);
 
     @Insert("insert into console_common_ucenter(uuid,username,phone,password,createTime,permission,bindUser) values(#{uuid},#{username},#{phone},#{password},#{createTime},#{permission},#{bindUser})")
     void ucenteradd(Ucenter ucenter);
@@ -32,4 +41,14 @@ public interface UcenterMapper{
 
     @Select("select count(*) from console_common_ucenter")
     int getCount();
+
+    @Select("select count(*) from console_common_ucenter where id like #{content}")
+    int getIDCount(String content);
+
+    @Select("select count(*) from console_common_ucenter where username like #{content}")
+    int getUsernameCount(String content);
+
+    @Select("select count(*) from console_common_ucenter where phone like #{content}")
+    int getPhoneCount(String content);
+
 }

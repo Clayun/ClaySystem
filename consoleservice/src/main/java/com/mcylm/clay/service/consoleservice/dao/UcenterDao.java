@@ -13,6 +13,12 @@ public interface UcenterDao {
 
     List<Ucenter> getList(Page page, Map<String, Object> map);
 
+    List<Ucenter> getIDList(String content, Page page, Map<String, Object> map);
+
+    List<Ucenter> getUsernameList(String content, Page page, Map<String, Object> map);
+
+    List<Ucenter> getPhoneList(String content, Page page, Map<String, Object> map);
+
     void ucenteradd(Ucenter ucenter);
 
     void ucenterdel(Integer id);
@@ -24,4 +30,11 @@ public interface UcenterDao {
     void doUpdatePassword(String password, Integer id);
 
     int getCount();
+
+    int getIDCount(String content);
+
+    int getUsernameCount(String content);
+
+    int getPhoneCount(String content);
+
 }

@@ -21,14 +21,23 @@ public class UcenterServiceImpl implements UcenterService{
     @Autowired
     private UcenterDao ucenterDao;
 
-
     @Override
-    public List<Ucenter> getList(Integer pageNo,Integer pageSize,Map<String, Object> map) {
+    public List<Ucenter> getList(String dropdownbox,String content,Integer pageNo,Integer pageSize,Map<String, Object> map) {
+        List<Ucenter> list=null;
         Page page=new Page();
         int cPage=(pageNo - 1)*pageSize;
         page.setcPage(cPage);
         page.setPageSize(pageSize);
-        List<Ucenter> list=ucenterDao.getList(page,map);
+        content="%"+content+"%";
+        if(dropdownbox==null){
+            list=ucenterDao.getList(page,map);
+        }else if(dropdownbox.equals("ID")){
+            list=ucenterDao.getIDList(content,page,map);
+        }else if(dropdownbox.equals("用户名")){
+            list=ucenterDao.getUsernameList(content,page,map);
+        }else{
+            list=ucenterDao.getPhoneList(content,page,map);
+        }
         return list;
     }
 
@@ -60,8 +69,18 @@ public class UcenterServiceImpl implements UcenterService{
     }
 
     @Override
-    public int getCount() {
-        int listCount=ucenterDao.getCount();
+    public int getCount(String dropdownbox,String content){
+        int listCount=0;
+        content="%"+content+"%";
+        if(dropdownbox==null){
+            listCount=ucenterDao.getCount();
+        }else if(dropdownbox.equals("ID")){
+            listCount=ucenterDao.getIDCount(content);
+        }else if(dropdownbox.equals("用户名")){
+            listCount=ucenterDao.getUsernameCount(content);
+        }else{
+            listCount=ucenterDao.getPhoneCount(content);
+        }
         return listCount;
     }
 }

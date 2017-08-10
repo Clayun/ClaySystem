@@ -10,7 +10,7 @@ import java.util.Map;
  */
 public interface UcenterService {
 
-    List<Ucenter> getList(@Param("pageNo") Integer pageNo,@Param("pageSize") Integer pageSize, Map<String, Object> map);
+    List<Ucenter> getList(@Param("dropdownbox") String dropdownbox,@Param("content") String content,@Param("pageNo") Integer pageNo,@Param("pageSize") Integer pageSize, Map<String, Object> map);
 
     void ucenteradd(Ucenter ucenter);
 
@@ -22,5 +22,6 @@ public interface UcenterService {
 
     void doUpdatePassword(String password, Integer id);
 
-    int getCount();
+    int getCount(@Param("dropdownbox") String dropdownbox,@Param("content") String content);
+
 }
