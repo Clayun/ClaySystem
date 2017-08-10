@@ -15,3 +15,4 @@ zuul:
     securityService: /security/**
     consoleService: /console/**
     paymentService: /pay/**
+    openstackService: /ecs/**
