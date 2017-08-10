@@ -2,6 +2,7 @@ package com.mcylm.clay.securityservice.dao.impl;
 
 import com.mcylm.clay.securityservice.dao.UauthTokenDao;
 import com.mcylm.clay.securityservice.mapper.UauthTokenMapper;
+import com.mcylm.clay.securityservice.module.UauthToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -18,4 +19,11 @@ public class UauthTokenDaoImpl implements UauthTokenDao {
     public Integer insertUauthTokenMessage(String uid, String hostIp, String sessionId, String token) {
         return uauthTokenMapper.insertUauthTokenMessage(uid,hostIp,sessionId,token);
     }
+
+    @Override
+    public UauthToken findUauthTokenBySessionId(String sessionId) {
+        return uauthTokenMapper.findUauthTokenBySessionId(sessionId);
+    }
+
+
 }

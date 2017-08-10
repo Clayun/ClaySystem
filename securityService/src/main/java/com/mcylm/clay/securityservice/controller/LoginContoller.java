@@ -7,10 +7,12 @@ import com.mcylm.clay.securityservice.util.IPUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.Map;
 
 /**
  * Created by lenovo on 2017/8/7.
@@ -21,18 +23,27 @@ import javax.servlet.http.HttpServletRequest;
 public class LoginContoller {
     @Autowired
     private UauthService uauthService;
+
     /**
      * 跳转到登录页面
      *
      * @return
      */
     @RequestMapping(value = "/login")
-    public String login() {
+    public String login(Map<String,Object> map,String redirectUrl) {
+
+        if (redirectUrl!=null&&!"".equals(redirectUrl)) {
+            map.put("redirectUrl",redirectUrl);
+        }else {
+            map.put("redirectUrl","");
+        }
+
         return "login";
     }
 
     /**
      * 登录
+     *
      * @param request
      * @param username
      * @param password
@@ -45,7 +56,7 @@ public class LoginContoller {
         String hostIp = IPUtil.getIpAddr(request);
         //主机ip
         String sessionId = request.getSession().getId();
-        ResponseEntity result = uauthService.getUuidByUsernameAndPassword(username, password,hostIp,sessionId);
+        ResponseEntity result = uauthService.getUuidByUsernameAndPassword(username, password, hostIp, sessionId);
         return result;
     }
 
@@ -67,10 +78,5 @@ public class LoginContoller {
         resStr = gtSdk.getResponseStr();
         return resStr;
     }
-
-   /* @RequestMapping("/getIpAddr")
-    */
-
-
 
 }

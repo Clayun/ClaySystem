@@ -23,6 +23,8 @@ public class UauthServiceImpl implements UauthService {
     @Autowired
     private UauthDao uauthDao;
 
+
+
     @Autowired
     private UauthTokenService uauthTokenService;
 
@@ -35,35 +37,25 @@ public class UauthServiceImpl implements UauthService {
      */
     @Override
     public ResponseEntity getUuidByUsernameAndPassword(String username, String password, String hostIp, String sessionId) {
-        System.out.println("密码"+MD5Util.generate(password));
         //MD5加密数据
         Uauth uauth = uauthDao.getUuidByUsernameAndPassword(username);
-        System.out.println("判断前paswprd:"+uauth.getPassWord());
-        System.out.println("判断前uuid:"+uauth.getUuid());
-        if (uauth.getUuid() != null && !"".equals(uauth.getUuid())) {
-            System.out.println("进去了");
-            if (uauth.getPassWord()!=null&&!"".equals(uauth.getPassWord())){
-                System.out.println("数据库中paswprd:"+uauth.getPassWord());
-                boolean flag = MD5Util.verify(password, uauth.getPassWord());
-                System.out.println("数据库中paswprd:"+flag);
 
-                if (flag){
-                    //把用户登录信息存入token
-                    ResponseEntity result = uauthTokenService.insertUauthTokenMessage(uauth.getUuid(), hostIp, sessionId);
-                    //登录成功
-                    return result;
-                }else {
-                    //登录失败
-                    return ResponseEntity.ok().body(510);
-                }
-            }else {
-                //登录失败
-                return ResponseEntity.ok().body(510);
+        if (uauth != null && uauth.getUuid() != null && !"".equals(uauth.getUuid())) {
+
+            boolean flag = MD5Util.verify(password, uauth.getPassWord());
+
+            if (flag) {
+                //把用户登录信息存入token
+                ResponseEntity result = uauthTokenService.insertUauthTokenMessage(uauth.getUuid(), hostIp, sessionId);
+                //登录成功
+                return result;
             }
-        }else {
             //登录失败
             return ResponseEntity.ok().body(510);
         }
+        //登录失败
+        return ResponseEntity.ok().body(510);
+
 
     }
 }

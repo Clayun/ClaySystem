@@ -12,6 +12,7 @@ import java.util.List;
  */
 @Mapper
 public interface UauthMapper {
+
     @Select("SELECT uuid,userName,passWord FROM pre_common_uauth WHERE  userName = #{username} OR phone = #{username}")
     Uauth getUuidByUsernameAndPassword(@Param(value = "username") String username);
 }

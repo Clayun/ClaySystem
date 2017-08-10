@@ -1,6 +1,7 @@
 /**
  * Created by Mikesam on 2017/7/11.
  */
+
 var handler1 = function (captchaObj) {
     $("#submit").click(function (e) {
         var result = captchaObj.getValidate();
@@ -23,6 +24,7 @@ var handler1 = function (captchaObj) {
                 $("#msg").css("color","red");
                 return ;
             }
+            var redirectUrl = $("#redirectUrl").val();
             $.ajax({
                 url: '/security/author/doLogin',
                 type: 'POST',
@@ -33,7 +35,13 @@ var handler1 = function (captchaObj) {
                 },
                 success: function (data) {
                     if (data == '201') {
-                        window.location.href="http://www.baidu.com";
+                        $("#msg").html("登录成功，即将跳转！");
+                        $("#msg").css("color","green");
+                            if (redirectUrl != null && redirectUrl != ''){
+                                window.location.href="http://"+redirectUrl;
+                                return ;
+                            }
+                            window.location.href="http://localhost/";
                     } else if (data == '510') {
                         $("#msg").css("color","red");
                         $("#msg").html("用户名或密码错误！")
