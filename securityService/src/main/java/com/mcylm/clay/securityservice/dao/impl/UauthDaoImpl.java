@@ -6,19 +6,22 @@ import com.mcylm.clay.securityservice.module.Uauth;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import java.util.List;
-
 /**
  * Created by lenovo on 2017/8/7.
  */
 @Repository
 public class UauthDaoImpl implements UauthDao {
     @Autowired
-    private UauthMapper authMapper;
-
+    private UauthMapper uauthMapper;
+    /**
+     * 登录 获取 uuid
+     * @param username
+     * @return
+     */
     @Override
-    public List<Uauth> getUauths() {
-        List<Uauth> result = authMapper.getUauths();
-        return result;
+    public Uauth getUuidByUsernameAndPassword(String username) {
+        Uauth uauth = uauthMapper.getUuidByUsernameAndPassword(username);
+        return uauth;
     }
+
 }

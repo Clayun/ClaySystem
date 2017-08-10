@@ -1,5 +1,6 @@
 package com.mcylm.clay.securityservice.module;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -9,7 +10,8 @@ import java.util.Date;
 /**
  * Uauth 类
  */
-public class Uauth {
+public class Uauth implements Serializable{
+
     private Integer id;
     private String uuid;
     private String userName;

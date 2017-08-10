@@ -6,12 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
     <title>登录 - 企业级云服务器、弹性云MineCraft服务器租用服务提供商</title>
-    <script src="/js/jquery-1.7.1.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="/css/login.css">
-    <script src="/js/md5.js"></script>
-    <script src="/js/gt.js"></script>
+    <link rel="stylesheet" type="text/css" href="/security/css/login.css">
 </head>
-
 	<body>
     <div class="login-banner">
         <div class="login-nav">
@@ -36,17 +32,17 @@
                     <span>密码登录</span>
                     <p id="msg">请使用您的用户名或手机号码登录</p>
                     <input type="text" name="username" placeholder="用户名/手机号" id="user" />
-                    <input type="password" name="password" placeholder="密码" id="pwd" />
+                    <input type="password" name="password" placeholder="密码" id="pwd" required/>
                     <div style="margin-left: 25px;width: 312px;margin-top: 25px;">
                         <div id="captcha1">
                             <p id="wait1" class="show">正在加载验证码......</p>
                         </div>
                     </div>
+                    <p id="notice1" class="hide">请先完成验证</p>
                     <button style="cursor: pointer;margin-bottom: 10px;" id="submit">登录</button>
                     <p style="display: inline;">忘记密码？</p><p style="display: inline;">免费注册</p>
                 </div>
             </div>
-
         </div>
     </div>
     </body>
@@ -96,9 +92,8 @@
         </div>
     </div>
 </footer>
-<script type="text/javascript" src="/js/login.js" ></script>
-<script>
 
-</script>
-
+<script src="/security/js/jquery-1.7.1.min.js"></script>
+<script src="/security/js/gt.js"></script>
+<script src="/security/js/login.js"></script>
 </html>
