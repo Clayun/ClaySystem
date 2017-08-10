@@ -1,10 +1,8 @@
 package com.mcylm.clay.service.consoleservice.controller;
 
-import com.github.pagehelper.PageHelper;
 import com.mcylm.clay.service.consoleservice.model.Ucenter;
 import com.mcylm.clay.service.consoleservice.service.UcenterService;
 import com.mcylm.clay.service.consoleservice.utils.PageUtil;
-import freemarker.template.TemplateException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
@@ -12,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import javax.servlet.http.HttpServletRequest;
-import java.io.IOException;
 import java.util.*;
 
 /**
@@ -27,15 +24,17 @@ public class UcenterAction{
 
     //列表查询
     @RequestMapping("/ucenterlist")
-    public String ucenterlist(HttpServletRequest request,Map<String,Object> map) throws Exception {
-        String pageNo=request.getParameter("cPage")==null?"1":request.getParameter("cPage");
-        int pageSize=5;
-        int listCount = ucenterService.getCount();
-        if (listCount == 0) {
+    public String ucenterlist(String dropdownbox,String pageNo,String content,HttpServletRequest request,Map<String,Object> map) throws Exception {
+        pageNo=request.getParameter("cPage")==null?"1":request.getParameter("cPage");
+        int pageSize=8;
+        int listCount = ucenterService.getCount(dropdownbox,content);
+        if (listCount == 0){
             pageNo = "0";
         }
-        List<Ucenter> list = ucenterService.getList(Integer.parseInt(pageNo),pageSize,map);
+        List<Ucenter> list = ucenterService.getList(dropdownbox,content,Integer.parseInt(pageNo),pageSize,map);
         map.put("list",list);
+        request.setAttribute("dropdownbox",dropdownbox);
+        request.setAttribute("content",content);
         PageUtil.page(request, Integer.parseInt(pageNo), pageSize, listCount, map, list);
         return "console";
     }
