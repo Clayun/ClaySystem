@@ -7,9 +7,9 @@
     <file url="file://$PROJECT_DIR$/controlcenter" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/gateways" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/normalservice" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/openstackService" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/paymentservice" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/securityservice" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/securityservice" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/securityService" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/serverservice" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/userservice" charset="UTF-8" />
   </component>

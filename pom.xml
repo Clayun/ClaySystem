@@ -16,8 +16,9 @@
         <module>consoleservice</module>
         <module>controlcenter</module>
         <module>gateways</module>
-        <module>securityservice</module>
+        <module>securityService</module>
         <module>normalservice</module>
+        <module>openstackService</module>
     </modules>
 
     <!--以下dependency来自官方-->
@@ -62,5 +63,16 @@
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
     </dependencies>
+
+   <build>
+       <plugins>
+           <plugin>
+               <groupId>org.springframework.boot</groupId>
+               <artifactId>spring-boot-maven-plugin</artifactId>
+           </plugin>
+       </plugins>
+
+   </build>
+
 
 </project>

@@ -39,7 +39,7 @@ spring.redis.pool.min-idle: 0
 spring.redis.timeout: 0
 
 spring.freemarker.allow-request-override: false
-spring.freemarker.cache: true
+spring.freemarker.cache: false
 spring.freemarker.check-template-location: true
 spring.freemarker.charset: UTF-8
 spring.freemarker.content-type: text/html
