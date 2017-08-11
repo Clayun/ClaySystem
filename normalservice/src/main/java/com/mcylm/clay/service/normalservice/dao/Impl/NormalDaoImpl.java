@@ -34,7 +34,7 @@ public class NormalDaoImpl implements NormalDao {
      */
     @Override
     public boolean initRedisCache() {
-        redisDao.setKey("normalcache",null);
+        redisDao.setKey("normalcache","");
         List<Label> list = normalMapper.selectLabels();
         redisDao.setKey("normalcache",gson.toJson(list));
         return true;
