@@ -4,10 +4,10 @@ import java.io.Serializable;
 import java.util.Date;
 
 /**
+ * 用户信息表
  * Created by lenovo on 2017/8/9.
  */
 public class UauthToken implements Serializable{
-
     private Integer id;
     private String uuid;
     private String clientid;

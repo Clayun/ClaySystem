@@ -1,6 +1,7 @@
 /**
  * Created by Mikesam on 2017/7/11.
  */
+
 var handler1 = function (captchaObj) {
     $("#submit").click(function (e) {
         var result = captchaObj.getValidate();
@@ -23,6 +24,7 @@ var handler1 = function (captchaObj) {
                 $("#msg").css("color","red");
                 return ;
             }
+            var redirectUrl = $("#redirectUrl").val();
             $.ajax({
                 url: '/security/author/doLogin',
                 type: 'POST',
@@ -32,9 +34,24 @@ var handler1 = function (captchaObj) {
                     password: $('#pwd').val(),
                 },
                 success: function (data) {
-                    if (data == '201') {
-                        window.location.href="http://www.baidu.com";
-                    } else if (data == '510') {
+                    if (data.status == '201') {
+                        $("#msg").html("登录成功，即将跳转！");
+                        $("#msg").css("color","green");
+                        var url = "";
+                        var token = data.token;
+                        var loginType = data.loginType;
+
+                        if (redirectUrl != null && redirectUrl != ''){
+                            url = url+redirectUrl;
+                        }
+                        if (token != null && token != ''){
+                            url = url+"?token="+token;
+                        }
+                        if (loginType != null && loginType != ''){
+                            url = url+"&loginType="+loginType;
+                        }
+                        window.location.href="http://"+url;
+                    } else if (data.status == '510') {
                         $("#msg").css("color","red");
                         $("#msg").html("用户名或密码错误！")
                     }else {
