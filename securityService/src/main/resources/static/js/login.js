@@ -6,66 +6,63 @@ var handler1 = function (captchaObj) {
     $("#submit").click(function (e) {
         var result = captchaObj.getValidate();
         if (!result) {
-            $("#msg").html("请先完成验证！")
+            // $("#notice1").show();
+            $("#msg").html("请先完成验证");
+            $("#msg").css("color","red");
             setTimeout(function () {
-                $("#msg").html("请使用您的用户名或手机号码登录")
+                $("#msg").html("");
+                /*$("#msg").css("color","green");*/
             }, 2000);
-            e.preventDefault();
-        }else{
-            var user = $("#user").val();
-            var pwd = $("#pwd").val();
-            if(user != "" && pwd != ""){
-                $.ajax({
-                    type: "POST",
-                    dataType: "text",
-                    url: '/ucenter/auth',
-                    data:{user:user,pwd:pwd},
-                    success: function (data) {
-                        if(data == "success"){
-                            $("#msg").css("color","green");
-                            $("#msg").html("登陆成功")
-
-                            if(getUrlParam('from_url') == null){
-                                window.location.href="/index/portal?user="+ hex_md5(user)+"&welcome=";
-                            }else if(getUrlParam('from_url') != ""){
-
-                                if(getUrlParam('selectproduct_mc') != "" && getUrlParam('selectproduct_mc') != null){
-                                    window.location.href="/"+getUrlParam('from_url')+"?selectproduct_mc="+getUrlParam('selectproduct_mc');
-                                }else if(getUrlParam('selectproduct_esc') != "" && getUrlParam('selectproduct_esc') != null){
-                                    window.location.href="/"+getUrlParam('from_url')+"?selectproduct_esc="+getUrlParam('selectproduct_esc');
-                                }
-                            }
-                            else{
-                                window.location.href="/index/portal?user="+ hex_md5(user)+"&welcome=";
-                            }
-
-                        }else if(data == "failed"){
-                            $("#msg").css("color","red");
-                            $("#msg").html("用户名或密码错误！")
-                        }else if(data  == "unregisted"){
-                            $("#msg").css("color","red");
-                            $("#msg").html("用户名未注册！")
-                        }else{
-                            $("#msg").css("color","red");
-                            $("#msg").html("服务器正在维护！")
-                        }
-                    }
-                });
-            }else{
+        } else {
+            if ($('#user').val()==""){
+                $("#msg").html("用户名不能为空");
                 $("#msg").css("color","red");
-                $("#msg").html("用户名或密码为空！")
+                return;
             }
+            if ($('#pwd').val()==""){
+                $("#msg").html("密码不能为空");
+                $("#msg").css("color","red");
+                return ;
+            }
+            var redirectUrl = $("#redirectUrl").val();
+            $.ajax({
+                url: '/security/author/doLogin',
+                type: 'POST',
+                dataType: 'json',
+                data: {
+                    username: $('#user').val(),
+                    password: $('#pwd').val(),
+                },
+                success: function (data) {
+                    if (data == '201') {
+                        $("#msg").html("登录成功，即将跳转！");
+                        $("#msg").css("color","green");
+                            if (redirectUrl != null && redirectUrl != ''){
+                                window.location.href="http://"+redirectUrl;
+                                return ;
+                            }
+                            window.location.href="http://localhost/";
+                    } else if (data == '510') {
+                        $("#msg").css("color","red");
+                        $("#msg").html("用户名或密码错误！")
+                    }else {
+                        $("#msg").css("color","red");
+                        $("#msg").html("服务器正在维护！")
+                    }
+                }
+            })
         }
+        e.preventDefault();
     });
+
     // 将验证码加到id为captcha的元素里，同时会有三个input的值用于表单提交
     captchaObj.appendTo("#captcha1");
     captchaObj.onReady(function () {
         $("#wait1").hide();
     });
-    // 更多接口参考：http://www.geetest.com/install/sections/idx-client-sdk.html
 };
 $.ajax({
-    url: "/index/startVal?t=" + (new Date()).getTime(), // 加随机数防止缓存
+    url: "/security/author/getVerificationCode?datetime=" + (new Date()).getTime(), // 加随机数防止缓存
     type: "get",
     dataType: "json",
     success: function (data) {
@@ -75,11 +72,10 @@ $.ajax({
         initGeetest({
             gt: data.gt,
             challenge: data.challenge,
-            new_captcha: data.new_captcha, // 用于宕机时表示是新验证码的宕机
-            offline: !data.success, // 表示用户后台检测极验服务器是否宕机，一般不需要关注
+            /* new_captcha: data.new_captcha,*/ // 用于宕机时表示是新验证码的宕机
+            /* offline: !data.success,*/ // 表示用户后台检测极验服务器是否宕机，一般不需要关注
             product: "float", // 产品形式，包括：float，popup
-            width: "312px"
-            // 更多配置参数请参见：http://www.geetest.com/install/sections/idx-client-sdk.html#config
+            width: "100%"
         }, handler1);
     }
 });

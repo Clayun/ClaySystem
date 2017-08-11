@@ -26,6 +26,24 @@ public class UcenterDaoImpl implements UcenterDao {
     }
 
     @Override
+    public List<Ucenter> getIDList(String content, Page page, Map<String, Object> map) {
+        List<Ucenter> list=ucenterMapper.getIDList(content,page,map);
+        return list;
+    }
+
+    @Override
+    public List<Ucenter> getUsernameList(String content, Page page, Map<String, Object> map) {
+        List<Ucenter> list=ucenterMapper.getUsernameList(content,page,map);
+        return list;
+    }
+
+    @Override
+    public List<Ucenter> getPhoneList(String content, Page page, Map<String, Object> map) {
+        List<Ucenter> list=ucenterMapper.getPhoneList(content,page,map);
+        return list;
+    }
+
+    @Override
     public void ucenteradd(Ucenter ucenter) {
         ucenterMapper.ucenteradd(ucenter);
     }
@@ -51,4 +69,23 @@ public class UcenterDaoImpl implements UcenterDao {
         int listCount=ucenterMapper.getCount();
         return listCount;
     }
+
+    @Override
+    public int getIDCount(String content) {
+        int listcount=ucenterMapper.getIDCount(content);
+        return listcount;
+    }
+
+    @Override
+    public int getUsernameCount(String content) {
+        int listcount=ucenterMapper.getUsernameCount(content);
+        return listcount;
+    }
+
+    @Override
+    public int getPhoneCount(String content) {
+        int listcount=ucenterMapper.getPhoneCount(content);
+        return listcount;
+    }
+
 }

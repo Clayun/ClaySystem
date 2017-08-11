@@ -31,19 +31,19 @@ public class PageUtil {
 		String next = "";
 		String last = "";
 		if(cPage == 1||cPage==0) {
-			first = "【首页】";
-			priv = "【上一页】";
+			first = "<input type='button' disabled='disabled' value='首页'>";
+			priv = "<input type='button' disabled='disabled' value='上一页'>";
 		} else {
-			first = "<a href='/console"+request.getRequestURI()+"?cPage=1'>【首页】</a>";
-			priv = "<a href='/console"+request.getRequestURI()+"?cPage="+(cPage-1)+"'>【上一页】</a>";
+			first = "<a href='/console"+request.getRequestURI()+"?cPage=1'><input type='button' value='首页'></a>";
+			priv = "<a href='/console"+request.getRequestURI()+"?cPage="+(cPage-1)+"'><input type='button' value='上一页'></a>";
 		}
 		
 		if(cPage == pageCount) {
-			next = "【下一页】";
-			last = "【尾页】";
+			next = "<input type='button' disabled='disabled' value='【下一页】'>";
+			last = "<input type='button' disabled='disabled' value='【尾页】'>";
 		} else {
-			next = "<a href='/console"+request.getRequestURI()+"?cPage="+(cPage + 1)+"'>【下一页】</a>";
-			last = "<a href='/console"+request.getRequestURI()+"?cPage="+ pageCount +"'>【尾页】</a>";
+			next = "<a id='nextpage' href='/console"+request.getRequestURI()+"?cPage="+(cPage + 1)+"'><input type='button' value='下一页'></a>";
+			last = "<a id='finalpage' href='/console"+request.getRequestURI()+"?cPage="+ pageCount +"'><input type='button' value='尾页'></a>";
 		}
 		
 		request.setAttribute("first", first);
