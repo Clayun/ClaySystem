@@ -16,13 +16,20 @@ import java.util.concurrent.TimeUnit;
 @Repository
 public class RedisDaoImpl implements RedisDao {
     private Gson gson = new Gson();
+
     @Autowired
     private StringRedisTemplate redisTemplate;
 
     @Override
-    public void setKeyAndVal(String sessionId, UauthToken uauthToken) {
+    public void setKeyAndVal(String token, UauthToken uauthToken) {
         String uauthonJson = gson.toJson(uauthToken);
         ValueOperations<String, String> stringValueOperations = redisTemplate.opsForValue();
-        stringValueOperations.set(sessionId, uauthonJson, 30, TimeUnit.MINUTES);
+        stringValueOperations.set(token, uauthonJson, 30, TimeUnit.MINUTES);
+    }
+
+    @Override
+    public String checkTokenExit(String token) {
+        ValueOperations<String, String> stringStringValueOperations = redisTemplate.opsForValue();
+        return stringStringValueOperations.get(token);
     }
 }

@@ -21,9 +21,8 @@ public class UauthTokenDaoImpl implements UauthTokenDao {
     }
 
     @Override
-    public UauthToken findUauthTokenBySessionId(String sessionId) {
-        return uauthTokenMapper.findUauthTokenBySessionId(sessionId);
+    public UauthToken findUauthTokenByToken(String token) {
+        return uauthTokenMapper.findUauthTokenByToken(token);
     }
-
 
 }

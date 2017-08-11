@@ -1,9 +1,12 @@
 package com.mcylm.clay.securityservice.controller;
 
 import com.mcylm.clay.securityservice.config.GeetestConfig;
+import com.mcylm.clay.securityservice.module.ParameterModel;
 import com.mcylm.clay.securityservice.sdk.GeetestLib;
 import com.mcylm.clay.securityservice.service.UauthService;
+import com.mcylm.clay.securityservice.util.Base64Utils;
 import com.mcylm.clay.securityservice.util.IPUtil;
+import com.sun.xml.internal.rngom.parse.host.Base;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -12,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
+import java.io.IOException;
 import java.util.Map;
 
 /**
@@ -30,14 +34,25 @@ public class LoginContoller {
      * @return
      */
     @RequestMapping(value = "/login")
-    public String login(Map<String,Object> map,String redirectUrl) {
+    public String login(Map<String, Object> map, ParameterModel parameterModel) {
+        boolean flag = false;
+        String redirectUrl = parameterModel.getRedirectUrl();
+        String baseToken = parameterModel.getToken();
 
-        if (redirectUrl!=null&&!"".equals(redirectUrl)) {
-            map.put("redirectUrl",redirectUrl);
-        }else {
-            map.put("redirectUrl","");
+        if (redirectUrl != null && !"".equals(redirectUrl)) {
+            map.put("redirectUrl", redirectUrl);
+        } else {
+            map.put("redirectUrl", "");
         }
 
+        if (baseToken != null && !"".equals(baseToken)) {
+            String token = Base64Utils.decodeBase64String(baseToken);
+            flag = uauthService.checkTokenExit(token);
+        }
+
+        if (flag){
+            return "redirect:http://"+redirectUrl+"?token="+baseToken+"&loginType="+Base64Utils.encodeBase64String("autoLogin");
+        }
         return "login";
     }
 
@@ -45,18 +60,17 @@ public class LoginContoller {
      * 登录
      *
      * @param request
-     * @param username
-     * @param password
+     * @param parameterModel
      * @return
      */
     @RequestMapping("/doLogin")
     @ResponseBody
-    public ResponseEntity doLogin(HttpServletRequest request, String username, String password) {
+    public ResponseEntity<ParameterModel> doLogin(HttpServletRequest request, ParameterModel parameterModel) {
         //客户端ip
         String hostIp = IPUtil.getIpAddr(request);
         //主机ip
         String sessionId = request.getSession().getId();
-        ResponseEntity result = uauthService.getUuidByUsernameAndPassword(username, password, hostIp, sessionId);
+        ResponseEntity<ParameterModel> result = uauthService.getUuidByUsernameAndPassword(parameterModel, hostIp, sessionId);
         return result;
     }
 
