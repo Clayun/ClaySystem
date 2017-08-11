@@ -6,6 +6,7 @@ import com.mcylm.clay.securityservice.sdk.GeetestLib;
 import com.mcylm.clay.securityservice.service.UauthService;
 import com.mcylm.clay.securityservice.util.Base64Utils;
 import com.mcylm.clay.securityservice.util.IPUtil;
+import com.mcylm.clay.securityservice.util.RedisUtils;
 import com.sun.xml.internal.rngom.parse.host.Base;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -37,7 +38,7 @@ public class LoginContoller {
     public String login(Map<String, Object> map, ParameterModel parameterModel) {
         boolean flag = false;
         String redirectUrl = parameterModel.getRedirectUrl();
-        String baseToken = parameterModel.getToken();
+        String token = parameterModel.getToken();
 
         if (redirectUrl != null && !"".equals(redirectUrl)) {
             map.put("redirectUrl", redirectUrl);
@@ -45,14 +46,14 @@ public class LoginContoller {
             map.put("redirectUrl", "");
         }
 
-        if (baseToken != null && !"".equals(baseToken)) {
-            String token = Base64Utils.decodeBase64String(baseToken);
-            flag = uauthService.checkTokenExit(token);
+        if (token != null && !"".equals(token)) {
+            //解密并判断
+//            flag = uauthService.checkTokenExit(token);
+            flag = RedisUtils.checkTokenExit(token);
         }
 
-        if (flag){
-            return "redirect:http://"+redirectUrl+"?token="+baseToken+"&loginType="+Base64Utils.encodeBase64String("autoLogin");
-        }
+        if (flag)
+            return "redirect:http://"+redirectUrl+"?token="+token+"&loginType="+Base64Utils.encodeBase64String("autoLogin");
         return "login";
     }
 

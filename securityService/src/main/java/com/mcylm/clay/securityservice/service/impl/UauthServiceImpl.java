@@ -4,11 +4,11 @@ import com.mcylm.clay.securityservice.dao.UauthDao;
 import com.mcylm.clay.securityservice.module.ParameterModel;
 import com.mcylm.clay.securityservice.module.Uauth;
 import com.mcylm.clay.securityservice.module.UauthToken;
-import com.mcylm.clay.securityservice.service.RedisService;
 import com.mcylm.clay.securityservice.service.UauthService;
 import com.mcylm.clay.securityservice.service.UauthTokenService;
 import com.mcylm.clay.securityservice.util.Base64Utils;
 import com.mcylm.clay.securityservice.util.MD5Util;
+import com.mcylm.clay.securityservice.util.RedisUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -24,9 +24,6 @@ public class UauthServiceImpl implements UauthService {
 
     @Autowired
     private UauthTokenService uauthTokenService;
-
-    @Autowired
-    private RedisService redisService;
 
     /**
      * 登录获取uuid
@@ -51,7 +48,7 @@ public class UauthServiceImpl implements UauthService {
 
                 if (uauthToken != null) {
                     //将信息存入redis中
-                    redisService.setKeyAndVal(uauthToken.getToken(), uauthToken);
+                    RedisUtils.setKey_Val_TimeOut(uauthToken.getToken(),uauthToken);
                     parameterModel.setToken(Base64Utils.encodeBase64String(uauthToken.getToken()));
                     parameterModel.setStatus("201");
                     parameterModel.setLoginType(Base64Utils.encodeBase64String("loginSuccess"));
@@ -66,13 +63,5 @@ public class UauthServiceImpl implements UauthService {
         return ResponseEntity.ok().body(parameterModel);
     }
 
-    /**
-     * 检查redis中是否有信息
-     * @param token
-     * @return
-     */
-    @Override
-    public boolean checkTokenExit(String token) {
-        return redisService.checkTokenExit(token);
-    }
+
 }
