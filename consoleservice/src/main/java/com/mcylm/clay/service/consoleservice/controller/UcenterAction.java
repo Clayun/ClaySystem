@@ -15,12 +15,18 @@ import java.util.*;
 /**
  * Created by Mr_Shen on 2017/8/7/007.
  */
+
 @Controller
 @RequestMapping("/list")
 public class UcenterAction{
 
     @Autowired
     private UcenterService ucenterService;
+
+    @RequestMapping("/index")
+    public String index(){
+        return "index";
+    }
 
     //列表查询
     @RequestMapping("/ucenterlist")
@@ -94,6 +100,7 @@ public class UcenterAction{
             return "";
         }
     }
+
     //修改密码
     @RequestMapping(value = "/doUpdatePassword",method= RequestMethod.POST)
     @ResponseBody
@@ -105,4 +112,5 @@ public class UcenterAction{
             return "";
         }
     }
+
 }
