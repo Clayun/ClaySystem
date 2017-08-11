@@ -31,26 +31,26 @@ public class PageUtil {
 		String next = "";
 		String last = "";
 		if(cPage == 1||cPage==0) {
-			first = "<input type='button' disabled='disabled' value='首页'>";
-			priv = "<input type='button' disabled='disabled' value='上一页'>";
+			first = "<input class='btn btn-primary ' type='button' disabled='disabled' value='首页'>";
+			priv = "<input class='btn btn-primary ' type='button' disabled='disabled' value='上一页'>";
 		} else {
-			first = "<a href='/console"+request.getRequestURI()+"?cPage=1'><input type='button' value='首页'></a>";
-			priv = "<a href='/console"+request.getRequestURI()+"?cPage="+(cPage-1)+"'><input type='button' value='上一页'></a>";
+			first = "<a href='/console"+request.getRequestURI()+"?cPage=1'><input class='btn btn-primary ' type='button' value='首页'></a>";
+			priv = "<a href='/console"+request.getRequestURI()+"?cPage="+(cPage-1)+"'><input class='btn btn-primary ' type='button' value='上一页'></a>";
 		}
 		
 		if(cPage == pageCount) {
-			next = "<input type='button' disabled='disabled' value='【下一页】'>";
-			last = "<input type='button' disabled='disabled' value='【尾页】'>";
+			next = "<input class='btn btn-primary ' type='button' disabled='disabled' value='下一页'>";
+			last = "<input class='btn btn-primary ' type='button' disabled='disabled' value='尾页'>";
 		} else {
-			next = "<a id='nextpage' href='/console"+request.getRequestURI()+"?cPage="+(cPage + 1)+"'><input type='button' value='下一页'></a>";
-			last = "<a id='finalpage' href='/console"+request.getRequestURI()+"?cPage="+ pageCount +"'><input type='button' value='尾页'></a>";
+			next = "<a id='nextpage' href='/console"+request.getRequestURI()+"?cPage="+(cPage + 1)+"'><input class='btn btn-primary ' type='button' value='下一页'></a>";
+			last = "<a id='finalpage' href='/console"+request.getRequestURI()+"?cPage="+ pageCount +"'><input class='btn btn-primary ' type='button' value='尾页'></a>";
 		}
 		
 		request.setAttribute("first", first);
 		request.setAttribute("priv", priv);
 		request.setAttribute("next", next);
 		request.setAttribute("last", last);
-		request.setAttribute("page","共"+count+"条数据   " +  first +" " + priv +" " + next +" " + last +"   第"+cPage+"/"+pageCount+"页");
+		request.setAttribute("page","<span class='text-primary'>共"+count+"条数据</span>&nbsp;&nbsp;&nbsp;&nbsp;" +  first +" " + priv +" " + next +" " + last +" &nbsp;&nbsp;<span class='text-primary'>第"+cPage+"/"+pageCount+"页</span>");
 		
 		request.setAttribute("cPage", cPage);
 		request.setAttribute("pageSize", pageSize);
