@@ -1,11 +1,13 @@
 package com.mcylm.clay.securityservice.util;
 
+import com.google.gson.Gson;
 import jdk.nashorn.internal.scripts.JD;
 import org.springframework.data.redis.connection.RedisClusterConnection;
 import org.springframework.data.redis.connection.RedisConnection;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.connection.jedis.JedisConnection;
 import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
+import org.springframework.data.redis.core.SetOperations;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.jca.cci.connection.ConnectionFactoryUtils;
@@ -17,58 +19,73 @@ import java.util.concurrent.TimeUnit;
  * Created by lenovo on 2017/8/10.
  */
 public class RedisUtils {
-   /* private static StringRedisTemplate stringRedisTemplate = null;
-    private static JedisPoolConfig jedisPoolConfig = null;
-    private static JedisConnectionFactory jedisConnectionFactory = null;
-    private static ValueOperations<String, String> stringStringValueOperations = null;
+    private static JedisPoolConfig jedisPoolConfig = new JedisPoolConfig();
+    private static JedisConnectionFactory jedisConnectionFactory = new JedisConnectionFactory();
+    private static StringRedisTemplate stringRedisTemplate = new StringRedisTemplate();
+    private static ValueOperations<String, String> stringValueOperations = null;
+    private static Gson gson = new Gson();
+    private final static Integer TIME = 30;
+
     static {
-      stringRedisTemplate = new StringRedisTemplate();
-       jedisPoolConfig = new JedisPoolConfig();
-       jedisPoolConfig.setMaxIdle(300);
-       jedisPoolConfig.setMaxWaitMillis(10000);
-       jedisConnectionFactory = new JedisConnectionFactory();
-       jedisConnectionFactory.setHostName("59.110.235.199");
-       jedisConnectionFactory.setPort(6379);
-       jedisConnectionFactory.setTimeout(2000);
-       jedisConnectionFactory.setPoolConfig(jedisPoolConfig);
-       stringRedisTemplate.setConnectionFactory(jedisConnectionFactory);
-       stringStringValueOperations = stringRedisTemplate.opsForValue();
-       stringRedisTemplate.afterPropertiesSet();
+        //jedispoll 链接池的配置
+        jedisPoolConfig.setMaxIdle(500);
+        jedisPoolConfig.setMinIdle(0);
+        jedisPoolConfig.setMaxWaitMillis(-1);
 
-//       ConnectionFactoryUtils
-//       stringRedisTemplate.setConnectionFactory();
-   }
-  *//*  private static StringRedisTemplate redisTemplate = new StringRedisTemplate();
+        //jedis工厂配置
+        jedisConnectionFactory.setHostName("59.110.235.199");
+        jedisConnectionFactory.setPort(6379);
+        jedisConnectionFactory.afterPropertiesSet();
+        jedisConnectionFactory.setPoolConfig(jedisPoolConfig);
 
+        //设置属性
+        stringRedisTemplate.setConnectionFactory(jedisConnectionFactory);
+        stringRedisTemplate.afterPropertiesSet();
+        stringValueOperations = stringRedisTemplate.opsForValue();
+    }
 
-    private static ValueOperations<String, String> stringValueOperations = redisTemplate.opsForValue();
-*//*
-
-
-    *//**
+    /**
      * 存入key value 并设置过期时间
-     * @param key
-     * @param value
-     * @param timeout
-     * @param unit
-     *//*
-    public static void setKey_Val_TimeOut(String key,String value,long timeout,TimeUnit unit){
+     * @param token
+     * @param uauthToken
+     */
+    public static void setKey_Val_TimeOut(String token, Object uauthToken) {
+        String uauthonJson = gson.toJson(uauthToken);
+        stringValueOperations.set(token, uauthonJson, TIME, TimeUnit.MINUTES);
+    }
 
-        stringStringValueOperations.set(key,value,timeout,unit);
-    };
-
-
-    *//**
-     * 根据 key
+    /**
+     * 根据key获取
      * @param key
      * @return
-     *//*
+     */
     public static String getValByKey(String key){
-
-        String val = stringStringValueOperations.get(key);
+        String val = stringValueOperations.get(key);
         return val;
     }
-*/
+
+    /**
+     * 根据token 判断数据库是否存在
+     * @param token
+     * @return
+     */
+    public static boolean checkTokenExit(String token) {
+        String tokens = Base64Utils.decodeBase64String(token);
+        String string = stringValueOperations.get(tokens);
+        if (string != null)
+            return true;
+        return false;
+    }
+
+    /**
+
+     * 根据 token 删除
+     * @param token
+     */
+    public static void deleteValByTocken(String token){
+        stringRedisTemplate.delete(token);
+
+    }
 
 
 }

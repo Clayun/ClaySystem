@@ -10,5 +10,4 @@ public interface UauthService {
 
     ResponseEntity<ParameterModel> getUuidByUsernameAndPassword(ParameterModel parameterModel, String hostIp, String sessionId);
 
-    boolean checkTokenExit(String token);
 }

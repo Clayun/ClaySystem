@@ -2,7 +2,6 @@ package com.mcylm.clay.securityservice.service.impl;
 
 import com.mcylm.clay.securityservice.dao.UauthTokenDao;
 import com.mcylm.clay.securityservice.module.UauthToken;
-import com.mcylm.clay.securityservice.service.RedisService;
 import com.mcylm.clay.securityservice.service.UauthTokenService;
 import com.mcylm.clay.securityservice.util.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,9 +13,6 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class UauthTokenServiceImpl implements UauthTokenService {
-
-    @Autowired
-    private RedisService redisService;
 
     @Autowired
     private UauthTokenDao uauthTokenDao;
