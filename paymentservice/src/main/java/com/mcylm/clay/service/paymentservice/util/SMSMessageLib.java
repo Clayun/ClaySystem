@@ -1,4 +1,4 @@
-package com.mcylm.clay.service.paymentservice.controller;
+package com.mcylm.clay.service.paymentservice.util;
 
 import com.aliyun.mns.client.CloudAccount;
 import com.aliyun.mns.client.CloudTopic;

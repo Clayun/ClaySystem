@@ -14,14 +14,14 @@
 	<body>
 		<div class="boxx" id="b1">
 			<div class="box1">
-				<a href="javascript:;" onclick="jQuery('#b1').hide()" class="close"><img src="http://osuyq1koj.bkt.clouddn.com/17-7-12/6917333.jpg" style="margin-left:500px;margin-top:20px;"/></a>
-				<span style="color:#000;font-size:24px;margin-left:30px;margin-top:10px;">验证手机</span><br>
-				<span id="smsg" style="color:#171B1E;font-size:20px;margin-left:100px;margin-top:20px;"></span><br>
-				<span style="color:#171B1E;font-size:20px;margin-left:100px;margin-top:80px;">手机号：<span id="phonenum"></span></span><br>
-				<input type="text" id="vephone" placeholder="请输入验证码" style="height: 32px;width: 250px;border: solid 1px #AAAAAA;background-color: #fff;font-size: 16px;color:#999;margin-left:100px;padding-left:5px;margin-top:20px;">
-				<input type="button" id="repely" style="cursor: pointer;" value="发送验证码" class="box1button" /><br>
-				<button id="submitphone" style="cursor: pointer; width: 258px;margin-left: 100px;">提交</button>
-			</div>
+            <a href="javascript:;" onclick="jQuery('#b1').hide()" class="close"><img src="http://osuyq1koj.bkt.clouddn.com/17-7-12/6917333.jpg" style="margin-left:500px;margin-top:20px;"/></a>
+            <span style="color:#000;font-size:24px;margin-left:30px;margin-top:10px;">验证手机</span><br><br>
+            <span id="smsg" style="color:#171B1E;font-size:20px;margin-left:100px;margin-top:20px;"></span>
+            <span style="color:#171B1E;font-size:20px;margin-left:100px;margin-top:80px;" id="phonemessge">手机号：<span id="phonenum"></span></span><br>
+            <input type="text" id="vephone" placeholder="请输入验证码" style="height: 32px;width: 250px;border: solid 1px #AAAAAA;background-color: #fff;font-size: 16px;color:#999;margin-left:100px;padding-left:5px;margin-top:20px;">
+            <input type="button" id="repely" style="cursor: pointer;" value="发送验证码" class="box1button" /><br>
+            <button id="submitphone" style="cursor: pointer; width: 258px;margin-left: 100px;">提交</button>
+        </div>
 		</div>
 		<div class="create-banner" style="background: url(http://osuyq1koj.bkt.clouddn.com/17-7-20/11198340.jpg) repeat-x">
 			<div class="nav">
@@ -55,28 +55,52 @@
 					<span style="margin-left: 100px;line-height: 100px;font-size: 30px;font-weight: bold; color: #555;">配置清单</span>
 					<div class="renew-box">
 						<div class="renew-box-items" style="width: 1000px;"><br><br>
-							<span style=" font-weight: bold;color:#555;">订单号：</span><span id="entityId">${orders.uuid}</span><br>
+
+							<input type="hidden" value="${orders.uuid}" name="uuid" id="uuid">
+							<input type="hidden" value="${orders.month}" name="month" id="month">
+							<span style=" font-weight: bold;color:#555;">订单号：</span><span id="entityId">${orders.ordersUuid}</span><br>
 							<span style=" font-weight: bold;color:#555;">产品名称：</span><span id="entityName">${orders.remarks}</span><br>
 							<span style=" font-weight: bold;color:#555;">产品内容：</span><span id="entitycontent">${orders.remarks}</span><br>
 							<span style=" font-weight: bold;color:#555;">产品月付：</span><span id="entityPrice">${orders.theActualAmount}</span><br>
-							<span style=" font-weight: bold;color:#555;">创建时间：</span><span id="entityCreateTime">${orders.paymentTime?string("yyyy-MM-dd HH:mm:ss")}</span><br>
+							<span style=" font-weight: bold;color:#555;">创建时间：</span><span id="entityCreateTime">${orders.paymentTime?string("yyyy-MM-dd HH:mm:ss")}</span><br>·
 						</div>
 
 						<span style="line-height: 100px;font-size: 30px;font-weight: bold; color: #555;">购买时长</span>
 						<div class="renew-box-items-middle">
-							<input type="hidden" class="single-slider" value="1" id="month" />
+							<input type="hidden" class="single-slider" value="${orders.month}"/>
 						</div>
 						<div class="renew-box-items-bottom-left">
-							请核实您选中的订单，避免出现不必要的损失，如果队选中订单不满意，可以重新生成订单！<br>
-							如有任何疑义请提交工单或联系在线客服。
+							<#--<div id="infoHelp">
+								请核实您选中的订单，避免出现不必要的损失，如果队选中订单不满意，可以重新生成订单！<br>
+								如有任何疑义请提交工单或联系在线客服。
+                        	</div>-->
+							<div id="infoActivit">
+									<span>
+                                                活动详情
+									</span><br>
+									<span>
+									<#list detail as l>
+										<ol>
+											<li><input type="radio" name="id" value="${l.id}"onclick="selectedInfo()" >${l.content}</li>
+										</ol>
+									</#list>
+									</span>
+									<span>
+									<#list details as l>
+										<ol>
+											<li><input type="checkbox" name="ids" value="${l.id}" onclick="selectedInfo()">${l.content}</li>
+										</ol>
+									</#list>
+									</span>
+							</div>
 						</div>
 						<div class="renew-box-items-bottom-right">
-							<span>配置费用：</span><span style="color: #f1a417;font-size: 40px;">￥<span id="price">${orders.theActualAmount}</span></span><br>
+							<div >
+								<span id="pzPrice">配置费用：</span><span style="color: #f1a417;font-size: 40px;">￥<span id="price">${orders.theActualAmount}</span></span><br>
+							</div>
 							<button class="banner-info-line-button" style="background:#f1a417;border: none;color: #fff;width: 250px;" id="paynow">立即支付</button>
 						</div>
 					</div>
-
-
 				</div>
     	</div>
     	<div class="border"></div>
