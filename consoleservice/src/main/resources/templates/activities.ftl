@@ -7,6 +7,8 @@
     <script type="text/javascript" src="/console/My97DatePicker/WdatePicker.js"></script>
     <script src="/console/js/jquery-3.2.1.min.js"></script>
     <script src="/console/js/bootstrap.min.js"></script>
+    <script src="/console/js/bootstrapValidator.min.js"></script>
+    <link href="/console/css/bootstrapValidator.min.css" rel="stylesheet" />
     <title>列表</title>
 </head>
 <script>
@@ -16,14 +18,34 @@
     function ss() {
         WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})
     }
+    //查询功能
+    function selectStart(){
+        var dropdownbox=$("#dropdownbox").val();
+        var content=$("#content").val();
+        if(content!=""){
+            location.href="/console/activities/activitieslist?dropdownbox="+dropdownbox+"&content="+content;
+        }else{
+            location.href="/console/activities/activitieslist";
+        }
+    }
 </script>
 <script>
-    function s() {
-        WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})
+    //跳转到指定的页数
+    function GO(){
+        var pageCount=$("#pageCount").val();
+        var gopage=$("#gopage").val();
+        if(pageCount==0){
+            alert("查询时无法跳转页数!");
+        }else{
+            if(gopage!=null&&gopage!=""){
+                location.href="/console/activities/activitieslist?cPage="+gopage;
+            }else{
+                alert("请输入要跳转的页数!");
+            }
+        }
     }
-    function ss() {
-        WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})
-    }
+</script>
+<script>
     function update(id) {
         $("#idlabel").val($("#id-"+id).html());
         $("#titlelabel").val($("#title-"+id).html());
@@ -56,86 +78,34 @@
             }
         })
     }
-
-    $(function(){
-        $("#form1").hide();
-        $('#addform').bootstrapValidator({
-            message: 'This value is not valid',
-            feedbackIcons: {
-                valid: 'glyphicon glyphicon-ok',
-                invalid: 'glyphicon glyphicon-remove',
-                validating: 'glyphicon glyphicon-refresh'
-            },
-            fields: {
-                username: {
-                    message: '用户名验证失败',
-                    validators: {
-                        notEmpty: {
-                            message: '用户名不能为空'
-                        },
-                        stringLength: {
-                            min: 6,
-                            max: 18,
-                            message: '用户名长度必须在6到18位之间'
-                        },
-                        regexp: {
-                            regexp: /^[a-zA-Z0-9_]+$/,
-                            message: '用户名只能包含大写、小写、数字和下划线'
-                        }
-                    }
-                },
-                phone:{
-                    validators: {
-                        notEmpty: {
-                            message: '手机号不能为空'
-                        },
-                        stringLength: {
-                            min: 11,
-                            message: '联系方式应该不少于11位'
-                        }
-                    }
-                },
-                password:{
-                    validators: {
-                        notEmpty: {
-                            message: '用户密码不能为空'
-                        }
-                    }
-                },
-                permission:{
-                    validators: {
-                        notEmpty: {
-                            message: '权限等级不能为空'
-                        }
-                    }
-                },
-                bindUser:{
-                    validators: {
-                        notEmpty: {
-                            message: '账号管理不能为空'
-                        }
-                    }
-                }
-            }
-        });
-    })
-
 </script>
 <body>
 <div class="container" style="margin-top: 10px;">
     <div class="row" style="margin-top: 20px;">
+        <div>
+            <select id="dropdownbox"  >
+                <option  value="活动标题">活动标题</option>
+                <#--<option  value="活动状态">活动状态</option>-->
+                <option  value="负责人">负责人</option>
+            </select>
+            <input type="text" id="content">
+            <button class="btn btn-success" type="button" onclick="selectStart()">
+                <span class="glyphicon glyphicon-search "></span>
+                开始查询
+            </button>
+        </div><br/>
         <table class="table table-striped table-bordered text-center" style="vertical-align:middle;">
             <tr>
                 <td>ID</td>
                 <td>活动类型</td>
-                <td>说明</td>
+                <td>活动标题</td>
                 <td>概况</td>
                 <td>详情</td>
                 <td>具体参数</td>
                 <td>起始日期</td>
                 <td>截止日期</td>
                 <td>负责人</td>
-                <td>状态</td>
+                <td>活动状态</td>
                 <td>selected</td>
                 <td>
                     <button class="btn btn-info" data-toggle="modal" data-target="#sheModal"
@@ -158,12 +128,21 @@
                 <td id="state-${l.id}">${l.state}</td>
                 <td id="selected-${l.id}">${l.selected}</td>
                 <td>
-                    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModalupdate" onclick="update(${l.id})">
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#myModalupdate" onclick="update(${l.id})">
+                        <span class="glyphicon glyphicon-pencil"></span>
                         修改
                     </button>
+
                 </td>
             </tr>
         </#list>
+            <tr>
+                <td colspan="13">${page}&nbsp;&nbsp;
+                    <span class="text-primary">到第<input type="text" id="gopage" style="width:50px;">页</span>
+                    <input class="btn btn-primary" type="button" value="GO" onclick="GO()">
+                    <input type="hidden" id="pageCount" value="${pageCount}">
+                </td>
+            </tr>
         </table>
 
         <!-- 添加模态框-->

@@ -39,9 +39,9 @@
 <script>
     BUI.use('common/main',function(){
         var config = [{id:'1',menu:[{text:'系统管理',items:[{id:'2',text:'机构管理',href:'/console/Node/index.html'},
-            {id:'3',text:'角色管理',href:'/console/Role/index.html'},
+            {id:'',text:'角色管理',href:'/console/Role/index.html'},
             {id:'4',text:'后台用户管理',href:'/console/list/ucenterlist'},
-            {id:'5',text:'活动管理',href:'/console/activities/activitieslist'},
+            {id:'5',text:'后台活动管理',href:'/console/activities/activitieslist'},
             {id:'6',text:'注册管理',href:'/console/account/accountlist'}]}]},
             {id:'7',homePage : '9',menu:[{text:'业务管理',items:[{id:'9',text:'查询业务',href:'/console/Node/index.html'}]}]}];
         new PageUtil.MainPage({
