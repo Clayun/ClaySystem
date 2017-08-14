@@ -25,4 +25,20 @@ public class AccountServiceImpl implements AccountService {
         List<Account> list=accountDao.getaccountlist(map);
         return list;
     }
+
+    @Override
+    public void ucenteradd(Account account) {
+        accountDao.ucenteradd(account);
+    }
+
+    @Override
+    public void accountupdate(Account account) {
+        accountDao.accountupdate(account);
+    }
+
+    @Override
+    public void accountdel(Integer id) {
+        accountDao.accountdel(id);
+    }
+
 }

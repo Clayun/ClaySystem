@@ -14,4 +14,10 @@ import java.util.Map;
 public interface AccountDao {
 
     List<Account> getaccountlist(Map<String,Object> map);
+
+    void ucenteradd(Account account);
+
+    void accountupdate(Account account);
+
+    void accountdel(Integer id);
 }

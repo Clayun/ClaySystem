@@ -8,6 +8,9 @@
         <link rel="stylesheet" type="text/css" href="/console/css/bootstrap.min.css"/>
         <script src="/console/js/bootstrapValidator.min.js"></script>
         <link href="/console/css/bootstrapValidator.min.css" rel="stylesheet" />
+        <script src="/console/js/sweetalert.min.js"></script>
+        <script src="/console/js/sweetalert-dev.js"></script>
+        <link href="/console/css/sweetalert.css" rel="stylesheet" />
         <title>列表</title>
     </head>
     <body>
@@ -128,12 +131,12 @@
             var pageCount=$("#pageCount").val();
             var gopage=$("#gopage").val();
             if(pageCount==0){
-                alert("模糊查询时无法跳转页数!");
+                swal("模糊查询时无法跳转页面!")
             }else{
                 if(gopage!=null&&gopage!=""){
                     location.href="/console/list/ucenterlist?cPage="+gopage;
                 }else{
-                    alert("请输入要跳转的页数!");
+                    swal("请输入要跳转的页数!")
                 }
             }
         }
@@ -148,22 +151,33 @@
             $("#username-"+id).css("display","block");
             $("#change-username-"+id).css("display","none");
             if($("#change-username-"+id).val()==""){
-                alert("用户名不能为空");
-            }else {
-                if (confirm("确定要修改数据吗？")) {
-                    $.ajax({
-                        type: "POST",
-                        url: 'doUpdateUcenter',
-                        data: {username: $("#change-username-" + id).val(), id: id},
-                        success: function (data) {
-                            if (data == "success") {
-                                $("#username-" + id).html($("#change-username-" + id).val());
-                            } else {
-                                alert("修改失败");
+                swal("用户名不能为空!")
+            }else{
+                swal({
+                    title: "您确定要执行此操作吗？",
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#DD6B55",
+                    confirmButtonText: "确定",
+                    closeOnConfirm: false
+                },function(isConfirm){
+                    if(isConfirm){
+                        $.ajax({
+                            type: "POST",
+                            url: 'doUpdateUcenter',
+                            data: {username: $("#change-username-" + id).val(), id: id},
+                            success: function (data) {
+                                if (data == "success") {
+                                    $("#username-" + id).html($("#change-username-" + id).val());
+                                    swal("修改成功", "您选择的数据已被修改!", "success");
+                                } else{
+                                    swal("错误!","您的数据修改失败!","error");
+                                }
                             }
-                        }
-                    });
-                }
+                        });
+                    }
+                });
+
             }
         }
     </script>
@@ -177,20 +191,33 @@
             $("#phone-"+id).css("display","block");
             $("#change-phone-"+id).css("display","none");
             if($("#change-phone-"+id).val()==""){
-                alert("密码不能为空");
+                swal("手机号不能为空!")
             }else{
-                if(confirm("确定要修改数据吗？")) {
-                    $.ajax({
-                        type: "POST",
-                        url: 'doUpdatePhone',
-                        data:{phone:$("#change-phone-"+id).val(),id:id},
-                        success: function (data){
-                            if(data == "success"){
-                                $("#phone-"+id).html($("#change-phone-"+id).val());
+                swal({
+                    title: "您确定要执行此操作吗？",
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#DD6B55",
+                    confirmButtonText: "确定",
+                    closeOnConfirm: false
+                },function(isConfirm){
+                    if(isConfirm){
+                        $.ajax({
+                            type: "POST",
+                            url: 'doUpdatePhone',
+                            data:{phone:$("#change-phone-"+id).val(),id:id},
+                            success: function (data){
+                                if(data == "success"){
+                                    $("#phone-"+id).html($("#change-phone-"+id).val());
+                                    swal("修改成功", "您选择的数据已被修改!", "success");
+                                }else{
+                                    swal("错误!","您的数据修改失败!","error");
+                                }
                             }
-                        }
-                    });
-                }
+                        });
+                    }
+                });
+
             }
         }
     </script>
@@ -204,41 +231,59 @@
             $("#password-"+id).css("display","block");
             $("#change-password-"+id).css("display","none");
             if($("#change-password-"+id).val()==""){
-                alert("密码不能为空");
+                swal("密码不能为空!")
             }else{
-                if(confirm("确定要修改密码吗？")) {
-                    $.ajax({
-                        type: "POST",
-                        url: 'doUpdatePassword',
-                        data:{password:$("#change-password-"+id).val(),id:id},
+                swal({
+                    title: "您确定要执行此操作吗？",
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#DD6B55",
+                    confirmButtonText: "确定",
+                    closeOnConfirm: false
+                },function(isConfirm){
+                    if(isConfirm){
+                        $.ajax({
+                            type: "POST",
+                            url: 'doUpdatePassword',
+                            data:{password:$("#change-password-"+id).val(),id:id},
                             success: function (data){
-                        }
-                    });
-                }
+                                if(data == "success"){
+                                    swal("修改成功", "您选择的数据已被修改!", "success");
+                                }else{
+                                    swal("错误!","您的数据修改失败!","error");
+                                }
+                            }
+                        });
+                    }
+                });
             }
         }
     </script>
     <script>
         //添加
         function add(){
-            if(!$('#addform').data('bootstrapValidator').isValid()) {//判断校检是否通过
-                return;
+            if(pageCount==0){
+                swal("查询时无法添加!");
             }else{
-                var addform=$("#form1").serialize();
-                $.ajax({
-                    url:'ucenteradd',
-                    data:addform,
-                    dataType:'json',
-                    type:'post',
-                    success:function (msg) {
-                        if(msg) {
-                            alert("添加成功");
-                            location.href="ucenterlist";
-                        }else{
-                            alert("添加失败");
+                if(!$('#addform').data('bootstrapValidator').isValid()){ //判断校检是否通过
+                    return;
+                }else{
+                    var addform=$("#form1").serialize();
+                    $.ajax({
+                        url:'ucenteradd',
+                        data:addform,
+                        dataType:'json',
+                        type:'post',
+                        success:function (msg) {
+                            if(msg) {
+                                swal("添加成功", "您的数据已被添加!", "success");
+                                window.setTimeout("window.location.href='ucenterlist'",2000);
+                            }else{
+                                swal("错误!","您的数据添加失败!","error");
+                            }
                         }
-                    }
-                })
+                    })
+                }
             }
         }
     </script>
@@ -311,22 +356,32 @@
         }
         //删除
         function todel(id){
-            if(confirm("确认删除么？")){
-                $.ajax({
-                    url:'ucenterdel',
-                    data:{id:id},
-                    dataType:'json',
-                    type:'post',
-                    success:function (msg) {
-                        if(msg) {
-                            alert("删除成功");
-                            location.href="ucenterlist";
-                        }else{
-                            alert("删除失败");
+            swal({
+                title: "您确定要执行此操作吗？",
+                text: "删除后将无法恢复，请谨慎操作！",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "确定",
+                closeOnConfirm: false
+            },function(isConfirm){
+                if(isConfirm){
+                    $.ajax({
+                        url:'ucenterdel',
+                        data:{id:id},
+                        dataType:'json',
+                        type:'post',
+                        success:function (msg) {
+                            if(msg) {
+                                swal("删除成功", "您选择的数据已被删除!", "success");
+                                window.setTimeout("window.location.href='ucenterlist'",2000);
+                            }else{
+                                swal("错误!","您的数据删除失败!","error");
+                            }
                         }
-                    }
-                })
-            }
+                    })
+                }
+            });
         }
         //查询功能
         function selectStart(){

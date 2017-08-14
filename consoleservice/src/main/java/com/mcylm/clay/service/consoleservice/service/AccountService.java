@@ -16,4 +16,9 @@ public interface AccountService {
 
     List<Account> getaccountlist(Map<String,Object> map);
 
+    void ucenteradd(Account account);
+
+    void accountupdate(Account account);
+
+    void accountdel(Integer id);
 }

@@ -26,4 +26,19 @@ public class AccountDaoImpl implements AccountDao {
         return list;
     }
 
+    @Override
+    public void ucenteradd(Account account) {
+        accountMapper.ucenteradd(account);
+    }
+
+    @Override
+    public void accountupdate(Account account) {
+        accountMapper.accountupdate(account);
+    }
+
+    @Override
+    public void accountdel(Integer id) {
+        accountMapper.accountdel(id);
+    }
+
 }
