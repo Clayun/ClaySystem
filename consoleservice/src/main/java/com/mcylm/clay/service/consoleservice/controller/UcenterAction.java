@@ -13,7 +13,10 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.*;
 
 /**
- * Created by Mr_Shen on 2017/8/7/007.
+ * @Author:Mr_Shen
+ * @Description: 后台管理
+ * @Date:2017.8.15
+ * @Modified By:None one
  */
 
 @Controller
@@ -28,7 +31,12 @@ public class UcenterAction{
         return "index";
     }
 
-    //列表查询
+    /**
+     * @Author:Mr_Shen
+     * @Date:2017.8.15
+     * @Description: 列表展示，分页，模糊查询
+     */
+
     @RequestMapping("/ucenterlist")
     public String ucenterlist(String dropdownbox,String pageNo,String content,HttpServletRequest request,Map<String,Object> map) throws Exception {
         pageNo=request.getParameter("cPage")==null?"1":request.getParameter("cPage");
@@ -37,6 +45,10 @@ public class UcenterAction{
         if (listCount == 0){
             pageNo = "0";
         }
+        if(content!=null){
+            pageNo="0";
+            listCount=0;
+        }
         List<Ucenter> list = ucenterService.getList(dropdownbox,content,Integer.parseInt(pageNo),pageSize,map);
         map.put("list",list);
         request.setAttribute("dropdownbox",dropdownbox);
@@ -44,6 +56,12 @@ public class UcenterAction{
         PageUtil.page(request, Integer.parseInt(pageNo), pageSize, listCount, map, list);
         return "console";
     }
+
+    /**
+     * @Author:Mr_Shen
+     * @Description: 添加功能
+     * @Date:2017.8.15
+     */
 
     //添加
     @RequestMapping(value="/ucenteradd",method= RequestMethod.POST)
@@ -55,7 +73,6 @@ public class UcenterAction{
             String str = uuid.toString();
             String uuidStr=str.replace("-", "");
             ucenter.setUuid(uuidStr);
-
             //获取当前创建时间
             ucenter.setCreateTime(new Date());
             ucenterService.ucenteradd(ucenter);
@@ -64,6 +81,12 @@ public class UcenterAction{
             return false;
         }
     }
+
+    /**
+     * @Author:Mr_Shen
+     * @Description: 删除功能
+     * @Date:2017.8.15
+     */
 
     //删除
     @RequestMapping(value="/ucenterdel",method= RequestMethod.POST)
@@ -76,6 +99,12 @@ public class UcenterAction{
             return false;
         }
     }
+
+    /**
+     * @Author:Mr_Shen
+     * @Description: 修改功能
+     * @Date:2017.8.15
+     */
 
     //修改姓名
     @RequestMapping(value = "/doUpdateUcenter",method= RequestMethod.POST)

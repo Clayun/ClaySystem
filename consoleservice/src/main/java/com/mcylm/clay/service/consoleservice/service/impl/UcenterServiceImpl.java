@@ -7,10 +7,11 @@ import com.mcylm.clay.service.consoleservice.service.UcenterService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import static com.mcylm.clay.service.consoleservice.MD5Util.generate;
+import static com.mcylm.clay.service.consoleservice.utils.MD5Util.generate;
 
 /**
  * Created by Mr_Shen on 2017/8/7/007.
@@ -23,20 +24,20 @@ public class UcenterServiceImpl implements UcenterService{
 
     @Override
     public List<Ucenter> getList(String dropdownbox,String content,Integer pageNo,Integer pageSize,Map<String, Object> map) {
-        List<Ucenter> list=null;
-        Page page=new Page();
-        int cPage=(pageNo - 1)*pageSize;
-        page.setcPage(cPage);
-        page.setPageSize(pageSize);
-        content="%"+content+"%";
+        List<Ucenter> list;
+        content="%" + content + "%";
         if(dropdownbox==null){
+            Page page=new Page();
+            int cPage=(pageNo - 1)*pageSize;
+            page.setcPage(cPage);
+            page.setPageSize(pageSize);
             list=ucenterDao.getList(page,map);
-        }else if(dropdownbox.equals("ID")){
-            list=ucenterDao.getIDList(content,page,map);
-        }else if(dropdownbox.equals("用户名")){
-            list=ucenterDao.getUsernameList(content,page,map);
+        }else if(dropdownbox.contains("ID")){
+            list=ucenterDao.getIDList(content);
+        }else if(dropdownbox.contains("用户名")){
+            list=ucenterDao.getUsernameList(content);
         }else{
-            list=ucenterDao.getPhoneList(content,page,map);
+            list=ucenterDao.getPhoneList(content);
         }
         return list;
     }
@@ -70,13 +71,13 @@ public class UcenterServiceImpl implements UcenterService{
 
     @Override
     public int getCount(String dropdownbox,String content){
-        int listCount=0;
-        content="%"+content+"%";
+        int listCount;
+        content="%" + content + "%";
         if(dropdownbox==null){
             listCount=ucenterDao.getCount();
-        }else if(dropdownbox.equals("ID")){
+        }else if(dropdownbox.contains("ID")){
             listCount=ucenterDao.getIDCount(content);
-        }else if(dropdownbox.equals("用户名")){
+        }else if(dropdownbox.contains("用户名")){
             listCount=ucenterDao.getUsernameCount(content);
         }else{
             listCount=ucenterDao.getPhoneCount(content);

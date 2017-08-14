@@ -13,16 +13,16 @@ import java.util.Map;
 public interface UcenterMapper{
 
     @Select("select * from console_common_ucenter order by id limit #{page.cPage},#{page.pageSize}")
-    List<Ucenter> getList(@Param("page") Page page,Map<String,Object> map);
+    List<Ucenter> getList(@Param("page") Page page,Map<String, Object> map);
 
-    @Select("select * from console_common_ucenter where id like #{content} order by id limit #{page.cPage},#{page.pageSize}")
-    List<Ucenter> getIDList(@Param("content") String content,@Param("page") Page page, Map<String, Object> map);
+    @Select("select * from console_common_ucenter where id like #{content} order by id ")
+    List<Ucenter> getIDList(@Param("content") String content);
 
-    @Select("select * from console_common_ucenter where username like #{content} order by id limit #{page.cPage},#{page.pageSize}")
-    List<Ucenter> getUsernameList(@Param("content") String content,@Param("page") Page page, Map<String, Object> map);
+    @Select("select * from console_common_ucenter where username like #{content} order by id ")
+    List<Ucenter> getUsernameList(@Param("content") String content);
 
-    @Select("select * from console_common_ucenter where phone like #{content} order by id limit #{page.cPage},#{page.pageSize}")
-    List<Ucenter> getPhoneList(@Param("content") String content,@Param("page") Page page, Map<String, Object> map);
+    @Select("select * from console_common_ucenter where phone like #{content} order by id ")
+    List<Ucenter> getPhoneList(@Param("content") String content);
 
     @Insert("insert into console_common_ucenter(uuid,username,phone,password,createTime,permission,bindUser) values(#{uuid},#{username},#{phone},#{password},#{createTime},#{permission},#{bindUser})")
     void ucenteradd(Ucenter ucenter);

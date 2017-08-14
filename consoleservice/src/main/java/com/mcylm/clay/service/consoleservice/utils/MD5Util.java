@@ -1,4 +1,4 @@
-package com.mcylm.clay.service.consoleservice;
+package com.mcylm.clay.service.consoleservice.utils;
 
 /**
  * Created by Mikesam on 2017/7/11.
