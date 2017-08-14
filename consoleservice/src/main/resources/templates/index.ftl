@@ -12,7 +12,7 @@
 <div class="header">
 
     <div class="dl-title">
-        <!--<img src="/chinapost/Public/assets/img/top.png">-->
+        <h2>聚乐云后台管理系统</h2>
     </div>
 
     <div class="dl-log">欢迎您，<span class="dl-log-user">root</span><a href="/chinapost/index.php?m=Public&a=logout" title="退出系统" class="dl-log-quit">[退出]</a>
@@ -24,6 +24,8 @@
         <ul id="J_Nav"  class="nav-list ks-clear">
             <li class="nav-item dl-selected"><div class="nav-item-inner nav-home">系统管理</div></li>
             <li class="nav-item dl-selected"><div class="nav-item-inner nav-order">业务管理</div></li>
+            <#--<li class="nav-item dl-selected"><div class="nav-item-inner nav-order">业务管理</div></li>
+            <li class="nav-item dl-selected"><div class="nav-item-inner nav-order">业务管理</div></li>-->
         </ul>
     </div>
     <ul id="J_NavContent" class="dl-tab-conten">
@@ -36,7 +38,12 @@
 <script type="text/javascript" src="/console/assets/js/config-min.js"></script>
 <script>
     BUI.use('common/main',function(){
-        var config = [{id:'1',menu:[{text:'系统管理',items:[{id:'12',text:'机构管理',href:'/console/Node/index.html'},{id:'3',text:'角色管理',href:'/console/Role/index.html'},{id:'4',text:'用户管理',href:'/console/list/ucenterlist'},{id:'6',text:'菜单管理',href:'/console/Menu/index.html'}]}]},{id:'7',homePage : '9',menu:[{text:'业务管理',items:[{id:'9',text:'查询业务',href:'/console/Node/index.html'}]}]}];
+        var config = [{id:'1',menu:[{text:'系统管理',items:[{id:'2',text:'机构管理',href:'/console/Node/index.html'},
+            {id:'',text:'角色管理',href:'/console/Role/index.html'},
+            {id:'4',text:'后台用户管理',href:'/console/list/ucenterlist'},
+            {id:'5',text:'后台活动管理',href:'/console/activities/activitieslist'},
+            {id:'6',text:'注册管理',href:'/console/account/accountlist'}]}]},
+            {id:'7',homePage : '9',menu:[{text:'业务管理',items:[{id:'9',text:'查询业务',href:'/console/Node/index.html'}]}]}];
         new PageUtil.MainPage({
             modulesConfig : config
         });

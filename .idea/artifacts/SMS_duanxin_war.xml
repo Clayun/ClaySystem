@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="SMS_duanxin:war">
+    <output-path>$PROJECT_DIR$/SMS_duanxin/target</output-path>
+    <root id="archive" name="com.smy.demo.war">
+      <element id="artifact" artifact-name="SMS_duanxin:war exploded" />
+    </root>
+  </artifact>
+</component>

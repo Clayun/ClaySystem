@@ -28,10 +28,11 @@
       <module name="gateways" target="1.6" />
       <module name="normalservice" target="1.6" />
       <module name="openstackService" target="1.6" />
-      <module name="paymentservice" target="1.6" />
+      <module name="paymentservice" target="1.8" />
       <module name="securityService" target="1.6" />
       <module name="securityservice" target="1.6" />
       <module name="serverservice" target="1.6" />
+      <module name="SMS_duanxin" target="1.5" />
       <module name="userservice" target="1.6" />
     </bytecodeTargetLevel>
   </component>

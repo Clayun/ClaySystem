@@ -3,10 +3,14 @@
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
     <head>
         <meta charset="utf-8">
-        <script src="/console/js/jquery-2.1.1.min.js"></script>
+        <script src="/console/js/jquery-3.2.1.min.js"></script>
         <script src="/console/js/bootstrap.min.js"></script>
         <link rel="stylesheet" type="text/css" href="/console/css/bootstrap.min.css"/>
-        <link rel="stylesheet" type="text/css" href="/console/css/jquery.datetimepicker.css"/>
+        <script src="/console/js/bootstrapValidator.min.js"></script>
+        <link href="/console/css/bootstrapValidator.min.css" rel="stylesheet" />
+        <script src="/console/js/sweetalert.min.js"></script>
+        <script src="/console/js/sweetalert-dev.js"></script>
+        <link href="/console/css/sweetalert.css" rel="stylesheet" />
         <title>列表</title>
     </head>
     <body>
@@ -26,7 +30,7 @@
                 </div><br/>
                     <table class="table table-striped table-bordered text-center " style="vertical-align: middle;">
                         <tr>
-                            <td><input style=" width: 20px; height: 15px;" type="checkbox" id="all"></td>
+                            <td><strong>ID</strong></td>
                             <td><strong>用户名</strong></td>
                             <td><strong>联系电话</strong></td>
                             <td><strong>用户密码</strong></td>
@@ -36,24 +40,24 @@
                             <td>
                                 <button class="btn btn-info" ng-click="ad()" data-toggle="modal" data-target="#sheModal" type="button" >
                                     <span class="glyphicon glyphicon-plus"></span>
-                                    添加</button>
+                                    添加
+                                </button>
                             </td>
-
                         </tr>
                     <#list list as l>
                         <tr>
-                            <td><input style=" width: 20px; height: 15px;" type="checkbox" name="list" value="${l.id}"></td>
+                            <td>${l.id}</td>
                             <td id="usernamelabel-${l.id}" onclick="onClickByUsername(${l.id})">
                                 <span id="username-${l.id}">${l.username}</span>
-                                <input id="change-username-${l.id}" type="text" name="username" value="${l.username}" style="display: none" onblur="onBlurByUsername(${l.id})">
+                                <input id="change-username-${l.id}" type="text" name="username" value="${l.username}" style="display: none; width: 80px;" onblur="onBlurByUsername(${l.id})">
                             </td>
                             <td id="phonelabel-${l.id}" onclick="onClickByPhone(${l.id})">
                                 <span id="phone-${l.id}">${l.phone}</span>
-                                <input id="change-phone-${l.id}" type="text" name="phone" value="${l.phone}" style="display: none" onblur="onBlurByPhone(${l.id})">
+                                <input id="change-phone-${l.id}" type="text" name="phone" value="${l.phone}" style="display: none; width: 100px;" onblur="onBlurByPhone(${l.id})">
                             </td>
                             <td id="passwordlabel-${l.id}" onclick="onClickByPassword(${l.id})">
                                 <span id="password-${l.id}">***</span>
-                                <input id="change-password-${l.id}" placeholder="密码不能为空" type="password" required="required" name="password" style="display: none" onblur="onBlurByPassword(${l.id}) ">
+                                <input id="change-password-${l.id}" placeholder="密码不能为空" type="password" required="required" name="password" style="display: none; width: 100px;" onblur="onBlurByPassword(${l.id}) ">
                             </td>
                             <td>${l.createTime?string("yyyy-MM-dd HH:mm:ss")}</td>
                             <td>${l.permission}</td>
@@ -91,13 +95,28 @@
                             </div>
                             <div class="modal-body">
                                 <form id="addform">
-                                    用户名称：<input class="form-control" type="text" name="username" ><br/>
-                                    联系电话:<input class="form-control" type="text" name="phone" ><br/>
-                                    用户密码:<input class="form-control" type="password" name="password" ><br/>
-                                    权限等级:<input class="form-control" type="text" name="permission" ><br/>
-                                    账号管理:<input class="form-control" type="text" name="bindUser"><br/>
+                                    <div class="form-group">
+                                        <label>用户名称：</label>
+                                        <input class="form-control" type="text" name="username" >
+                                    </div>
+                                    <div class="form-group">
+                                        <label>联系电话：</label>
+                                        <input class="form-control" type="text" name="phone" >
+                                    </div>
+                                    <div class="form-group">
+                                        <label>用户密码:</label>
+                                        <input class="form-control" type="password" name="password" >
+                                    </div>
+                                    <div class="form-group">
+                                        <label>权限等级:</label>
+                                        <input class="form-control" type="text" name="permission" >
+                                    </div>
+                                    <div class="form-group">
+                                        <label>账号管理:</label>
+                                        <input class="form-control" type="text" name="bindUser">
+                                    </div>
                                     <button type="button" class="btn btn-danger" data-dismiss="modal">关闭</button>
-                                    <button type="button" class="btn btn-primary" onclick="add()">
+                                    <button type="submit" name="submit" class="btn btn-primary" onclick="add()">
                                         提交
                                     </button>
                                 </form>
@@ -105,33 +124,22 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
     </body>
-
     <script>
         //跳转到指定的页数
         function GO(){
             var pageCount=$("#pageCount").val();
             var gopage=$("#gopage").val();
-            if(gopage!=null&&gopage!=""){
-                location.href="/console/list/ucenterlist?cPage="+gopage;
+            if(pageCount==0){
+                swal("模糊查询时无法跳转页面!")
             }else{
-                alert("请输入要跳转的页数!");
-            }
-        }
-    </script>
-    <script>
-        //全选反选功能
-        $("#all").click(
-            function(){
-                if(this.checked){
-                    $("input[name='list']").attr('checked',true);
+                if(gopage!=null&&gopage!=""){
+                    location.href="/console/list/ucenterlist?cPage="+gopage;
                 }else{
-                    $("input[name='list']").attr('checked',false);
+                    swal("请输入要跳转的页数!")
                 }
             }
-        )
+        }
     </script>
     <script>
         //修改用户名功能
@@ -143,22 +151,33 @@
             $("#username-"+id).css("display","block");
             $("#change-username-"+id).css("display","none");
             if($("#change-username-"+id).val()==""){
-                alert("密码不能为空");
-            }else {
-                if (confirm("确定要修改数据吗？")) {
-                    $.ajax({
-                        type: "POST",
-                        url: 'doUpdateUcenter',
-                        data: {username: $("#change-username-" + id).val(), id: id},
-                        success: function (data) {
-                            if (data == "success") {
-                                $("#username-" + id).html($("#change-username-" + id).val());
-                            } else {
-                                alert("修改失败");
+                swal("用户名不能为空!")
+            }else{
+                swal({
+                    title: "您确定要执行此操作吗？",
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#DD6B55",
+                    confirmButtonText: "确定",
+                    closeOnConfirm: false
+                },function(isConfirm){
+                    if(isConfirm){
+                        $.ajax({
+                            type: "POST",
+                            url: 'doUpdateUcenter',
+                            data: {username: $("#change-username-" + id).val(), id: id},
+                            success: function (data) {
+                                if (data == "success") {
+                                    $("#username-" + id).html($("#change-username-" + id).val());
+                                    swal("修改成功", "您选择的数据已被修改!", "success");
+                                } else{
+                                    swal("错误!","您的数据修改失败!","error");
+                                }
                             }
-                        }
-                    });
-                }
+                        });
+                    }
+                });
+
             }
         }
     </script>
@@ -172,20 +191,33 @@
             $("#phone-"+id).css("display","block");
             $("#change-phone-"+id).css("display","none");
             if($("#change-phone-"+id).val()==""){
-                alert("密码不能为空");
+                swal("手机号不能为空!")
             }else{
-                if(confirm("确定要修改数据吗？")) {
-                    $.ajax({
-                        type: "POST",
-                        url: 'doUpdatePhone',
-                        data:{phone:$("#change-phone-"+id).val(),id:id},
-                        success: function (data){
-                            if(data == "success"){
-                                $("#phone-"+id).html($("#change-phone-"+id).val());
+                swal({
+                    title: "您确定要执行此操作吗？",
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#DD6B55",
+                    confirmButtonText: "确定",
+                    closeOnConfirm: false
+                },function(isConfirm){
+                    if(isConfirm){
+                        $.ajax({
+                            type: "POST",
+                            url: 'doUpdatePhone',
+                            data:{phone:$("#change-phone-"+id).val(),id:id},
+                            success: function (data){
+                                if(data == "success"){
+                                    $("#phone-"+id).html($("#change-phone-"+id).val());
+                                    swal("修改成功", "您选择的数据已被修改!", "success");
+                                }else{
+                                    swal("错误!","您的数据修改失败!","error");
+                                }
                             }
-                        }
-                    });
-                }
+                        });
+                    }
+                });
+
             }
         }
     </script>
@@ -199,16 +231,58 @@
             $("#password-"+id).css("display","block");
             $("#change-password-"+id).css("display","none");
             if($("#change-password-"+id).val()==""){
-                alert("密码不能为空");
+                swal("密码不能为空!")
             }else{
-                if(confirm("确定要修改密码吗？")) {
-                    $.ajax({
-                        type: "POST",
-                        url: 'doUpdatePassword',
-                        data:{password:$("#change-password-"+id).val(),id:id},
+                swal({
+                    title: "您确定要执行此操作吗？",
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#DD6B55",
+                    confirmButtonText: "确定",
+                    closeOnConfirm: false
+                },function(isConfirm){
+                    if(isConfirm){
+                        $.ajax({
+                            type: "POST",
+                            url: 'doUpdatePassword',
+                            data:{password:$("#change-password-"+id).val(),id:id},
                             success: function (data){
+                                if(data == "success"){
+                                    swal("修改成功", "您选择的数据已被修改!", "success");
+                                }else{
+                                    swal("错误!","您的数据修改失败!","error");
+                                }
+                            }
+                        });
+                    }
+                });
+            }
+        }
+    </script>
+    <script>
+        //添加
+        function add(){
+            if(pageCount==0){
+                swal("查询时无法添加!");
+            }else{
+                if(!$('#addform').data('bootstrapValidator').isValid()){ //判断校检是否通过
+                    return;
+                }else{
+                    var addform=$("#form1").serialize();
+                    $.ajax({
+                        url:'ucenteradd',
+                        data:addform,
+                        dataType:'json',
+                        type:'post',
+                        success:function (msg) {
+                            if(msg) {
+                                swal("添加成功", "您的数据已被添加!", "success");
+                                window.setTimeout("window.location.href='ucenterlist'",2000);
+                            }else{
+                                swal("错误!","您的数据添加失败!","error");
+                            }
                         }
-                    });
+                    })
                 }
             }
         }
@@ -216,53 +290,108 @@
     <script>
         $(function(){
             $("#form1").hide();
+            $('#addform').bootstrapValidator({
+                message: 'This value is not valid',
+                feedbackIcons: {
+                    valid: 'glyphicon glyphicon-ok',
+                    invalid: 'glyphicon glyphicon-remove',
+                    validating: 'glyphicon glyphicon-refresh'
+                },
+                fields: {
+                    username: {
+                        message: '用户名验证失败',
+                        validators: {
+                            notEmpty: {
+                                message: '用户名不能为空'
+                            },
+                            stringLength: {
+                                min: 6,
+                                max: 18,
+                                message: '用户名长度必须在6到18位之间'
+                            },
+                            regexp: {
+                                regexp: /^[a-zA-Z0-9_]+$/,
+                                message: '用户名只能包含大写、小写、数字和下划线'
+                            }
+                        }
+                    },
+                    phone:{
+                        validators: {
+                            notEmpty: {
+                                message: '手机号不能为空'
+                            },
+                            stringLength: {
+                                min: 11,
+                                message: '联系方式应该不少于11位'
+                            }
+                        }
+                    },
+                    password:{
+                        validators: {
+                            notEmpty: {
+                                message: '用户密码不能为空'
+                            }
+                        }
+                    },
+                    permission:{
+                        validators: {
+                            notEmpty: {
+                                message: '权限等级不能为空'
+                            }
+                        }
+                    },
+                    bindUser:{
+                        validators: {
+                            notEmpty: {
+                                message: '账号管理不能为空'
+                            }
+                        }
+                    }
+                }
+            });
         })
         function toback(){
             $("#form1").hide(2000);
             $("#form1").empty();
         }
-        //添加
-        function add(){
-            var addform=$("#form1").serialize();
-            $.ajax({
-                url:'ucenteradd',
-                data:addform,
-                dataType:'json',
-                type:'post',
-                success:function (msg) {
-                    if(msg) {
-                        alert("添加成功");
-                        location.href="ucenterlist";
-                    }else{
-                        alert("添加失败");
-                    }
-                }
-            })
-        }
         //删除
         function todel(id){
-            if(confirm("确认删除么？")){
-                $.ajax({
-                    url:'ucenterdel',
-                    data:{id:id},
-                    dataType:'json',
-                    type:'post',
-                    success:function (msg) {
-                        if(msg) {
-                            alert("删除成功");
-                            location.href="ucenterlist";
-                        }else{
-                            alert("删除失败");
+            swal({
+                title: "您确定要执行此操作吗？",
+                text: "删除后将无法恢复，请谨慎操作！",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "确定",
+                closeOnConfirm: false
+            },function(isConfirm){
+                if(isConfirm){
+                    $.ajax({
+                        url:'ucenterdel',
+                        data:{id:id},
+                        dataType:'json',
+                        type:'post',
+                        success:function (msg) {
+                            if(msg) {
+                                swal("删除成功", "您选择的数据已被删除!", "success");
+                                window.setTimeout("window.location.href='ucenterlist'",2000);
+                            }else{
+                                swal("错误!","您的数据删除失败!","error");
+                            }
                         }
-                    }
-                })
-            }
+                    })
+                }
+            });
         }
         //查询功能
         function selectStart(){
             var dropdownbox=$("#dropdownbox").val();
             var content=$("#content").val();
-            location.href="/console/list/ucenterlist?dropdownbox="+dropdownbox+"&content="+content;
+            if(content!=""){
+                location.href="/console/list/ucenterlist?dropdownbox="+dropdownbox+"&content="+content;
+            }else{
+                location.href="ucenterlist";
+            }
         }
     </script>
 </html>
