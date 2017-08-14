@@ -1,6 +1,8 @@
 package com.mcylm.clay.securityservice.controller;
 
+import com.mcylm.clay.securityservice.module.ParameterModel;
 import com.mcylm.clay.securityservice.service.UserRegisterService;
+import com.mcylm.clay.securityservice.util.RedisUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,8 +20,9 @@ public class RegisterController {
 
     //注册
     @RequestMapping("/register")
-    public String register(){
+    public String register(ParameterModel parameterModel){
+
         System.out.println("=============");
-        return "register";
+        return RedisUtils.checkLogin(parameterModel,"register");
     }
 }

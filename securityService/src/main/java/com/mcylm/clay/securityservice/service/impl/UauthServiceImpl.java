@@ -48,7 +48,7 @@ public class UauthServiceImpl implements UauthService {
 
                 if (uauthToken != null) {
                     //将信息存入redis中
-                    RedisUtils.setKey_Val_TimeOut(uauthToken.getToken(),uauthToken);
+                    RedisUtils.setKey_Val_TimeOut(uauthToken.getToken(), uauthToken);
                     parameterModel.setToken(Base64Utils.encodeBase64String(uauthToken.getToken()));
                     parameterModel.setStatus("201");
                     parameterModel.setLoginType(Base64Utils.encodeBase64String("loginSuccess"));
@@ -61,6 +61,22 @@ public class UauthServiceImpl implements UauthService {
         }
         //登录失败
         return ResponseEntity.ok().body(parameterModel);
+    }
+
+    @Override
+    public Uauth checkName(ParameterModel parameterModel) {
+        return uauthDao.checkName(parameterModel);
+    }
+
+    @Override
+    public String updatePassword(String password, String phone) {
+        try {
+            uauthDao.updatePassword(MD5Util.generate(password), phone);
+            return "success";
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "falid";
+        }
     }
 
 

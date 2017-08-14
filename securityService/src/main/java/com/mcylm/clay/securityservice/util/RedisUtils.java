@@ -1,16 +1,11 @@
 package com.mcylm.clay.securityservice.util;
 
 import com.google.gson.Gson;
-import jdk.nashorn.internal.scripts.JD;
-import org.springframework.data.redis.connection.RedisClusterConnection;
-import org.springframework.data.redis.connection.RedisConnection;
-import org.springframework.data.redis.connection.RedisConnectionFactory;
-import org.springframework.data.redis.connection.jedis.JedisConnection;
+
+import com.mcylm.clay.securityservice.module.ParameterModel;
 import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
-import org.springframework.data.redis.core.SetOperations;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
-import org.springframework.jca.cci.connection.ConnectionFactoryUtils;
 import redis.clients.jedis.JedisPoolConfig;
 
 import java.util.concurrent.TimeUnit;
@@ -46,6 +41,7 @@ public class RedisUtils {
 
     /**
      * 存入key value 并设置过期时间
+     *
      * @param token
      * @param uauthToken
      */
@@ -55,18 +51,32 @@ public class RedisUtils {
     }
 
     /**
+     * 接受json 串key value 并设置过期时间
+     *
+     * @param token
+     * @param data
+     */
+    public static void setKey_Val_TimeOut(String token, String data) {
+        stringValueOperations.set(token, data, TIME, TimeUnit.MINUTES);
+    }
+
+    /**
      * 根据key获取
+     *
      * @param key
      * @return
      */
-    public static String getValByKey(String key){
+    public static String getValByKey(String key) {
         String val = stringValueOperations.get(key);
         return val;
     }
 
     /**
      * 根据token 判断数据库是否存在
-     * @param token
+     * 并接入参数，返回路径
+     * 登录模块用
+     *
+     * @param
      * @return
      */
     public static boolean checkTokenExit(String token) {
@@ -78,13 +88,37 @@ public class RedisUtils {
     }
 
     /**
+     * 其他模块检验是否登录用
+     *
+     * @param parameterModel
+     * @param fmlName
+     * @return
+     */
+    public static String checkLogin(ParameterModel parameterModel, String fmlName) {
+        String redirectUrl = parameterModel.getRedirectUrl();
+        String token = parameterModel.getToken();
+        String message = null;
+        if (token != null && !"".equals(token)) {
+            message = stringValueOperations.get(Base64Utils.decodeBase64String(token));
+        }
+        if (message == null || "".equals(message)) {
+            StringBuffer redirectToLogin = new StringBuffer();
+            redirectToLogin.append("redirect:http://localhost/security/author/login");
+            if (redirectUrl != null && !"".equals(redirectUrl)) {
+                redirectToLogin.append("?redirectUrl=" + redirectUrl);
+            }
+            return redirectToLogin.toString();
+        }
+        return fmlName;
+    }
 
+    /**
      * 根据 token 删除
+     *
      * @param token
      */
-    public static void deleteValByTocken(String token){
+    public static void deleteValByTocken(String token) {
         stringRedisTemplate.delete(token);
-
     }
 
 

@@ -11,6 +11,15 @@ public class ParameterModel {
     private String status;
     private String token;
     private String loginType;
+    private String fmlName;
+
+    public String getFmlName() {
+        return fmlName;
+    }
+
+    public void setFmlName(String fmlName) {
+        this.fmlName = fmlName;
+    }
 
     public String getLoginType() {
         return loginType;
