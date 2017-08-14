@@ -34,15 +34,26 @@ var handler1 = function (captchaObj) {
                     password: $('#pwd').val(),
                 },
                 success: function (data) {
-                    if (data == '201') {
+                    if (data.status == '201') {
                         $("#msg").html("登录成功，即将跳转！");
                         $("#msg").css("color","green");
-                            if (redirectUrl != null && redirectUrl != ''){
-                                window.location.href="http://"+redirectUrl;
-                                return ;
-                            }
-                            window.location.href="http://localhost/";
-                    } else if (data == '510') {
+                        var url = "";
+                        var token = data.token;
+                        var loginType = data.loginType;
+
+                        if (redirectUrl != null && redirectUrl != ''){
+                            url = url+redirectUrl;
+                        }else{
+                            url += "localhost/";
+                        }
+                        if (token != null && token != ''){
+                            url = url+"?token="+token;
+                        }
+                        if (loginType != null && loginType != ''){
+                            url = url+"&loginType="+loginType;
+                        }
+                        window.location.href="http://"+url;
+                    } else if (data.status == '510') {
                         $("#msg").css("color","red");
                         $("#msg").html("用户名或密码错误！")
                     }else {

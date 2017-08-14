@@ -20,26 +20,26 @@ public class UcenterDaoImpl implements UcenterDao {
     private UcenterMapper ucenterMapper;
 
     @Override
-    public List<Ucenter> getList(Page page, Map<String, Object> map) {
+    public List<Ucenter> getList(Page page,Map<String, Object> map) {
         List<Ucenter> list=ucenterMapper.getList(page,map);
         return list;
     }
 
     @Override
-    public List<Ucenter> getIDList(String content, Page page, Map<String, Object> map) {
-        List<Ucenter> list=ucenterMapper.getIDList(content,page,map);
+    public List<Ucenter> getIDList(String content) {
+        List<Ucenter> list=ucenterMapper.getIDList(content);
         return list;
     }
 
     @Override
-    public List<Ucenter> getUsernameList(String content, Page page, Map<String, Object> map) {
-        List<Ucenter> list=ucenterMapper.getUsernameList(content,page,map);
+    public List<Ucenter> getUsernameList(String content) {
+        List<Ucenter> list=ucenterMapper.getUsernameList(content);
         return list;
     }
 
     @Override
-    public List<Ucenter> getPhoneList(String content, Page page, Map<String, Object> map) {
-        List<Ucenter> list=ucenterMapper.getPhoneList(content,page,map);
+    public List<Ucenter> getPhoneList(String content) {
+        List<Ucenter> list=ucenterMapper.getPhoneList(content);
         return list;
     }
 

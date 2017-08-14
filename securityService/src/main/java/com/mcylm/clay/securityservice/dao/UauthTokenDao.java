@@ -8,5 +8,5 @@ import com.mcylm.clay.securityservice.module.UauthToken;
 public interface UauthTokenDao {
     Integer insertUauthTokenMessage(String uid, String hostIp, String sessionId, String token);
 
-    UauthToken findUauthTokenBySessionId(String sessionId);
+    UauthToken findUauthTokenByToken(String token);
 }

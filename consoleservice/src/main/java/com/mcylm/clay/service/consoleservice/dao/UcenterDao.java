@@ -11,13 +11,13 @@ import java.util.Map;
  */
 public interface UcenterDao {
 
-    List<Ucenter> getList(Page page, Map<String, Object> map);
+    List<Ucenter> getList(Page page,Map<String, Object> map);
 
-    List<Ucenter> getIDList(String content, Page page, Map<String, Object> map);
+    List<Ucenter> getIDList(String content);
 
-    List<Ucenter> getUsernameList(String content, Page page, Map<String, Object> map);
+    List<Ucenter> getUsernameList(String content);
 
-    List<Ucenter> getPhoneList(String content, Page page, Map<String, Object> map);
+    List<Ucenter> getPhoneList(String content);
 
     void ucenteradd(Ucenter ucenter);
 

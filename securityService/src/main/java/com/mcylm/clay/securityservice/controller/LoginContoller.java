@@ -1,18 +1,17 @@
 package com.mcylm.clay.securityservice.controller;
 
-import com.mcylm.clay.securityservice.config.GeetestConfig;
-import com.mcylm.clay.securityservice.sdk.GeetestLib;
+import com.mcylm.clay.securityservice.module.ParameterModel;
+import com.mcylm.clay.securityservice.module.Uauth;
 import com.mcylm.clay.securityservice.service.UauthService;
 import com.mcylm.clay.securityservice.util.IPUtil;
+import com.mcylm.clay.securityservice.util.SMSMessageLib;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.Map;
 
 /**
  * Created by lenovo on 2017/8/7.
@@ -21,62 +20,82 @@ import java.util.Map;
 @Controller
 @RequestMapping("/author")
 public class LoginContoller {
+
     @Autowired
     private UauthService uauthService;
-
-    /**
-     * 跳转到登录页面
-     *
-     * @return
-     */
-    @RequestMapping(value = "/login")
-    public String login(Map<String,Object> map,String redirectUrl) {
-
-        if (redirectUrl!=null&&!"".equals(redirectUrl)) {
-            map.put("redirectUrl",redirectUrl);
-        }else {
-            map.put("redirectUrl","");
-        }
-
-        return "login";
-    }
 
     /**
      * 登录
      *
      * @param request
-     * @param username
-     * @param password
+     * @param parameterModel
      * @return
      */
-    @RequestMapping("/doLogin")
+    @RequestMapping(value = "/doLogin")
     @ResponseBody
-    public ResponseEntity doLogin(HttpServletRequest request, String username, String password) {
+    public ResponseEntity<ParameterModel> doLogin(HttpServletRequest request, ParameterModel parameterModel) {
         //客户端ip
         String hostIp = IPUtil.getIpAddr(request);
         //主机ip
         String sessionId = request.getSession().getId();
-        ResponseEntity result = uauthService.getUuidByUsernameAndPassword(username, password, hostIp, sessionId);
+        ResponseEntity<ParameterModel> result = uauthService.getUuidByUsernameAndPassword(parameterModel, hostIp, sessionId);
         return result;
     }
 
-
-    @RequestMapping("/getVerificationCode")
+    /**
+     * 根据用户名检测用户是否存在
+     *
+     * @param parameterModel
+     * @return
+     */
+    @RequestMapping(value = "/checkName")
     @ResponseBody
-    public String startCaptchaServlet(HttpServletRequest request, String dateTime) {
-        GeetestLib gtSdk = new GeetestLib(GeetestConfig.getGeettestId(), GeetestConfig.getGeetestKey(),
-                GeetestConfig.isNEWFAILBACK());
-        String resStr = "{}";
-        //自定义userid
-        String userid = dateTime;
-        //进行验证预处理
-        int gtServerStatus = gtSdk.preProcess(userid);
-        //将服务器状态设置到session中
-        request.getSession().setAttribute(gtSdk.gtServerStatusSessionKey, gtServerStatus);
-        //将userid设置到session中
-        request.getSession().setAttribute("userid", userid);
-        resStr = gtSdk.getResponseStr();
-        return resStr;
+    public Uauth checkName(ParameterModel parameterModel) {
+        return uauthService.checkName(parameterModel);
     }
+
+    /**
+     * 根据手机号获取验证码
+     *
+     * @param phone
+     * @param request
+     * @return
+     */
+    @RequestMapping(value = "/valphonewhatever")
+    @ResponseBody
+    public String valphonewhatever(String phone, HttpServletRequest request) {
+        String send = SMSMessageLib.send(phone, request);
+        return send;
+    }
+
+    /**
+     * 验证验证码是否正确
+     *
+     * @param request
+     * @param verphone
+     * @return
+     */
+    @RequestMapping(value = "/verphone")
+    @ResponseBody
+    public String verphone(HttpServletRequest request, String verphone, String phonever) {
+        if (verphone.equals(phonever))
+            return "success";
+        else
+            return "failed";
+    }
+
+    /**
+     * 根据手机号修改密码
+     *
+     * @param phone
+     * @param password
+     * @return
+     */
+    @RequestMapping(value = "/updatePassword")
+    @ResponseBody
+    public String updatePassword(String password, String phone) {
+        return uauthService.updatePassword(password, phone);
+    }
+
 
 }

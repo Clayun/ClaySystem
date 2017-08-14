@@ -1,12 +1,12 @@
 package com.mcylm.clay.securityservice.service;
 
 
-import org.springframework.http.ResponseEntity;
+import com.mcylm.clay.securityservice.module.UauthToken;
 
 /**
  * Created by lenovo on 2017/8/9.
  */
 public interface UauthTokenService {
 
-    ResponseEntity insertUauthTokenMessage(String uid, String hostIp, String sessionId);
+    UauthToken insertUauthTokenMessage(String uid, String hostIp, String sessionId);
 }
