@@ -1,7 +1,9 @@
 package com.mcylm.clay.service.consoleservice.dao;
 
 import com.mcylm.clay.service.consoleservice.model.Account;
+
 import java.util.List;
+import java.util.Map;
 
 /**
  * @Author:Mr_Shen
@@ -11,5 +13,5 @@ import java.util.List;
  */
 public interface AccountDao {
 
-    List<Account> getaccountlist();
+    List<Account> getaccountlist(Map<String,Object> map);
 }

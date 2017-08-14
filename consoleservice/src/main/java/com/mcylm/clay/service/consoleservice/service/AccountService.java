@@ -1,7 +1,9 @@
 package com.mcylm.clay.service.consoleservice.service;
 
 import com.mcylm.clay.service.consoleservice.model.Account;
+
 import java.util.List;
+import java.util.Map;
 
 /**
  * @Author:Mr_Shen
@@ -12,6 +14,6 @@ import java.util.List;
 
 public interface AccountService {
 
-    List<Account> getaccountlist();
+    List<Account> getaccountlist(Map<String,Object> map);
 
 }

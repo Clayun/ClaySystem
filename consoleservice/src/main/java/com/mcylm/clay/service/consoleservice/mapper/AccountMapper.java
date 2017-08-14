@@ -3,6 +3,7 @@ package com.mcylm.clay.service.consoleservice.mapper;
 import com.mcylm.clay.service.consoleservice.model.Account;
 import org.apache.ibatis.annotations.*;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @Author:Mr_Shen
@@ -14,6 +15,6 @@ import java.util.List;
 public interface AccountMapper {
 
     @Select("select * from pre_common_account")
-    List<Account> getaccountlist();
+    List<Account> getaccountlist(Map<String,Object> map);
 
 }

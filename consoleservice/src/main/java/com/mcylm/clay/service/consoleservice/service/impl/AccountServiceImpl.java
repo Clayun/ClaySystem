@@ -5,8 +5,8 @@ import com.mcylm.clay.service.consoleservice.model.Account;
 import com.mcylm.clay.service.consoleservice.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
+import java.util.Map;
 
 /**
  * @Author:Mr_Shen
@@ -21,8 +21,8 @@ public class AccountServiceImpl implements AccountService {
     private AccountDao accountDao;
 
     @Override
-    public List<Account> getaccountlist() {
-        List<Account> list=accountDao.getaccountlist();
+    public List<Account> getaccountlist(Map<String,Object> map){
+        List<Account> list=accountDao.getaccountlist(map);
         return list;
     }
 }

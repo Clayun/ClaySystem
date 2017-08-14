@@ -5,6 +5,8 @@ import com.mcylm.clay.service.consoleservice.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
 import java.util.List;
 import java.util.Map;
 
@@ -23,7 +25,7 @@ public class AccountAction {
 
     @RequestMapping("/accountlist")
     public String accountlist(Map<String,Object> map){
-        List<Account> list=accountService.getaccountlist();
+        List<Account> list=accountService.getaccountlist(map);
         map.put("list",list);
         return "account";
     }

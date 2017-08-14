@@ -6,6 +6,7 @@ import com.mcylm.clay.service.consoleservice.model.Account;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @Author:Mr_Shen
@@ -20,8 +21,8 @@ public class AccountDaoImpl implements AccountDao {
     private AccountMapper accountMapper;
 
     @Override
-    public List<Account> getaccountlist() {
-        List<Account> list=accountMapper.getaccountlist();
+    public List<Account> getaccountlist(Map<String,Object> map) {
+        List<Account> list=accountMapper.getaccountlist(map);
         return list;
     }
 
