@@ -24,4 +24,5 @@ public interface UcenterService {
 
     int getCount(@Param("dropdownbox") String dropdownbox,@Param("content") String content);
 
+    void deleteConsoleById(String ids);
 }

@@ -6,12 +6,12 @@ import com.mcylm.clay.service.consoleservice.model.Ucenter;
 import com.mcylm.clay.service.consoleservice.service.UcenterService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import static com.mcylm.clay.service.consoleservice.utils.MD5Util.generate;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import static com.mcylm.clay.service.consoleservice.utils.MD5Util.generate;
 
 /**
  * Created by Mr_Shen on 2017/8/7/007.
@@ -83,5 +83,10 @@ public class UcenterServiceImpl implements UcenterService{
             listCount=ucenterDao.getPhoneCount(content);
         }
         return listCount;
+    }
+
+    @Override
+    public void deleteConsoleById(String ids) {
+
     }
 }

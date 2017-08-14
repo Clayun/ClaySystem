@@ -1,7 +1,6 @@
 package com.mcylm.clay.securityservice.util;
 
 import com.google.gson.Gson;
-import jdk.nashorn.internal.scripts.JD;
 import org.springframework.data.redis.connection.RedisClusterConnection;
 import org.springframework.data.redis.connection.RedisConnection;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
