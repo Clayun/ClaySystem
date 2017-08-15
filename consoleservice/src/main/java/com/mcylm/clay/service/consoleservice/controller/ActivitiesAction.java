@@ -25,20 +25,20 @@ public class ActivitiesAction {
 
     @RequestMapping("activitieslist")
     public String activitieslist(String dropdownbox, String pageNo, String content, HttpServletRequest request, Map<String, Object> map) {
-        pageNo=request.getParameter("cPage")==null?"1":request.getParameter("cPage");
-        int pageSize=8;
-        int listCount = activitiesService.getCount(dropdownbox,content);
-        if (listCount == 0){
+        pageNo = request.getParameter("cPage") == null ? "1" : request.getParameter("cPage");
+        int pageSize = 8;
+        int listCount = activitiesService.getCount(dropdownbox, content);
+        if (listCount == 0) {
             pageNo = "0";
         }
-        if(content!=null){
-            pageNo="0";
-            listCount=0;
+        if (content != null) {
+            pageNo = "0";
+            listCount = 0;
         }
-        List<Activities> list = activitiesService.activitieslist(dropdownbox,content,Integer.parseInt(pageNo),pageSize,map);
-        map.put("list",list);
-        request.setAttribute("dropdownbox",dropdownbox);
-        request.setAttribute("content",content);
+        List<Activities> list = activitiesService.activitieslist(dropdownbox, content, Integer.parseInt(pageNo), pageSize, map);
+        map.put("list", list);
+        request.setAttribute("dropdownbox", dropdownbox);
+        request.setAttribute("content", content);
         PageUtil.page(request, Integer.parseInt(pageNo), pageSize, listCount, map, list);
         return "activities";
     }
@@ -47,17 +47,21 @@ public class ActivitiesAction {
     @ResponseBody
     public Boolean activitiesAdd(ActivitiesStr activities) {
         try {
-            System.out.println(activities.toString());
-
             activitiesService.activitiesAdd(activities);
             return true;
         } catch (Exception e) {
             return false;
         }
     }
+
     @RequestMapping(value = "/activitiesUpdate", method = RequestMethod.POST)
-    public String activitiesUpdate(ActivitiesStr activities) {
+    @ResponseBody
+    public Boolean activitiesUpdate(ActivitiesStr activities) {
+        try {
             activitiesService.activitiesUpdate(activities);
-            return "";
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
     }
 }

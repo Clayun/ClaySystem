@@ -2,19 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6a314246-48ea-4720-93fc-11f6729192a2" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/model/UauthStr.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/controller/UauthAction.java" afterPath="$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/controller/UauthAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/dao/UauthDao.java" afterPath="$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/dao/UauthDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/dao/impl/UauthDaoImpl.java" afterPath="$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/dao/impl/UauthDaoImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/mapper/ActivitiesMapper.java" afterPath="$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/mapper/ActivitiesMapper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/mapper/UauthMapper.java" afterPath="$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/mapper/UauthMapper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/service/UauthService.java" afterPath="$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/service/UauthService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/service/impl/UauthServiceImpl.java" afterPath="$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/service/impl/UauthServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/consoleservice/consoleservice.iml" afterPath="$PROJECT_DIR$/consoleservice/consoleservice.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/controller/ActivitiesAction.java" afterPath="$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/controller/ActivitiesAction.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/consoleservice/src/main/resources/templates/activities.ftl" afterPath="$PROJECT_DIR$/consoleservice/src/main/resources/templates/activities.ftl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/consoleservice/src/main/resources/templates/console.ftl" afterPath="$PROJECT_DIR$/consoleservice/src/main/resources/templates/console.ftl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/consoleservice/src/main/resources/templates/index.ftl" afterPath="$PROJECT_DIR$/consoleservice/src/main/resources/templates/index.ftl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/consoleservice/src/main/resources/templates/uauth.ftl" afterPath="$PROJECT_DIR$/consoleservice/src/main/resources/templates/uauth.ftl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/paymentservice/paymentservice.iml" afterPath="$PROJECT_DIR$/paymentservice/paymentservice.iml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -50,7 +42,68 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+      <file leaf-file-name="ActivitiesAction.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/controller/ActivitiesAction.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="142">
+              <caret line="53" column="9" lean-forward="false" selection-start-line="53" selection-start-column="9" selection-end-line="53" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ActivitiesService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/service/ActivitiesService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="151">
+              <caret line="15" column="47" lean-forward="false" selection-start-line="15" selection-start-column="37" selection-end-line="15" selection-end-column="47" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="activities.ftl" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/consoleservice/src/main/resources/templates/activities.ftl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-328">
+              <caret line="365" column="42" lean-forward="false" selection-start-line="365" selection-start-column="42" selection-end-line="365" selection-end-column="42" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.ftl" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/consoleservice/src/main/resources/templates/index.ftl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="89">
+              <caret line="34" column="45" lean-forward="false" selection-start-line="34" selection-start-column="45" selection-end-line="34" selection-end-column="45" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RedisUtils.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/paymentservice/src/main/java/com/mcylm/clay/service/paymentservice/util/RedisUtils.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1672">
+              <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="uauth.ftl" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/consoleservice/src/main/resources/templates/uauth.ftl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-199">
+              <caret line="140" column="38" lean-forward="false" selection-start-line="140" selection-start-column="20" selection-end-line="140" selection-end-column="38" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -124,14 +177,12 @@
         <option value="$PROJECT_DIR$/securityService/src/main/java/com/mcylm/clay/securityservice/util/RedisUtils.java" />
         <option value="$PROJECT_DIR$/consoleservice/src/main/resources/templates/test.ftl" />
         <option value="$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/service/impl/UcenterServiceImpl.java" />
-        <option value="$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/controller/ActivitiesAction.java" />
         <option value="$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/service/ActivitiesService.java" />
         <option value="$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/service/impl/ActivitiesServiceImpl.java" />
         <option value="$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/dao/ActivitiesDao.java" />
         <option value="$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/dao/impl/ActivitiesDaoImpl.java" />
         <option value="$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/mapper/ActivitiesMapper.java" />
         <option value="$PROJECT_DIR$/consoleservice/src/main/resources/templates/index.ftl" />
-        <option value="$PROJECT_DIR$/consoleservice/src/main/resources/templates/activities.ftl" />
         <option value="$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/model/UauthStr.java" />
         <option value="$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/controller/UauthAction.java" />
         <option value="$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/service/UauthService.java" />
@@ -141,6 +192,8 @@
         <option value="$PROJECT_DIR$/consoleservice/src/main/resources/templates/console.ftl" />
         <option value="$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/mapper/UauthMapper.java" />
         <option value="$PROJECT_DIR$/consoleservice/src/main/resources/templates/uauth.ftl" />
+        <option value="$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/controller/ActivitiesAction.java" />
+        <option value="$PROJECT_DIR$/consoleservice/src/main/resources/templates/activities.ftl" />
       </list>
     </option>
   </component>
@@ -215,6 +268,106 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ClaySystem" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ClaySystem" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="consoleservice" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ClaySystem" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ClaySystem" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="consoleservice" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ClaySystem" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ClaySystem" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="consoleservice" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ClaySystem" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ClaySystem" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="consoleservice" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="consoleservice" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -247,10 +400,12 @@
     <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/consoleservice/src/main/resources/templates/add.ftl" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\大一\ClaySystem\consoleservice\src\main\resources\static\css" />
-      <recent name="E:\workspace\ideaProject\ClaySystem\securityService\src\main" />
-      <recent name="C:\Users\Mikesam\IdeaProjects\ClaySystem\normalservice\webapp\WEB-INF\view" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.mcylm.clay.service.consoleservice.mapper" />
+      <recent name="com.mcylm.clay.service.consoleservice.dao" />
+      <recent name="com.mcylm.clay.service.consoleservice.service" />
+      <recent name="com.mcylm.clay.service.openstackService.service.impl" />
+      <recent name="com.mcylm.clay.service.openstackService.dao.impl" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\大一\ClaySystem\consoleservice\src\main\resources\static\css" />
@@ -265,12 +420,10 @@
       <recent name="com.mcylm.clay.service.consoleservice.config" />
       <recent name="com.mcylm.clay.service.normalservice.dao" />
     </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.mcylm.clay.service.consoleservice.mapper" />
-      <recent name="com.mcylm.clay.service.consoleservice.dao" />
-      <recent name="com.mcylm.clay.service.consoleservice.service" />
-      <recent name="com.mcylm.clay.service.openstackService.service.impl" />
-      <recent name="com.mcylm.clay.service.openstackService.dao.impl" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\大一\ClaySystem\consoleservice\src\main\resources\static\css" />
+      <recent name="E:\workspace\ideaProject\ClaySystem\securityService\src\main" />
+      <recent name="C:\Users\Mikesam\IdeaProjects\ClaySystem\normalservice\webapp\WEB-INF\view" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -809,7 +962,14 @@
       <envs />
       <method />
     </configuration>
-    <list size="12">
+    <configuration default="false" name="OpenStackService" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.mcylm.clay.service.openstackService.OpenStackService" />
+      <module name="openstackService" />
+      <envs />
+      <method />
+    </configuration>
+    <list size="13">
       <item index="0" class="java.lang.String" itemvalue="Spring Boot.UserService" />
       <item index="1" class="java.lang.String" itemvalue="Spring Boot.Controlcenter" />
       <item index="2" class="java.lang.String" itemvalue="Spring Boot.Application" />
@@ -822,6 +982,7 @@
       <item index="9" class="java.lang.String" itemvalue="Application.Application" />
       <item index="10" class="java.lang.String" itemvalue="Application.Controlcenter" />
       <item index="11" class="java.lang.String" itemvalue="Application.test" />
+      <item index="12" class="java.lang.String" itemvalue="Spring Boot.OpenStackService" />
     </list>
     <recent_temporary>
       <list size="5">
@@ -863,7 +1024,7 @@
       <workItem from="1502236878221" duration="3108000" />
       <workItem from="1502409953244" duration="56679000" />
       <workItem from="1502669235833" duration="35763000" />
-      <workItem from="1502755305698" duration="7578000" />
+      <workItem from="1502755305698" duration="9286000" />
     </task>
     <task id="LOCAL-00001" summary="新增登录验证服务，Oauth2协议">
       <created>1501846921527</created>
@@ -928,11 +1089,18 @@
       <option name="project" value="LOCAL" />
       <updated>1502697047329</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="全局Uauth表增改差模糊分页完成">
+      <created>1502763008023</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1502763008023</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="186880000" />
+    <option name="totallyTimeSpent" value="188588000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -949,7 +1117,7 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27762803" sideWeight="0.5028653" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28510028" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.254298" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -957,12 +1125,12 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2722372" sideWeight="0.49713466" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2722372" sideWeight="0.49713466" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32884097" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3301887" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32749325" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32614556" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32614556" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.287062" sideWeight="0.49710983" order="2" side_tool="false" content_ui="tabs" />
@@ -998,12 +1166,12 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2722372" sideWeight="0.49713466" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2722372" sideWeight="0.49713466" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32884097" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3301887" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32749325" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32614556" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" x="92" y="92" width="1244" height="676" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1011,7 +1179,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.287062" sideWeight="0.49710983" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32884097" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32884097" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21633238" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21633238" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32884097" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295129" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
@@ -1060,7 +1228,8 @@
     <MESSAGE value="register application.yml 中的配置freemarker缓存为false" />
     <MESSAGE value="那啥，嘿" />
     <MESSAGE value="后台活动管理，分页模糊完成" />
-    <option name="LAST_COMMIT_MESSAGE" value="后台活动管理，分页模糊完成" />
+    <MESSAGE value="全局Uauth表增改差模糊分页完成" />
+    <option name="LAST_COMMIT_MESSAGE" value="全局Uauth表增改差模糊分页完成" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1073,13 +1242,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/consoleservice/src/main/resources/static/js/bootstrap-select.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="11" column="26" lean-forward="true" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/consoleservice/src/main/resources/static/css/bootstrap-select.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="312">
@@ -1175,24 +1337,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/service/ActivitiesService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="13" column="142" lean-forward="false" selection-start-line="13" selection-start-column="40" selection-end-line="13" selection-end-column="142" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/controller/ActivitiesAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="25" column="35" lean-forward="false" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/mapper/ActivitiesMapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="235">
           <caret line="76" column="74" lean-forward="true" selection-start-line="76" selection-start-column="74" selection-end-line="76" selection-end-column="74" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1261,22 +1410,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="32">
           <caret line="16" column="28" lean-forward="false" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/consoleservice/src/main/resources/templates/index.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="56">
-          <caret line="34" column="45" lean-forward="false" selection-start-line="34" selection-start-column="45" selection-end-line="34" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/consoleservice/src/main/resources/templates/activities.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1825">
-          <caret line="68" column="16" lean-forward="true" selection-start-line="68" selection-start-column="16" selection-end-line="68" selection-end-column="16" />
           <folding />
         </state>
       </provider>
@@ -1417,7 +1550,7 @@
         <state relative-caret-position="336">
           <caret line="48" column="31" lean-forward="true" selection-start-line="48" selection-start-column="31" selection-end-line="48" selection-end-column="31" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1470,10 +1603,50 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/service/ActivitiesService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="151">
+          <caret line="15" column="47" lean-forward="false" selection-start-line="15" selection-start-column="37" selection-end-line="15" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/controller/ActivitiesAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="53" column="9" lean-forward="false" selection-start-line="53" selection-start-column="9" selection-end-line="53" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/consoleservice/src/main/resources/templates/uauth.ftl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="752">
-          <caret line="136" column="18" lean-forward="true" selection-start-line="136" selection-start-column="18" selection-end-line="136" selection-end-column="18" />
+        <state relative-caret-position="-199">
+          <caret line="140" column="38" lean-forward="false" selection-start-line="140" selection-start-column="20" selection-end-line="140" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consoleservice/src/main/resources/templates/activities.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-328">
+          <caret line="365" column="42" lean-forward="false" selection-start-line="365" selection-start-column="42" selection-end-line="365" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/paymentservice/src/main/java/com/mcylm/clay/service/paymentservice/util/RedisUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1672">
+          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consoleservice/src/main/resources/templates/index.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="89">
+          <caret line="34" column="45" lean-forward="false" selection-start-line="34" selection-start-column="45" selection-end-line="34" selection-end-column="45" />
           <folding />
         </state>
       </provider>

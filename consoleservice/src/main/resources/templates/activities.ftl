@@ -38,12 +38,12 @@
         var pageCount=$("#pageCount").val();
         var gopage=$("#gopage").val();
         if(pageCount==0){
-            alert("查询时无法跳转页数!");
+            swal("查询时无法跳转页数!")
         }else{
             if(gopage!=null&&gopage!=""){
                 location.href="/console/activities/activitieslist?cPage="+gopage;
             }else{
-                alert("请输入要跳转的页数!");
+                swal("请输入要跳转的页数!")
             }
         }
     }
@@ -74,6 +74,24 @@
             success:function (msg) {
                 if(msg) {
                     swal("添加成功", "您提交的数据已添加成功!", "success");
+                    window.setTimeout("window.location.href='/console/activities/activitieslist'",2000);
+                }else{
+                    swal("错误!","您提交的数据添加失败!","error");
+                }
+            }
+        })
+}
+    //执行修改操作
+    function doUpdate(){
+        var addform =$("#updateActivities").serialize();
+        $.ajax({
+            url:'/console/activities/activitiesUpdate',
+            data:addform,
+            dataType:'json',
+            type:'post',
+            success:function (data) {
+                if(data) {
+                    swal("修改成功", "您提交的数据已修改成功!", "success");
                     window.setTimeout("window.location.href='/console/activities/activitieslist'",2000);
                 }else{
                     swal("错误!","您提交的数据添加失败!","error");
@@ -264,7 +282,7 @@
                         </h4>
                     </div>
                     <div class="modal-body">
-                        <form id="update" action="/console/activities/activitiesUpdate" method="post">
+                        <form id="updateActivities">
                             <div style="padding: 10px 100px 10px;">
                                 <div class="input-group">
                                     <span class="input-group-addon">活动标题</span>
@@ -347,7 +365,7 @@
                                         </label>
                                     </div>
                                 </div><br />
-                                <input type="submit" class="btn btn-primary" onclick="osp()" value="确认修改"></input>
+                                <input type="button" class="btn btn-primary" onclick="doUpdate()" value="确认修改"></input>
                                 <input type="button" class="btn btn-danger" value="关闭" data-dismiss="modal"></input>
                         </form>
                     </div>
