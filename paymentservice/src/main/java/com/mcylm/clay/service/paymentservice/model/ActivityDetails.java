@@ -6,10 +6,10 @@ import java.util.Date;
 /**
  * 活动优惠
  */
-public class ActivityDetails implements Serializable{
+public class ActivityDetails implements Serializable {
     private Integer id;
     private String type;       //活动类型，如百分比降价，直降价等
-    private  String title;     //活动标题
+    private String title;     //活动标题
     private String abstractInfo; //活动概述
     private String content;    //活动详情
     private String num;        //对应Type的具体参数
@@ -17,6 +17,15 @@ public class ActivityDetails implements Serializable{
     private Date overTime;    //截止日期
     private String managerName; //负责人名称
     private String state;     //活动状态，0为未开始，1为进行中，2为已结束
+    private String selected;
+
+    public String getSelected() {
+        return selected;
+    }
+
+    public void setSelected(String selected) {
+        this.selected = selected;
+    }
 
     public Integer getId() {
         return id;
@@ -111,6 +120,7 @@ public class ActivityDetails implements Serializable{
                 ", overTime=" + overTime +
                 ", managerName='" + managerName + '\'' +
                 ", state='" + state + '\'' +
+                ", selected=" + selected +
                 '}';
     }
 }

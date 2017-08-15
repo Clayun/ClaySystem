@@ -43,6 +43,8 @@ var handler1 = function (captchaObj) {
 
                         if (redirectUrl != null && redirectUrl != ''){
                             url = url+redirectUrl;
+                        }else{
+                            url += "localhost/";
                         }
                         if (token != null && token != ''){
                             url = url+"?token="+token;

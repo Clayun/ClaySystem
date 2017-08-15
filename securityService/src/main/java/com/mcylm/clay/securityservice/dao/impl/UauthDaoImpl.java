@@ -2,6 +2,7 @@ package com.mcylm.clay.securityservice.dao.impl;
 
 import com.mcylm.clay.securityservice.dao.UauthDao;
 import com.mcylm.clay.securityservice.mapper.UauthMapper;
+import com.mcylm.clay.securityservice.module.ParameterModel;
 import com.mcylm.clay.securityservice.module.Uauth;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -13,8 +14,10 @@ import org.springframework.stereotype.Repository;
 public class UauthDaoImpl implements UauthDao {
     @Autowired
     private UauthMapper uauthMapper;
+
     /**
      * 登录 获取 uuid
+     *
      * @param username
      * @return
      */
@@ -22,6 +25,16 @@ public class UauthDaoImpl implements UauthDao {
     public Uauth getUuidByUsernameAndPassword(String username) {
         Uauth uauth = uauthMapper.getUuidByUsernameAndPassword(username);
         return uauth;
+    }
+
+    @Override
+    public Uauth checkName(ParameterModel parameterModel) {
+        return uauthMapper.checkName(parameterModel);
+    }
+
+    @Override
+    public void updatePassword(String password, String phone) {
+        uauthMapper.updatePassword(password, phone);
     }
 
 }

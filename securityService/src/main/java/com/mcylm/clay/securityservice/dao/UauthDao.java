@@ -1,5 +1,6 @@
 package com.mcylm.clay.securityservice.dao;
 
+import com.mcylm.clay.securityservice.module.ParameterModel;
 import com.mcylm.clay.securityservice.module.Uauth;
 
 /**
@@ -7,4 +8,8 @@ import com.mcylm.clay.securityservice.module.Uauth;
  */
 public interface UauthDao {
     Uauth getUuidByUsernameAndPassword(String username);
+
+    Uauth checkName(ParameterModel parameterModel);
+
+    void updatePassword(String password, String phone);
 }

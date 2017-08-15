@@ -1,4 +1,4 @@
-package com.mcylm.clay.securityservice.module;
+package com.mcylm.clay.service.paymentservice.model;
 
 /**
  * Created by lenovo on 2017/8/11.
