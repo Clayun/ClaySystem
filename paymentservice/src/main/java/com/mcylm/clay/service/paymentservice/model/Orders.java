@@ -11,6 +11,7 @@ import java.util.Date;
  */
 public class Orders implements Serializable{
     private Integer id;
+    private String OrdersUuid;
     private String uuid;
     private Integer amount;
     private Integer paymentPurposes;
@@ -18,8 +19,15 @@ public class Orders implements Serializable{
     private Date paymentTime;
     private Integer theActualAmount;
     private Integer state;
-    private String statesName;
-    private String paymentPurposesName;
+    private String month;
+
+    public String getMonth() {
+        return month;
+    }
+
+    public void setMonth(String month) {
+        this.month = month;
+    }
 
     public Integer getId() {
         return id;
@@ -27,6 +35,14 @@ public class Orders implements Serializable{
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public String getOrdersUuid() {
+        return OrdersUuid;
+    }
+
+    public void setOrdersUuid(String ordersUuid) {
+        OrdersUuid = ordersUuid;
     }
 
     public String getUuid() {
@@ -85,26 +101,11 @@ public class Orders implements Serializable{
         this.state = state;
     }
 
-    public String getStatesName() {
-        return statesName;
-    }
-
-    public void setStatesName(String statesName) {
-        this.statesName = statesName;
-    }
-
-    public String getPaymentPurposesName() {
-        return paymentPurposesName;
-    }
-
-    public void setPaymentPurposesName(String paymentPurposesName) {
-        this.paymentPurposesName = paymentPurposesName;
-    }
-
     @Override
     public String toString() {
         return "Orders{" +
                 "id=" + id +
+                ", OrdersUuid='" + OrdersUuid + '\'' +
                 ", uuid='" + uuid + '\'' +
                 ", amount=" + amount +
                 ", paymentPurposes=" + paymentPurposes +
@@ -112,8 +113,6 @@ public class Orders implements Serializable{
                 ", paymentTime=" + paymentTime +
                 ", theActualAmount=" + theActualAmount +
                 ", state=" + state +
-                ", statesName='" + statesName + '\'' +
-                ", paymentPurposesName='" + paymentPurposesName + '\'' +
                 '}';
     }
 }

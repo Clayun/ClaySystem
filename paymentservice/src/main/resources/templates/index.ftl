@@ -11,71 +11,37 @@
 	</head>
 
 	<body>
-
-	<#--<table border="1">
-    <#list list as l>
-        <tr>
-            <th>${l.id}</th>
-            <th>${l.uuid}</th>
-            <th>${l.amount}</th>
-            <th>${l.paymentPurposes}</th>
-            <th>${l.remarks}</th>
-            <th>${l.paymentTime?string("yyyy-MM-dd HH:mm:ss")}</th>
-            <th>${l.theActualAmount}</th>
-            <th>${l.state}</th>
-        </tr>
-    </#list>
-		</table>-->
-		<form action="" id="form">
+		<form action="/paymentInterface" id="form" method="get">
 			<table border="1">
 				<tr>
-                    <th>付款人编号/用户名<input type="text" name="uuid"></th>
+                    <th>付款人编号/用户名<input type="text" name="uuid" value="1"></th>
 				</tr>
 				<tr>
-                    <th>付款金额<input type="text" name="amount"></th>
+                    <th>付款金额<input type="text" name="amount" value="100"></th>
 				</tr>
 				<tr>
-                    <th>付款用途<input type="text" name="paymentPurposes"></th>
+                    <th>付款用途<input type="text" name="paymentPurposes" value="1"></th>
 				</tr>
 				<tr>
-                    <th>备注<input type="text" name="remarks"></th>
+                    <th>备注<input type="text" name="remarks" value="买手机！！！"></th>
 				</tr>
 				<tr>
-                    <th>付款时间<input type="text" name="paymentTime"></th>
+                    <th>付款时间<input type="text" name="paymentTime" value="2019/9/9"></th>
 				</tr>
 				<tr>
-                    <th>实际金额<input type="text" name="theActualAmount"></th>
+                    <th>订购月份<input type="text" name="month" value="10"></th>
 				</tr>
 				<tr>
-                    <th>状态<input type="text" name="state"></th>
+                    <th>实际金额<input type="text" name="theActualAmount" value="100"></th>
 				</tr>
 				<tr>
-                	<th colspan="10"><input type="button" value="测试支付接口" onclick="test()"></th>
+                    <th>状态<input type="text" name="state" value="4"></th>
+				</tr>
+				<tr>
+                	<th colspan="10"><input type="submit" value="测试支付接口" ></th><#--onclick="test()"-->
             	</tr>
 			</table>
 		</form>
 
     </body>
-        <script type="text/javascript">
-           function test(){
-               alert("看看");
-               alert($("#form").serialize());
-               $.ajax({
-                   url:"paymentInterface",
-                   data	:$("#form").serialize(),
-                   dataType:'json',
-                   type:'post',
-                   success:function(m){
-                       if (m){
-                           alert("支付成功");
-                       }
-                       else{
-                           alert("支付失败");
-                       }
-                   }
-               });
-		   }
-        </script>
-    </footer>
-
 </html>

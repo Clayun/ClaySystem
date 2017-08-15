@@ -2,100 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6a314246-48ea-4720-93fc-11f6729192a2" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/consoleservice/src/main/resources/static/My97DatePicker/skin/datePicker.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/consoleservice/src/main/resources/static/My97DatePicker/skin/default/img.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/consoleservice/src/main/resources/static/My97DatePicker/skin/whyGreen/bg.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/consoleservice/src/main/resources/static/My97DatePicker/skin/whyGreen/img.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/consoleservice/src/main/resources/static/My97DatePicker/开发包/skin/datePicker.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/consoleservice/src/main/resources/static/My97DatePicker/开发包/skin/default/img.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/consoleservice/src/main/resources/static/My97DatePicker/开发包/skin/whyGreen/bg.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/consoleservice/src/main/resources/static/My97DatePicker/开发包/skin/whyGreen/img.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/SMS_duanxin_war.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/SMS_duanxin_war_exploded.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_aliyun_mns_aliyun_sdk_mns_jar_with_dependencies_1_1_8.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_jsqlparser_jsqlparser_0_9_4.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_pagehelper_pagehelper_4_1_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_jayway_jsonpath_json_path_2_2_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_beanutils_commons_beanutils_1_9_3.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_lang_commons_lang_2_5.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_1_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_1_3.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_12.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__log4j_log4j_1_2_17.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_minidev_accessors_smart_1_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_minidev_json_smart_2_2_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_sf_ezmorph_ezmorph_1_0_6.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_sf_json_lib_json_lib_2_4.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_4.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpasyncclient_4_1_3.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpcore_nio_4_4_6.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_assertj_assertj_core_2_5_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_library_1_3.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_json_json_20140107.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_json_json_20160810.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mockito_mockito_core_1_10_19.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_3_4_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_spring_1_3_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_spring_boot_mybatis_spring_boot_autoconfigure_1_1_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_spring_boot_mybatis_spring_boot_starter_1_1_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_objenesis_objenesis_2_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_skyscreamer_jsonassert_1_3_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_test_1_4_5_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_1_4_5_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_autoconfigure_1_4_5_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_test_4_3_7_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__redis_clients_jedis_2_9_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/controller/ActivitiesAction.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/controller/UauthAction.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/dao/ActivitiesDao.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/dao/UauthDao.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/dao/impl/ActivitiesDaoImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/dao/impl/UauthDaoImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/mapper/ActivitiesMapper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/mapper/UauthMapper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/model/Activities.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/model/ActivitiesStr.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/model/Uauth.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/service/ActivitiesService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/service/UauthService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/service/impl/ActivitiesServiceImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/service/impl/UauthServiceImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/consoleservice/src/main/resources/static/My97DatePicker/My97DatePicker.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/consoleservice/src/main/resources/static/My97DatePicker/WdatePicker.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/consoleservice/src/main/resources/static/My97DatePicker/calendar.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/consoleservice/src/main/resources/static/My97DatePicker/config.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/consoleservice/src/main/resources/static/My97DatePicker/lang/en.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/consoleservice/src/main/resources/static/My97DatePicker/lang/zh-cn.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/consoleservice/src/main/resources/static/My97DatePicker/lang/zh-tw.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/consoleservice/src/main/resources/static/My97DatePicker/skin/WdatePicker.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/consoleservice/src/main/resources/static/My97DatePicker/skin/default/datepicker.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/consoleservice/src/main/resources/static/My97DatePicker/skin/whyGreen/datepicker.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/consoleservice/src/main/resources/static/My97DatePicker/开发包/lang/en.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/consoleservice/src/main/resources/static/My97DatePicker/开发包/lang/zh-cn.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/consoleservice/src/main/resources/static/My97DatePicker/开发包/lang/zh-tw.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/consoleservice/src/main/resources/static/My97DatePicker/开发包/readme.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/consoleservice/src/main/resources/static/My97DatePicker/开发包/skin/WdatePicker.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/consoleservice/src/main/resources/static/My97DatePicker/开发包/skin/default/datepicker.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/consoleservice/src/main/resources/static/My97DatePicker/开发包/skin/whyGreen/datepicker.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/consoleservice/src/main/resources/static/css/bootstrap-select.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/consoleservice/src/main/resources/static/css/bootstrap-select.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/consoleservice/src/main/resources/static/js/bootstrap-select.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/consoleservice/src/main/resources/templates/activities.ftl" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/consoleservice/src/main/resources/templates/uauth.ftl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/consoleservice/consoleservice.iml" afterPath="$PROJECT_DIR$/consoleservice/consoleservice.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/consoleservice/pom.xml" afterPath="$PROJECT_DIR$/consoleservice/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/service/UcenterService.java" afterPath="$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/service/UcenterService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/service/impl/UcenterServiceImpl.java" afterPath="$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/service/impl/UcenterServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/consoleservice/src/main/resources/templates/index.ftl" afterPath="$PROJECT_DIR$/consoleservice/src/main/resources/templates/index.ftl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/normalservice/normalservice.iml" afterPath="$PROJECT_DIR$/normalservice/normalservice.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openstackService/openstackService.iml" afterPath="$PROJECT_DIR$/openstackService/openstackService.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/paymentservice/paymentservice.iml" afterPath="$PROJECT_DIR$/paymentservice/paymentservice.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/securityService/securityService.iml" afterPath="$PROJECT_DIR$/securityService/securityService.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/securityService/src/main/java/com/mcylm/clay/securityservice/util/RedisUtils.java" afterPath="$PROJECT_DIR$/securityService/src/main/java/com/mcylm/clay/securityservice/util/RedisUtils.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -132,14 +39,22 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="console.ftl" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/consoleservice/src/main/resources/templates/console.ftl">
+      <file leaf-file-name="ActivitiesAction.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/controller/ActivitiesAction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1736">
-              <caret line="306" column="10" lean-forward="true" selection-start-line="306" selection-start-column="10" selection-end-line="306" selection-end-column="10" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="142">
+              <caret line="53" column="9" lean-forward="false" selection-start-line="53" selection-start-column="9" selection-end-line="53" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ActivitiesService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/service/ActivitiesService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="151">
+              <caret line="15" column="47" lean-forward="false" selection-start-line="15" selection-start-column="37" selection-end-line="15" selection-end-column="47" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -147,20 +62,38 @@
       <file leaf-file-name="activities.ftl" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/consoleservice/src/main/resources/templates/activities.ftl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1368">
-              <caret line="57" column="5" lean-forward="true" selection-start-line="57" selection-start-column="5" selection-end-line="57" selection-end-column="5" />
-              <folding>
-                <element signature="n#style#0;n#table#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="-328">
+              <caret line="365" column="42" lean-forward="false" selection-start-line="365" selection-start-column="42" selection-end-line="365" selection-end-column="42" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="account.ftl" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/consoleservice/src/main/resources/templates/account.ftl">
+      <file leaf-file-name="index.ftl" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/consoleservice/src/main/resources/templates/index.ftl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="456">
-              <caret line="19" column="39" lean-forward="true" selection-start-line="19" selection-start-column="39" selection-end-line="19" selection-end-column="39" />
+            <state relative-caret-position="425">
+              <caret line="47" column="31" lean-forward="true" selection-start-line="47" selection-start-column="31" selection-end-line="47" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RedisUtils.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/paymentservice/src/main/java/com/mcylm/clay/service/paymentservice/util/RedisUtils.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1672">
+              <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="uauth.ftl" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/consoleservice/src/main/resources/templates/uauth.ftl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-199">
+              <caret line="140" column="38" lean-forward="false" selection-start-line="140" selection-start-column="20" selection-end-line="140" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -171,19 +104,23 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
       <find>首页</find>
+      <find>form1</find>
+      <find>添加</find>
+      <find>doadd</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
+        <option value="xingzichen1688 &lt;30788402+xingzichen1688@users.noreply.github.com&gt;" />
         <option value="Mikesam &lt;1627072456@qq.com&gt;" />
         <option value="Mikesam &lt;ceo@mcylm.com&gt;" />
       </list>
@@ -202,11 +139,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/securityService/src/main/java/com/mcylm/clay/securityservice/mapper/UserRegisterMapper.java" />
-        <option value="$PROJECT_DIR$/securityService/src/main/java/com/mcylm/clay/securityservice/service/impl/UserRegisterServiceImpl.java" />
-        <option value="$PROJECT_DIR$/controlcenter/src/main/java/com/mcylm/clay/controlcenter/Controlcenter.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/securityService/src/main/resources/application.yml" />
         <option value="$PROJECT_DIR$/consoleservice/src/main/resources/application.yml" />
         <option value="$PROJECT_DIR$/normalservice/src/main/resources/application.yml" />
         <option value="$PROJECT_DIR$/securityService/src/main/resources/templates/login.ftl" />
@@ -235,22 +167,27 @@
         <option value="$PROJECT_DIR$/securityService/src/main/java/com/mcylm/clay/securityservice/controller/RegisterController.java" />
         <option value="$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/model/Details.java" />
         <option value="$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/mapper/UcenterMapper.java" />
-        <option value="$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/mapper/UauthMapper.java" />
         <option value="$PROJECT_DIR$/consoleservice/src/main/resources/templates/add.ftl" />
         <option value="$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/model/ActivitiesStr.java" />
         <option value="$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/model/Activities.java" />
         <option value="$PROJECT_DIR$/securityService/src/main/java/com/mcylm/clay/securityservice/util/RedisUtils.java" />
-        <option value="$PROJECT_DIR$/consoleservice/src/main/resources/templates/uauth.ftl" />
-        <option value="$PROJECT_DIR$/consoleservice/src/main/resources/templates/console.ftl" />
         <option value="$PROJECT_DIR$/consoleservice/src/main/resources/templates/test.ftl" />
+        <option value="$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/service/impl/UcenterServiceImpl.java" />
         <option value="$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/service/ActivitiesService.java" />
         <option value="$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/service/impl/ActivitiesServiceImpl.java" />
         <option value="$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/dao/ActivitiesDao.java" />
         <option value="$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/dao/impl/ActivitiesDaoImpl.java" />
         <option value="$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/mapper/ActivitiesMapper.java" />
-        <option value="$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/service/impl/UauthServiceImpl.java" />
-        <option value="$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/service/impl/UcenterServiceImpl.java" />
         <option value="$PROJECT_DIR$/consoleservice/src/main/resources/templates/index.ftl" />
+        <option value="$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/model/UauthStr.java" />
+        <option value="$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/controller/UauthAction.java" />
+        <option value="$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/service/UauthService.java" />
+        <option value="$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/service/impl/UauthServiceImpl.java" />
+        <option value="$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/dao/UauthDao.java" />
+        <option value="$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/dao/impl/UauthDaoImpl.java" />
+        <option value="$PROJECT_DIR$/consoleservice/src/main/resources/templates/console.ftl" />
+        <option value="$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/mapper/UauthMapper.java" />
+        <option value="$PROJECT_DIR$/consoleservice/src/main/resources/templates/uauth.ftl" />
         <option value="$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/controller/ActivitiesAction.java" />
         <option value="$PROJECT_DIR$/consoleservice/src/main/resources/templates/activities.ftl" />
       </list>
@@ -315,22 +252,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ClaySystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="userservice" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -443,114 +364,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane">
+        <subPane>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="ClaySystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ClaySystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="consoleservice" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="consoleservice" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="service" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ClaySystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ClaySystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="consoleservice" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="consoleservice" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="service" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="impl" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ClaySystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ClaySystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="consoleservice" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="consoleservice" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controller" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+              <option name="myItemId" value="userservice" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -565,10 +396,12 @@
     <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/consoleservice/src/main/resources/templates/add.ftl" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\大一\ClaySystem\consoleservice\src\main\resources\static\css" />
-      <recent name="E:\workspace\ideaProject\ClaySystem\securityService\src\main" />
-      <recent name="C:\Users\Mikesam\IdeaProjects\ClaySystem\normalservice\webapp\WEB-INF\view" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.mcylm.clay.service.consoleservice.mapper" />
+      <recent name="com.mcylm.clay.service.consoleservice.dao" />
+      <recent name="com.mcylm.clay.service.consoleservice.service" />
+      <recent name="com.mcylm.clay.service.openstackService.service.impl" />
+      <recent name="com.mcylm.clay.service.openstackService.dao.impl" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\大一\ClaySystem\consoleservice\src\main\resources\static\css" />
@@ -583,12 +416,10 @@
       <recent name="com.mcylm.clay.service.consoleservice.config" />
       <recent name="com.mcylm.clay.service.normalservice.dao" />
     </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.mcylm.clay.service.consoleservice.mapper" />
-      <recent name="com.mcylm.clay.service.consoleservice.dao" />
-      <recent name="com.mcylm.clay.service.consoleservice.service" />
-      <recent name="com.mcylm.clay.service.openstackService.service.impl" />
-      <recent name="com.mcylm.clay.service.openstackService.dao.impl" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\大一\ClaySystem\consoleservice\src\main\resources\static\css" />
+      <recent name="E:\workspace\ideaProject\ClaySystem\securityService\src\main" />
+      <recent name="C:\Users\Mikesam\IdeaProjects\ClaySystem\normalservice\webapp\WEB-INF\view" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -603,7 +434,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Application">
+  <component name="RunManager" selected="Spring Boot.Gateway">
     <configuration default="false" name="Gateway" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -1127,7 +958,14 @@
       <envs />
       <method />
     </configuration>
-    <list size="12">
+    <configuration default="false" name="OpenStackService" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.mcylm.clay.service.openstackService.OpenStackService" />
+      <module name="openstackService" />
+      <envs />
+      <method />
+    </configuration>
+    <list size="13">
       <item index="0" class="java.lang.String" itemvalue="Spring Boot.UserService" />
       <item index="1" class="java.lang.String" itemvalue="Spring Boot.Controlcenter" />
       <item index="2" class="java.lang.String" itemvalue="Spring Boot.Application" />
@@ -1140,6 +978,7 @@
       <item index="9" class="java.lang.String" itemvalue="Application.Application" />
       <item index="10" class="java.lang.String" itemvalue="Application.Controlcenter" />
       <item index="11" class="java.lang.String" itemvalue="Application.test" />
+      <item index="12" class="java.lang.String" itemvalue="Spring Boot.OpenStackService" />
     </list>
     <recent_temporary>
       <list size="5">
@@ -1180,7 +1019,8 @@
       <workItem from="1502195527193" duration="4229000" />
       <workItem from="1502236878221" duration="3108000" />
       <workItem from="1502409953244" duration="56679000" />
-      <workItem from="1502669235833" duration="8263000" />
+      <workItem from="1502669235833" duration="35763000" />
+      <workItem from="1502755305698" duration="9863000" />
     </task>
     <task id="LOCAL-00001" summary="新增登录验证服务，Oauth2协议">
       <created>1501846921527</created>
@@ -1231,11 +1071,39 @@
       <option name="project" value="LOCAL" />
       <updated>1502160732356</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="那啥，嘿">
+      <created>1502677632389</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1502677632389</updated>
+    </task>
+    <task id="LOCAL-00009" summary="后台活动管理，分页模糊完成">
+      <created>1502697047329</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1502697047329</updated>
+    </task>
+    <task id="LOCAL-00010" summary="全局Uauth表增改差模糊分页完成">
+      <created>1502763008023</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1502763008023</updated>
+    </task>
+    <task id="LOCAL-00011" summary="全局Uauth表增改差模糊分页完成1.1修改了bug">
+      <created>1502764649092</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1502764649092</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="151802000" />
+    <option name="totallyTimeSpent" value="189165000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1252,7 +1120,7 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27762803" sideWeight="0.5028653" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28510028" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.254298" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1260,18 +1128,18 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27762803" sideWeight="0.49713466" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2722372" sideWeight="0.49713466" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32884097" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3301887" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3301887" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32749325" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32614556" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32614556" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.287062" sideWeight="0.49710983" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32884097" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32884097" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.247851" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32884097" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32884097" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21633238" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32884097" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295129" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -1285,6 +1153,43 @@
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934928" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27762803" sideWeight="0.5028653" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28510028" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="11" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295129" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2722372" sideWeight="0.49713466" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32884097" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3301887" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32614556" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" x="92" y="92" width="1244" height="676" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32614556" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.287062" sideWeight="0.49710983" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32884097" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32884097" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21633238" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32884097" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295129" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934928" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="processedProjectFiles" value="true" />
@@ -1324,11 +1229,15 @@
     <MESSAGE value="新增常规页面显示二次提交更新" />
     <MESSAGE value="更新常规服务部分" />
     <MESSAGE value="register application.yml 中的配置freemarker缓存为false" />
-    <option name="LAST_COMMIT_MESSAGE" value="register application.yml 中的配置freemarker缓存为false" />
+    <MESSAGE value="那啥，嘿" />
+    <MESSAGE value="后台活动管理，分页模糊完成" />
+    <MESSAGE value="全局Uauth表增改差模糊分页完成" />
+    <MESSAGE value="全局Uauth表增改差模糊分页完成1.1修改了bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="全局Uauth表增改差模糊分页完成1.1修改了bug" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="21" />
+      <option name="time" value="22" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1337,148 +1246,10 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/dao/UauthDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/model/Page.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/service/UauthService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/mapper/UcenterMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="27" column="0" lean-forward="false" selection-start-line="26" selection-start-column="2" selection-end-line="27" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.m2/repository/org/springframework/spring-beans/4.3.7.RELEASE/spring-beans-4.3.7.RELEASE.jar!/org/springframework/beans/BeanUtils.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-7938">
-          <caret line="7" column="7" lean-forward="true" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/consoleservice/src/main/resources/static/My97DatePicker/开发包/lang/en.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/consoleservice/src/main/resources/static/My97DatePicker/WdatePicker.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/consoleservice/src/main/resources/templates/add.ftl" />
-    <entry file="file://$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/model/ActivitiesStr.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="108" column="18" lean-forward="false" selection-start-line="108" selection-start-column="18" selection-end-line="108" selection-end-column="18" />
-          <folding>
-            <element signature="e#1326#1327#0" expanded="false" />
-            <element signature="e#1358#1359#0" expanded="false" />
-            <element signature="e#1408#1409#0" expanded="false" />
-            <element signature="e#1450#1451#0" expanded="false" />
-            <element signature="e#1485#1486#0" expanded="false" />
-            <element signature="e#1516#1517#0" expanded="false" />
-            <element signature="e#1564#1565#0" expanded="false" />
-            <element signature="e#1604#1605#0" expanded="false" />
-            <element signature="e#1639#1640#0" expanded="false" />
-            <element signature="e#1670#1671#0" expanded="false" />
-            <element signature="e#1718#1719#0" expanded="false" />
-            <element signature="e#1758#1759#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.m2/repository/org/apache/tomcat/embed/tomcat-embed-core/8.5.11/tomcat-embed-core-8.5.11.jar!/javax/servlet/http/HttpServlet.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="244" column="0" lean-forward="false" selection-start-line="244" selection-start-column="0" selection-end-line="244" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/MD5Util.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-703">
-          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.m2/repository/org/springframework/spring-web/4.3.7.RELEASE/spring-web-4.3.7.RELEASE.jar!/org/springframework/web/method/support/HandlerMethodReturnValueHandlerComposite.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="54" column="0" lean-forward="false" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.m2/repository/com/netflix/eureka/eureka-client/1.4.11/eureka-client-1.4.11.jar!/com/netflix/discovery/TimedSupervisorTask.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="613">
-          <caret line="51" column="0" lean-forward="true" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/securityService/src/main/java/com/mcylm/clay/securityservice/util/RedisUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="7" column="21" lean-forward="false" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/securityService/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="90" column="23" lean-forward="true" selection-start-line="90" selection-start-column="23" selection-end-line="90" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/model/Activities.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/consoleservice/src/main/resources/static/js/bootstrap-select.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="11" column="26" lean-forward="true" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/consoleservice/src/main/resources/static/css/bootstrap-select.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="312">
           <caret line="13" column="19" lean-forward="true" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/controller/UauthAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2016">
-          <caret line="96" column="24" lean-forward="false" selection-start-line="96" selection-start-column="24" selection-end-line="96" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1497,14 +1268,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/service/UcenterService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="26" column="20" lean-forward="false" selection-start-line="26" selection-start-column="20" selection-end-line="26" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/consoleservice/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1974">
@@ -1517,7 +1280,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1525,59 +1287,149 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
           <caret line="12" column="37" lean-forward="true" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consoleservice/src/main/resources/templates/test.ftl" />
+    <entry file="file://$PROJECT_DIR$/consoleservice/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="8" column="23" lean-forward="true" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.m2/repository/org/freemarker/freemarker/2.3.25-incubating/freemarker-2.3.25-incubating.jar!/freemarker/core/InvalidReferenceException.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-9">
+          <caret line="57" column="0" lean-forward="false" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.m2/repository/org/springframework/spring-aop/4.3.7.RELEASE/spring-aop-4.3.7.RELEASE.jar!/org/springframework/aop/framework/ReflectiveMethodInvocation.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-9">
+          <caret line="70" column="0" lean-forward="false" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.m2/repository/org/springframework/boot/spring-boot-actuator/1.4.5.RELEASE/spring-boot-actuator-1.4.5.RELEASE.jar!/org/springframework/boot/actuate/trace/WebRequestTraceFilter.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-9">
+          <caret line="61" column="0" lean-forward="false" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.m2/repository/org/springframework/boot/spring-boot-actuator/1.4.5.RELEASE/spring-boot-actuator-1.4.5.RELEASE.jar!/org/springframework/boot/actuate/autoconfigure/MetricsFilter.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="69" column="0" lean-forward="true" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/dao/AccountDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="13" column="17" lean-forward="false" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/model/Activities.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/mapper/ActivitiesMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="76" column="74" lean-forward="true" selection-start-line="76" selection-start-column="74" selection-end-line="76" selection-end-column="74" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/mapper/AccountMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="245">
+          <caret line="19" column="48" lean-forward="false" selection-start-line="19" selection-start-column="48" selection-end-line="19" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/dao/impl/AccountDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+          <folding>
+            <element signature="e#851#852#0" expanded="false" />
+            <element signature="e#900#901#0" expanded="false" />
+            <element signature="e#964#965#0" expanded="false" />
+            <element signature="e#1016#1017#0" expanded="false" />
+            <element signature="e#1072#1073#0" expanded="false" />
+            <element signature="e#1116#1117#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gateways/src/main/java/com/mcylm/gateway/Gateway.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="14" column="25" lean-forward="true" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
-          <folding />
+        <state relative-caret-position="216">
+          <caret line="12" column="19" lean-forward="true" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
+          <folding>
+            <element signature="e#448#449#0" expanded="false" />
+            <element signature="e#505#506#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/Application.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="18" column="1" lean-forward="false" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
-          <folding>
-            <element signature="e#573#574#0" expanded="true" />
-            <element signature="e#634#635#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="286">
+          <caret line="15" column="25" lean-forward="false" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/controlcenter/src/main/java/com/mcylm/clay/controlcenter/Controlcenter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+        <state relative-caret-position="288">
+          <caret line="14" column="24" lean-forward="true" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
           <folding>
-            <element signature="imports" expanded="false" />
+            <element signature="e#395#396#0" expanded="false" />
+            <element signature="e#458#459#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/consoleservice/src/main/resources/templates/test.ftl">
+    <entry file="file://$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/model/UauthStr.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="632">
+          <caret line="79" column="0" lean-forward="false" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/consoleservice/src/main/resources/application.yml">
+    <entry file="file://$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/model/Ucenter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="8" column="23" lean-forward="true" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
+        <state relative-caret-position="32">
+          <caret line="16" column="28" lean-forward="false" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/service/ActivitiesService.java">
+    <entry file="file://$PROJECT_DIR$/consoleservice/src/main/resources/templates/account.ftl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+        <state relative-caret-position="168">
+          <caret line="7" column="79" lean-forward="false" selection-start-line="7" selection-start-column="70" selection-end-line="7" selection-end-column="79" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/model/Uauth.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="52" column="0" lean-forward="true" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1590,181 +1442,215 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/config/StaticConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/dao/ActivitiesDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="19" column="1" lean-forward="false" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/dao/impl/ActivitiesDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="37" column="34" lean-forward="false" selection-start-line="37" selection-start-column="34" selection-end-line="37" selection-end-column="34" />
-          <folding>
-            <element signature="e#952#953#0" expanded="true" />
-            <element signature="e#1014#1015#0" expanded="true" />
-            <element signature="e#1090#1091#0" expanded="true" />
-            <element signature="e#1151#1152#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/mapper/UauthMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/mapper/ActivitiesMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-140">
-          <caret line="20" column="38" lean-forward="false" selection-start-line="20" selection-start-column="38" selection-end-line="20" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/service/impl/UcenterServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1584">
-          <caret line="89" column="0" lean-forward="false" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/service/impl/UauthServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="53" column="13" lean-forward="false" selection-start-line="53" selection-start-column="13" selection-end-line="53" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1544#1545#0" expanded="true" />
-            <element signature="e#1596#1597#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/service/impl/ActivitiesServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="36" column="34" lean-forward="false" selection-start-line="36" selection-start-column="34" selection-end-line="36" selection-end-column="34" />
-          <folding>
-            <element signature="e#948#949#0" expanded="true" />
-            <element signature="e#1007#1008#0" expanded="true" />
-            <element signature="e#1083#1084#0" expanded="true" />
-            <element signature="e#1141#1142#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/consoleservice/src/main/resources/templates/index.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="402">
-          <caret line="42" column="68" lean-forward="true" selection-start-line="42" selection-start-column="68" selection-end-line="42" selection-end-column="68" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/consoleservice/src/main/resources/templates/uauth.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="6" column="25" lean-forward="true" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
-          <folding>
-            <marker date="1502455558683" expanded="true" signature="8095:8113" ph="..." />
-            <marker date="1502455558683" expanded="true" signature="8642:8660" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.m2/repository/org/freemarker/freemarker/2.3.25-incubating/freemarker-2.3.25-incubating.jar!/freemarker/core/InvalidReferenceException.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-9">
-          <caret line="57" column="0" lean-forward="false" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/controller/UcenterAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-462">
-          <caret line="111" column="39" lean-forward="true" selection-start-line="111" selection-start-column="39" selection-end-line="111" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/controller/ActivitiesAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="42" column="5" lean-forward="true" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.m2/repository/org/springframework/spring-aop/4.3.7.RELEASE/spring-aop-4.3.7.RELEASE.jar!/org/springframework/aop/framework/ReflectiveMethodInvocation.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-9">
-          <caret line="70" column="0" lean-forward="false" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.m2/repository/org/springframework/boot/spring-boot-actuator/1.4.5.RELEASE/spring-boot-actuator-1.4.5.RELEASE.jar!/org/springframework/boot/actuate/trace/WebRequestTraceFilter.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-9">
-          <caret line="61" column="0" lean-forward="false" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.m2/repository/org/springframework/boot/spring-boot-actuator/1.4.5.RELEASE/spring-boot-actuator-1.4.5.RELEASE.jar!/org/springframework/boot/actuate/autoconfigure/MetricsFilter.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="69" column="0" lean-forward="true" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
+        <state relative-caret-position="329">
+          <caret line="26" column="44" lean-forward="false" selection-start-line="26" selection-start-column="44" selection-end-line="26" selection-end-column="44" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/controller/AccountAction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="23" column="42" lean-forward="true" selection-start-line="23" selection-start-column="42" selection-end-line="23" selection-end-column="42" />
+        <state relative-caret-position="665">
+          <caret line="47" column="24" lean-forward="false" selection-start-line="47" selection-start-column="12" selection-end-line="47" selection-end-column="24" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/dao/UcenterDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="33" column="8" lean-forward="false" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/service/impl/AccountServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="28" column="13" lean-forward="true" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/service/UcenterService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="12" column="192" lean-forward="true" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="192" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/service/impl/ActivitiesServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="624">
+          <caret line="75" column="26" lean-forward="false" selection-start-line="75" selection-start-column="26" selection-end-line="75" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/service/UauthService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/service/AccountService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/service/impl/UcenterServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="536">
+          <caret line="41" column="20" lean-forward="true" selection-start-line="26" selection-start-column="8" selection-end-line="41" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/dao/impl/UcenterDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="28" column="35" lean-forward="true" selection-start-line="28" selection-start-column="35" selection-end-line="28" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/dao/impl/ActivitiesDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="377">
+          <caret line="84" column="0" lean-forward="true" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
+          <folding>
+            <marker date="1502695489833" expanded="false" signature="836:847" ph=" { " />
+            <marker date="1502695489833" expanded="false" signature="888:894" ph=" }" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/dao/impl/UauthDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="39" column="45" lean-forward="true" selection-start-line="39" selection-start-column="45" selection-end-line="39" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/controller/UauthAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="48" column="31" lean-forward="true" selection-start-line="48" selection-start-column="31" selection-end-line="48" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/consoleservice/src/main/resources/templates/console.ftl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1736">
-          <caret line="306" column="10" lean-forward="true" selection-start-line="306" selection-start-column="10" selection-end-line="306" selection-end-column="10" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="514">
+          <caret line="140" column="9" lean-forward="true" selection-start-line="140" selection-start-column="9" selection-end-line="140" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/mapper/UcenterMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="18" column="45" lean-forward="true" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/mapper/UauthMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="166">
+          <caret line="47" column="32" lean-forward="false" selection-start-line="47" selection-start-column="32" selection-end-line="47" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/controller/UcenterAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="46" column="9" lean-forward="true" selection-start-line="46" selection-start-column="9" selection-end-line="46" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/service/impl/UauthServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="60" column="5" lean-forward="true" selection-start-line="60" selection-start-column="5" selection-end-line="60" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/dao/UauthDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="13" column="44" lean-forward="false" selection-start-line="13" selection-start-column="44" selection-end-line="13" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/service/ActivitiesService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="151">
+          <caret line="15" column="47" lean-forward="false" selection-start-line="15" selection-start-column="37" selection-end-line="15" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consoleservice/src/main/java/com/mcylm/clay/service/consoleservice/controller/ActivitiesAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="53" column="9" lean-forward="false" selection-start-line="53" selection-start-column="9" selection-end-line="53" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consoleservice/src/main/resources/templates/uauth.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-199">
+          <caret line="140" column="38" lean-forward="false" selection-start-line="140" selection-start-column="20" selection-end-line="140" selection-end-column="38" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/consoleservice/src/main/resources/templates/activities.ftl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1368">
-          <caret line="57" column="5" lean-forward="true" selection-start-line="57" selection-start-column="5" selection-end-line="57" selection-end-column="5" />
-          <folding>
-            <element signature="n#style#0;n#table#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="-328">
+          <caret line="365" column="42" lean-forward="false" selection-start-line="365" selection-start-column="42" selection-end-line="365" selection-end-column="42" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/consoleservice/src/main/resources/templates/account.ftl">
+    <entry file="file://$PROJECT_DIR$/paymentservice/src/main/java/com/mcylm/clay/service/paymentservice/util/RedisUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="19" column="39" lean-forward="true" selection-start-line="19" selection-start-column="39" selection-end-line="19" selection-end-column="39" />
+        <state relative-caret-position="-1672">
+          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consoleservice/src/main/resources/templates/index.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="47" column="31" lean-forward="true" selection-start-line="47" selection-start-column="31" selection-end-line="47" selection-end-column="31" />
           <folding />
         </state>
       </provider>

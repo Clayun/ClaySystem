@@ -1,5 +1,6 @@
 package com.mcylm.clay.service.consoleservice.mapper;
 
+import com.mcylm.clay.service.consoleservice.model.Page;
 import com.mcylm.clay.service.consoleservice.model.Uauth;
 import org.apache.ibatis.annotations.*;
 
@@ -11,9 +12,6 @@ import java.util.Map;
  */
 @Mapper
 public interface UauthMapper {
-
-    @Select("select * from pre_common_uauth")
-    List<Uauth> getlist(Map<String, Object> map);
 
     @Update("update pre_common_uauth set username=#{username} where id = #{id}")
     void doUpdateUsername(@Param("username") String username, @Param("id") Integer id);
@@ -35,4 +33,27 @@ public interface UauthMapper {
             "#{password},#{createTime},#{content})")
     void uauthadd(Uauth uauth);
 
+    @Select("select count(*) from pre_common_uauth")
+    int getCount();
+
+    @Select("select count(*) from pre_common_uauth where email like #{content}")
+    int getEmailCount(String content);
+
+    @Select("select count(*) from pre_common_uauth where userName like #{content}")
+    int getUserNameCount(String content);
+
+    @Select("select count(*) from pre_common_uauth where phone like #{content}")
+    int getPhoneCount(String content);
+
+    @Select("select * from pre_common_uauth order by id limit #{page.cPage},#{page.pageSize}")
+    List<Uauth> getList(@Param("page")Page page, Map<String, Object> map);
+
+    @Select("select * from pre_common_uauth where email like #{content} order by id")
+    List<Uauth> getEmailList(@Param("content")String content);
+
+    @Select("select * from pre_common_uauth where userName like #{content} order by id")
+    List<Uauth> getUserNameList(@Param("content")String content);
+
+    @Select("select * from pre_common_uauth where phone like #{content} order by id")
+    List<Uauth> getPhoneList(@Param("content")String content);
 }

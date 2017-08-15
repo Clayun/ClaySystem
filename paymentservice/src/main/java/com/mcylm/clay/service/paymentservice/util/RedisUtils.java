@@ -1,11 +1,18 @@
-package com.mcylm.clay.securityservice.util;
+package com.mcylm.clay.service.paymentservice.util;
 
 import com.google.gson.Gson;
 
-import com.mcylm.clay.securityservice.module.ParameterModel;
+import com.mcylm.clay.service.paymentservice.model.ParameterModel;
+import jdk.nashorn.internal.scripts.JD;
+import org.springframework.data.redis.connection.RedisClusterConnection;
+import org.springframework.data.redis.connection.RedisConnection;
+import org.springframework.data.redis.connection.RedisConnectionFactory;
+import org.springframework.data.redis.connection.jedis.JedisConnection;
 import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
+import org.springframework.data.redis.core.SetOperations;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
+import org.springframework.jca.cci.connection.ConnectionFactoryUtils;
 import redis.clients.jedis.JedisPoolConfig;
 
 import java.util.concurrent.TimeUnit;
@@ -51,7 +58,7 @@ public class RedisUtils {
     }
 
     /**
-     * 接受json 串key value 并设置过期时间
+     * 接受key value 并设置过期时间
      *
      * @param token
      * @param data
