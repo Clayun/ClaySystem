@@ -1,5 +1,6 @@
 package com.mcylm.clay.service.consoleservice.dao;
 
+import com.mcylm.clay.service.consoleservice.model.Page;
 import com.mcylm.clay.service.consoleservice.model.Uauth;
 
 import java.util.List;
@@ -10,7 +11,13 @@ import java.util.Map;
  */
 public interface UauthDao {
 
-    List<Uauth> getlist(Map<String, Object> map);
+    List<Uauth> getList(Page page, Map<String, Object> map);
+
+    List<Uauth> getEmailList(String content);
+
+    List<Uauth> getUserNameList(String content);
+
+    List<Uauth> getPhoneList(String content);
 
     void doUpdateUsername(String username, Integer id);
 
@@ -23,4 +30,13 @@ public interface UauthDao {
     void uauthadd(Uauth uauth);
 
     void doUpdateContent(String content, Integer id);
+
+    int getCount();
+
+    int getEmailCount(String content);
+
+    int getUsernameCount(String content);
+
+    int getPhoneCount(String content);
+
 }

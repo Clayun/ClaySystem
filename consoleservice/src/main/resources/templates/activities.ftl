@@ -9,6 +9,9 @@
     <script src="/console/js/bootstrap.min.js"></script>
     <script src="/console/js/bootstrapValidator.min.js"></script>
     <link href="/console/css/bootstrapValidator.min.css" rel="stylesheet" />
+    <script src="/console/js/sweetalert.min.js"></script>
+    <script src="/console/js/sweetalert-dev.js"></script>
+    <link href="/console/css/sweetalert.css" rel="stylesheet" />
     <title>列表</title>
 </head>
 <script>
@@ -70,22 +73,22 @@
             type:'post',
             success:function (msg) {
                 if(msg) {
-                    alert("添加成功");
-                    location.href="activitieslist";
+                    swal("添加成功", "您提交的数据已添加成功!", "success");
+                    window.setTimeout("window.location.href='/console/activities/activitieslist'",2000);
                 }else{
-                    alert("添加失败");
+                    swal("错误!","您提交的数据添加失败!","error");
                 }
             }
         })
-    }
+}
 </script>
 <body>
 <div class="container" style="margin-top: 10px;">
     <div class="row" style="margin-top: 20px;">
         <div>
             <select id="dropdownbox"  >
+            <#--<option  value="活动状态">活动状态</option>-->
                 <option  value="活动标题">活动标题</option>
-                <#--<option  value="活动状态">活动状态</option>-->
                 <option  value="负责人">负责人</option>
             </select>
             <input type="text" id="content">
@@ -132,7 +135,6 @@
                         <span class="glyphicon glyphicon-pencil"></span>
                         修改
                     </button>
-
                 </td>
             </tr>
         </#list>
@@ -150,8 +152,9 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                        </button>
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                &times;
+                            </button>
                         <h4 class="modal-title" id="myModalLabel" style="margin-left:240px; color: red;">
                             添加数据
                         </h4>
@@ -254,6 +257,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                            &times;
                         </button>
                         <h4 class="modal-title" id="myModalLabel" style="margin-left:240px; color: red;">
                             修改数据
@@ -343,7 +347,7 @@
                                         </label>
                                     </div>
                                 </div><br />
-                                <input type="submit" class="btn btn-primary" value="确认修改"></input>
+                                <input type="submit" class="btn btn-primary" onclick="osp()" value="确认修改"></input>
                                 <input type="button" class="btn btn-danger" value="关闭" data-dismiss="modal"></input>
                         </form>
                     </div>
