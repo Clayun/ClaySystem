@@ -39,7 +39,7 @@
 <script>
     BUI.use('common/main',function(){
         var config = [{id:'1',menu:[{text:'系统管理',items:[
-            {id:'2',text:'机构管理',href:'/console/Node/index.html'},
+            {id:'2',text:'老沈是老大',href:'/console/Node/index.html'},
             {id:'3',text:'全局用户管理',href:'/console/uauth/uauthlist'},
             {id:'4',text:'后台用户管理',href:'/console/list/ucenterlist'},
             {id:'5',text:'活动管理',href:'/console/activities/activitieslist'},
