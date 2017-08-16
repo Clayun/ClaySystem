@@ -17,6 +17,13 @@ public class UauthTokenServiceImpl implements UauthTokenService {
     @Autowired
     private UauthTokenDao uauthTokenDao;
 
+    /**
+     * 生成token 并将数据存入信息表
+     * @param uid
+     * @param hostIp
+     * @param sessionId
+     * @return
+     */
     @Override
     public UauthToken insertUauthTokenMessage(String uid, String hostIp, String sessionId) {
         //生成 token

@@ -1,0 +1,259 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+.register-banner{
+	min-height:750px;
+	height: auto;
+	background:url(http://osuyq1koj.bkt.clouddn.com/17-7-14/18987011.jpg) repeat-x center;
+}
+.register-nav{
+	width:100%;
+	position:relative;
+	height:52px;
+	background:rgba(0,0,0,0);
+	transition: background-color 1s;
+	-moz-transition: background-color 1s;	/* Firefox 4 */
+	-webkit-transition: background-color 1s;	/* Safari 和 Chrome */
+	-o-transition: background-color 1s;
+}
+.nav-button{
+	height:25px;
+	width:75px;
+	background-color:rgba(0,0,0,0);
+	border:1px solid #09f;
+	border-radius:2px 2px 2px 2px;
+	color:#FFF;
+	font-size:10px;
+	font-family:"Microsoft YaHei UI";
+	cursor:pointer;
+	margin-left:10px;
+}
+.logo{
+	height:50px;
+	margin-left:50px;
+	vertical-align:middle;
+	padding-top:10px;
+}
+.logo .p{
+	float:right;
+	margin-right:20px;
+	padding-top:10px;
+	color:#fff;
+	font-family:"Microsoft YaHei UI";
+}
+.nav-line{
+	height:50px;
+	float:left;
+	width:100%;
+	border-top:1px solid rgba(96,96,96,0.5);
+	border-bottom:1px solid rgba(96,96,96,0.5);
+}
+.register-box{
+	height: 600px;
+	width: 950px;
+	margin: 0 auto;
+	margin-top: 50px;
+}
+.register-box-reg{
+	height: 600px;
+	width: 950px;
+	margin: 0 auto;
+	background: #FFF;
+	text-align: center;
+}
+.register-box-reg input{
+	height: 35px;
+	width: 300px;
+	border: solid 1px #BBBBBB;
+	padding-left: 10px;
+	display: inline-block;
+	margin-top: 20px;
+	margin-left:25px;
+}
+.register-box-reg button{
+	height: 37px;
+	width: 312px;
+	border: solid 1px #888888;
+	padding-left: 10px;
+	display: inline-block;
+	margin-top: 20px;
+	margin-left:25px;
+	color: #FFF;
+	background: #00CCCC;
+	border: none;
+}
+.box1 button{
+	height: 34px;
+	width: 80px;
+	border: solid 1px #888888;
+	display: inline-block;
+	margin-top: 20px;
+	margin-left:10px;
+	color: #FFF;
+	background: #00CCCC;
+	border: none;
+}
+
+.box1button{
+	height: 34px;
+	width: 80px;
+	border: solid 1px #888888;
+	display: inline-block;
+	margin-top: 20px;
+	margin-left:10px;
+	color: #FFF;
+	background: #00CCCC;
+	border: none;
+}
+footer{
+	height:500px;
+	background:#FFF;
+}
+.footer-box-hole{
+	width:1300px;
+	height:500px;
+	margin:0 auto;
+}
+.footer-box-up{
+	width:1300px;
+	height:270px;
+	float:left;
+}
+.footer-box-middle{
+	width:1300px;
+	height:30px;
+	float:left;
+	border-bottom: solid 1px #555;
+}
+.footer-box-down{
+	width:1300px;
+	height:200px;
+	float:left;
+}
+.footer-box-up-left{
+	width:35%;
+	height:270px;
+	float:left;
+}
+.footer-box-up-right{
+	width:64%;
+	height:270px;
+	float:left;
+}
+.footer-box-up-left img{
+	display:block;
+	float:left;
+	margin-top:70px;
+	margin-left:50px;
+}
+.footer-box-up-left-line{
+	height:100px;
+	width:200px;
+	float:left;
+	margin-left:80px;
+	margin-top:70px;
+	color:#fff;
+	font-family:"Microsoft YaHei UI";
+	line-height:30px;
+}
+.footer-box-up-right ul{
+	list-style:none;
+	float:left;
+	display:block;
+	height:200px;
+	width:100px;
+	margin-left:50px;
+	margin-top:65px;
+	color:#BBB;
+	font-family:"Microsoft YaHei UI";
+	line-height:30px;
+}
+.footer-box-up-right ul li:first-child{
+	font-weight:bold;
+	line-height:40px;
+	color:#fff;
+}
+.footer-box-down span{
+	display:block;
+	float:left;
+	margin-top:100px;
+	color:#888;
+	font-family:"Microsoft YaHei UI";
+	font-size:14px;
+	margin-left:50px;
+	
+}
+
+.inp {
+	border: 1px solid #cccccc;
+	border-radius: 2px;
+	padding: 0 10px;
+	width: 278px;
+	height: 40px;
+	font-size: 18px;
+}
+.btn {
+	border: 1px solid #cccccc;
+	border-radius: 2px;
+	width: 100px;
+	height: 40px;
+	font-size: 16px;
+	color: #666;
+	cursor: pointer;
+	background: white linear-gradient(180deg, #ffffff 0%, #f3f3f3 100%);
+}
+.btn:hover {
+	background: white linear-gradient(0deg, #ffffff 0%, #f3f3f3 100%)
+}
+#captcha1,
+#captcha2 {
+	width: 300px;
+	display: inline-block;
+}
+.show {
+	display: block;
+}
+.hide {
+	display: none;
+}
+#notice1,
+#notice2 {
+	color: red;
+}
+label {
+	vertical-align: top;
+	display: inline-block;
+	width: 80px;
+	text-align: right;
+}
+#wait1, #wait2 {
+	text-align: left;
+	color: #666;
+	margin: 0;
+}
+.boxx{
+	 position: fixed;
+	 width: 100%;
+	 height: 100%;
+	 background: rgba(0, 0, 0, 0.5);
+	 display: none;
+	 z-index:1000;
+ }
+
+.box1{
+	width: 540px;
+	height: 300px;
+	position: fixed;left: 50%; top: 25%;
+	background: #fff;
+	margin-left: -265px;
+	z-index: 1100;
+}
+.box2{
+	width: 540px;
+	height: 380px;
+	position: fixed;left: 50%; top: 25%;
+	background: #fff;
+	margin-left: -265px;
+	z-index: 1100;
+}

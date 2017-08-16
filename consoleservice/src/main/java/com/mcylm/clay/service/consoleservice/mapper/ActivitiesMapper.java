@@ -54,7 +54,7 @@ public interface ActivitiesMapper {
             "a.managerName,b.type,c.state,d.selected FROM pre_activities_details a ," +
             "pre_activities_details_type b, pre_activities_details_state c, " +
             "pre_activities_details_selected d where a.type = b.id and " +
-            "a.state = c.id and a.selected = d.id order by id limit #{page.cPage},#{page.pageSize}")
+            "a.state = c.id and a.selected = d.id order by id desc limit #{page.cPage},#{page.pageSize}")
     List<Activities> activitieslist(@Param("page")Page page, Map<String, Object> map);
 
     @Select("select a.id,a.title,a.abstractInfo,a.content,a.num,a.startTime,a.overTime," +

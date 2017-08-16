@@ -1,16 +1,27 @@
 package com.mcylm.clay.securityservice.module;
 
+import java.io.Serializable;
+
 /**
  * Created by lenovo on 2017/8/11.
  * 接入的参数及信息模型
  */
-public class ParameterModel {
+public class ParameterModel implements Serializable{
     private String redirectUrl;
     private String username;
     private String password;
     private String status;
     private String token;
     private String loginType;
+    private String fmlName;
+
+    public String getFmlName() {
+        return fmlName;
+    }
+
+    public void setFmlName(String fmlName) {
+        this.fmlName = fmlName;
+    }
 
     public String getLoginType() {
         return loginType;

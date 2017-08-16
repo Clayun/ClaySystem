@@ -78,9 +78,6 @@
                             </td>
                         </tr>
                     </table>
-                    <form id="form1" style="border: 1px solid; width:250px;">
-                    </form>
-
                 <!-- 添加模态框-->
                 <div class="modal fade" id="sheModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
@@ -124,6 +121,8 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
     </body>
     <script>
         //跳转到指定的页数
@@ -268,7 +267,7 @@
                 if(!$('#addform').data('bootstrapValidator').isValid()){ //判断校检是否通过
                     return;
                 }else{
-                    var addform=$("#form1").serialize();
+                    var addform=$("#addform").serialize();
                     $.ajax({
                         url:'ucenteradd',
                         data:addform,
@@ -282,7 +281,7 @@
                                 swal("错误!","您的数据添加失败!","error");
                             }
                         }
-                    })
+                    });
                 }
             }
         }
