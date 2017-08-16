@@ -1,6 +1,8 @@
 package com.mcylm.clay.service.consoleservice.controller;
 
 import com.mcylm.clay.service.consoleservice.model.Uauth;
+import com.mcylm.clay.service.consoleservice.model.UauthStr;
+import com.mcylm.clay.service.consoleservice.utils.PageUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
@@ -9,6 +11,7 @@ import com.mcylm.clay.service.consoleservice.service.UauthService;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
@@ -25,9 +28,25 @@ public class UauthAction {
     private UauthService UauthService;
 
     @RequestMapping("uauthlist")
-    public String uauthlist(Map<String,Object> map){
-        List<Uauth> list = UauthService.getlist(map);
-        map.put("list",list);
+        public String uauthlist(String dropdownbox, String pageNo, String content, HttpServletRequest request, Map<String,Object> map) throws Exception {
+            pageNo=request.getParameter("cPage")==null?"1":request.getParameter("cPage");
+            int pageSize=8;
+            int listCount = UauthService.getCount(dropdownbox,content);
+            if (listCount == 0){
+                pageNo = "0";
+            }
+            if(content!=null){
+                pageNo="0";
+                listCount=0;
+            }
+            List<Uauth> list = UauthService.getList(dropdownbox,content,Integer.parseInt(pageNo),pageSize,map);
+            map.put("list",list);
+            request.setAttribute("dropdownbox",dropdownbox);
+            request.setAttribute("content",content);
+            PageUtil.page(request, Integer.parseInt(pageNo), pageSize, listCount, map, list);
+
+        /*List<Uauth> list = UauthService.getlist(map);
+        map.put("list",list);*/
         return "uauth";
     }
     @RequestMapping(value = "/doUpdateUsername",method= RequestMethod.POST)
@@ -90,7 +109,6 @@ public class UauthAction {
             String str = uuid.toString();
             String uuidStr=str.replace("-", "");
             uauth.setUuid(uuidStr);
-
             //获取当前创建时间
             uauth.setCreateTime(new Date());
             UauthService.uauthadd(uauth);
@@ -100,4 +118,5 @@ public class UauthAction {
             return false;
         }
     }
+
 }
