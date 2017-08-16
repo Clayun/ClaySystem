@@ -14,6 +14,7 @@
         <module name="openstackService" />
         <module name="paymentservice" />
         <module name="securityService" />
+        <module name="staticservice" />
         <module name="userservice" />
       </profile>
     </annotationProcessing>
@@ -33,7 +34,8 @@
       <module name="securityservice" target="1.6" />
       <module name="serverservice" target="1.6" />
       <module name="SMS_duanxin" target="1.5" />
-      <module name="userservice" target="1.6" />
+      <module name="staticservice" target="1.6" />
+      <module name="userservice" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

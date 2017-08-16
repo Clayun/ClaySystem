@@ -1,0 +1,248 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+.login-banner{
+	min-height:600px;
+	height: auto;
+	background:url("http://osuyq1koj.bkt.clouddn.com/17-7-20/23871555.jpg") no-repeat center;
+	background-size: cover;
+}
+.login-nav{
+	width:100%;
+	position:relative;
+	height:52px;
+	background:rgba(0,0,0,0);
+	transition: background-color 1s;
+	-moz-transition: background-color 1s;	/* Firefox 4 */
+	-webkit-transition: background-color 1s;	/* Safari 和 Chrome */
+	-o-transition: background-color 1s;
+	border-bottom: solid 1px #373D41;
+}
+.nav-button{
+	height:25px;
+	width:75px;
+	background-color:rgba(0,0,0,0);
+	border:1px solid #09f;
+	border-radius:2px 2px 2px 2px;
+	color:#FFF;
+	font-size:10px;
+	font-family:"Microsoft YaHei UI";
+	cursor:pointer;
+	margin-left:10px;
+}
+.logo{
+	height:50px;
+	margin-left:50px;
+	vertical-align:middle;
+	padding-top:10px;
+}
+.logo .p .a{
+	float:right;
+	margin-right:20px;
+	padding-top:10px;
+	color:#fff;
+	font-family:"Microsoft YaHei UI";
+}
+.nav-line{
+	height:50px;
+	float:left;
+	width:100%;
+	border-top:1px solid rgba(96,96,96,0.5);
+	border-bottom:1px solid rgba(96,96,96,0.5);
+}
+.login-box{
+	height: 500px;
+	width: 950px;
+	margin: 0 auto;
+	margin-top: 50px;
+}
+.login-box-up-left{
+	height: 500px;
+	width: 475px;
+	float: left;
+}
+.login-box-up-right{
+	height: 500px;
+	width: 475px;
+	float: left;
+}
+.login-box-up-left-linebox{
+	height: auto;
+	width: 400px;
+	margin: 0 auto;
+	margin-top: 150px;
+	color: #FFF;
+}
+.login-box-up-left-linebox h3{
+	line-height: 50px;
+}
+.login-box-up-left-linebox p{
+	line-height: 30px;
+}
+.login-box-up-right-loginbox{
+	height: 370px;
+	width: 360px;
+	background: #FFF;
+	margin: 0 auto;
+	margin-top: 50px;
+	color: #555555;
+}
+.login-box-up-right-loginbox p{
+	margin-left:25px;
+	color: #AAAAAA;
+	font-size: 12px;
+	line-height: 30px;
+}
+
+.login-box-up-right-loginbox span{
+	margin-left:25px;
+	color: #555555;
+	line-height: 50px;
+}
+
+.login-box-up-right-loginbox input{
+	height: 30px;
+	width: 300px;
+	border: solid 1px #888888;
+	padding-left: 10px;
+	display: inline-block;
+	margin-top: 20px;
+	margin-left:25px;
+}
+.login-box-up-right-loginbox button{
+	height: 30px;
+	width: 312px;
+	border: solid 1px #888888;
+	display: inline-block;
+	margin-top: 20px;
+	margin-left:25px;
+	color: #FFF;
+	background: #00CCCC;
+	border: none;
+}
+footer{
+	height:510px;
+	background:#37414B;
+}
+.footer-box-hole{
+	width:1300px;
+	height:500px;
+	margin:0 auto;
+}
+.footer-box-up{
+	width:1300px;
+	height:270px;
+	float:left;
+}
+.footer-box-middle{
+	width:1300px;
+	height:30px;
+	float:left;
+	border-bottom: solid 1px #555;
+}
+.footer-box-down{
+	width:1300px;
+	height:200px;
+	float:left;
+}
+.footer-box-up-left{
+	width:35%;
+	height:270px;
+	float:left;
+}
+.footer-box-up-right{
+	width:64%;
+	height:270px;
+	float:left;
+}
+.footer-box-up-left img{
+	display:block;
+	float:left;
+	margin-top:70px;
+	margin-left:50px;
+}
+.footer-box-up-left-line{
+	height:100px;
+	width:200px;
+	float:left;
+	margin-left:80px;
+	margin-top:70px;
+	color:#fff;
+	font-family:"Microsoft YaHei UI";
+	line-height:30px;
+}
+.footer-box-up-right ul{
+	list-style:none;
+	float:left;
+	display:block;
+	height:200px;
+	width:100px;
+	margin-left:50px;
+	margin-top:65px;
+	color:#BBB;
+	font-family:"Microsoft YaHei UI";
+	line-height:30px;
+}
+.footer-box-up-right ul li:first-child{
+	font-weight:bold;
+	line-height:40px;
+	color:#fff;
+}
+.footer-box-down span{
+	display:block;
+	float:left;
+	margin-top:100px;
+	color:#888;
+	font-family:"Microsoft YaHei UI";
+	font-size:14px;
+	margin-left:50px;
+	
+}
+.inp {
+	border: 1px solid #cccccc;
+	border-radius: 2px;
+	padding: 0 10px;
+	width: 278px;
+	height: 40px;
+	font-size: 18px;
+}
+.btn {
+	border: 1px solid #cccccc;
+	border-radius: 2px;
+	width: 100px;
+	height: 40px;
+	font-size: 16px;
+	color: #666;
+	cursor: pointer;
+	background: white linear-gradient(180deg, #ffffff 0%, #f3f3f3 100%);
+}
+.btn:hover {
+	background: white linear-gradient(0deg, #ffffff 0%, #f3f3f3 100%)
+}
+#captcha1,
+#captcha2 {
+	width: 312px;
+	display: inline-block;
+}
+.show {
+	display: block;
+}
+.hide {
+	display: none;
+}
+#notice1,
+#notice2 {
+	color: red;
+}
+label {
+	vertical-align: top;
+	display: inline-block;
+	width: 80px;
+	text-align: right;
+}
+#wait1, #wait2 {
+	text-align: left;
+	color: #666;
+	margin: 0;
+}

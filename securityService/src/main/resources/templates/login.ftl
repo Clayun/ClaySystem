@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
     <title>登录 - 企业级云服务器、弹性云MineCraft服务器租用服务提供商</title>
-    <link rel="stylesheet" type="text/css" href="/security/css/login.css">
+    <link rel="stylesheet" type="text/css" href="/staticService/css/login.css">
 </head>
 	<body>
     <div class="login-banner">
