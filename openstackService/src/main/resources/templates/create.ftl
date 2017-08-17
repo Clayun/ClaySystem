@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>聚乐云 - 弹性云MineCraft服务器 - 产品详情</title>
-		<link rel="stylesheet" type="text/css" href="/ecs/css/style.css">
+		<link rel="stylesheet" type="text/css" href="/ecs/css/style1.css">
 		<script type="text/javascript" src="/ecs/js/jquery-1.7.1.min.js" ></script>
 	</head>
 	
