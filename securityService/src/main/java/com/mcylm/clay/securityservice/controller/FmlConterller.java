@@ -19,6 +19,7 @@ import java.util.Map;
 @Controller
 @RequestMapping("/author")
 public class FmlConterller {
+
     /**
      * 跳转到登录页面
      *
@@ -27,20 +28,27 @@ public class FmlConterller {
     @RequestMapping(value = "/login")
     public String login(Map<String, Object> map, ParameterModel parameterModel) {
         boolean flag = false;
+        //获取请求的路径
         String redirectUrl = parameterModel.getRedirectUrl();
+        //过去用户登录token
         String token = parameterModel.getToken();
 
-        if (redirectUrl != null && !"".equals(redirectUrl))
+        //判断跳转的 url 是否为空
+        if (redirectUrl != null && !"".equals(redirectUrl)) {
             map.put("redirectUrl", redirectUrl);
-        else
+        } else{
             map.put("redirectUrl", "");
+        }
 
         //解密并判断
-        if (token != null && !"".equals(token))
+        if (token != null && !"".equals(token)) {
             flag = RedisUtils.checkTokenExit(token);
+        }
 
-        if (flag)
+        //如果没有登录就跳转到登录页面
+        if (flag) {
             return "redirect:http://" + redirectUrl + "?token=" + token + "&loginType=" + Base64Utils.encodeBase64String("autoLogin");
+        }
         return "login";
     }
 
@@ -72,6 +80,7 @@ public class FmlConterller {
 
     /**
      * 跳转到修改密码页面
+     *
      * @return
      */
     @RequestMapping("/resetpwd")

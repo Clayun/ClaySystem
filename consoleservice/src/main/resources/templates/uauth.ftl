@@ -3,58 +3,174 @@
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
     <head>
         <meta charset="utf-8">
-        <script src="/console/js/jquery-1.7.1.min.js"></script>
+        <script src="/console/js/jquery-3.2.1.min.js"></script>
+        <script src="/console/js/bootstrap.min.js"></script>
+        <script src="/console/js/sweetalert.min.js"></script>
+        <script src="/console/js/sweetalert-dev.js"></script>
+        <link href="/console/css/sweetalert.css" rel="stylesheet" />
+        <script src="/console/js/bootstrapValidator.min.js"></script>
+        <link href="/console/css/bootstrapValidator.min.css" rel="stylesheet" />
+        <link rel="stylesheet" type="text/css" href="/console/css/bootstrap.min.css"/>
         <title>列表</title>
     </head>
-
     <body>
-    <center>
-        <table style="text-align: center;" border="1" cellpadding="2" cellspacing="2">
+    <div class="container" style="margin-top: 10px;">
+        <div class="row" style="margin-top: 20px;">
+            <div>
+                <select id="dropdownbox"  >
+                    <option  value="用户名">用户名</option>
+                    <option  value="手机号">手机号</option>
+                    <option  value="电子邮箱">电子邮箱</option>
+                </select>
+                <input type="text" id="content">
+                <button class="btn btn-success" type="button" onclick="selectStart()">
+                    <span class="glyphicon glyphicon-search "></span>
+                    开始查询
+                </button>
+                    <button class="btn btn-info" data-toggle="modal" data-target="#sheModal" type="button" style="float:right;margin-right:24px">
+                        <span class="glyphicon glyphicon-plus"></span>添加</button>
+            </div>
+            <br/>
+        <table class="table table-striped table-bordered text-center" style="vertical-align:middle;">
             <tr>
-                <td>ID</td>
-                <td>用户名</td>
-                <td>联系电话</td>
-                <td>用户邮箱</td>
-                <td>用户密码</td>
-                <td>创建时间</td>
-                <td>备注</td>
-                <td>
-                    <input type="button" value="添加" onclick="toadd()">
-                </td>
+                <td><strong>ID</strong></td>
+                <td><strong>用户名</strong></td>
+                <td><strong>联系电话</strong></td>
+                <td><strong>用户邮箱</strong></td>
+                <td><strong>用户密码</strong></td>
+                <td><strong>创建时间</strong></td>
+                <td><strong>备注</strong></td>
             </tr>
             <#list list as l>
                 <tr>
                     <td>${l.id}<input type="hidden" name="id"  value=""></td>
                     <td id="usernamelabel-${l.id}" onclick="onClickByUsername(${l.id})">
                         <span id="username-${l.id}">${l.username}</span>
-                        <input id="change-username-${l.id}" type="text" name="username" value="${l.username}" style="display: none" onblur="onBlurByUsername(${l.id})">
+                        <input id="change-username-${l.id}" type="text" name="username" value="${l.username}"                                        style="display: none; width: 80px;" onblur="onBlurByUsername(${l.id})">
                     </td>
                     <td id="phonelabel-${l.id}" onclick="onClickByPhone(${l.id})">
                         <span id="phone-${l.id}">${l.phone}</span>
-                        <input id="change-phone-${l.id}" type="text" name="phone" value="${l.phone}" style="display: none" onblur="onBlurByPhone(${l.id})">
+                        <input id="change-phone-${l.id}" type="text" name="phone" value="${l.phone}" style="display:                                none; width: 80px;" onblur="onBlurByPhone(${l.id})">
                     </td>
                     <td id="emaillabel-${l.id}" onclick="onClickByEmail(${l.id})">
                         <span id="email-${l.id}">${l.email}</span>
-                        <input id="change-email-${l.id}" type="text" name="email" value="${l.email}" style="display: none" onblur="onBlurByEmail(${l.id})">
+                        <input id="change-email-${l.id}" type="text" name="email" value="${l.email}" style="display:                                    none; width: 80px;" onblur="onBlurByEmail(${l.id})">
                     </td>
                     <td id="passwordlabel-${l.id}" onclick="onClickByPassword(${l.id})">
                         <span id="password-${l.id}">***</span>
-                        <input id="change-password-${l.id}" placeholder="密码不能为空" type="password" required="required" name="password" style="display: none" onblur="onBlurByPassword(${l.id}) ">
+                        <input id="change-password-${l.id}" placeholder="密码不能为空" type="password"                                            required="required" name="password" style="display: none; width: 90px;"                                             onblur="onBlurByPassword(${l.id}) ">
                     </td>
                     <td>${l.createTime?string("yyyy-MM-dd HH:mm:ss")}</td>
                     <td id="contentlabel-${l.id}" onclick="onClickByContent(${l.id})">
                         <span id="content-${l.id}">${l.content}</span>
-                        <input id="change-content-${l.id}" type="text" name="content" value="${l.content}" style="display: none" onblur="onBlurByContent(${l.id})">
+                        <input id="change-content-${l.id}" type="text" name="content" value="${l.content}"                                      style="display: none; width: 80px;" onblur="onBlurByContent(${l.id})">
                     </td>
-                    <td></td>
                 </tr>
             </#list>
+            <tr>
+                <td colspan="10">${page}&nbsp;&nbsp;
+                    <span class="text-primary">到第<input type="text" id="gopage" style="width:50px;">页</span>
+                    <input class="btn btn-primary" type="button" value="GO" onclick="GO()">
+                    <input type="hidden" id="pageCount" value="${pageCount}">
+                </td>
+            </tr>
         </table>
-    </center>
-        <form id="form1" style="border: 1px solid; width:250px;">
-
-        </form>
+            <#--添加模态框-->
+            <div class="modal fade" id="sheModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title" id="myModalLabel" style="margin-left: 240px; color: red;">添加页面</h4>
+                        </div>
+                        <div class="modal-body">
+                            <form id="form1">
+                                <div style="padding: 10px 100px 10px;">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">用户名称</span>
+                                        <input type="text" name="username" class="form-control" placeholder="用户名称">
+                                    </div>
+                                </div>
+                                <div style="padding: 10px 100px 10px;">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">联系电话</span>
+                                        <input type="text" name="phone" class="form-control" placeholder="联系电话">
+                                    </div>
+                                </div>
+                                <div style="padding: 10px 100px 10px;">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">用户邮箱</span>
+                                        <input type="text" name="email" class="form-control" placeholder="用户邮箱">
+                                    </div>
+                                </div>
+                                <div style="padding: 10px 100px 10px;">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">用户密码</span>
+                                        <input type="password" name="password" class="form-control" placeholder="用户密码">
+                                    </div>
+                                </div>
+                                <div style="padding: 10px 100px 10px;">
+                                    <div class="input-group">
+                                       <span class="input-group-addon">用户备注</span>
+                                       <input type="text" name="content" class="form-control" placeholder="用户备注">
+                                    </div>
+                                </div>
+                            <div style="text-align: center">
+                                <input type="button" class="btn btn-primary" value="添加" onclick="doadd()">
+                                <input type="button" class="btn btn-danger" data-dismiss="modal"  value="关闭">
+                            </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     </body>
+    <script>
+        //跳转到指定的页数
+        function GO(){
+            var pageCount=$("#pageCount").val();
+            var gopage=$("#gopage").val();
+            if(pageCount==0){
+                swal("模糊查询时无法跳转页面!")
+            }else{
+                if(gopage!=null&&gopage!=""){
+                    location.href="/console/uauth/uauthlist?cPage="+gopage;
+                }else{
+                    swal("请输入要跳转的页数!")
+                }
+            }
+        }
+        //查询功能
+        function selectStart(){
+            var dropdownbox=$("#dropdownbox").val();
+            var content=$("#content").val();
+            if(content!=""){
+                location.href="/console/uauth/uauthlist?dropdownbox="+dropdownbox+"&content="+content;
+            }else{
+                location.href="uauthlist";
+            }
+        }
+        //添加
+        function doadd(){
+            var addform =$("#form1").serialize();
+            $.ajax({
+                url:'/console/uauth/uauthadd',
+                data:addform,
+                dataType:'json',
+                type:'post',
+                success:function (msg) {
+                    if(msg) {
+                        swal("添加成功", "您提交的数据已添加成功!", "success");
+                        window.setTimeout("window.location.href='/console/uauth/uauthlist'",2000);
+                    }else{
+                        swal("错误!","您提交的数据添加失败!","error");
+                    }
+                }
+            })
+        }
+    </script>
     <script>
         function onClickByUsername(id) {
             $("#username-"+id).css("display","none");
@@ -64,22 +180,32 @@
             $("#username-"+id).css("display","block");
             $("#change-username-"+id).css("display","none");
             if($("#change-username-"+id).val()==""){
-                alert("密码不能为空");
-            }else {
-                if (confirm("确定要修改数据吗？")) {
-                    $.ajax({
-                        type: "POST",
-                        url: 'doUpdateUsername',
-                        data: {username: $("#change-username-" + id).val(), id: id},
-                        success: function (data) {
-                            if (data == "success") {
-                                $("#username-" + id).html($("#change-username-" + id).val());
-                            } else {
-                                alert("修改失败");
+                swal("用户名不能为空!")
+            }else{
+                swal({
+                    title: "您确定要执行此操作吗？",
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#DD6B55",
+                    confirmButtonText: "确定",
+                    closeOnConfirm: false
+                },function(isConfirm){
+                    if(isConfirm){
+                        $.ajax({
+                            type: "POST",
+                            url: 'doUpdateUsername',
+                            data: {username: $("#change-username-" + id).val(), id: id},
+                            success: function (data){
+                                if(data == "success"){
+                                    swal("修改成功", "您选择的数据已被修改!", "success");
+                                    $("#username-" + id).html($("#change-username-" + id).val());
+                                }else{
+                                    swal("错误!","您的数据修改失败!","error");
+                                }
                             }
-                        }
-                    });
-                }
+                        });
+                    }
+                });
             }
         }
     </script>
@@ -92,20 +218,32 @@
             $("#phone-"+id).css("display","block");
             $("#change-phone-"+id).css("display","none");
             if($("#change-phone-"+id).val()==""){
-                alert("手机号不能为空");
+                swal("手机号不能为空!")
             }else{
-                if(confirm("确定要修改数据吗？")) {
-                    $.ajax({
-                        type: "POST",
-                        url: 'doUpdatePhone',
-                        data:{phone:$("#change-phone-"+id).val(),id:id},
-                        success: function (data){
-                            if(data == "success"){
-                                $("#phone-"+id).html($("#change-phone-"+id).val());
+                swal({
+                    title: "您确定要执行此操作吗？",
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#DD6B55",
+                    confirmButtonText: "确定",
+                    closeOnConfirm: false
+                },function(isConfirm){
+                    if(isConfirm){
+                        $.ajax({
+                            type: "POST",
+                            url: 'doUpdatePhone',
+                            data:{phone:$("#change-phone-"+id).val(),id:id},
+                            success: function (data){
+                                if(data == "success"){
+                                    $("#phone-"+id).html($("#change-phone-"+id).val());
+                                    swal("修改成功", "您选择的数据已被修改!", "success");
+                                }else{
+                                    swal("错误!","您的数据修改失败!","error");
+                                }
                             }
-                        }
-                    });
-                }
+                        });
+                    }
+                });
             }
         }
     </script>
@@ -118,20 +256,33 @@
             $("#email-"+id).css("display","block");
             $("#change-email-"+id).css("display","none");
             if($("#change-email-"+id).val()==""){
-                alert("邮箱不能为空");
+                swal("邮箱不能为空!")
             }else{
-                if(confirm("确定要修改数据吗？")) {
-                    $.ajax({
-                        type: "POST",
-                        url: 'doUpdateEmail',
-                        data:{email:$("#change-email-"+id).val(),id:id},
-                        success: function (data){
-                            if(data == "success"){
-                                $("#email-"+id).html($("#change-email-"+id).val());
+                swal({
+                    title: "您确定要执行此操作吗？",
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#DD6B55",
+                    confirmButtonText: "确定",
+                    closeOnConfirm: false
+                },function(isConfirm){
+                    if(isConfirm){
+                        $.ajax({
+                            type: "POST",
+                            url: 'doUpdateEmail',
+                            data:{email:$("#change-email-"+id).val(),id:id},
+                            success: function (data){
+                                if(data == "success"){
+                                    $("#phone-"+id).html($("#change-phone-"+id).val());
+                                    swal("修改成功", "您选择的数据已被修改!", "success");
+                                    $("#email-"+id).html($("#change-email-"+id).val());
+                                }else{
+                                    swal("错误!","您的数据修改失败!","error");
+                                }
                             }
-                        }
-                    });
-                }
+                        });
+                    }
+                });
             }
         }
     </script>
@@ -144,20 +295,33 @@
             $("#content-"+id).css("display","block");
             $("#change-content-"+id).css("display","none");
             if($("#change-content-"+id).val()==""){
-                alert("备注不能为空");
+                swal("备注不能为空!")
             }else{
-                if(confirm("确定要修改数据吗？")) {
-                    $.ajax({
-                        type: "POST",
-                        url: 'doUpdateContent',
-                        data:{content:$("#change-content-"+id).val(),id:id},
-                        success: function (data){
-                            if(data == "success"){
-                                $("#content-"+id).html($("#change-content-"+id).val());
+                swal({
+                    title: "您确定要执行此操作吗？",
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#DD6B55",
+                    confirmButtonText: "确定",
+                    closeOnConfirm: false
+                },function(isConfirm){
+                    if(isConfirm){
+                        $.ajax({
+                            type: "POST",
+                            url: 'doUpdateContent',
+                            data:{content:$("#change-content-"+id).val(),id:id},
+                            success: function (data){
+                                if(data == "success"){
+                                    $("#phone-"+id).html($("#change-phone-"+id).val());
+                                    swal("修改成功", "您选择的数据已被修改!", "success");
+                                    $("#content-"+id).html($("#change-content-"+id).val());
+                                }else{
+                                    swal("错误!","您的数据修改失败!","error");
+                                }
                             }
-                        }
-                    });
-                }
+                        });
+                    }
+                });
             }
         }
     </script>
@@ -170,57 +334,35 @@
             $("#password-"+id).css("display","block");
             $("#change-password-"+id).css("display","none");
             if($("#change-password-"+id).val()==""){
-                alert("密码不能为空");
+                swal("密码不能为空!")
             }else{
-                if(confirm("确定要修改密码吗？")) {
-                    $.ajax({
-                        type: "POST",
-                        url: 'doUpdatePassword',
-                        data:{password:$("#change-password-"+id).val(),id:id},
+                swal({
+                    title: "您确定要执行此操作吗？",
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#DD6B55",
+                    confirmButtonText: "确定",
+                    closeOnConfirm: false
+                },function(isConfirm){
+                    if(isConfirm){
+                        $.ajax({
+                            type: "POST",
+                            url: 'doUpdatePassword',
+                            data:{password:$("#change-password-"+id).val(),id:id},
                             success: function (data){
-                        }
-                    });
-                }
+                                if(data == "success"){
+                                    swal("修改成功", "您选择的数据已被修改!", "success");
+                                }else{
+                                    swal("错误!","您的数据修改失败!","error");
+                                }
+                            }
+                        });
+                    }
+                });
             }
-
         }
     </script>
     <script>
-        $(function(){
-            $("#form1").hide();
-        })
-        function toback(){
-            $("#form1").hide(1500);
-            $("#form1").empty();
-        }
-        function toadd(){';'
-            $("#form1").show(1500);
-            $("#form1").append('<h2 style="margin-left: 80px;">添加</h2>');
-            $("#form1").append('用户姓名:<input type="text" name="username" ><br/><br/>');
-            $("#form1").append('联系电话:<input type="text" name="phone" ><br/><br/>');
-            $("#form1").append('用户邮箱:<input type="text" name="email" ><br/><br/>');
-            $("#form1").append('用户密码:<input type="password" name="password" ><br/><br/>');
-            $("#form1").append('备注：<input type="text" name="content"><br/><br/>');
-            $("#form1").append('<input type="button" value="添加" onclick="add()" style="margin-left: 80px;">');
-            $("#form1").append('<input type="button" value="返回" onclick="toback()">');
-        }
-        function add(){
-            var addform=$("#form1").serialize();
-            $.ajax({
-                url:'uauthadd',
-                data:addform,
-                dataType:'json',
-                type:'post',
-                success:function (msg) {
-                    if(msg) {
-                        alert("添加成功");
-                        location.href="uauthlist";
-                    }else{
-                        alert("添加失败");
-                    }
-                }
-            })
-        }
         function todel(id){
             if(confirm("确认删除么？")){
                 $.ajax({

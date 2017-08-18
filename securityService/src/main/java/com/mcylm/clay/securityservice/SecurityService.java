@@ -14,11 +14,9 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 @MapperScan({"com.mcylm.clay.securityservice.mapper.*"})
 @EnableEurekaClient
 public class SecurityService {
+
     public static void main(String[] args) {
         SpringApplication.run(SecurityService.class, args);
     }
-
-
-
 
 }

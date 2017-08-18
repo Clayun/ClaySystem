@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * Created by lenovo on 2017/8/10.
  */
-public class RedisUtils {
+public class  RedisUtils {
     private static JedisPoolConfig jedisPoolConfig = new JedisPoolConfig();
     private static JedisConnectionFactory jedisConnectionFactory = new JedisConnectionFactory();
     private static StringRedisTemplate stringRedisTemplate = new StringRedisTemplate();

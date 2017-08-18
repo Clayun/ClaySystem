@@ -11,7 +11,6 @@
     <modules>
         <module>config</module>
         <module>userservice</module>
-        <module>serverservice</module>
         <module>paymentservice</module>
         <module>consoleservice</module>
         <module>controlcenter</module>
@@ -19,6 +18,7 @@
         <module>securityService</module>
         <module>normalservice</module>
         <module>openstackService</module>
+        <module>staticservice</module>
     </modules>
 
     <!--以下dependency来自官方-->

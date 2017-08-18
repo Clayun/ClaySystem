@@ -36,7 +36,7 @@ public class LoginContoller {
     public ResponseEntity<ParameterModel> doLogin(HttpServletRequest request, ParameterModel parameterModel) {
         //客户端ip
         String hostIp = IPUtil.getIpAddr(request);
-        //主机ip
+        //主机id
         String sessionId = request.getSession().getId();
         ResponseEntity<ParameterModel> result = uauthService.getUuidByUsernameAndPassword(parameterModel, hostIp, sessionId);
         return result;
@@ -64,8 +64,7 @@ public class LoginContoller {
     @RequestMapping(value = "/valphonewhatever")
     @ResponseBody
     public String valphonewhatever(String phone, HttpServletRequest request) {
-        String send = SMSMessageLib.send(phone, request);
-        return send;
+        return SMSMessageLib.send(phone, request);
     }
 
     /**
@@ -78,10 +77,7 @@ public class LoginContoller {
     @RequestMapping(value = "/verphone")
     @ResponseBody
     public String verphone(HttpServletRequest request, String verphone, String phonever) {
-        if (verphone.equals(phonever))
-            return "success";
-        else
-            return "failed";
+        return verphone.equals(phonever) ? "success" : "failed";
     }
 
     /**

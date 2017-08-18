@@ -51,7 +51,7 @@ public class UauthServiceImpl implements UauthService {
                     RedisUtils.setKey_Val_TimeOut(uauthToken.getToken(), uauthToken);
                     parameterModel.setToken(Base64Utils.encodeBase64String(uauthToken.getToken()));
                     parameterModel.setStatus("201");
-                    parameterModel.setLoginType(Base64Utils.encodeBase64String("loginSuccess"));
+                    parameterModel.setLoginType(Base64Utils.encodeBase64String("logined"));
                     //登录成功
                     return ResponseEntity.ok().body(parameterModel);
                 }

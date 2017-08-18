@@ -6,13 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
     <title>登录 - 企业级云服务器、弹性云MineCraft服务器租用服务提供商</title>
-    <link rel="stylesheet" type="text/css" href="/security/css/login.css">
+    <link rel="stylesheet" type="text/css" href="/staticService/css/login.css">
 </head>
 	<body>
     <div class="login-banner">
         <div class="login-nav">
             <div class="logo">
-			<#--${logo.data}-->
+                <a href="/index/portal"><img src="http://osuyq1koj.bkt.clouddn.com/17-7-19/38186757.jpg"></a>
                 <div class="p">
                     <input type="button" class="nav-button" value="首页" onclick="window.location.href='/'">
                 </div>
@@ -29,20 +29,20 @@
             </div>
             <div class="login-box-up-right">
                 <div class="login-box-up-right-loginbox">
-                    <span>密码登录</span>
-                    <p id="msg">请使用您的用户名或手机号码登录</p>
-                    <input type="text" name="username" placeholder="用户名/手机号" id="user" />
-                    <input type="password" name="password" placeholder="密码" id="pwd" required/>
-                    <div style="margin-left: 25px;width: 312px;margin-top: 25px;">
-                        <div id="captcha1">
-                            <p id="wait1" class="show">正在加载验证码......</p>
-                        </div>
+                <span>密码登录</span>
+                <p id="msg">请使用您的用户名或手机号码登录</p>
+                <input type="text" name="username" placeholder="用户名/手机号" id="user" />
+                <input type="password" name="password" placeholder="密码" id="pwd" required/>
+                <div style="margin-left: 25px;width: 312px;margin-top: 25px;">
+                    <div id="captcha1">
+                        <p id="wait1" class="show">正在加载验证码......</p>
                     </div>
-                    <p id="notice1" class="hide">请先完成验证</p>
-                    <button style="cursor: pointer;margin-bottom: 10px;" id="submit">登录</button>
-                    <p style="display: inline;"><a style="text-decoration: none; color: #888888" class=".a" href="/security/author/resetpwd">忘记密码？</a></p><p style="display: inline;">免费注册</p>
-                    <input style="display: none" id="redirectUrl" type="text" value="${redirectUrl}">
                 </div>
+                <p id="notice1" class="hide">请先完成验证</p>
+                <button style="cursor: pointer;margin-bottom: 10px;" id="submit">登录</button>
+                <p style="display: inline;"><a style="text-decoration: none; color: #888888" class=".a" href="/security/author/resetpwd">忘记密码？</a></p><p style="display: inline;">免费注册</p>
+                <input style="display: none" id="redirectUrl" type="text" value="${redirectUrl}">
+            </div>
             </div>
         </div>
     </div>
@@ -94,7 +94,7 @@
     </div>
 </footer>
 
-<script src="/security/js/jquery-1.7.1.min.js"></script>
-<script src="/security/js/gt.js"></script>
-<script src="/security/js/login.js"></script>
+<script src="/staticService/js/jquery-1.7.1.min.js"></script>
+<script src="/staticService/js/gt.js"></script>
+<script src="/staticService/js/login.js"></script>
 </html>
