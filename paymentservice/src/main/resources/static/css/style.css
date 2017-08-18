@@ -622,13 +622,13 @@ footer{
     box-shadow:0px 2px 10px #555;
 }
 .renew-box{
-	height: 750px;
+	height: 950px;
 	width: 1000px;
 	background: #FFF;
 	margin-left: 100px;
 }
 .renew-box-items{
-	height: 300px;
+	height: 500px;
 	width: 333px;
 	float: left;
 	background: #e4eaed;

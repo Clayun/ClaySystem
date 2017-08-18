@@ -56,18 +56,22 @@
 					<div class="renew-box">
 						<div class="renew-box-items" style="width: 1000px;"><br><br>
 
-							<input type="hidden" value="${orders.uuid}" name="uuid" id="uuid">
-							<input type="hidden" value="${orders.month}" name="month" id="month">
-							<span style=" font-weight: bold;color:#555;">订单号：</span><span id="entityId">${orders.ordersUuid}</span><br>
-							<span style=" font-weight: bold;color:#555;">产品名称：</span><span id="entityName">${orders.remarks}</span><br>
-							<span style=" font-weight: bold;color:#555;">产品内容：</span><span id="entitycontent">${orders.remarks}</span><br>
-							<span style=" font-weight: bold;color:#555;">产品月付：</span><span id="entityPrice">${orders.theActualAmount}</span><br>
-							<span style=" font-weight: bold;color:#555;">创建时间：</span><span id="entityCreateTime">${orders.paymentTime?string("yyyy-MM-dd HH:mm:ss")}</span><br>·
+							<input type="hidden" value="${id}" name="uuid" id="uuid">
+							<span style=" font-weight: bold;color:#555;">服务器名称：</span><span id="ser_name">${ecsServer.ser_name}</span><br>
+							<span style=" font-weight: bold;color:#555;">CPU核心数：</span><span id="cpu">${ecsServer.cpu}</span><br>
+                            <span style=" font-weight: bold;color:#555;">内存：</span><span id="memory">${ecsServer.memory}</span><br>
+                            <span style=" font-weight: bold;color:#555;">系统盘大小：</span><span id="os_disk">${ecsServer.os_disk}</span><br>
+                            <span style=" font-weight: bold;color:#555;">拓展盘大小：</span><span id="expand_disk">${ecsServer.expand_disk}</span><br>
+                            <span style=" font-weight: bold;color:#555;">带宽（单位Mb）：</span><span id="tape">${ecsServer.tape}</span><br>
+                            <span style=" font-weight: bold;color:#555;">IP数量：</span><span id="ips">${ecsServer.ips}</span><br>
+                            <span style=" font-weight: bold;color:#555;">系统镜像：</span><span id="image">${ecsServer.image}</span><br>
+                            <span style=" font-weight: bold;color:#555;">每月单价：</span><span id="pricePerMonth">${ecsServer.pricePerMonth}</span><br>
+							<span style=" font-weight: bold;color:#555;">创建时间：</span><span id="createTime">${ecsServer.createTime?string("yyyy-MM-dd HH:mm:ss")}</span><br>·
 						</div>
 
 						<span style="line-height: 100px;font-size: 30px;font-weight: bold; color: #555;">购买时长</span>
 						<div class="renew-box-items-middle">
-							<input type="hidden" class="single-slider" value="${orders.month}"/>
+							<input type="hidden" class="single-slider" value="3"/>
 						</div>
 						<div class="renew-box-items-bottom-left">
 							<#--<div id="infoHelp">
@@ -96,7 +100,7 @@
 						</div>
 						<div class="renew-box-items-bottom-right">
 							<div >
-								<span id="pzPrice">配置费用：</span><span style="color: #f1a417;font-size: 40px;">￥<span id="price">${orders.theActualAmount}</span></span><br>
+								<span id="pzPrice">配置费用：</span><span style="color: #f1a417;font-size: 40px;">￥<span id="price">${ecsServer.pricePerMonth}</span></span><br>
 							</div>
 							<button class="banner-info-line-button" style="background:#f1a417;border: none;color: #fff;width: 250px;" id="paynow">立即支付</button>
 						</div>

@@ -12,6 +12,24 @@ public class ParameterModel {
     private String token;
     private String loginType;
     private String fmlName;
+    private String formToken;
+    private String data;
+
+    public String getFormToken() {
+        return formToken;
+    }
+
+    public void setFormToken(String formToken) {
+        this.formToken = formToken;
+    }
+
+    public String getData() {
+        return data;
+    }
+
+    public void setData(String data) {
+        this.data = data;
+    }
 
     public String getFmlName() {
         return fmlName;
@@ -68,4 +86,5 @@ public class ParameterModel {
     public void setPassword(String password) {
         this.password = password;
     }
+
 }
