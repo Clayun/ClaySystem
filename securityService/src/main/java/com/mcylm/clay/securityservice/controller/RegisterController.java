@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @Modified By:
  */
 @Controller
+@RequestMapping("/author")
 public class RegisterController {
     @Autowired
     private UserRegisterService userRegisterService;

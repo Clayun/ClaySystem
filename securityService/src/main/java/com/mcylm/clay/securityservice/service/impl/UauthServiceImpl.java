@@ -1,5 +1,6 @@
 package com.mcylm.clay.securityservice.service.impl;
 
+import com.google.gson.Gson;
 import com.mcylm.clay.securityservice.dao.UauthDao;
 import com.mcylm.clay.securityservice.module.ParameterModel;
 import com.mcylm.clay.securityservice.module.Uauth;
@@ -77,6 +78,38 @@ public class UauthServiceImpl implements UauthService {
             e.printStackTrace();
             return "falid";
         }
+    }
+
+    /**
+     * 根据token 判断是否登录，
+     * 登录 返回用户信息，
+     * 否则返回null
+     * @param token
+     * @return
+     */
+    @Override
+    public Uauth checkLogin(String token) {
+        boolean b = RedisUtils.checkTokenExit(token);
+        if (b) {
+            String valByKey = RedisUtils.getValByKey(Base64Utils.decodeBase64String(token));
+            Gson gson = new Gson();
+            UauthToken uauthToken = gson.fromJson(valByKey, UauthToken.class);
+            String uuid = uauthToken.getUuid();
+            Uauth uauth = uauthDao.getUauthByUuid(uuid);
+            return uauth;
+        }
+        return null;
+    }
+
+    /**
+     * 退出登录
+     * @param token
+     * @return
+     */
+    @Override
+    public boolean logout(String token) {
+        RedisUtils.deleteValByTocken(token);
+        return true;
     }
 
 

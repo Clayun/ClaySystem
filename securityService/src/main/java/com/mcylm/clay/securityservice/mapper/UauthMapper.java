@@ -23,4 +23,7 @@ public interface UauthMapper {
 
     @Update("UPDATE pre_common_uauth SET passWord = #{password} WHERE phone = #{phone}")
     void updatePassword(@Param(value = "password") String password, @Param(value = "phone") String phone);
+
+    @Select("SELECT uuid,userName FROM pre_common_uauth WHERE uuid = #{uuid}")
+    Uauth getUauthByUuid(@Param(value = "uuid") String uuid);
 }

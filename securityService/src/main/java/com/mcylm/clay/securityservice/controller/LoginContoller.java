@@ -2,6 +2,7 @@ package com.mcylm.clay.securityservice.controller;
 
 import com.mcylm.clay.securityservice.module.ParameterModel;
 import com.mcylm.clay.securityservice.module.Uauth;
+import com.mcylm.clay.securityservice.module.UauthToken;
 import com.mcylm.clay.securityservice.service.UauthService;
 import com.mcylm.clay.securityservice.util.IPUtil;
 import com.mcylm.clay.securityservice.util.SMSMessageLib;
@@ -91,6 +92,25 @@ public class LoginContoller {
     @ResponseBody
     public String updatePassword(String password, String phone) {
         return uauthService.updatePassword(password, phone);
+    }
+
+
+    /**
+     * 根据token检测用户是否登录，
+     * 如果存在就返回对象参数
+     * @param token
+     * @return
+     */
+    @RequestMapping("/checkLogin")
+    @ResponseBody
+    public Uauth checkLogin(String token){
+        return uauthService.checkLogin(token);
+    }
+
+    @RequestMapping("logout")
+    @ResponseBody
+    public boolean logout(String token){
+        return uauthService.logout(token);
     }
 
 

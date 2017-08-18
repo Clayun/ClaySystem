@@ -7,9 +7,9 @@ eureka:
       defaultZone: http://localhost:6080/eureka/  #注册中心地址
   instance:
     hostname: localhost
-    instance-id: http://localhost:8888
+    instance-id: http://localhost:9999
 server:
-  port: 8888
+  port: 9999
 #datasource config
 #jdbc:
 #  driverClassName: com.mysql.jdbc.Driver

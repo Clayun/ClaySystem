@@ -12,11 +12,7 @@
     <groupId>com.mcylm.claySystem</groupId>
     <artifactId>staticservice</artifactId>
     <dependencies>
-        <!-- 与数据库操作相关的依赖 -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-jdbc</artifactId>
-        </dependency>
+
         <!-- springboot web启动器 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -32,12 +28,7 @@
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
 
-        <!-- Spring Boot Mybatis 依赖 -->
-        <dependency>
-            <groupId>org.mybatis.spring.boot</groupId>
-            <artifactId>mybatis-spring-boot-starter</artifactId>
-            <version>1.2.0</version>
-        </dependency>
+
 
     </dependencies>
 

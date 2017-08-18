@@ -40,8 +40,7 @@ var handler1 = function (captchaObj) {
                     $("#phoneMessage").show();
                     $("#userMessage").css("display", "none");
                     phone = data.phone.toString();
-                    var phone1 = phone.substr(8, 11);
-                    phone1 = "********" + phone1;
+                    phone1 = phone.substr(0, 3)+"****"+phone.substr(8,11);
                     $("#phone").html(phone1);
 
                 }
@@ -61,6 +60,7 @@ var handler1 = function (captchaObj) {
 //提交手机号，获取随机码
 $("#submitphone").click(function () {
     var vephone = $("#vephone").val();
+    alert(vephone);
     $.ajax({
         type: "POST",
         dataType: "text",
@@ -127,12 +127,11 @@ function time(o) {
             data: {phone: phone},
             success: function (data) {
                 if (data != null) {
-                    phonever = data;
                     alert(data);
+                    phonever = data;
                 } else {
                     $("#msg").html("验证码发送失败！");
                 }
-
             }
         });
     }

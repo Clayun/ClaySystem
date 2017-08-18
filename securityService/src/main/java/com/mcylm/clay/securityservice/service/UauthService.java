@@ -14,4 +14,8 @@ public interface UauthService {
     Uauth checkName(ParameterModel parameterModel);
 
     String updatePassword(String password, String phone);
+
+    Uauth checkLogin(String token);
+
+    boolean logout(String token);
 }
