@@ -1,7 +1,5 @@
 package com.mcylm.clay.securityservice.service;
 
-import com.mcylm.clay.securityservice.module.Uauth;
-
 /**
  * @Author:Wuyali
  * @Description:
@@ -10,12 +8,6 @@ import com.mcylm.clay.securityservice.module.Uauth;
  */
 public interface UserRegisterService {
 
-
-    Uauth findRegisterByUserName(String username);
-
-    Uauth findRegisterByPhone(String phone);
-
-    boolean insertResisterInfo(String userName,String phone,String email,String passWord);
-
-    String insertResister(String userName, String phone, String email, String passWord);
+    //验证用户名和手机号
+    String  verifyRegisterUserInfo(String userName, String phone,String vpwd, String email, String passWord);
 }

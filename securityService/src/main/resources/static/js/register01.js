@@ -1,7 +1,6 @@
 var check = 0;
 var checkedphone = 0;
 var phone = "";
-//验证码
 var phonever = "";
 var handler1 = function (captchaObj) {
     $("#submit").click(function (e) {
@@ -9,89 +8,77 @@ var handler1 = function (captchaObj) {
         if (!result) {
             $("#msg").html("请先完成验证！");
             $("#msg").css("color", "red");
+            return;
             setTimeout(function () {
                 $("#msg").html("")
             }, 2000);
             e.preventDefault();
-        }else{
+        } else {
 
             var user = $("#username").val();
             var pwd = $("#password").val();
             var vpwd = $("#vepassword").val();
+            var email = $("#email").val();
             var phone = $("#phone").val();
-
-            if(user == ""){$("#msg").html("请先输入用户名！");
+            if (user == "") {
+                $("#msg").html("请先输入用户名！");
                 $("#msg").css("color", "red");
-            return;}
-            if(pwd == ""){$("#msg").html("请先输入密码！");
-                $("#msg").css("color", "red");
-            return;}
-            if(vpwd == ""){$("#msg").html("请输入第二次验证密码！");
-                $("#msg").css("color", "red");
-            return}
-            if(phone == ""){$("#msg").html("请输入您的手机号！");
-                $("#msg").css("color", "red");
-            return}
-
-            if(check == 0){
-                $.ajax({
-                    type: "POST",
-                    dataType: "text",
-                    url: '/security/author/verifyRegisterPhone',
-                    data:{phone:phone},
-                    success: function (data) {
-                        if(data == "success"){
-
-                            $("#msg").html("短信已发送至您的手机，请注意查收！");
-                            $("#phonenum").html($("#phone").val());
-                            jQuery('#b1').show();
-                        }else if(data == "failed"){
-                            $("#msg").html("当前手机号已注册！")
-                        }
-                    }
-                });
-
-                $.ajax({
-                    url: '/security/author/verifyRegisterName',
-                    type: 'POST',
-                    dataType: 'json',
-                    data: {
-                        username: $('#username').val()
-                    },
-                    success: function (data) {
-                        if (data != null) {
-                            $("#msg").html("账号已存在");
-                            $("#msg").css("color", "red");
-                        }else{
-                            $("#msg").html("");
-                        }
-                    }
-                });
-            }else{
-                $.post("/security/author/insertRegisterUser", {
-                        "userName": $("#username").val(),
-                        "phone": $("#phone").val(),
-                        "email": $("#email").val(),
-                        "passWord": $("#password").val()
-                    },
-                    function (data) {
-                        if (data) {
-                            alert("ok")
-                            location.href = 'http://www.baidu.com';    //跳转页面
-                        } else {
-                            alert("ee")
-                        }
-                    }, 'json');
+                return;
             }
+            if (pwd == "") {
+                $("#msg").html("请先输入密码！");
+                $("#msg").css("color", "red");
+                return;
+            }
+            if (vpwd == "") {
+                $("#msg").html("请输入第二次验证密码！");
+                $("#msg").css("color", "red");
+                return
+            } else if (pwd != vpwd) {
+                $("#msg").html("两次输入密码不一致！");
+                $("#msg").css("color", "red");
+            }
+            if(email == ""){
+                $("#msg").html("请输入您注册的邮箱！");
+                $("#msg").css("color", "red");
+            }
+            if (phone == "") {
+                $("#msg").html("请输入您的手机号！");
+                $("#msg").css("color", "red");
+                return
+            }
+            //alert($('#username').val());
+
+                 $.post("/security/author/verifyRegisterUserInfo", {
+             "userName": $("#username").val(),
+             "phone": $("#phone").val(),
+             "email": $("#email").val(),
+             "passWord": $("#password").val(),
+                         "vpwd" :$("#vepassword").val()
+             },
+             function (data) {
+             if (data=="n1") {
+                 $("#msg").html("用户名已注册！");
+                 $("#msg").css("color", "red");
+             } else if(data=="p2"){
+                 $("#msg").html("手机号已注册！");
+                 $("#msg").css("color", "red");
+             }else{
+                  alert("没问题");
+                 //location.href="";
+             }
+             }, 'text');
 
         }
     });
     // 将验证码加到id为captcha的元素里，同时会有三个input的值用于表单提交
-    captchaObj.appendTo("#captcha1");
-    captchaObj.onReady(function () {
+        captchaObj.appendTo("#captcha1");
+        captchaObj.onReady(function () {
         $("#wait1").hide();
     });
-};
+
+}
+//极验验证
 $.ajax({
     url: "/security/author/getVerificationCode?dateTime=" + (new Date()).getTime(), // 加随机数防止缓存
     type: "get",
@@ -111,32 +98,37 @@ $.ajax({
         }, handler1);
     }
 });
-
-$("#submitphone").click(function () {
+//点击获取手机号码
+/*$("#submitphone").click(function () {
 
     var vephone = $("#vephone").val();
     var phone = $("#phone").val();
-    if(vephone == ""){$("#smsg").html("请输入短信验证码！");return}
+    if (vephone == "") {
+        $("#smsg").html("请输入短信验证码！");
+        return
+    }
+
 
     $.ajax({
-        type: "POST",
-        dataType: "text",
-        url: '/security/author/verifyPhone',
-        data: {verphone:vephone},
-        success: function (data) {
-            if (data == "success") {
-                $("#msg").html("验证成功！")
-                checkedphone = phone;
-                $("#phone").attr("disabled",false);
-                jQuery('#b1').hide();
-                check = 1;
-            } else if (data == "failed") {
-                $("#msg").html("验证码输入错误！")
-            }
-        }
-    });
+     type: "POST",
+     dataType: "text",
+     url: '/security/author/verphone',
+     data: {verphone:vephone},
+     success: function (data) {
+     if (data == "success") {
+          $("#msg").html("验证成功！")
+           checkedphone = phone;
+          $("#phone").attr("disabled",false);
+           jQuery('#b1').hide();
+           check = 1;
+     } else if (data == "failed") {
+     $("#msg").html("验证码输入错误！")
+     }
+     }
+     });
+
 });
-var wait=60;
+var wait = 60;
 function time(o) {
     if (wait == 0) {
         var phone = $("#phone").val();
@@ -144,28 +136,32 @@ function time(o) {
             type: "POST",
             dataType: "text",
             url: '/security/author/verifyRegisterPhone',
-            data:{phone:phone},
+            data: {phone: phone},
             success: function (data) {
-                if(data == "success"){
-                    $("#smsg").html("短信已发送至您的手机，请注意查收！");
-                    $("#phonenum").html($("#phone").val());
+                alert(data);
+                if (data != null) {
+                    $("#msg").html("短信已发送至您的手机，请注意查收！");
+                    $("#phonenum").html($("#phone").val())
                     jQuery('#b1').show();
-                }else if(data == "failed"){
+                    phonever = data;
+                } else {
                     $("#msg").html("当前手机号已注册！")
                 }
             }
         });
         o.removeAttribute("disabled");
-        o.value="重新发送";
+        o.value = "重新发送";
         wait = 60;
     } else {
         o.setAttribute("disabled", true);
-        o.value="重新发送(" + wait + ")";
+        o.value = "重新发送(" + wait + ")";
         wait--;
-        setTimeout(function() {
+        setTimeout(function () {
                 time(o)
             },
             1000)
     }
 }
-document.getElementById("repely").onclick=function(){time(this);}
+document.getElementById("repely").onclick = function () {
+    time(this);
+}*/

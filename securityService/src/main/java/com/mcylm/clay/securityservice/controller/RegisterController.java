@@ -1,16 +1,10 @@
 package com.mcylm.clay.securityservice.controller;
 
-import com.mcylm.clay.securityservice.module.Uauth;
 import com.mcylm.clay.securityservice.service.UserRegisterService;
-import com.mcylm.clay.securityservice.util.SMSMessageLib;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
 
 /**
  * @Author:Wuyali
@@ -26,60 +20,40 @@ public class RegisterController {
 
     //注册
     @RequestMapping("/register")
-    public String register(){
-        return  "register";
+    public String register() {
+        return "register";
     }
 
-    //验证成功后注册
-    @RequestMapping("/insertRegisterUser")
+
+    //验证手机号唯一  发送信息
+  /*  @RequestMapping("/verifyRegisterPhone")
     @ResponseBody
-    public  boolean insertResisterInfo(String userName,String phone,String email,String passWord){
-         System.out.println(userName);
-         System.out.println(phone);
+    public String verifyRegisterPhone(String phone) {
+        System.out.println("lalala=====" + phone);
 
-         boolean flag =  userRegisterService.insertResisterInfo(userName,phone,email,passWord);
-         System.out.println("hahahahahah"+flag);
-         return flag;
-
-    }
-
-//验证手机号唯一  发送信息
-    @RequestMapping("/verifyRegisterPhone")
-    @ResponseBody
-    public String  verifyRegisterPhone(String phone,HttpServletRequest request){
-        System.out.println("lalala====="+phone);
-
-        Uauth uauth = userRegisterService.findRegisterByPhone(phone);
-        if(uauth!=null){
-            return "failed";
-        }else {
-            System.out.println("phone================"+phone);
-            String send = SMSMessageLib.send(phone, request);
-            System.out.println("手机验证码***********"+send);
-            return  "success";
+       Uauth uauth = userRegisterService.findRegisterByPhone(phone);
+        if (uauth != null) {
+            return null;
         }
-    }
+        System.out.println("phone================" + phone);
+        SMSMessageLib01.send(phone,request);
+
+        return send;
+        return "";
+    }*/
+
     //验证名称
-    @RequestMapping("/verifyRegisterName")
+    @RequestMapping("/verifyRegisterUserInfo")
     @ResponseBody
-     public Uauth verifyRegisterName(String username){
-       System.out.println("lalala====="+username);
-       Uauth uauth = userRegisterService.findRegisterByPhone(username);
-       return  uauth;
-   }
+    public String  verifyRegisterUserInfo(String userName, String phone,String vpwd, String email, String passWord) {
+        System.out.println("lalala=====" + userName);
+        String info  = userRegisterService.verifyRegisterUserInfo(userName,phone,vpwd,email,passWord);
+        return info;
+    }
+   /* @RequestMapping("/lianguoshuai")
+    public  void  lianguoshuai(HttpServletRequest request){
 
-@RequestMapping("/verifyPhone")
-@ResponseBody
-public String verifyPhone(HttpServletRequest request, HttpServletResponse response,String verphone) throws IOException{
-        if(String.valueOf(request.getSession().getAttribute("phonever")).equals(verphone)){
-             request.getSession().setAttribute("phonever",SMSMessageLib.random());
-            return  "success";
-
-        }else {
-            return  "failed";
-        }
-
-}
-
-
+        SMSMessage.send("15010622598",request);
+        System.out.println("phoneverphoneverphoneverphonever***");
+    }*/
 }

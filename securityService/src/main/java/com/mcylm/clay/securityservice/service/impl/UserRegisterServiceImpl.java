@@ -1,16 +1,16 @@
 package com.mcylm.clay.securityservice.service.impl;
 
 import com.mcylm.clay.securityservice.dao.UserRegisterDao;
-import com.mcylm.clay.securityservice.module.*;
+import com.mcylm.clay.securityservice.module.Account;
+import com.mcylm.clay.securityservice.module.Uauth;
+import com.mcylm.clay.securityservice.module.Ucenter;
+import com.mcylm.clay.securityservice.module.UcenterDetails;
 import com.mcylm.clay.securityservice.service.UserRegisterService;
 import com.mcylm.clay.securityservice.util.MD5Util;
 import com.mcylm.clay.securityservice.util.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -26,19 +26,20 @@ public class UserRegisterServiceImpl implements UserRegisterService{
     UserRegisterDao userRegisterDao;
 
 
-    @Override
-    public Uauth findRegisterByUserName(String username) {
-
-        return userRegisterDao.findRegisterByUserName(username);
-    }
 
     @Override
-    public Uauth findRegisterByPhone(String phone) {
-        return userRegisterDao.findRegisterByPhone(phone);
-    }
-
-    @Override
-    public boolean insertResisterInfo(String userName,String phone,String email,String passWord) {
+    public String  verifyRegisterUserInfo(String userName, String phone,String vpwd, String email, String passWord) {
+        String str = null;
+        Uauth uauth = userRegisterDao.findRegisterByUserName(userName);
+       if (uauth != null ){
+           str = "n1";
+           return str;
+       }
+       Uauth uauth1 = userRegisterDao.findRegisterByPhone(phone);
+       if(uauth1!= null){
+           str="p2";
+           return  str;
+       }
         String uuid = StringUtils.getUuid();
         System.out.println(uuid);
         String pwd = MD5Util.generate(passWord);
@@ -66,15 +67,7 @@ public class UserRegisterServiceImpl implements UserRegisterService{
 
 
         UcenterDetails uDetails = new UcenterDetails();
-        String birth = "1993-08-09";
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-        Date date = null;
-        try {
-            date = sdf.parse(birth);
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-        uDetails.setBirthday(date);
+
         uDetails.setUuid(uuid);
         uDetails.setCn_Name("无");
         uDetails.setEn_Name("无");
@@ -89,22 +82,18 @@ public class UserRegisterServiceImpl implements UserRegisterService{
         flag = userRegisterDao.insertResisterInfo(map);
 
         if(flag){
-        userRegisterDao.insertUcenterInfo(ucenter);
+            userRegisterDao.insertUcenterInfo(ucenter);
 
 
-        userRegisterDao.insertUcenterDetails(uDetails);
+            userRegisterDao.insertUcenterDetails(uDetails);
 
 
-        userRegisterDao.insertAccountInfo(account);
+            userRegisterDao.insertAccountInfo(account);
+            str ="success";
+            return str;
         }
 
-        return flag;
-    }
 
-    @Override
-    public String insertResister(String userName, String phone, String email, String passWord) {
-        
-
-        return null;
+        return str;
     }
 }
