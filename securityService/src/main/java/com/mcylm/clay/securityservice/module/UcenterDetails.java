@@ -12,6 +12,8 @@ import java.util.Date;
 //户中心细节
 public class UcenterDetails implements Serializable{
 
+
+
     private Integer id;
     private String uuid;
     private String cn_Name;

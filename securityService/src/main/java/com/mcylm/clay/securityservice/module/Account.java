@@ -11,6 +11,7 @@ import java.io.Serializable;
 //账户
 public class Account implements Serializable {
 
+
     private Integer id;
     private String uuid;
     private String money;

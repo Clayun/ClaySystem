@@ -11,6 +11,7 @@ import java.io.Serializable;
 //户中心
 public class Ucenter implements Serializable {
 
+
     private Integer id;
     private String uuid;
     private String avatar;

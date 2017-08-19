@@ -20,6 +20,7 @@ public interface UserRegisterMapper {
     @Select("SELECT uuid FROM pre_common_uauth WHERE  userName = #{username}")
     Uauth findUserByUserName(@Param(value = "username") String username);
 
+
     @Select("SELECT uuid FROM pre_common_uauth WHERE  phone = #{phone}")
     Uauth findRegisterByPhone(@Param(value = "phone") String phone);
 

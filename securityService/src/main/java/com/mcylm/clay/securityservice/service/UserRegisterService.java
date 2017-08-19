@@ -10,5 +10,6 @@ public interface UserRegisterService {
 
     //验证用户名和手机号
 
+
     String  verifyRegisterUserInfo(String userName, String phone,String vpwd, String email, String passWord);
 }

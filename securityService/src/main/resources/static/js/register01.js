@@ -77,6 +77,7 @@ var handler1 = function (captchaObj) {
         $("#wait1").hide();
     });
 
+
 }
 //极验验证
 $.ajax({

@@ -23,4 +23,5 @@ public interface UserRegisterDao {
     boolean insertUcenterDetails(UcenterDetails ucenterDetails);
 
     boolean insertResisterInfo(Map<String, Object> map);
+
 }

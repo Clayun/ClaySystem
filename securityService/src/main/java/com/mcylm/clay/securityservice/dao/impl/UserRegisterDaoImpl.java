@@ -16,6 +16,7 @@ import java.util.Map;
  */
 @Repository
 public class UserRegisterDaoImpl implements UserRegisterDao{
+
  @Autowired
  private UserRegisterMapper userRegisterMapper;
 
