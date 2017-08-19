@@ -29,7 +29,7 @@ public interface UserRegisterMapper {
     @Insert("insert into pre_common_account(uuid,money,score,consume) values(#{uuid},#{money},#{score},#{consume})")
     boolean insertAccountInfo(Account account);
 
-    @Insert("insert into pre_common_ucenter_details(uuid,cn_Name,en_Name,sex,job,education,school,birthday,locationId,content) values(#{uuid},#{cn_Name},#{en_Name},#{sex},#{job},#{education},#{school},#{birthday},#{locationId},#{content}) ")
+    @Insert("insert into pre_common_ucenter_details(uuid,cn_Name,en_Name,sex,job,education,school,locationId,content) values(#{uuid},#{cn_Name},#{en_Name},#{sex},#{job},#{education},#{school},#{locationId},#{content}) ")
     boolean insertUcenterDetails(UcenterDetails ucenterDetails);
 
     @Insert("insert into pre_common_ucenter(uuid,avatar,level,exp,content) values(#{uuid},#{avatar},#{level},#{exp},#{content})")

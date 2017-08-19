@@ -21,7 +21,8 @@ public class UserRegisterDaoImpl implements UserRegisterDao{
 
  @Override
  public Uauth findRegisterByUserName(String username) {
-  return userRegisterMapper.findUserByUserName(username);
+
+     return userRegisterMapper.findUserByUserName(username);
  }
 
     @Override

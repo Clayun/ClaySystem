@@ -4,6 +4,7 @@ var phone = "";
 var phonever = "";
 var handler1 = function (captchaObj) {
     $("#submit").click(function (e) {
+
         var result = captchaObj.getValidate();
         if (!result) {
             $("#msg").html("请先完成验证！");
@@ -47,7 +48,6 @@ var handler1 = function (captchaObj) {
                 $("#msg").css("color", "red");
                 return
             }
-            //alert($('#username').val());
 
                  $.post("/security/author/verifyRegisterUserInfo", {
              "userName": $("#username").val(),

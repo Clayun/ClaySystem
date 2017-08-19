@@ -25,8 +25,6 @@ public class UserRegisterServiceImpl implements UserRegisterService{
     @Autowired
     UserRegisterDao userRegisterDao;
 
-
-
     @Override
     public String  verifyRegisterUserInfo(String userName, String phone,String vpwd, String email, String passWord) {
         String str = null;

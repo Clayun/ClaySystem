@@ -12,7 +12,6 @@ import java.util.Map;
  */
 public interface UserRegisterDao {
 
-
     Uauth findRegisterByUserName(String username);
 
     Uauth findRegisterByPhone(String phone);
