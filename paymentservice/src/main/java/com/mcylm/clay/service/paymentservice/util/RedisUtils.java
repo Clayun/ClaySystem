@@ -2,8 +2,10 @@ package com.mcylm.clay.service.paymentservice.util;
 
 import com.google.gson.Gson;
 
+import com.mcylm.clay.service.paymentservice.model.Orders;
 import com.mcylm.clay.service.paymentservice.model.ParameterModel;
 import jdk.nashorn.internal.scripts.JD;
+import org.springframework.core.annotation.Order;
 import org.springframework.data.redis.connection.RedisClusterConnection;
 import org.springframework.data.redis.connection.RedisConnection;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
@@ -53,6 +55,7 @@ public class RedisUtils {
      * @param uauthToken
      */
     public static void setKey_Val_TimeOut(String token, Object uauthToken) {
+        //将对象转成json字符串
         String uauthonJson = gson.toJson(uauthToken);
         stringValueOperations.set(token, uauthonJson, TIME, TimeUnit.MINUTES);
     }
@@ -64,6 +67,7 @@ public class RedisUtils {
      * @param data
      */
     public static void setKey_Val_TimeOut(String token, String data) {
+        //进键值对存入redis中，并设置过期时间30分钟
         stringValueOperations.set(token, data, TIME, TimeUnit.MINUTES);
     }
 
@@ -74,8 +78,8 @@ public class RedisUtils {
      * @return
      */
     public static String getValByKey(String key) {
-        String val = stringValueOperations.get(key);
-        return val;
+        //根据key获取对应的值
+        return stringValueOperations.get(key);
     }
 
     /**
@@ -87,11 +91,11 @@ public class RedisUtils {
      * @return
      */
     public static boolean checkTokenExit(String token) {
+        //解析加密后的token
         String tokens = Base64Utils.decodeBase64String(token);
+        //使用tokens获取对应的值
         String string = stringValueOperations.get(tokens);
-        if (string != null)
-            return true;
-        return false;
+        return string != null;
     }
 
     /**
@@ -102,20 +106,39 @@ public class RedisUtils {
      * @return
      */
     public static String checkLogin(ParameterModel parameterModel, String fmlName) {
+        //获取跳转的路径
         String redirectUrl = parameterModel.getRedirectUrl();
+        //获取用户登录的token
         String token = parameterModel.getToken();
+        //获取表单提交的formToken,防止表单重复提交
+        String formToken = parameterModel.getFormToken();
+        //用户登录信息
         String message = null;
+
+        //根据用户的token判断redis中是否登录
         if (token != null && !"".equals(token)) {
             message = stringValueOperations.get(Base64Utils.decodeBase64String(token));
         }
+
+        //如果没有登录，追加跳转路径及formtoken
         if (message == null || "".equals(message)) {
             StringBuffer redirectToLogin = new StringBuffer();
-            redirectToLogin.append("redirect:http://localhost/security/author/login");
+            redirectToLogin.append("redirect:http://10.2.2.75/security/author/login");
+
+            //判断跳转路径是否为null，追加路径后面
             if (redirectUrl != null && !"".equals(redirectUrl)) {
                 redirectToLogin.append("?redirectUrl=" + redirectUrl);
             }
-            return redirectToLogin.toString();
+
+            //追加表单提交的formtoken
+            if (formToken != null && !"".equals(formToken)) {
+                redirectToLogin.append("&formToken=" + formToken);
+            }
+
+            //返回跳转路径，并发第一个&替换为？
+            return redirectToLogin.toString().replaceFirst("&", "?");
         }
+        //返回目标页面的名字
         return fmlName;
     }
 
@@ -127,6 +150,5 @@ public class RedisUtils {
     public static void deleteValByTocken(String token) {
         stringRedisTemplate.delete(token);
     }
-
 
 }

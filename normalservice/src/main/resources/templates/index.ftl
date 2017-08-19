@@ -11,6 +11,7 @@
 		<script src="/js/jquery-1.7.1.min.js"></script>
 		<script src="/js/banner.js"></script>
 		<script src="/js/function.js"></script>
+		<script src="/js/headerlogin.js"></script>
 
 	</head>
 
@@ -59,10 +60,17 @@
 				<div class="nav">
 					<div class="logo">
 						<a href="/index/portal"><img src="http://osuyq1koj.bkt.clouddn.com/17-7-19/38186757.jpg"></a>
-						<div class="p">
+						<div class="p" id="ulg">
 							<input type="button" class="nav-button" value="登录" onclick="window.location.href='/security/author/login'">
 							<input type="button" class="nav-button" value="注册有礼" onclick="window.location.href='/ucenter/register'" style="background-color:#FFF; color:#09F; border-color:#e7f0fd;">
 							<input type="button" class="nav-button" value="控制台" onclick="window.location.href='/console/home'">
+						</div>
+						<div class="p" id="lg" style="display: none">
+                            <img src=""/>
+                            <input id="uname" type="button" class="nav-button"  style="border:none;border:none;width:100px;">
+                            <input type="button" class="nav-button" value="最新消息" style="border:none;width:50px;" >
+                            <input type="button" class="nav-button" value="控制台" onclick="window.location.href='/console/home'">
+                            <input type="button" class="nav-button" value="退出" style="border:none;width:30px;" onclick="logout()">
 						</div>
 					</div>
 					<nav class="nav-line">

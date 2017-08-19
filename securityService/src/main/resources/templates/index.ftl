@@ -18,7 +18,7 @@
             <p id="msg">请输入您的用户名</p>
 
             <input type="text" name="username" placeholder="用户名/手机号" id="user" />
-            <div style="margin-left: 25px;width: 312px;margin-top: 25px;">
+            <div style="margin-left: 25px;width: 317px;margin-top: 25px;">
                 <div id="captcha1">
                     <p id="wait1" class="show">正在加载验证码......</p>
                 </div>

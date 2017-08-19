@@ -2,6 +2,7 @@ package com.mcylm.clay.securityservice.controller;
 
 import com.mcylm.clay.securityservice.module.ParameterModel;
 import com.mcylm.clay.securityservice.module.Uauth;
+import com.mcylm.clay.securityservice.module.UauthToken;
 import com.mcylm.clay.securityservice.service.UauthService;
 import com.mcylm.clay.securityservice.util.IPUtil;
 import com.mcylm.clay.securityservice.util.SMSMessageLib;
@@ -36,7 +37,7 @@ public class LoginContoller {
     public ResponseEntity<ParameterModel> doLogin(HttpServletRequest request, ParameterModel parameterModel) {
         //客户端ip
         String hostIp = IPUtil.getIpAddr(request);
-        //主机ip
+        //主机id
         String sessionId = request.getSession().getId();
         ResponseEntity<ParameterModel> result = uauthService.getUuidByUsernameAndPassword(parameterModel, hostIp, sessionId);
         return result;
@@ -64,8 +65,7 @@ public class LoginContoller {
     @RequestMapping(value = "/valphonewhatever")
     @ResponseBody
     public String valphonewhatever(String phone, HttpServletRequest request) {
-        String send = SMSMessageLib.send(phone, request);
-        return send;
+        return SMSMessageLib.send(phone, request);
     }
 
     /**
@@ -78,10 +78,7 @@ public class LoginContoller {
     @RequestMapping(value = "/verphone")
     @ResponseBody
     public String verphone(HttpServletRequest request, String verphone, String phonever) {
-        if (verphone.equals(phonever))
-            return "success";
-        else
-            return "failed";
+        return verphone.equals(phonever) ? "success" : "failed";
     }
 
     /**
@@ -95,6 +92,25 @@ public class LoginContoller {
     @ResponseBody
     public String updatePassword(String password, String phone) {
         return uauthService.updatePassword(password, phone);
+    }
+
+
+    /**
+     * 根据token检测用户是否登录，
+     * 如果存在就返回对象参数
+     * @param token
+     * @return
+     */
+    @RequestMapping("/checkLogin")
+    @ResponseBody
+    public Uauth checkLogin(String token){
+        return uauthService.checkLogin(token);
+    }
+
+    @RequestMapping("logout")
+    @ResponseBody
+    public boolean logout(String token){
+        return uauthService.logout(token);
     }
 
 

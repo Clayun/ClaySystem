@@ -3,6 +3,7 @@ package com.mcylm.clay.securityservice.util;
 import com.google.gson.Gson;
 
 import com.mcylm.clay.securityservice.module.ParameterModel;
+import com.sun.xml.internal.rngom.parse.host.Base;
 import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
@@ -13,7 +14,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * Created by lenovo on 2017/8/10.
  */
-public class RedisUtils {
+public class  RedisUtils {
     private static JedisPoolConfig jedisPoolConfig = new JedisPoolConfig();
     private static JedisConnectionFactory jedisConnectionFactory = new JedisConnectionFactory();
     private static StringRedisTemplate stringRedisTemplate = new StringRedisTemplate();
@@ -118,7 +119,7 @@ public class RedisUtils {
      * @param token
      */
     public static void deleteValByTocken(String token) {
-        stringRedisTemplate.delete(token);
+        stringRedisTemplate.delete(Base64Utils.decodeBase64String(token));
     }
 
 

@@ -39,12 +39,13 @@
 <script>
     BUI.use('common/main',function(){
         var config = [{id:'1',menu:[{text:'系统管理',items:[
-            {id:'2',text:'老沈是老大',href:'/console/Node/index.html'},
-            {id:'3',text:'全局用户管理',href:'/console/uauth/uauthlist'},
-            {id:'4',text:'后台用户管理',href:'/console/list/ucenterlist'},
-            {id:'5',text:'活动管理',href:'/console/activities/activitieslist'},
-            {id:'6',text:'注册管理',href:'/console/account/accountlist'}]}]},
-            {id:'7',homePage : '9',menu:[{text:'业务管理',items:[{id:'9',text:'查询业务',href:'/console/Node/index.html'}]}]}];
+            {id:'2',text:'全局用户',href:'/console/uauth/uauthlist'},
+            {id:'3',text:'用户令牌',href:'/console/token/tokenlist'},
+            {id:'4',text:'后台用户',href:'/console/list/ucenterlist'},
+            {id:'5',text:'活动',href:'/console/activities/activitieslist'},
+            {id:'6',text:'注册',href:'/console/account/accountlist'},
+            {id:'7',text:'历史订单',href:'/console/orders/orderlist'}]}]},
+            {id:'8',homePage :'9',menu:[{text:'业务管理',items:[{id:'10',text:'查询业务',href:'/console/Node/index.html'}]}]}];
         new PageUtil.MainPage({
             modulesConfig : config
         });

@@ -1,6 +1,8 @@
 package com.mcylm.clay.service.paymentservice.util;
 
 
+import com.google.gson.Gson;
+import com.mcylm.clay.service.paymentservice.model.EcsServer;
 import sun.misc.BASE64Decoder;
 import sun.misc.BASE64Encoder;
 
@@ -52,6 +54,17 @@ public class Base64Utils  {
         }
         return dstr;
     }
+
+
+  /*  public static void main(String[] args) {
+//        String ss = "eyJpZCI6MCwidXVpZCI6IjQ0YjFmYjU2NmU1YzRlNDhiNzE3MzE1NDI4ZTM1ZDg3Iiwic2VyX3V1aWQiOiJjNTZkMGI3NjdmNGU0NjBjYTk3M2UyZjFiNDBlYWZhNCIsInNlcl9uYW1lIjoiNDg2YzQ5MmU3YmU0NDNmYzg5ZmYwNWJhOGRhZWYxYjQiLCJjcHUiOiIxNiIsIm1lbW9yeSI6IjgiLCJvc19kaXNrIjoiMTAwIiwiZXhwYW5kX2Rpc2siOiI1MCIsInRhcGUiOiIxMCIsImlwcyI6IjEiLCJpbWFnZSI6IndpbmRvd3M3IiwicGFzc3dvcmQiOiJhZGFzZGFzZGFkYXNkIiwiZGF5cyI6IjAiLCJwcmljZVBlck1vbnRoIjoiMTI5MC4wIiwic3RhdGUiOiIxIiwiY3JlYXRlVGltZSI6IkF1ZyAxNiwgMjAxNyAxMDoxMzoyNCBBTSJ9";
+        String sss="ZXlKcFpDSTZNQ3dpZFhWcFpDSTZJalEwWWpGbVlqVTJObVUxWXpSbE5EaGlOekUzTXpFMU5ESTRaVE0xWkRnM0lpd2ljMlZ5WDNWMWFXUWlPaUpqTlRaa01HSTNOamRtTkdVME5qQmpZVGszTTJVeVpqRmlOREJsWVdaaE5DSXNJbk5sY2w5dVlXMWxJam9pTkRnMll6UTVNbVUzWW1VME5ETm1Zemc1Wm1Zd05XSmhPR1JoWldZeFlqUWlMQ0pqY0hVaU9pSXhOaUlzSW0xbGJXOXllU0k2SWpnaUxDSnZjMTlrYVhOcklqb2lNVEF3SWl3aVpYaHdZVzVrWDJScGMyc2lPaUkxTUNJc0luUmhjR1VpT2lJeE1DSXNJbWx3Y3lJNklqRWlMQ0pwYldGblpTSTZJbmRwYm1SdmQzTTNJaXdpY0dGemMzZHZjbVFpT2lKaFpHRnpaR0Z6WkdGa1lYTmtJaXdpWkdGNWN5STZJakFpTENKd2NtbGpaVkJsY2sxdmJuUm9Jam9pTVRJNU1DNHdJaXdpYzNSaGRHVWlPaUl4SWl3aVkzSmxZWFJsVkdsdFpTSTZJa0YxWnlBeE5pd2dNakF4TnlBeE1Eb3hNem95TkNCQlRTSjk=";
+        String s = decodeBase64String(sss);
+        Gson gson = new Gson();
+        EcsServer ecsServer = gson.fromJson(s, EcsServer.class);
+        System.out.println(ecsServer);
+        System.out.println(s);
+    }*/
 
 
 }

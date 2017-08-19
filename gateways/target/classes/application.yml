@@ -16,3 +16,4 @@ zuul:
     consoleService: /console/**
     paymentService: /pay/**
     openstackService: /ecs/**
+    staticService: /staticService/**

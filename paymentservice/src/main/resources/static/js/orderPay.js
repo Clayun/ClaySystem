@@ -24,17 +24,14 @@ $(function () {
     });
     //计算优惠金额
     $(".slider-container").click(function () {
-        alert("sssss");
         var check_val = "";
         $("input:checkbox[name='ids']:checked").each(function () {
             check_val += "," + $(this).val();
         });
         check_val = check_val.substring(1);
-        alert(check_val)
         var id = $("input:radio:checked").val();
-        alert(id)
         var month = $(".single-slider").val();
-        var entityPrice = $("#entityPrice").html();
+        var entityPrice = $("#pricePerMonth").html();
         if (check_val.length < 0) {
             check_val += "1";
         }
@@ -53,7 +50,7 @@ $(function () {
     });
     //总金额会显
     var aa = $(".single-slider").val();
-    var serverId = $("#entityPrice").html();
+    var serverId = $("#pricePerMonth").html();
     $.ajax({
         type: "POST",
         dataType: "json",
@@ -63,23 +60,23 @@ $(function () {
             $("#price").html(data);
         }
     });
-   /* $.ajax({
+
+    var uuid = $("#uuid").val();
+    $.ajax({
         type: "POST",
         dataType: "text",
-        url: '/getUserPhone',
-        data:{date:1},
+        url: 'getUserPhone',
+        data:{uuid:uuid},
         success: function (data) {
             $("#phonenum").html(data);
         }
-    });*/
-
+    });
 });
 
 $("#paynow").click(function () {
     jQuery('#b1').show();
     $("#smsg").hide();
     $("phonemessage").show();
-    $("#vephone").attr("placeholder", "请输入手机号！");
 });
 
 $("#submitphone").click(function () {
@@ -95,7 +92,6 @@ $("#submitphone").click(function () {
         url: '/verphone',
         data: {verphone: vephone},
         success: function (data) {
-            alert(data)
             if (data) {
                 $("#msg").html("验证成功！")
                 checkedphone = phone;
@@ -104,12 +100,26 @@ $("#submitphone").click(function () {
                 var uuid = $("#uuid").val();
                 var theActualAmount = $("#price").html();
                 var month = $(".single-slider").val();
-                var serverId = $("#entityId").html();
+                var pricePerMonth = $("#pricePerMonth").html();
+                var ser_uuid = $("#ser_uuid").html();
+                var check_val = "";
+                $("input:checkbox[name='ids']:checked").each(function () {
+                    check_val += "," + $(this).val();
+                });
+                check_val = check_val.substring(1);
+                var id = $("input:radio:checked").val();
+                var entityPrice = $("#pricePerMonth").html();
+                if (check_val.length < 0) {
+                    check_val += "0";
+                }
+                if (id == "undefined" || id == "" || id == null) {
+                    id = 0;
+                }
                 $.ajax({
                     type: "POST",
                     dataType: "json",
                     url: '/payment',
-                    data: {ordersUuid: ordersUuid, uuid: uuid, theActualAmount: theActualAmount, month: month},
+                    data: {ordersUuid: ordersUuid, uuid: uuid, theActualAmount: theActualAmount, month: month,pricePerMonth:pricePerMonth,check_val:check_val,id:id,ser_uuid:ser_uuid},
                     success: function (data) {
                         if (data) {
                             alert("支付成功！");
@@ -129,28 +139,17 @@ $("#submitphone").click(function () {
 
 var wait = 60;
 function time(o) {
-    var regex = /^1[3-8]+\d{9}$/;
-    var vephone = $("#vephone").val().trim();
-    if (!regex.test(vephone)) {
-        alert("请输入正确的手机号！！！");
-        return
-    }
-
-
     if (wait == 59) {
-        var phone = $("#vephone").val();
+        var phone = $("#phonenum").html();
         $.ajax({
             type: "POST",
             dataType: "text",
             url: '/valphonewhatever',
             data: {phone: phone},
             success: function (data) {
-                alert(data);
                 if (data == "success") {
                     $("#smsg").show();
                     $("#phonemessge").css("display", "none")
-                    $("#vephone").val("");
-                    $("#vephone").attr("placeholder", "请输入验证码！");
                     $("#smsg").html("短信已发送至您的手机，请注意查收！");
                     jQuery('#b1').show();
                 }
@@ -179,22 +178,21 @@ document.getElementById("repely").onclick = function () {
 
 //计算价格
 function selectedInfo() {
-    alert("sssss");
     var check_val = "";
     $("input:checkbox[name='ids']:checked").each(function () {
         check_val += "," + $(this).val();
     });
     check_val = check_val.substring(1);
-    alert(check_val)
     var id = $("input:radio:checked").val();
-    alert(id)
     var month = $(".single-slider").val();
-    var entityPrice = $("#entityPrice").html();
-    if (check_val.length < 0) {
-        check_val += "1";
+    var entityPrice = $("#pricePerMonth").html();
+    if (check_val== "") {
+        check_val += "";
+        alert(check_val);
     }
     if (id == "undefined" || id == "" || id == null) {
-        id = 1;
+        id = 0;
+        alert(id)
     }
 
     $.ajax({

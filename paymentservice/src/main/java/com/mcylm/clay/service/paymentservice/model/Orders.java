@@ -113,6 +113,7 @@ public class Orders implements Serializable{
                 ", paymentTime=" + paymentTime +
                 ", theActualAmount=" + theActualAmount +
                 ", state=" + state +
+                ", month='" + month + '\'' +
                 '}';
     }
 }

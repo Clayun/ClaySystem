@@ -37,4 +37,9 @@ public class UauthDaoImpl implements UauthDao {
         uauthMapper.updatePassword(password, phone);
     }
 
+    @Override
+    public Uauth getUauthByUuid(String uuid) {
+        return uauthMapper.getUauthByUuid(uuid);
+    }
+
 }

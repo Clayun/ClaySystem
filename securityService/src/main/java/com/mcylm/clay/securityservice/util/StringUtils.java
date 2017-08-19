@@ -13,7 +13,6 @@ public class StringUtils {
         return removeHorizontalLine(uuid);
     }
 
-    
     /**
      * 去除 uuid 中的 -
      * @param uuid

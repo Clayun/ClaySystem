@@ -12,4 +12,6 @@ public interface UauthDao {
     Uauth checkName(ParameterModel parameterModel);
 
     void updatePassword(String password, String phone);
+
+    Uauth getUauthByUuid(String uuid);
 }

@@ -35,7 +35,7 @@
                     <th>实际金额<input type="text" name="theActualAmount" value="100"></th>
 				</tr>
 				<tr>
-                    <th>状态<input type="text" name="state" value="4"></th>
+                    <th>状态<input type="text" name="state" value="2"></th>
 				</tr>
 				<tr>
                 	<th colspan="10"><input type="submit" value="测试支付接口" ></th><#--onclick="test()"-->
