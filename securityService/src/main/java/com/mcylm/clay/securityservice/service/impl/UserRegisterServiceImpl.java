@@ -27,18 +27,21 @@ public class UserRegisterServiceImpl implements UserRegisterService{
 
 
     @Override
-    public String  verifyRegisterUserInfo(String userName, String phone,String vpwd, String email, String passWord) {
-        String str = null;
+    public String  verifyRegisterUserInfo(String userName, String phone) {
         Uauth uauth = userRegisterDao.findRegisterByUserName(userName);
-       if (uauth != null ){
-           str = "n1";
-           return str;
-       }
-       Uauth uauth1 = userRegisterDao.findRegisterByPhone(phone);
-       if(uauth1!= null){
-           str="p2";
-           return  str;
-       }
+        if (uauth != null) {
+            return "n1";
+        }
+        Uauth uauth1 = userRegisterDao.findRegisterByPhone(phone);
+        if (uauth1 != null) {
+            return "p2";
+        }
+        return null;
+
+    }
+
+    @Override
+    public boolean registerUser(String userName, String phone,String vpwd, String email, String passWord){
         String uuid = StringUtils.getUuid();
         System.out.println(uuid);
         String pwd = MD5Util.generate(passWord);
@@ -77,7 +80,6 @@ public class UserRegisterServiceImpl implements UserRegisterService{
         uDetails.setContent("无");
         uDetails.setLocationId("北京东城葫芦巷");
 
-
         flag = userRegisterDao.insertResisterInfo(map);
 
         if(flag){
@@ -88,11 +90,9 @@ public class UserRegisterServiceImpl implements UserRegisterService{
 
 
             userRegisterDao.insertAccountInfo(account);
-            str ="success";
-            return str;
+           return flag;
         }
 
-
-        return str;
+        return flag;
     }
 }

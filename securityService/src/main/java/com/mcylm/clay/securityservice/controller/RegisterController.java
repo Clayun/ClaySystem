@@ -28,10 +28,15 @@ public class RegisterController {
     //验证名称
     @RequestMapping("/verifyRegisterUserInfo")
     @ResponseBody
-    public String  verifyRegisterUserInfo(String userName, String phone,String vpwd, String email, String passWord) {
-        System.out.println("lalala=====" + userName);
-        String info  = userRegisterService.verifyRegisterUserInfo(userName,phone,vpwd,email,passWord);
+    public String  verifyRegisterUserInfo(String userName, String phone) {
+        String info  = userRegisterService.verifyRegisterUserInfo(userName,phone);
         return info;
+    }
+
+    @RequestMapping("/registerUser")
+    @ResponseBody
+    public boolean registerUser(String userName, String phone,String vpwd, String email, String passWord){
+        return userRegisterService.registerUser(userName, phone,vpwd, email, passWord);
     }
 
 

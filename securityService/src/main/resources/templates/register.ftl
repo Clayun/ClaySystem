@@ -12,12 +12,12 @@
 <div class="boxx" id="b1">
     <div class="box1">
         <a href="javascript:;" onclick="jQuery('#b1').hide()" class="close"><img src="http://osuyq1koj.bkt.clouddn.com/17-7-12/6917333.jpg" style="margin-left:500px;margin-top:20px;"/></a>
-        <span style="color:#000;font-size:24px;margin-left:30px;margin-top:10px;">验证手机</span><br>
-        <span id="smsg" style="color:#171B1E;font-size:20px;margin-left:100px;margin-top:20px;"></span><br>
-        <span style="color:#171B1E;font-size:20px;margin-left:100px;margin-top:80px;">手机号：<span id="phonenum"></span></span><br>
+        <span style="color:#000;font-size:24px;margin-left:30px;margin-top:10px;">验证手机</span><br><br>
+        <span id="smsg" style="color:#171B1E;font-size:20px;margin-left:100px;margin-top:20px;"></span>
+        <span id="phonemsg" style="color:#171B1E;font-size:20px;margin-left:100px;margin-top:80px;">手机号：<span id="phonenum"></span></span><br>
         <input type="text" id="vephone" placeholder="请输入验证码" style="height: 32px;width: 250px;border: solid 1px #AAAAAA;background-color: #fff;font-size: 16px;color:#999;margin-left:100px;padding-left:5px;margin-top:20px;">
-        <input type="button" id="repely" style="cursor: pointer;" value="重新发送" class="box1button" /><br>
-        <button id="submitphone" style="cursor: pointer; width: 258px;margin-left: 100px;">提交</button>
+        <input type="button" id="repely" style="cursor: pointer;" value="发送验证码" class="box1button" /><br>
+        <button id="submitverphone" style="cursor: pointer; width: 258px;margin-left: 100px;">提交</button>
     </div>
 </div>
 <div class="register-banner">
