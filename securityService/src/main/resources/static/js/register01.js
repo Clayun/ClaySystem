@@ -34,46 +34,55 @@ var handler1 = function (captchaObj) {
             if (vpwd == "") {
                 $("#msg").html("请输入第二次验证密码！");
                 $("#msg").css("color", "red");
-                return
+                return;
             } else if (pwd != vpwd) {
                 $("#msg").html("两次输入密码不一致！");
                 $("#msg").css("color", "red");
+                return;
             }
-            if(email == ""){
+            if (email == "") {
                 $("#msg").html("请输入您注册的邮箱！");
                 $("#msg").css("color", "red");
+                return;
             }
+            /*  var emailRegx = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+             if (emailRegx.test(email)){
+             $("#msg").html("请输入正确的邮箱！");
+             $("#msg").css("color", "red");
+             return;
+             }*/
             if (phone == "") {
                 $("#msg").html("请输入您的手机号！");
                 $("#msg").css("color", "red");
-                return
+                return;
             }
 
-                 $.post("/security/author/verifyRegisterUserInfo", {
-             "userName": $("#username").val(),
-             "phone": $("#phone").val(),
-             "email": $("#email").val(),
-             "passWord": $("#password").val(),
-                         "vpwd" :$("#vepassword").val()
-             },
-             function (data) {
-             if (data=="n1") {
-                 $("#msg").html("用户名已注册！");
-                 $("#msg").css("color", "red");
-             } else if(data=="p2"){
-                 $("#msg").html("手机号已注册！");
-                 $("#msg").css("color", "red");
-             }else{
-                  alert("没问题");
-                 //location.href="";
-             }
-             }, 'text');
+
+            $.post("/security/author/verifyRegisterUserInfo", {
+                    "userName": $("#username").val(),
+                    "phone": $("#phone").val(),
+                },
+                function (data) {
+                    if (data == "n1") {
+                        $("#msg").html("用户名已注册！");
+                        $("#msg").css("color", "red");
+                        return;
+                    } else if (data == "p2") {
+                        $("#msg").html("手机号已注册！");
+                        $("#msg").css("color", "red");
+                        return;
+                    } else {
+                        $("#b1").show();
+                        phone = $("#phone").val();
+                        $("#phonenum").html(phone);
+                    }
+                }, 'text');
 
         }
     });
     // 将验证码加到id为captcha的元素里，同时会有三个input的值用于表单提交
-        captchaObj.appendTo("#captcha1");
-        captchaObj.onReady(function () {
+    captchaObj.appendTo("#captcha1");
+    captchaObj.onReady(function () {
         $("#wait1").hide();
     });
 
@@ -99,57 +108,69 @@ $.ajax({
         }, handler1);
     }
 });
-//点击获取手机号码
-/*$("#submitphone").click(function () {
 
+//提交验证码，验证
+$("#submitverphone").click(function () {
     var vephone = $("#vephone").val();
-    var phone = $("#phone").val();
+    alert(vephone);
     if (vephone == "") {
         $("#smsg").html("请输入短信验证码！");
-        return
+        return;
     }
-
-
     $.ajax({
-     type: "POST",
-     dataType: "text",
-     url: '/security/author/verphone',
-     data: {verphone:vephone},
-     success: function (data) {
-     if (data == "success") {
-          $("#msg").html("验证成功！")
-           checkedphone = phone;
-          $("#phone").attr("disabled",false);
-           jQuery('#b1').hide();
-           check = 1;
-     } else if (data == "failed") {
-     $("#msg").html("验证码输入错误！")
-     }
-     }
-     });
-
+        type: "POST",
+        dataType: "text",
+        url: '/security/author/verphone',
+        data: {verphone: vephone, phonever: phonever},
+        success: function (data) {
+            if (data == "success") {
+                $.post("/security/author/registerUser", {
+                    "userName": $("#username").val(),
+                    "phone": $("#phone").val(),
+                    "email": $("#email").val(),
+                    "passWord": $("#password").val(),
+                    "vpwd": $("#vepassword").val()
+                }, function (data) {
+                    if (data) {
+                        alert("注册成功！请登录！");
+                        window.location.href = "http://localhost/security/author/login";
+                    } else {
+                        alert("注册失败！请冲洗注册！");
+                        window.location.href = "http://localhost/security/author/register";
+                    }
+                }, 'text');
+            } else if (data == "failed") {
+                $("#msg").html("验证码输入错误！")
+            }
+        }
+    });
 });
 var wait = 60;
 function time(o) {
-    if (wait == 0) {
-        var phone = $("#phone").val();
+    if (wait == 59) {
+        var pho = $("#phonenum").html();
+        alert(pho);
         $.ajax({
             type: "POST",
-            dataType: "text",
-            url: '/security/author/verifyRegisterPhone',
-            data: {phone: phone},
+            dataType: "json",
+            url: '/security/author/valphonewhatever',
+            data: {phone: pho},
             success: function (data) {
                 alert(data);
                 if (data != null) {
-                    $("#msg").html("短信已发送至您的手机，请注意查收！");
+                    $("#smsg").html("短信已发送至您的手机，请注意查收！");
                     $("#phonenum").html($("#phone").val())
                     jQuery('#b1').show();
                     phonever = data;
+                    $("#phonemsg").css("display", "none")
+
                 } else {
                     $("#msg").html("当前手机号已注册！")
                 }
             }
         });
+    }
+    if (wait == 0) {
         o.removeAttribute("disabled");
         o.value = "重新发送";
         wait = 60;
@@ -160,9 +181,10 @@ function time(o) {
         setTimeout(function () {
                 time(o)
             },
-            1000)
+            1000);
     }
 }
+
 document.getElementById("repely").onclick = function () {
     time(this);
-}*/
+}

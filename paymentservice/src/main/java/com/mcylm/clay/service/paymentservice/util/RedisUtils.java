@@ -114,6 +114,7 @@ public class RedisUtils {
         String formToken = parameterModel.getFormToken();
         //用户登录信息
         String message = null;
+        String redirectlogin = "";
 
         //根据用户的token判断redis中是否登录
         if (token != null && !"".equals(token)) {
@@ -123,7 +124,7 @@ public class RedisUtils {
         //如果没有登录，追加跳转路径及formtoken
         if (message == null || "".equals(message)) {
             StringBuffer redirectToLogin = new StringBuffer();
-            redirectToLogin.append("redirect:http://10.2.2.75/security/author/login");
+            redirectToLogin.append("redirect:http://localhost/security/author/login");
 
             //判断跳转路径是否为null，追加路径后面
             if (redirectUrl != null && !"".equals(redirectUrl)) {
@@ -135,8 +136,18 @@ public class RedisUtils {
                 redirectToLogin.append("&formToken=" + formToken);
             }
 
+            System.out.println(redirectToLogin.toString().contains("redirectUrl"));
+            System.out.println(redirectToLogin.toString().contains("redirectUrl"));
+            System.out.println(redirectToLogin.toString().contains("redirectUrl"));
+            System.out.println(redirectToLogin.toString().contains("redirectUrl"));
+            System.out.println(redirectToLogin.toString().contains("redirectUrl"));
+            System.out.println(redirectToLogin.toString().contains("redirectUrl"));
+            System.out.println(redirectToLogin.toString().contains("redirectUrl"));
+            if (redirectToLogin.toString().contains("redirectUrl")) {
+                redirectlogin = redirectToLogin.toString().replaceFirst("&", "?");
+            }
             //返回跳转路径，并发第一个&替换为？
-            return redirectToLogin.toString().replaceFirst("&", "?");
+            return redirectlogin;
         }
         //返回目标页面的名字
         return fmlName;

@@ -1,6 +1,6 @@
 spring:
   application:
-    name: OrdersService
+    name: paymentService
 eureka:
   client:
     serviceUrl:

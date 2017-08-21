@@ -65,7 +65,15 @@ public class LoginContoller {
     @RequestMapping(value = "/valphonewhatever")
     @ResponseBody
     public String valphonewhatever(String phone, HttpServletRequest request) {
-        return SMSMessageLib.send(phone, request);
+        System.out.println(phone);
+        System.out.println(phone);
+        System.out.println(phone);
+        System.out.println(phone);
+        System.out.println(phone);
+        System.out.println(phone);
+        System.out.println(phone);
+        /*SMSMessageLib.send(phone, request)*/
+        return "1234";
     }
 
     /**
@@ -78,6 +86,20 @@ public class LoginContoller {
     @RequestMapping(value = "/verphone")
     @ResponseBody
     public String verphone(HttpServletRequest request, String verphone, String phonever) {
+        System.out.println("========================================");
+        System.out.println("========================================");
+        System.out.println("========================================");
+        System.out.println("=====水电费是的发送到===================================");
+        System.out.println(verphone);
+        System.out.println("========================================");
+        System.out.println("========================================");
+        System.out.println("========================================");
+        System.out.println("========================================");
+        System.out.println("========================================");
+        System.out.println("========================================");
+        System.out.println("撒啊啊====================================");
+        System.out.println(phonever);
+
         return verphone.equals(phonever) ? "success" : "failed";
     }
 

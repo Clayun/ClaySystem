@@ -3,11 +3,11 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>订单付款 - 弹性云MineCraft服务器</title>
-		<link rel="stylesheet" type="text/css" href="css/style.css">
-		<link rel="stylesheet" type="text/css" href="css/jquery.range.css">
-		<link rel="stylesheet" type="text/css" href="css/orderpay.css">
-		<script type="text/javascript" src="js/jquery-1.7.1.min.js" ></script>
-		<script type="text/javascript" src="js/jquery.range.js" ></script>
+		<link rel="stylesheet" type="text/css" href="/pay/css/style.css">
+		<link rel="stylesheet" type="text/css" href="/pay/css/jquery.range.css">
+		<link rel="stylesheet" type="text/css" href="/pay/css/orderpay.css">
+		<script type="text/javascript" src="/pay/js/jquery-1.7.1.min.js" ></script>
+		<script type="text/javascript" src="/pay/js/jquery.range.js" ></script>
 
 	</head>
 	
@@ -155,6 +155,6 @@
 	        </div>
 	    </div>
 	</footer>
-	<script src="js/loginout.js"></script>
-	<script type="text/javascript" src="js/orderPay.js" ></script>
+	<script src="/pay/js/loginout.js"></script>
+	<script type="text/javascript" src="/pay/js/orderPay.js" ></script>
 </html>

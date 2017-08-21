@@ -41,7 +41,7 @@ $(function () {
         $.ajax({
             type: "POST",
             dataType: "json",
-            url: 'getorderMonthPrice',
+            url: '/pay/getorderMonthPrice',
             data: {month: month, entityPrice: entityPrice, check_val: check_val, id: id},
             success: function (data) {
                 $("#price").html(data);
@@ -54,7 +54,7 @@ $(function () {
     $.ajax({
         type: "POST",
         dataType: "json",
-        url: 'getMonthPrice',
+        url: '/pay/getMonthPrice',
         data: {aa: aa, serverId: serverId},
         success: function (data) {
             $("#price").html(data);
@@ -65,7 +65,7 @@ $(function () {
     $.ajax({
         type: "POST",
         dataType: "text",
-        url: 'getUserPhone',
+        url: '/pay/getUserPhone',
         data:{uuid:uuid},
         success: function (data) {
             $("#phonenum").html(data);
@@ -89,7 +89,7 @@ $("#submitphone").click(function () {
     $.ajax({
         type: "POST",
         dataType: "json",
-        url: '/verphone',
+        url: '/pay/verphone',
         data: {verphone: vephone},
         success: function (data) {
             if (data) {
@@ -118,7 +118,7 @@ $("#submitphone").click(function () {
                 $.ajax({
                     type: "POST",
                     dataType: "json",
-                    url: '/payment',
+                    url: '/pay/payment',
                     data: {ordersUuid: ordersUuid, uuid: uuid, theActualAmount: theActualAmount, month: month,pricePerMonth:pricePerMonth,check_val:check_val,id:id,ser_uuid:ser_uuid},
                     success: function (data) {
                         if (data) {
@@ -144,7 +144,7 @@ function time(o) {
         $.ajax({
             type: "POST",
             dataType: "text",
-            url: '/valphonewhatever',
+            url: '/pay/valphonewhatever',
             data: {phone: phone},
             success: function (data) {
                 if (data == "success") {
@@ -188,17 +188,15 @@ function selectedInfo() {
     var entityPrice = $("#pricePerMonth").html();
     if (check_val== "") {
         check_val += "";
-        alert(check_val);
     }
     if (id == "undefined" || id == "" || id == null) {
         id = 0;
-        alert(id)
     }
 
     $.ajax({
         type: "POST",
         dataType: "json",
-        url: 'getorderMonthPrice',
+        url: '/pay/getorderMonthPrice',
         data: {month: month, entityPrice: entityPrice, check_val: check_val, id: id},
         success: function (data) {
             $("#pzPrice").html("优惠后的价格：");
