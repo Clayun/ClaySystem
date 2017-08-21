@@ -15,9 +15,9 @@
     <script src="/ecs/bootstrap-3.3.5-dist/js/bootstrap.min.js" type="text/javascript"></script>
 </head>
 <body>
-    ${label.nav}
+<#include "/header.ftl">
 <div class="down-main">
-    ${label.select}
+<#include "/lefter.ftl">
   <div class="right-product view-product right-full">
      <div class="container-fluid">
 				<div class="manage account-manage info-center">

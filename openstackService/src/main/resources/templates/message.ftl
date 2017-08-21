@@ -16,9 +16,9 @@
 </head>
 
 <body>
-${label.nav}
+<#include "/header.ftl">
 <div class="down-main">
-${label.select}
+<#include "/lefter.ftl">
   <div class="right-product right-full">
      <div class="container-fluid">
 				<div class="info-center">
