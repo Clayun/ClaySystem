@@ -8,4 +8,8 @@ package com.mcylm.clay.securityservice.service;
  */
 public interface UserRegisterService {
 
+    //验证用户名和手机号
+    String  verifyRegisterUserInfo(String userName, String phone);
+
+    boolean registerUser(String userName, String phone,String vpwd, String email, String passWord);
 }

@@ -35,7 +35,7 @@ var handler1 = function (captchaObj) {
                         location.reload();
                         $("#msg").css("color", "red");
                         $("#msg").html("账号不存在");
-
+                        return;
                     }
                     $("#phoneMessage").show();
                     $("#userMessage").css("display", "none");
@@ -57,7 +57,7 @@ var handler1 = function (captchaObj) {
 };
 
 
-//提交手机号，获取随机码
+//提交验证码，验证
 $("#submitphone").click(function () {
     var vephone = $("#vephone").val();
     alert(vephone);

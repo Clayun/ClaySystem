@@ -1,11 +1,10 @@
 package com.mcylm.clay.securityservice.controller;
 
-import com.mcylm.clay.securityservice.module.ParameterModel;
 import com.mcylm.clay.securityservice.service.UserRegisterService;
-import com.mcylm.clay.securityservice.util.RedisUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * @Author:Wuyali
@@ -21,9 +20,24 @@ public class RegisterController {
 
     //注册
     @RequestMapping("/register")
-    public String register(ParameterModel parameterModel){
-
-        System.out.println("=============");
-        return RedisUtils.checkLogin(parameterModel,"register");
+    public String register() {
+        return "register";
     }
+
+
+    //验证名称
+    @RequestMapping("/verifyRegisterUserInfo")
+    @ResponseBody
+    public String  verifyRegisterUserInfo(String userName, String phone) {
+        String info  = userRegisterService.verifyRegisterUserInfo(userName,phone);
+        return info;
+    }
+
+    @RequestMapping("/registerUser")
+    @ResponseBody
+    public boolean registerUser(String userName, String phone,String vpwd, String email, String passWord){
+        return userRegisterService.registerUser(userName, phone,vpwd, email, passWord);
+    }
+
+
 }
