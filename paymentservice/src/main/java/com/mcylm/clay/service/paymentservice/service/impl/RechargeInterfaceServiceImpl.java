@@ -8,8 +8,16 @@ import org.springframework.stereotype.Service;
 /**
  * Created by lenovo-pc on 2017/8/17.
  */
-/*@Service*/
+@Service
 public class RechargeInterfaceServiceImpl implements RechargeInterfaceService{
-   /* @Autowired
-    private RechargeInterfaceDao rechargeInterfaceDao;*/
+   @Autowired
+    private RechargeInterfaceDao rechargeInterfaceDao;
+
+   //充值
+    @Override
+    public Integer rechargeInterface(String uuid, Double amount, String r6_Order) {
+        Double money=0.0;
+
+        return rechargeInterfaceDao.rechargeInterface(uuid,amount,r6_Order);
+    }
 }

@@ -63,6 +63,7 @@ public class PaymentInterfaceController {
 
         //获取当前地址
         StringBuffer url = request.getRequestURL();
+        url.replace(17, 22, "/pay/");
         parameterModel.setRedirectUrl(url.toString());
         //检测是否登录
         String orderPay = RedisUtils.checkLogin(parameterModel, "orderPay");
