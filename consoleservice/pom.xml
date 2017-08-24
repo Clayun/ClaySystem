@@ -10,6 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
     <artifactId>consoleservice</artifactId>
     <dependencies>
+
         <!-- 与数据库操作相关的依赖 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -88,16 +89,19 @@
             <artifactId>spring-boot-devtools</artifactId>
             <optional>true</optional>
         </dependency>
+
         <dependency>
             <groupId>commons-codec</groupId>
             <artifactId>commons-codec</artifactId>
             <version>1.9</version>
         </dependency>
+
         <dependency>
             <groupId>com.mcylm.claySystem</groupId>
             <artifactId>securityService</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
+
     </dependencies>
 
     <build>

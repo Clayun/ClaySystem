@@ -1,0 +1,48 @@
+spring:
+  application:
+    name: consoleService
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:6080/eureka/  #注册中心地址
+  instance:
+    hostname: localhost
+    instance-id: http://localhost:6068
+server:
+  port: 6068
+#datasource config
+#jdbc:
+#  driverClassName: com.mysql.jdbc.Driver
+#  url: jdbc:mysql://59.110.235.199:3306/claySystem?characterEncoding=utf-8
+#  username: root
+#  password: hdidcNO.F-2
+##数据库连接信息
+spring.datasource.url: jdbc:mysql://59.110.235.199:3306/claySystem?characterEncoding=utf-8
+spring.datasource.username: root
+spring.datasource.password: hdidcNO.F-2
+spring.datasource.driver-class-name: com.mysql.jdbc.Driver
+##指向mapper的xml文件位置
+#mybatis.mapper-locations: classpath:mapper/*Mapper.xml
+#mybatis config
+#mybatis:
+#  typeAliasesPackage: com.mcylm.clay.service.normalservice.model
+#  mapperLocations: classpath:mapper/*.xml
+
+spring.redis.host: 59.110.235.199
+spring.redis.port: 6379
+#spring.redis.password=
+spring.redis.database: 1
+spring.redis.pool.max-active: 8
+spring.redis.pool.max-wait: -1
+spring.redis.pool.max-idle: 500
+spring.redis.pool.min-idle: 0
+spring.redis.timeout: 0
+
+spring.freemarker.allow-request-override: false
+spring.freemarker.cache: false
+spring.freemarker.check-template-location: true
+spring.freemarker.charset: UTF-8
+spring.freemarker.content-type: text/html
+spring.freemarker.expose-session-attributes: false
+spring.freemarker.expose-spring-macro-helpers: false
+spring.freemarker.request-context-attribute: request
