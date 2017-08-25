@@ -1,7 +1,6 @@
 package com.mcylm.clay.service.consoleservice.controller;
 
 import com.mcylm.clay.service.consoleservice.model.Uauth;
-import com.mcylm.clay.service.consoleservice.model.UauthStr;
 import com.mcylm.clay.service.consoleservice.utils.PageUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.query.Param;
@@ -10,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.mcylm.clay.service.consoleservice.service.UauthService;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-
 import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
 import java.util.List;

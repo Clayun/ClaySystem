@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import java.util.List;
+import java.io.IOException;
 
 /**
  * @Author:Mr_Shen
@@ -29,17 +29,17 @@ public class LoginAction{
         return "login";
     }
 
-    @RequestMapping("tologin")
+    @RequestMapping("/tologin")
     @ResponseBody
     public boolean tologin(String username, String password, HttpServletRequest request){
         Login login=new Login();
         login.setUsername(username);
         login.setPassword(password);
-        try {
+        try{
             Login LoginMessage=loginService.tologin(login);
             if(LoginMessage.getId()!=null){
                 HttpSession session=request.getSession();
-                session.setAttribute("username",username);
+                session.setAttribute("LoginMessage",LoginMessage);
                 return true;
             }else{
                 return false;
@@ -47,5 +47,12 @@ public class LoginAction{
         }catch (Exception e){
             return false;
         }
+    }
+
+    @RequestMapping("/logout")
+    public String logout(HttpServletRequest request) throws IOException {
+        HttpSession session=request.getSession();
+        session.invalidate();
+        return "login";
     }
 }
