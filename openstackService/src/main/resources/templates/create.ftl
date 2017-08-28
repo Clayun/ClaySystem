@@ -3,31 +3,76 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>聚乐云 - 弹性云MineCraft服务器 - 产品详情</title>
-		<link rel="stylesheet" type="text/css" href="/ecs/css/style1.css">
+        <link rel="stylesheet" type="text/css" href="/ecs/css/nav.css">
+		<link rel="stylesheet" type="text/css" href="/ecs/css/createstyle.css">
 		<script type="text/javascript" src="/ecs/js/jquery-1.7.1.min.js" ></script>
 	</head>
 	
 	<body>
 		<div class="create-banner">
-			<div class="nav">
+            <div class="nav">
                 <div class="logo">
-                    <a href="/index/portal"><img src="http://osuyq1koj.bkt.clouddn.com/17-7-19/38186757.jpg"></a>
-                    <div class="p">
-                        <input type="button" class="nav-button" value="登录" style=" border:none;">
-                        <input type="button" class="nav-button" value="免费体验" style=" border:none;">
-                        <input type="button" class="nav-button" value="注册有礼" style="background-color:#FFF; color:#09F; border-color:#e7f0fd;">
-                        <input type="button" class="nav-button" value="控制台">
+                    <a href="/index"><img src="http://osuyq1koj.bkt.clouddn.com/17-7-19/38186757.jpg"></a>
+                    <div class="p" id="ulg">
+                        <input type="button" class="nav-button" value="登录" onclick="window.location.href='/security/author/login'">
+                        <input type="button" class="nav-button" value="注册有礼" onclick="window.location.href='/ucenter/register'" style="background-color:#FFF; color:#09F; border-color:#e7f0fd;">
+                        <input type="button" class="nav-button" value="控制台" onclick="window.location.href='/console/home'">
+                    </div>
+                    <div class="p" id="lg" style="display: none">
+                        <img src=""/>
+                        <input id="uname" type="button" class="nav-button"  style="border:none;border:none;width:100px;">
+                        <input type="button" class="nav-button" value="最新消息" style="border:none;width:50px;" >
+                        <input type="button" class="nav-button" value="控制台" onclick="window.location.href='/console/home'">
+                        <input type="button" class="nav-button" value="退出" style="border:none;width:30px;" onclick="logout()">
                     </div>
                 </div>
                 <nav class="nav-line">
                     <ol>
-                        <a href="#"><li class="firstpage">☰ 首页</li></a>
-                        <a href="#"><li id="begin">开始定制</li></a>
-                        <a href="#"><li id="ecs">云主机</li></a>
-                        <a href="#"><li>人工服务</li></a>
-                        <a href="#"><li>关于我们</li></a>
-                    </ol>  
+                        <a href="#" id="firstpage">
+                            <li class="firstpage">☰ 首页</li>
+                        </a>
+                        <a href="#" id="ecspage">
+                            <li id="ecs">云服务器</li>
+                        </a>
+                        <a href="#" id="thirdpage">
+                            <li id="begin">定制服务</li>
+                        </a>
+                        <a href="#" id="fthpage">
+                            <li>人工服务</li>
+                        </a>
+                        <a href="#" id="fifthpage">
+                            <li>关于我们</li>
+                        </a>
+                    </ol>
                 </nav>
+            </div>
+            <div class="nav-slide-down" id="firstpage-nav" style="display: none;">
+                <ul>
+                    <li><a href="/ecs/enterprise/create">首页</a></li>
+                </ul>
+            </div>
+            <div class="nav-slide-down" id="ecs-nav" style="display: none;">
+                <ul>
+                    <li>云服务器 ECS</li>
+                </ul>
+            </div>
+            <div class="nav-slide-down" id="third-nav" style="display: none;">
+                <ul>
+                    <li>网页设计</li>
+                    <li>电子商城开发</li>
+                    <li>手机APP开发</li>
+                </ul>
+            </div>
+            <div class="nav-slide-down" id="fth-nav" style="display: none;">
+                <ul>
+                    <li>QQ客服</li>
+                    <li>微信客服</li>
+                </ul>
+            </div>
+            <div class="nav-slide-down" id="fifth-nav" style="display: none;">
+                <ul>
+                    <li>联系我们</li>
+                </ul>
             </div>
 	            <div class="create-head">
 	            	<br><br>
@@ -394,5 +439,6 @@
 	    </div>
 	</footer>
 	<script type="text/javascript" src="/ecs/js/create.js" ></script>
+    <script type="text/javascript" src="/ecs/js/nav.js" ></script>
 	<script src="/ecs/js/loginout.js"></script>
 </html>

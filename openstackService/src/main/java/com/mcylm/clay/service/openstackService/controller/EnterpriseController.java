@@ -27,6 +27,30 @@ public class EnterpriseController {
         return "create";
     }
 
+    @RequestMapping("/userInfo")
+    public String userInfo(){
+        return "userInfo";
+    }
+
+    @RequestMapping("/message")
+    public String message(){
+        return "message";
+    }
+
+    @RequestMapping("/smsInfo")
+    public String smsInfo(){
+        return "smsInfo";
+    }
+
+    @RequestMapping("/identify")
+    public String identify(){
+        return "identify";
+    }
+
+    @RequestMapping("/right")
+    public String right(){
+        return "right";
+    }
 
 
 }

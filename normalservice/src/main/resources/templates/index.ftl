@@ -7,12 +7,12 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
 		<title>${index_head_title.label}</title>
 		<link rel="stylesheet" type="text/css" href="/css/style.css">
+        <link rel="stylesheet" type="text/css" href="/css/nav.css">
 		<link rel="stylesheet" type="text/css" href="/css/bootstrap-grid.min.css">
 		<script src="/js/jquery-1.7.1.min.js"></script>
 		<script src="/js/banner.js"></script>
 		<script src="/js/function.js"></script>
 		<script src="/js/headerlogin.js"></script>
-
 	</head>
 
 	<body>
@@ -59,7 +59,7 @@
 				</div>
 				<div class="nav">
 					<div class="logo">
-						<a href="/index/portal"><img src="http://osuyq1koj.bkt.clouddn.com/17-7-19/38186757.jpg"></a>
+						<a href="/index"><img src="http://osuyq1koj.bkt.clouddn.com/17-7-19/38186757.jpg"></a>
 						<div class="p" id="ulg">
 							<input type="button" class="nav-button" value="登录" onclick="window.location.href='/security/author/login'">
 							<input type="button" class="nav-button" value="注册有礼" onclick="window.location.href='/ucenter/register'" style="background-color:#FFF; color:#09F; border-color:#e7f0fd;">
@@ -73,26 +73,54 @@
                             <input type="button" class="nav-button" value="退出" style="border:none;width:30px;" onclick="logout()">
 						</div>
 					</div>
-					<nav class="nav-line">
-						<ol>
-							<a href="/index/portal">
-								<li class="firstpage">☰ 首页</li>
-							</a>
-							<a href="/index/create">
-								<li id="ecs">云服务器</li>
-							</a>
-							<a href="#">
-								<li id="begin">定制服务</li>
-							</a>
-							<a href="#">
-								<li>人工服务</li>
-							</a>
-							<a href="#">
-								<li>关于我们</li>
-							</a>
-						</ol>
-					</nav>
-				</div>
+                        <nav class="nav-line">
+                            <ol>
+                                <a href="#" id="firstpage">
+                                    <li class="firstpage">☰ 首页</li>
+                                </a>
+                                <a href="#" id="ecspage">
+                                    <li id="ecs">云服务器</li>
+                                </a>
+                                <a href="#" id="thirdpage">
+                                    <li id="begin">定制服务</li>
+                                </a>
+                                <a href="#" id="fthpage">
+                                    <li>人工服务</li>
+                                </a>
+                                <a href="#" id="fifthpage">
+                                    <li>关于我们</li>
+                                </a>
+                            </ol>
+                        </nav>
+					</div>
+                    <div class="nav-slide-down" id="firstpage-nav" style="display: none;">
+                        <ul>
+                            <li><a href="/ecs/enterprise/create">首页</a></li>
+                        </ul>
+                    </div>
+                    <div class="nav-slide-down" id="ecs-nav" style="display: none;">
+                        <ul>
+                            <li>云服务器 ECS</li>
+						</ul>
+                    </div>
+                    <div class="nav-slide-down" id="third-nav" style="display: none;">
+                        <ul>
+                            <li>网页设计</li>
+                            <li>电子商城开发</li>
+                            <li>手机APP开发</li>
+                        </ul>
+                    </div>
+                    <div class="nav-slide-down" id="fth-nav" style="display: none;">
+                        <ul>
+                            <li>QQ客服</li>
+                            <li>微信客服</li>
+                        </ul>
+                    </div>
+                    <div class="nav-slide-down" id="fifth-nav" style="display: none;">
+                        <ul>
+                            <li>联系我们</li>
+                        </ul>
+					</div>
 			</div>
 		</div>
 		<div class="canus">
@@ -473,6 +501,7 @@
 			</div>
 		</div>
 		<script src="/js/loginout.js"></script>
+        <script src="/js/nav.js"></script>
 		<script type="text/javascript">
 			$(function() {
 				$("#cardArea").cardArea()
