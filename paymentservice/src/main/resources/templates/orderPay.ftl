@@ -55,8 +55,9 @@
 					<span style="margin-left: 100px;line-height: 100px;font-size: 30px;font-weight: bold; color: #555;">配置清单</span>
 					<div class="renew-box">
 						<div class="renew-box-items" style="width: 1000px;"><br><br>
-
 							<input type="hidden" value="${id}" name="uuid" id="uuid">
+							<input type="hidden" value="${ecsServer.uuid}" name="uuid" id="ordersUuid">
+							<input type="hidden" value="${ecsServer.ser_uuid}" name="ser_uuid" id="ser_uuid">
 							<span style=" font-weight: bold;color:#555;">服务器名称：</span><span id="ser_name">${ecsServer.ser_name}</span><br>
 							<span style=" font-weight: bold;color:#555;">CPU核心数：</span><span id="cpu">${ecsServer.cpu}</span><br>
                             <span style=" font-weight: bold;color:#555;">内存：</span><span id="memory">${ecsServer.memory}</span><br>

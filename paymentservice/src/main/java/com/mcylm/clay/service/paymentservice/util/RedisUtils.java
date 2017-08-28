@@ -1,20 +1,10 @@
 package com.mcylm.clay.service.paymentservice.util;
 
 import com.google.gson.Gson;
-
-import com.mcylm.clay.service.paymentservice.model.Orders;
 import com.mcylm.clay.service.paymentservice.model.ParameterModel;
-import jdk.nashorn.internal.scripts.JD;
-import org.springframework.core.annotation.Order;
-import org.springframework.data.redis.connection.RedisClusterConnection;
-import org.springframework.data.redis.connection.RedisConnection;
-import org.springframework.data.redis.connection.RedisConnectionFactory;
-import org.springframework.data.redis.connection.jedis.JedisConnection;
 import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
-import org.springframework.data.redis.core.SetOperations;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
-import org.springframework.jca.cci.connection.ConnectionFactoryUtils;
 import redis.clients.jedis.JedisPoolConfig;
 
 import java.util.concurrent.TimeUnit;
@@ -136,7 +126,10 @@ public class RedisUtils {
                 redirectToLogin.append("&formToken=" + formToken);
             }
 
-            System.out.println(redirectToLogin.toString().contains("redirectUrl"));
+            System.out.println(redirectlogin);
+            System.out.println(redirectlogin);
+            System.out.println(redirectlogin);
+            System.out.println(redirectlogin);
             System.out.println(redirectToLogin.toString().contains("redirectUrl"));
             System.out.println(redirectToLogin.toString().contains("redirectUrl"));
             System.out.println(redirectToLogin.toString().contains("redirectUrl"));

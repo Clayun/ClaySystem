@@ -96,12 +96,12 @@ $("#submitphone").click(function () {
                 $("#msg").html("验证成功！")
                 checkedphone = phone;
                 jQuery('#b1').hide();
-                var ordersUuid = $("#entityId").html();
+                var ordersUuid = $("#ordersUuid").val();
                 var uuid = $("#uuid").val();
                 var theActualAmount = $("#price").html();
                 var month = $(".single-slider").val();
                 var pricePerMonth = $("#pricePerMonth").html();
-                var ser_uuid = $("#ser_uuid").html();
+                var ser_uuid = $("#ser_uuid").val();
                 var check_val = "";
                 $("input:checkbox[name='ids']:checked").each(function () {
                     check_val += "," + $(this).val();

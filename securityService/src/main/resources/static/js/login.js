@@ -46,8 +46,14 @@ var handler1 = function (captchaObj) {
                         }else{
                             url += "localhost/";
                         }
+                        if (url.indexOf('?')!=-1){
+                            url += '&';
+                        }else{
+                            url += '?';
+                        }
+
                         if (token != null && token != ''){
-                            url = url+"?token="+token;
+                            url = url+"token="+token;
                         }
                         if (loginType != null && loginType != ''){
                             url = url+"&loginType="+loginType;
