@@ -67,7 +67,11 @@ public class PaymentInterfaceController {
 
         if (!flag) {
             //信息存入redis
-            RedisUtils.setKey_Val_TimeOut(Base64Utils.decodeBase64String(parameterModel.getFormToken()), data);
+            try {
+                RedisUtils.setKey_Val_TimeOut(Base64Utils.decodeBase64String(parameterModel.getFormToken()), data);
+            } catch (Exception e) {
+                return "redirect:http://localhost/ecs/enterprise/create?token="+parameterModel.getToken();
+            }
             //信息添加
             Integer i = paymentInterfaceService.paymentInterfaceAdd(data);
         }
