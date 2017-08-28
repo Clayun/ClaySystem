@@ -85,6 +85,6 @@ public class FmlConterller {
      */
     @RequestMapping("/resetpwd")
     public String unknown() {
-        return "index";
+        return "resetpwd";
     }
 }

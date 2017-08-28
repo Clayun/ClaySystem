@@ -48,12 +48,12 @@
             </div>
             <div class="nav-slide-down" id="firstpage-nav" style="display: none;">
                 <ul>
-                    <li><a href="/ecs/enterprise/create">首页</a></li>
+                    <li><a href="/index">首页</a></li>
                 </ul>
             </div>
             <div class="nav-slide-down" id="ecs-nav" style="display: none;">
                 <ul>
-                    <li>云服务器 ECS</li>
+                    <li><a href="/ecs/enterprise/create">云服务器 ECS</a></li>
                 </ul>
             </div>
             <div class="nav-slide-down" id="third-nav" style="display: none;">

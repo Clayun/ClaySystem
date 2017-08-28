@@ -20,3 +20,19 @@
 	float: left;
 	padding-left: 70px;
 }
+.nav-slide-down ul li a:link{
+	color: #FFF;
+	text-decoration: none;
+}
+.nav-slide-down ul li a:hover{
+	color: #1b77b9;
+	text-decoration: none;
+}
+.nav-slide-down ul li a:visited{
+	color: #FFF;
+	text-decoration: none;
+}
+.nav-slide-down ul li a:active{
+	color: #1b77b9;
+	text-decoration: none;
+}
