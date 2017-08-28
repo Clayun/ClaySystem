@@ -33,7 +33,7 @@
                     <li>
                         <div class="showtitle" style="width:100px;">
                             <img src="/ecs/img/leftimg.png" />消息中心
-                        </div><a href="/ecs/label/message"><span class="sublist-icon glyphicon glyphicon-envelope"></span><span class="sub-title">消息中心</span></a> </li>
+                        </div><a href="/ecs/messageInterface"><span class="sublist-icon glyphicon glyphicon-envelope"></span><span class="sub-title">消息中心</span></a> </li>
                     <li>
                         <div class="showtitle" style="width:100px;">
                             <img src="/ecs/img/leftimg.png" />短信
