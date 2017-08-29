@@ -3,7 +3,6 @@ package com.mcylm.clay.securityservice.util;
 import com.google.gson.Gson;
 
 import com.mcylm.clay.securityservice.module.ParameterModel;
-import com.sun.xml.internal.rngom.parse.host.Base;
 import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
