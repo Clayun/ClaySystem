@@ -8,7 +8,6 @@ import com.mcylm.clay.service.paymentservice.util.Base64Utils;
 import com.mcylm.clay.service.paymentservice.util.RedisUtils;
 import com.mcylm.clay.service.paymentservice.util.StringUtils;
 import com.mcylm.clay.service.paymentservice.util.ZhiUtil;
-import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -39,7 +38,7 @@ public class RechargeInterfaceController {
     public String rechargeInterface(ParameterModel parameterModel, Model model, HttpServletRequest request) {
         //获取当前地址
         StringBuffer url = request.getRequestURL();
-        url.replace(17, 22, "/pay/");
+        url.replace(16, 22, "/pay/");
         parameterModel.setRedirectUrl(url.toString());
         //检测是否登录
         String recharge = RedisUtils.checkLogin(parameterModel, "recharge");
