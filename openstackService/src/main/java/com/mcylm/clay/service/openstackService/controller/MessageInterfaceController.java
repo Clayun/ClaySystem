@@ -15,6 +15,7 @@ import java.util.List;
  * Created by lenovo-pc on 2017/8/21.
  */
 @Controller
+@RequestMapping("/message")
 public class MessageInterfaceController {
     @Autowired
     private MessageInterfaceService messageInterfaceService;

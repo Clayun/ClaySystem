@@ -14,6 +14,7 @@
       <set>
         <option value="$PROJECT_DIR$/discovery/pom.xml" />
         <option value="$PROJECT_DIR$/gateway/pom.xml" />
+        <option value="$PROJECT_DIR$/openstackService/pom.xml" />
         <option value="$PROJECT_DIR$/serverservice/pom.xml" />
         <option value="$PROJECT_DIR$/springbootfreemarker/pom.xml" />
       </set>
