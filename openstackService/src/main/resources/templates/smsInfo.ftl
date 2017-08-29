@@ -16,9 +16,9 @@
 </head>
 
 <body>
-    ${label.nav}
+<#include "/header.ftl">
 <div class="down-main">
-    ${label.select}
+<#include "/lefter.ftl">
   <div class="right-product view-product right-full">
      <div class="container-fluid">
 				<div class="message-manage info-center">
@@ -42,9 +42,6 @@
 						<div class="select-table pull-right">
 							<div>
 								<input readonly="readonly" value="全部站点" type="text">
-								<span>
-								<img src="/statics/console/images/icon_lit1.png" width="10">
-								</span>
 							</div>
 						</div>
 						<span class="pull-right margin-small-top">按站点查找：</span>

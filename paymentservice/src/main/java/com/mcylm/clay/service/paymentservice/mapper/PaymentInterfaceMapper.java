@@ -28,7 +28,6 @@ public interface PaymentInterfaceMapper {
     @Select("SELECT id,uuid,money,score,consume from  pre_common_account WHERE uuid=#{uuid}")
     Account getMoneyByAccountUuid(@Param("uuid") String uuid);
 
-    //支付
     @Update("update pre_common_account set money=money-#{theActualAmount},score=score+#{score}," +
             "consume=consume+#{theActualAmount} where uuid=#{uuid}")
     int paymentInterface(@Param("theActualAmount") Double theActualAmount, @Param("score") Integer score, @Param("uuid") String uuid);

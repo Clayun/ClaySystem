@@ -7,19 +7,19 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
 		<title></title>
-		<script src="/js/jquery-1.7.1.min.js"></script>
+		<script src="/pay/js/jquery-1.7.1.min.js"></script>
 	</head>
 
 	<body>
-		<form action="/paymentInterface" id="form" method="get">
+		<form action="/pay/recharge" id="form" method="get">
 			<table border="1">
 				<tr>
-                    <th>付款人编号/用户名<input type="text" name="uuid" value="1"></th>
+                    <th>付款人编号/用户名<input type="text" name="uuids" value="${token}"></th>
 				</tr>
 				<tr>
-                    <th>付款金额<input type="text" name="amount" value="100"></th>
+                    <th>充值金额<input type="text" name="amount" value="1000"></th>
 				</tr>
-				<tr>
+				<#--<tr>
                     <th>付款用途<input type="text" name="paymentPurposes" value="1"></th>
 				</tr>
 				<tr>
@@ -36,7 +36,7 @@
 				</tr>
 				<tr>
                     <th>状态<input type="text" name="state" value="2"></th>
-				</tr>
+				</tr>-->
 				<tr>
                 	<th colspan="10"><input type="submit" value="测试支付接口" ></th><#--onclick="test()"-->
             	</tr>
@@ -44,4 +44,5 @@
 		</form>
 
     </body>
+    <script src="/pay/js/recharge.js"></script>
 </html>

@@ -20,9 +20,9 @@
 <script src="ui-layout-0.0.0/ui-layout.js"></script>
 </head>
 <body>
-    ${label.nav}
+<#include "/header.ftl">
 <div class="down-main">
-    ${label.select}
+<#include "/lefter.ftl">
   <div class="right-product right-off">
   <section id="layout" ng-app="doc.ui-layout">
     <div ui-layout class="layout-mock"> 

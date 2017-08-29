@@ -20,30 +20,39 @@ public class Dateils {
     public Integer getId() {
         return id;
     }
+
     public void setId(Integer id) {
         this.id = id;
     }
+
     public String getOrdersId() {
         return ordersId;
     }
+
     public void setOrdersId(String ordersId) {
         this.ordersId = ordersId;
     }
+
     public String getContent() {
         return content;
     }
+
     public void setContent(String content) {
         this.content = content;
     }
+
     public Integer getLength() {
         return length;
     }
+
     public void setLength(Integer length) {
         this.length = length;
     }
+
     public String getActivityId() {
         return activityId;
     }
+
     public void setActivityId(String activityId) {
         this.activityId = activityId;
     }

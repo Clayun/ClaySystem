@@ -3,11 +3,11 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>订单付款 - 弹性云MineCraft服务器</title>
-		<link rel="stylesheet" type="text/css" href="css/style.css">
-		<link rel="stylesheet" type="text/css" href="css/jquery.range.css">
-		<link rel="stylesheet" type="text/css" href="css/orderpay.css">
-		<script type="text/javascript" src="js/jquery-1.7.1.min.js" ></script>
-		<script type="text/javascript" src="js/jquery.range.js" ></script>
+		<link rel="stylesheet" type="text/css" href="/pay/css/style.css">
+		<link rel="stylesheet" type="text/css" href="/pay/css/jquery.range.css">
+		<link rel="stylesheet" type="text/css" href="/pay/css/orderpay.css">
+		<script type="text/javascript" src="/pay/js/jquery-1.7.1.min.js" ></script>
+		<script type="text/javascript" src="/pay/js/jquery.range.js" ></script>
 
 	</head>
 	
@@ -55,8 +55,9 @@
 					<span style="margin-left: 100px;line-height: 100px;font-size: 30px;font-weight: bold; color: #555;">配置清单</span>
 					<div class="renew-box">
 						<div class="renew-box-items" style="width: 1000px;"><br><br>
-
 							<input type="hidden" value="${id}" name="uuid" id="uuid">
+							<input type="hidden" value="${ecsServer.uuid}" name="uuid" id="ordersUuid">
+							<input type="hidden" value="${ecsServer.ser_uuid}" name="ser_uuid" id="ser_uuid">
 							<span style=" font-weight: bold;color:#555;">服务器名称：</span><span id="ser_name">${ecsServer.ser_name}</span><br>
 							<span style=" font-weight: bold;color:#555;">CPU核心数：</span><span id="cpu">${ecsServer.cpu}</span><br>
                             <span style=" font-weight: bold;color:#555;">内存：</span><span id="memory">${ecsServer.memory}</span><br>
@@ -155,6 +156,6 @@
 	        </div>
 	    </div>
 	</footer>
-	<script src="js/loginout.js"></script>
-	<script type="text/javascript" src="js/orderPay.js" ></script>
+	<script src="/pay/js/loginout.js"></script>
+	<script type="text/javascript" src="/pay/js/orderPay.js" ></script>
 </html>

@@ -1,14 +1,12 @@
 package com.mcylm.clay.service.consoleservice.controller;
 
 import com.mcylm.clay.service.consoleservice.model.Account;
-import com.mcylm.clay.service.consoleservice.model.Ucenter;
 import com.mcylm.clay.service.consoleservice.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;

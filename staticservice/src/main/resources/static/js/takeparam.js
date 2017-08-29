@@ -1,7 +1,3 @@
-/**
- * Created by lenovo on 2017/8/28.
- * 拼接路径的参数
- */
 var token = "";
 var loginType = "";
 function takeparam(url) {
@@ -25,7 +21,6 @@ function takeparam(url) {
     window.location.href="http://"+url;
 }
 
-
 //获取路径上指定的参数
 function getQueryString(name) {
     var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
@@ -33,3 +28,5 @@ function getQueryString(name) {
     if (r != null) return unescape(r[2]);
     return null;
 }
+
+

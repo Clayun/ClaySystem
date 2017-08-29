@@ -14,7 +14,6 @@
             <div class="logo">
                 <a href="/index/portal"><img src="http://osuyq1koj.bkt.clouddn.com/17-7-19/38186757.jpg"></a>
                 <div class="p">
-                    <input type="button" class="nav-button" value="首页" onclick="window.location.href='/'">
                 </div>
             </div>
         </div>

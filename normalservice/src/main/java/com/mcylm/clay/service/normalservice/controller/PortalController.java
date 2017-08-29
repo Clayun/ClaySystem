@@ -34,6 +34,7 @@ public class PortalController {
         for(Label label : normal){
             map.put(label.getKey(),label);
         }
+
         return "index";
     }
 }

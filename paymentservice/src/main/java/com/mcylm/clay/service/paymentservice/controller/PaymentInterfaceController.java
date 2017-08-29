@@ -8,17 +8,14 @@ import com.mcylm.clay.service.paymentservice.util.RedisUtils;
 import com.mcylm.clay.service.paymentservice.util.SMSMessageLib;
 import com.mcylm.clay.service.paymentservice.util.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import java.text.DecimalFormat;
-import java.util.*;
+import java.util.List;
 
 /**
  * Created by lenovo-pc on 2017/8/7.
@@ -63,15 +60,18 @@ public class PaymentInterfaceController {
 
         //获取当前地址
         StringBuffer url = request.getRequestURL();
+        url.replace(16, 22, "/pay/");
         parameterModel.setRedirectUrl(url.toString());
         //检测是否登录
         String orderPay = RedisUtils.checkLogin(parameterModel, "orderPay");
 
-        //new订单编号
         if (!flag) {
-
             //信息存入redis
-            RedisUtils.setKey_Val_TimeOut(Base64Utils.decodeBase64String(parameterModel.getFormToken()), data);
+            try {
+                RedisUtils.setKey_Val_TimeOut(Base64Utils.decodeBase64String(parameterModel.getFormToken()), data);
+            } catch (Exception e) {
+                return "redirect:http://localhost/ecs/enterprise/create?token="+parameterModel.getToken();
+            }
             //信息添加
             Integer i = paymentInterfaceService.paymentInterfaceAdd(data);
         }
@@ -134,6 +134,7 @@ public class PaymentInterfaceController {
 
     /**
      * 支付并修改状态
+     *
      * @param ordersUuid
      * @param uuid
      * @param theActualAmount
@@ -166,14 +167,17 @@ public class PaymentInterfaceController {
      * @param
      * @return
      */
+    String phonever = "";
+
     @RequestMapping(value = "/verphone")
     @ResponseBody
     public Boolean verphone(String verphone, HttpServletRequest request) {
-        String phonever = (String) request.getSession().getAttribute("phonever");
-        if (phonever.equals(verphone))
+        if (verphone.equals(phonever)) {
+            phonever = "";
             return true;
-        else
+        } else {
             return false;
+        }
 
     }
 
@@ -187,7 +191,9 @@ public class PaymentInterfaceController {
     @RequestMapping(value = "/valphonewhatever")
     @ResponseBody
     public String valphonewhatever(String phone, HttpServletRequest request) {
-        SMSMessageLib.send(phone,request);
+        SMSMessageLib.send(phone, request);
+        String phonever1 = (String) request.getSession().getAttribute("phonever");
+        phonever = phonever1;
         return "success";
     }
 }

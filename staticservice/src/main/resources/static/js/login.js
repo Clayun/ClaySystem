@@ -44,15 +44,20 @@ var handler1 = function (captchaObj) {
                         if (redirectUrl != null && redirectUrl != ''){
                             url = url+redirectUrl;
                         }else{
-                            url += "localhost/";
+                            url += "http://localhost/";
+                        }
+                        if (url.indexOf('?')!=-1){
+                            url += '&';
+                        }else{
+                            url += '?';
                         }
                         if (token != null && token != ''){
-                            url = url+"?token="+token;
+                            url = url+"token="+token;
                         }
                         if (loginType != null && loginType != ''){
                             url = url+"&loginType="+loginType;
                         }
-                        window.location.href="http://"+url;
+                        window.location.href=url;
                     } else if (data.status == '510') {
                         $("#msg").css("color","red");
                         $("#msg").html("用户名或密码错误！")

@@ -6,10 +6,6 @@ import com.mcylm.clay.service.consoleservice.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 import java.util.List;
 import java.util.Map;
 
@@ -36,9 +32,9 @@ public class OrderAction {
 
     @RequestMapping("/ordersSelect")
     public String ordersSelect(String ordersUuid,Map<String,Object> map){
-            Dateils dateils=orderService.ordersSelect(ordersUuid);
-            map.put("dateils",dateils);
-            return "xiangqin";
+        Dateils dateils=orderService.ordersSelect(ordersUuid);
+        map.put("dateils",dateils);
+        return "xiangqin";
     }
 
 }
