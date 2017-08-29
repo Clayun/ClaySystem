@@ -123,7 +123,7 @@ $("#submitphone").click(function () {
                     success: function (data) {
                         if (data) {
                             alert("支付成功！");
-                            window.location.href = "http://www.baidu.com";
+                            window.location.href = "http://localhost/ecs/enterprise/createInstance?uuid="+uuid+"&ser_uuid="+ser_uuid;
                         } else {
                             alert("支付失败！余额不足！")
                         }
