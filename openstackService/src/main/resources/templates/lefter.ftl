@@ -29,19 +29,19 @@
                     <li>
                         <div class="showtitle" style="width:100px;">
                             <img src="/ecs/img/leftimg.png" />账号管理
-                        </div><a href="/ecs/label/userInfo"><span class="sublist-icon glyphicon glyphicon-user"></span><span class="sub-title">账号管理</span></a> </li>
+                        </div><a href="/ecs/enterprise/userInfo"><span class="sublist-icon glyphicon glyphicon-user"></span><span class="sub-title">账号管理</span></a> </li>
                     <li>
                         <div class="showtitle" style="width:100px;">
                             <img src="/ecs/img/leftimg.png" />消息中心
-                        </div><a href="/ecs/messageInterface"><span class="sublist-icon glyphicon glyphicon-envelope"></span><span class="sub-title">消息中心</span></a> </li>
+                        </div><a href="/ecs/message/messageInterface"><span class="sublist-icon glyphicon glyphicon-envelope"></span><span class="sub-title">消息中心</span></a> </li>
                     <li>
                         <div class="showtitle" style="width:100px;">
                             <img src="/ecs/img/leftimg.png" />短信
-                        </div><a href="/ecs/label/smsInfo"><span class="sublist-icon glyphicon glyphicon-bullhorn"></span><span class="sub-title">短信</span></a></li>
+                        </div><a href="/ecs/enterprise/smsInfo"><span class="sublist-icon glyphicon glyphicon-bullhorn"></span><span class="sub-title">短信</span></a></li>
                     <li>
                         <div class="showtitle" style="width:100px;">
                             <img src="/ecs/img/leftimg.png" />实名认证
-                        </div><a href="/ecs/label/identify"><span class="sublist-icon glyphicon glyphicon-credit-card"></span><span class="sub-title">实名认证</span></a></li>
+                        </div><a href="/ecs/enterprise/identify"><span class="sublist-icon glyphicon glyphicon-credit-card"></span><span class="sub-title">实名认证</span></a></li>
                 </ul>
             </div>
             <div class="sBox">
@@ -53,7 +53,7 @@
                     <li>
                         <div class="showtitle" style="width:100px;">
                             <img src="/ecs/img/leftimg.png" />添加新闻
-                        </div><a href="/ecs/label/right"><span class="sublist-icon glyphicon glyphicon-user"></span><span class="sub-title">服务器信息</span></a></li>
+                        </div><a href="/ecs/enterprise/instance"><span class="sublist-icon glyphicon glyphicon-user"></span><span class="sub-title">服务器信息</span></a></li>
                     <li>
                         <div class="showtitle" style="width:100px;">
                             <img src="/ecs/img/leftimg.png" />添加新闻
