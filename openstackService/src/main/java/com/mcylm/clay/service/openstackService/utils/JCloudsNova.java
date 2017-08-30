@@ -8,21 +8,21 @@ import java.util.Set;
 
 import com.google.common.base.Optional;
 import com.google.common.collect.FluentIterable;
+import com.mcylm.clay.service.openstackService.model.ucenter.EcsServer;
 import org.jclouds.ContextBuilder;
 import org.jclouds.logging.slf4j.config.SLF4JLoggingModule;
 import org.jclouds.openstack.nova.v2_0.NovaApi;
-import org.jclouds.openstack.nova.v2_0.domain.Flavor;
-import org.jclouds.openstack.nova.v2_0.domain.FloatingIP;
-import org.jclouds.openstack.nova.v2_0.domain.Server;
-import org.jclouds.openstack.nova.v2_0.domain.ServerCreated;
+import org.jclouds.openstack.nova.v2_0.domain.*;
 import org.jclouds.openstack.nova.v2_0.extensions.FloatingIPApi;
 import org.jclouds.openstack.nova.v2_0.features.FlavorApi;
+import org.jclouds.openstack.nova.v2_0.features.ImageApi;
 import org.jclouds.openstack.nova.v2_0.features.ServerApi;
 
 import com.google.common.collect.ImmutableSet;
 import com.google.common.io.Closeables;
 import com.google.inject.Module;
 import org.jclouds.openstack.nova.v2_0.options.CreateServerOptions;
+import org.jclouds.openstack.v2_0.domain.Link;
 
 /**
  *
@@ -98,6 +98,55 @@ public class JCloudsNova implements Closeable {
         }
         return list;
     }
+
+    /**
+     * 获取所有的镜像文件
+     * @return
+     */
+    public List<Image> getListImages() {
+        List<Image> list = new ArrayList<Image>();
+        for (String region : regions) {
+            ImageApi imageApi = novaApi.getImageApi(region);
+            for(Image image : imageApi.listInDetail().concat()){
+                list.add(image);
+            }
+        }
+        return list;
+    }
+
+    public String getImageIdByName(String name){
+        for(Image image : getListImages()){
+            System.out.println(image.getName()+"    "+name);
+            if(image.getName().equals(name)){
+                System.out.println("配对成功");
+                return image.getId();
+            }
+        }
+
+        return null;
+    }
+
+
+    /**
+     * 创建云主机类型
+     */
+    public String createFlavor(EcsServer ecsServer){
+        String flavorId = StringUtils.getUuid();
+        Flavor.builder();
+        for (String region : regions) {
+            FlavorApi flavorApi = novaApi.getFlavorApi(region);
+            flavorApi.create(Flavor.builder().disk(Integer.valueOf(ecsServer.getOs_disk()))
+                    .ram(Integer.valueOf(ecsServer.getMemory())*1024)
+            .rxtxFactor(1.0)
+            .vcpus(Integer.valueOf(ecsServer.getCpu()))
+            .id(flavorId)
+            .name(flavorId)
+            .build());
+        }
+
+        return flavorId;
+    }
+
 
     /**
      * 关机指令
@@ -180,44 +229,35 @@ public class JCloudsNova implements Closeable {
             }
         }
     }
-
-    @Deprecated
-    public void createInstance(String name, String image, String flavor, CreateServerOptions createServerOptions) {
-        for (String region : regions) {
-            ServerApi serverApi = novaApi.getServerApi(region);
-            System.out.println("————————即将创建虚机————————");
-            System.out.println("配置清单：");
-            System.out.println("名称：" + name);
-            System.out.println("镜像Id:" + image);
-            System.out.println("配置Id:" + flavor);
-            System.out.println("更多信息：");
-            System.out.println("    " + createServerOptions);
-
-            serverApi.create(name, image, flavor, createServerOptions);
-
-        }
-    }
-
-    public void createInstance(String name, String image, String flavor, String password, String availabilityZone, int ips) {
-
+    /**
+     * 创建云主机实例
+     * @param ecsServer
+     * @param availabilityZone
+     * @return
+     */
+    public ServerCreated createInstance(EcsServer ecsServer , String availabilityZone) {
+        ServerCreated serverCreated = null;
         CreateServerOptions createServerOptions = new CreateServerOptions();
-        createServerOptions.adminPass(password);
+        createServerOptions.adminPass(ecsServer.getPassword());
         createServerOptions.availabilityZone("nova");
+        createServerOptions.networks("cea413ef-effe-441a-88d6-779903fdb90b");
+        String imageId = getImageIdByName(ecsServer.getImage());
+        if(imageId == null){
+            System.out.println("镜像文件不存在");
+            return null;
+        }
 
         for (String region : regions) {
             ServerApi serverApi = novaApi.getServerApi(region);
-            System.out.println("————————即将创建虚机————————");
-            System.out.println("配置清单：");
-            System.out.println("名称：" + name);
-            System.out.println("镜像Id:" + image);
-            System.out.println("配置Id:" + flavor);
-            System.out.println("更多信息：");
-            System.out.println("    " + createServerOptions);
 
-            ServerCreated server = serverApi.create(name, image, flavor, createServerOptions);
-
-
+            try{
+                serverCreated = serverApi.create(ecsServer.getSer_name(), imageId, createFlavor(ecsServer), createServerOptions);
+            }catch (Exception ex){
+                ex.printStackTrace();
+                System.out.println("创建失败");
+            }
         }
+        return serverCreated;
     }
 
 

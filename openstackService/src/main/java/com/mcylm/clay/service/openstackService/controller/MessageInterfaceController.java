@@ -1,8 +1,12 @@
 package com.mcylm.clay.service.openstackService.controller;
 
 
+import com.google.gson.Gson;
 import com.mcylm.clay.service.openstackService.model.msg.MessagesInfo;
+import com.mcylm.clay.service.openstackService.model.ucenter.UauthToken;
 import com.mcylm.clay.service.openstackService.service.MessageInterfaceService;
+import com.mcylm.clay.service.openstackService.utils.Base64Utils;
+import com.mcylm.clay.service.openstackService.utils.RedisUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -27,9 +31,8 @@ public class MessageInterfaceController {
      * @return
      */
     @RequestMapping("/messageInterface")
-    public String messageInterface(/*String uuid*/Model model) {
-        String uuid = "30e6d8723f3a4e7ba051f4b09c2bcd92";
-        List<MessagesInfo> messagesInfoList = messageInterfaceService.getMessagesByUuid(uuid);
+    public String messageInterface(String token,Model model) {
+        List<MessagesInfo> messagesInfoList = messageInterfaceService.getMessagesByUuid(getUUidByToken(token));
         model.addAttribute("messagesInfoList", messagesInfoList);
         return "message";
     }
@@ -41,9 +44,8 @@ public class MessageInterfaceController {
      * @return
      */
     @RequestMapping("/readMessage")
-    public String readMessage(/*String uuid*/Model model) {
-        String uuid = "30e6d8723f3a4e7ba051f4b09c2bcd92";
-        List<MessagesInfo> messagesInfoList = messageInterfaceService.readMessage(uuid);
+    public String readMessage(String token,Model model) {
+        List<MessagesInfo> messagesInfoList = messageInterfaceService.readMessage(getUUidByToken(token));
         model.addAttribute("messagesInfoList", messagesInfoList);
         return "message";
     }
@@ -55,9 +57,8 @@ public class MessageInterfaceController {
      * @return
      */
     @RequestMapping("/noReadMessage")
-    public String noReadMessage(/*String uuid*/Model model) {
-        String uuid = "30e6d8723f3a4e7ba051f4b09c2bcd92";
-        List<MessagesInfo> messagesInfoList = messageInterfaceService.noReadMessage(uuid);
+    public String noReadMessage(String token ,Model model) {
+        List<MessagesInfo> messagesInfoList = messageInterfaceService.noReadMessage(getUUidByToken(token));
         model.addAttribute("messagesInfoList", messagesInfoList);
         return "message";
     }
@@ -69,9 +70,16 @@ public class MessageInterfaceController {
      */
     @RequestMapping("/getCountByUuid")
     @ResponseBody
-    public Integer getCountByUuid() {
-        String uuid = "30e6d8723f3a4e7ba051f4b09c2bcd92";
-        return messageInterfaceService.getCountByUuid(uuid);
+    public Integer getCountByUuid(String token) {
+        return messageInterfaceService.getCountByUuid(getUUidByToken(token));
+    }
+
+    private String getUUidByToken(String uuid) {
+
+        String valByKey = RedisUtils.getValByKey(Base64Utils.decodeBase64String(uuid));
+        Gson gson = new Gson();
+        UauthToken uauthToken = gson.fromJson(valByKey, UauthToken.class);
+        return uauthToken.getUuid();
     }
 
 }

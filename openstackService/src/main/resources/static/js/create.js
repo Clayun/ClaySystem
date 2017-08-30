@@ -304,7 +304,7 @@ function sendEcsOrder() {
         url: '/ecs/data/createEcsOrder',
         data:{ecspz:pz,image:core,pwd:pwd},
         success: function (data) {
-            window.location.href="http://localhost/pay/paymentInterface?data="+data;
+            window.location.href="http://localhost/pay/paymentInterface?data="+data+"&token="+getQueryString("token");
         }
     });
 
@@ -312,3 +312,10 @@ function sendEcsOrder() {
 
 
 
+//获取路径上指定的参数
+function getQueryString(name) {
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+    var r = window.location.search.substr(1).match(reg);
+    if (r != null) return unescape(r[2]);
+    return null;
+}

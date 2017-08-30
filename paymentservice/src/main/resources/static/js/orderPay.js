@@ -124,24 +124,19 @@ $("#submitphone").click(function () {
                         if (data) {
                             alert("支付成功！");
                             $.ajax({
-                                url:'/ecs/enterprise',
+                                url:'/ecs/enterprise/createInstance',
                                 data:{token:uuid,ser_uuid:ser_uuid},
                                 dataType:'text',
                                 type:'post',
                                 success:function(msg){
-                                    if(msg=="success"){
-                                        window.location.href = "http://localhost/ecs/enterprise/instance?token="+uuid+"&ser_uuid="+ser_uuid;
-                                    }else if(msg=="failed"){
-                                        window.location.href = "http://localhost/ecs/enterprise/create?token="+uuid;
-                                    }else if(msg=="unlogin"){
-                                        window.location.href = "http://localhost/security/login";
-                                    }
+                                    window.location.href = "http://localhost/ecs/enterprise/instance?token="+uuid+"&ser_uuid="+ser_uuid;
                                 }
 
                             });
                         } else {
                             alert("支付失败！余额不足！")
                         }
+                        window.location.href = "http://localhost/ecs/enterprise/instance?token="+uuid+"&ser_uuid="+ser_uuid;
                     }
                 });
                 check = 1;

@@ -16,4 +16,7 @@ public interface ServerControlService {
     EcsServer getServerInfo(String serveruuid);
 
     List<EcsServer> getServerInfoListByUserUUID(String useruuid);
+
+    boolean checkServerOwnedByUserUUID(String uuid,String serUUid);
+
 }

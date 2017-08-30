@@ -20,7 +20,7 @@
 			<div class="right-product view-product right-full">
 				<div class="container-fluid">
 					<div class="info-center">
-					<h3>**EnterPrise</h3>
+					<h3>${ecsInfo.ser_name}</h3>
 					<div class="row clearfix">
 					<div class="col-md-6 column">
 						<div class="panel panel-default">
@@ -35,16 +35,11 @@
 								
 							</div>
 							<div class="panel-body">
-								ID:##############<br/><br/>
-								所在可用区:##############<br/><br/>
-								名称:####<br/><br/>
-								描述:#####<br/><br/>
-								地域:#####<br/><br/>
-								实例规格:#####<br/><br/>
-								实力规格族:#####<br/><br/>
-								镜像ID:#####<br/><br/>
+								ID:${ecsInfo.ser_uuid}<br/><br/>
+								所在可用区:默认<br/><br/>
+								名称:${ecsInfo.ser_name}<br/><br/>
+								实例规格:企业级<br/><br/>
 								密钥对名称:#####<br/><br/>
-								标签:#####
 							</div>
 						</div>
 					</div>
@@ -52,11 +47,10 @@
 					<div class="col-md-6 column">
 						<div class="panel panel-default">
 							<div class="panel-heading">
-								磁盘:#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-								状态:<input type="radio" >运行中<br/><br/>
-								快照:#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								磁盘:${ecsInfo.expand_disk}<br/><br/>
+								状态:${ecsInfo.state}<br/><br/>
 								网络类型:###<br/><br/>
-								镜像:#<br/><br/>
+								镜像:${ecsInfo.image}<br/><br/>
 							</div>
 						</div>
 					</div>
@@ -75,15 +69,13 @@
 								</span>
 							</div>
 							<div class="panel-body">
-								CPU:##<br/><br/>
-								内存:##<br/><br/>
-								实例类型:##<br/><br/>
-								操作系统:##<br/><br/>
+								CPU:${ecsInfo.cpu}核心<br/><br/>
+								内存:${ecsInfo.memory}Gb<br/><br/>
+								实例类型:弹性云ECS服务器<br/><br/>
+								操作系统:${ecsInfo.image}<br/><br/>
 								公网IP：##<br/><br/>
 								弹性公网IP：##<br/><br/>
 								私有IP：##<br/><br/>
-								宽带计费方式：##<br/><br/>
-								当前使用宽带：##<br/><br/>
 							</div>
 						</div>
 					</div>
