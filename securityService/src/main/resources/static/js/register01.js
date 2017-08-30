@@ -112,7 +112,6 @@ $.ajax({
 //提交验证码，验证
 $("#submitverphone").click(function () {
     var vephone = $("#vephone").val();
-    alert(vephone);
     if (vephone == "") {
         $("#smsg").html("请输入短信验证码！");
         return;
