@@ -40,22 +40,22 @@ var handler1 = function (captchaObj) {
                         var url = "";
                         var token = data.token;
                         var loginType = data.loginType;
+                        var formToken = getUrlParam("formToken");
 
                         if (redirectUrl != null && redirectUrl != ''){
                             url = url+redirectUrl;
                         }else{
                             url += "http://localhost/";
                         }
-                        if (url.indexOf('?')!=-1){
-                            url += '&';
-                        }else{
-                            url += '?';
-                        }
+
                         if (token != null && token != ''){
-                            url = url+"token="+token;
+                            url = checkParam(url)+"token="+token;
                         }
                         if (loginType != null && loginType != ''){
-                            url = url+"&loginType="+loginType;
+                            url = checkParam(url)+"loginType="+loginType;
+                        }
+                        if (formToken != null && formToken != ''){
+                            url = checkParam(url)+"formToken="+formToken;
                         }
                         window.location.href=url;
                     } else if (data.status == '510') {
@@ -100,4 +100,14 @@ function getUrlParam(name) {
     var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
     var r = window.location.search.substr(1).match(reg);  //匹配目标参数
     if (r != null) return unescape(r[2]); return null; //返回参数值
+}
+
+function checkParam(url) {
+    //防止路径符号错误
+    if (url.indexOf("?") != -1) {
+        url += "&";
+    } else {
+        url += "?";
+    }
+    return url;
 }

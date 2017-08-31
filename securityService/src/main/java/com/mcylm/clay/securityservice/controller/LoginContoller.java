@@ -66,15 +66,7 @@ public class LoginContoller {
     @RequestMapping(value = "/valphonewhatever")
     @ResponseBody
     public String valphonewhatever(String phone, HttpServletRequest request) {
-        System.out.println(phone);
-        System.out.println(phone);
-        System.out.println(phone);
-        System.out.println(phone);
-        System.out.println(phone);
-        System.out.println(phone);
-        System.out.println(phone);
-        /*SMSMessageLib.send(phone, request)*/
-        return "1234";
+        return SMSMessageLib.send(phone, request);
     }
 
     /**
@@ -87,20 +79,6 @@ public class LoginContoller {
     @RequestMapping(value = "/verphone")
     @ResponseBody
     public String verphone(HttpServletRequest request, String verphone, String phonever) {
-        System.out.println("========================================");
-        System.out.println("========================================");
-        System.out.println("========================================");
-        System.out.println("=====水电费是的发送到===================================");
-        System.out.println(verphone);
-        System.out.println("========================================");
-        System.out.println("========================================");
-        System.out.println("========================================");
-        System.out.println("========================================");
-        System.out.println("========================================");
-        System.out.println("========================================");
-        System.out.println("撒啊啊====================================");
-        System.out.println(phonever);
-
         return verphone.equals(phonever) ? "success" : "failed";
     }
 
@@ -116,7 +94,6 @@ public class LoginContoller {
     public String updatePassword(String password, String phone) {
         return uauthService.updatePassword(password, phone);
     }
-
 
     /**
      * 根据token检测用户是否登录，
@@ -135,6 +112,4 @@ public class LoginContoller {
     public boolean logout(String token){
         return uauthService.logout(token);
     }
-
-
 }

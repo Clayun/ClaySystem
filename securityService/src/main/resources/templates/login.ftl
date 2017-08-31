@@ -39,7 +39,7 @@
                 </div>
                 <p id="notice1" class="hide">请先完成验证</p>
                 <button style="cursor: pointer;margin-bottom: 10px;" id="submit">登录</button>
-                <p style="display: inline;"><a style="text-decoration: none; color: #888888" class=".a" href="/security/author/resetpwd">忘记密码？</a></p><p style="display: inline;"><a style="text-decoration: none; color: #888888" class=".a" href="/security/author/register">免费注册</a></p>
+                <p style="display: inline;"><a style="text-decoration: none; color: #888888" class=".a" href="/security/author/resetpwd">忘记密码？</a></p><p style="display: inline;"><a style="text-decoration: none; color: #888888" class=".a" onclick="takeparam('/security/author/register')">免费注册</a></p>
                 <input style="display: none" id="redirectUrl" type="text" value="${redirectUrl}">
             </div>
             </div>
@@ -96,4 +96,5 @@
 <script src="/staticService/js/jquery-1.7.1.min.js"></script>
 <script src="/staticService/js/gt.js"></script>
 <script src="/staticService/js/login.js"></script>
+<script src="/staticService/js/takeparam.js"></script>
 </html>

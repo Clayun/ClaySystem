@@ -112,7 +112,6 @@ $.ajax({
 //提交验证码，验证
 $("#submitverphone").click(function () {
     var vephone = $("#vephone").val();
-    alert(vephone);
     if (vephone == "") {
         $("#smsg").html("请输入短信验证码！");
         return;
@@ -133,7 +132,30 @@ $("#submitverphone").click(function () {
                 }, function (data) {
                     if (data) {
                         alert("注册成功！请登录！");
-                        window.location.href = "http://localhost/security/author/login";
+                        var redirectUrl = getQueryString("redirectUrl");//获取redirectUrl
+                        var token = getQueryString("token");//获取token
+                        var loginType = getQueryString("loginType");//获取logintype
+                        var formToken = getQueryString("formToken");//获取formToken
+                        var url = "";
+                        //判断是否有redirectUrl
+                        if (redirectUrl != null && redirectUrl != '') {
+                            url = checkParam(url) + "redirectUrl=" + redirectUrl;
+                        }
+                        //判断是否有token
+                        if (token != null && token != '') {
+                            url = checkParam(url) + "token=" + token;
+                        }
+                        //获取loginType
+                        if (loginType != null&&loginType!='') {
+                            url =checkParam(url) + "loginType="+loginType;
+                        }
+
+                        //获取formToken
+                        if (formToken != null&&formToken!='') {
+                            url = checkParam(url) +"formToken="+formToken;
+                        }
+                        //跳转路径
+                        window.location.href = "http://localhost/security/author/login"+url;
                     } else {
                         alert("注册失败！请冲洗注册！");
                         window.location.href = "http://localhost/security/author/register";
@@ -149,14 +171,12 @@ var wait = 60;
 function time(o) {
     if (wait == 59) {
         var pho = $("#phonenum").html();
-        alert(pho);
         $.ajax({
             type: "POST",
             dataType: "json",
             url: '/security/author/valphonewhatever',
             data: {phone: pho},
             success: function (data) {
-                alert(data);
                 if (data != null) {
                     $("#smsg").html("短信已发送至您的手机，请注意查收！");
                     $("#phonenum").html($("#phone").val())
@@ -187,4 +207,21 @@ function time(o) {
 
 document.getElementById("repely").onclick = function () {
     time(this);
+}
+//获取路径上指定的参数
+function getQueryString(name) {
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+    var r = window.location.search.substr(1).match(reg);
+    if (r != null) return unescape(r[2]);
+    return null;
+}
+
+function checkParam(url) {
+    //防止路径符号错误
+    if (url.indexOf("?") != -1) {
+        url += "&";
+    } else {
+        url += "?";
+    }
+    return url;
 }
