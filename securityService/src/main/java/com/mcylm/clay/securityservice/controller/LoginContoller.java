@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 /**
  * Created by lenovo on 2017/8/7.
@@ -34,12 +35,12 @@ public class LoginContoller {
      */
     @RequestMapping(value = "/doLogin")
     @ResponseBody
-    public ResponseEntity<ParameterModel> doLogin(HttpServletRequest request, ParameterModel parameterModel) {
+    public ResponseEntity<ParameterModel> doLogin(HttpServletRequest request, HttpServletResponse response, ParameterModel parameterModel) {
         //客户端ip
         String hostIp = IPUtil.getIpAddr(request);
         //主机id
         String sessionId = request.getSession().getId();
-        ResponseEntity<ParameterModel> result = uauthService.getUuidByUsernameAndPassword(parameterModel, hostIp, sessionId);
+        ResponseEntity<ParameterModel> result = uauthService.getUuidByUsernameAndPassword(parameterModel, hostIp, sessionId,request,response);
         return result;
     }
 

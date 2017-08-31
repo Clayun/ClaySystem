@@ -3,6 +3,7 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
+import org.springframework.session.data.redis.config.annotation.web.http.EnableRedisHttpSession;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @SpringBootApplication(scanBasePackages = "com.mcylm.clay.service.paymentservice.*")
 @MapperScan("com.mcylm.clay.service.paymentservice.mapper")
+@EnableRedisHttpSession
 @EnableEurekaServer
 public class OrdersService {
     public static void main(String[] args) {

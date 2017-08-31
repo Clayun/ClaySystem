@@ -14,6 +14,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 /**
  * Created by lenovo on 2017/8/7.
  */
@@ -33,7 +37,7 @@ public class UauthServiceImpl implements UauthService {
      * @return
      */
     @Override
-    public ResponseEntity<ParameterModel> getUuidByUsernameAndPassword(ParameterModel parameterModel, String hostIp, String sessionId) {
+    public ResponseEntity<ParameterModel> getUuidByUsernameAndPassword(ParameterModel parameterModel, String hostIp, String sessionId,HttpServletRequest request,HttpServletResponse response) {
         //MD5加密数据
         Uauth uauth = uauthDao.getUuidByUsernameAndPassword(parameterModel.getUsername());
         parameterModel.setStatus("510");
@@ -53,6 +57,10 @@ public class UauthServiceImpl implements UauthService {
                     parameterModel.setToken(Base64Utils.encodeBase64String(uauthToken.getToken()));
                     parameterModel.setStatus("201");
                     parameterModel.setLoginType(Base64Utils.encodeBase64String("logined"));
+                    request.getSession().setAttribute("token",Base64Utils.encodeBase64String(uauthToken.getToken()));
+                    Cookie cookie = new Cookie("token", Base64Utils.encodeBase64String(uauthToken.getToken()));
+                    cookie.setMaxAge(30*60);
+                    response.addCookie(cookie);
                     //登录成功
                     return ResponseEntity.ok().body(parameterModel);
                 }

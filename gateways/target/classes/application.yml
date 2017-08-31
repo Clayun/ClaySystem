@@ -7,13 +7,53 @@ spring:
     name: Gateway
 server:
   port: 80
+
+
+spring.redis.host: 59.110.235.199
+spring.redis.port: 6379
+#spring.redis.password=
+spring.redis.database: 1
+spring.redis.pool.max-active: 8
+spring.redis.pool.max-wait: -1
+spring.redis.pool.max-idle: 500
+spring.redis.pool.min-idle: 0
+spring.redis.timeout: 0
+
+
 zuul:
   routes:
-    userService: /service/user/**
-    serverService: /service/server/**
-    normalService: /**
-    securityService: /security/**
-    consoleService: /console/**
-    paymentService: /pay/**
-    openstackService: /ecs/**
-    staticService: /staticService/**
+    userService:
+      path: /service/user/**
+      serviceId: userService
+      sensitiveHeaders:
+
+    normalService:
+      path: /**
+      serviceId: normalService
+      sensitiveHeaders:
+
+    securityService:
+      path: /security/**
+      serviceId: securityService
+      sensitiveHeaders:
+
+    consoleService:
+      path: /console/**
+      serviceId: consoleService
+      sensitiveHeaders:
+
+    paymentService:
+      path: /pay/**
+      serviceId: paymentService
+      sensitiveHeaders:
+
+    openstackService:
+      path: /ecs/**
+      serviceId: openstackService
+      sensitiveHeaders:
+
+    staticService:
+      path: /staticService/**
+      serviceId: staticService
+      sensitiveHeaders:
+

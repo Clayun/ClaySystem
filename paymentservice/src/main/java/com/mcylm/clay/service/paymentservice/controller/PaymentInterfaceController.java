@@ -80,6 +80,7 @@ public class PaymentInterfaceController {
             //查询优惠信息回显
             List<ActivityDetails> detail = paymentInterfaceService.getDetails();
             List<ActivityDetails> details = paymentInterfaceService.getDetailsSelected();
+            System.out.println(parameterModel.getToken());
             model.addAttribute("id", parameterModel.getToken());
             model.addAttribute("ecsServer", ecsServer);
             model.addAttribute("detail", detail);
@@ -154,7 +155,6 @@ public class PaymentInterfaceController {
 
     //根据token获取uuid
     public String getUUidByToken(String uuid) {
-
         String valByKey = RedisUtils.getValByKey(Base64Utils.decodeBase64String(uuid));
         Gson gson = new Gson();
         UauthToken uauthToken = gson.fromJson(valByKey, UauthToken.class);

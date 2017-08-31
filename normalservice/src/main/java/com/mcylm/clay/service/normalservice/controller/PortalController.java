@@ -25,7 +25,7 @@ public class PortalController {
     private InterfaceService interfaceService;
 
     @RequestMapping(value = {"/","/index"})
-    public String portal(Map<String,Object> map) throws IOException {
+    public String portal(Map<String,Object> map,HttpServletRequest request) throws IOException {
         List<Label> index = interfaceService.selectLabelsByPage("index");
         for(Label label : index){
             map.put(label.getKey(),label);
@@ -34,7 +34,7 @@ public class PortalController {
         for(Label label : normal){
             map.put(label.getKey(),label);
         }
-
+        System.out.println(request.getSession().getAttribute("token"));
         return "index";
     }
 }

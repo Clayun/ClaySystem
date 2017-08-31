@@ -26,7 +26,7 @@ public class FmlConterller {
      * @return
      */
     @RequestMapping(value = "/login")
-    public String login(Map<String, Object> map, ParameterModel parameterModel) {
+    public String login(Map<String, Object> map, ParameterModel parameterModel,HttpServletRequest request) {
         boolean flag = false;
         //获取请求的路径
         String redirectUrl = parameterModel.getRedirectUrl();
@@ -49,6 +49,7 @@ public class FmlConterller {
         if (flag) {
             return "redirect:http://" + redirectUrl + "?token=" + token + "&loginType=" + Base64Utils.encodeBase64String("autoLogin");
         }
+        System.out.println(request.getSession().getId());
         return "login";
     }
 

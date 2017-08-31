@@ -43,9 +43,10 @@ public class EnterpriseController {
     private ServerControlService serverControlService;
 
     @RequestMapping("/create")
-    public String create(Map<String,Object> map){
+    public String create(Map<String,Object> map,HttpServletRequest request){
         EcsProduce ecsProduce = ecsService.getEcsProduce();
         map.put("ecsProduce",ecsProduce);
+        System.out.println(request.getSession().getId());
         return "create";
     }
 
