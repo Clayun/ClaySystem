@@ -68,6 +68,26 @@ public class JCloudsNova implements Closeable {
     }
 
     /**
+     * 给服务器附加IP
+     * @param serverCreated
+     * @param floatingIPs
+     */
+    public void addIptoServer(ServerCreated serverCreated,List<FloatingIP> floatingIPs){
+        Optional<FloatingIPApi> floatingIPApi = null;
+        for (String region : regions) {
+            floatingIPApi = novaApi.getFloatingIPApi(region);
+        }
+        for(Server server : getListServers()){
+            if(serverCreated.getId().equals(server.getId())){
+                for(FloatingIP floatingIP : floatingIPs){
+                    floatingIPApi.get().addToServer(floatingIP.getIp(),serverCreated.getId());
+                }
+                return;
+            }
+        }
+    }
+
+    /**
      * 获取公网IP类型
      *
      * @return
@@ -114,6 +134,11 @@ public class JCloudsNova implements Closeable {
         return list;
     }
 
+    /**
+     * 通过镜像名称获取镜像
+     * @param name
+     * @return
+     */
     public String getImageIdByName(String name){
         for(Image image : getListImages()){
             System.out.println(image.getName()+"    "+name);
@@ -135,13 +160,15 @@ public class JCloudsNova implements Closeable {
         Flavor.builder();
         for (String region : regions) {
             FlavorApi flavorApi = novaApi.getFlavorApi(region);
-            flavorApi.create(Flavor.builder().disk(Integer.valueOf(ecsServer.getOs_disk()))
+            flavorApi.create(Flavor.builder()
+                    .disk(Integer.valueOf(ecsServer.getOs_disk()))
                     .ram(Integer.valueOf(ecsServer.getMemory())*1024)
-            .rxtxFactor(1.0)
-            .vcpus(Integer.valueOf(ecsServer.getCpu()))
-            .id(flavorId)
-            .name(flavorId)
-            .build());
+                    .swap(String.valueOf(Integer.valueOf(ecsServer.getMemory())*1024*2))
+                    .rxtxFactor(1.0)
+                    .vcpus(Integer.valueOf(ecsServer.getCpu()))
+                    .id(flavorId)
+                    .name(flavorId)
+                    .build());
         }
 
         return flavorId;
@@ -251,7 +278,9 @@ public class JCloudsNova implements Closeable {
             ServerApi serverApi = novaApi.getServerApi(region);
 
             try{
+                List<FloatingIP> floatingIPs = getListFloatingIPs(Integer.valueOf(ecsServer.getIps()));
                 serverCreated = serverApi.create(ecsServer.getSer_name(), imageId, createFlavor(ecsServer), createServerOptions);
+                addIptoServer(serverCreated,floatingIPs);
             }catch (Exception ex){
                 ex.printStackTrace();
                 System.out.println("创建失败");
