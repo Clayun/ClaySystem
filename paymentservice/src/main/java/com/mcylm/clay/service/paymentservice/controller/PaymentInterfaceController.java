@@ -194,6 +194,7 @@ public class PaymentInterfaceController {
         SMSMessageLib.send(phone, request);
         String phonever1 = (String) request.getSession().getAttribute("phonever");
         phonever = phonever1;
+        //System.out.println("phonever1 = " + phonever1);
         return "success";
     }
 }

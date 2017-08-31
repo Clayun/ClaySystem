@@ -126,16 +126,6 @@ public class RedisUtils {
                 redirectToLogin.append("&formToken=" + formToken);
             }
 
-            System.out.println(redirectlogin);
-            System.out.println(redirectlogin);
-            System.out.println(redirectlogin);
-            System.out.println(redirectlogin);
-            System.out.println(redirectToLogin.toString().contains("redirectUrl"));
-            System.out.println(redirectToLogin.toString().contains("redirectUrl"));
-            System.out.println(redirectToLogin.toString().contains("redirectUrl"));
-            System.out.println(redirectToLogin.toString().contains("redirectUrl"));
-            System.out.println(redirectToLogin.toString().contains("redirectUrl"));
-            System.out.println(redirectToLogin.toString().contains("redirectUrl"));
             if (redirectToLogin.toString().contains("redirectUrl")) {
                 redirectlogin = redirectToLogin.toString().replaceFirst("&", "?");
             }
