@@ -304,7 +304,8 @@ function sendEcsOrder() {
         url: '/ecs/data/createEcsOrder',
         data:{ecspz:pz,image:core,pwd:pwd},
         success: function (data) {
-            window.location.href="http://localhost/pay/paymentInterface?data="+data+"&token="+getQueryString("token");
+            var timestamp = new Date().getTime();
+            window.location.href="http://localhost/pay/paymentInterface?data="+data+"&token="+getQueryString("token")+"&formToken="+timestamp;
         }
     });
 
