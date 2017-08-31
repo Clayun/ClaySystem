@@ -6,7 +6,6 @@ import com.mcylm.clay.service.paymentservice.service.PaymentInterfaceService;
 import com.mcylm.clay.service.paymentservice.util.Base64Utils;
 import com.mcylm.clay.service.paymentservice.util.RedisUtils;
 import com.mcylm.clay.service.paymentservice.util.SMSMessageLib;
-import com.mcylm.clay.service.paymentservice.util.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -36,13 +35,11 @@ public class PaymentInterfaceController {
     public String paymentInterface(ParameterModel parameterModel, Model model, HttpServletRequest request, String data) {
         boolean flag = false;
         EcsServer ecsServer = null;
-        //随机formToken
-        String formToken = StringUtils.getUuid();
 
         //判断formtoken是否为空
-        if (parameterModel.getFormToken() == null || "".equals(formToken)) {
+        if (parameterModel.getFormToken() == null || "".equals(parameterModel.getFormToken())) {
             //赋值  一个加密的formToken
-            parameterModel.setFormToken(Base64Utils.encodeBase64String(formToken));
+            parameterModel.setFormToken(parameterModel.getFormToken());
         }
 
         //获取redis中提交的数据
