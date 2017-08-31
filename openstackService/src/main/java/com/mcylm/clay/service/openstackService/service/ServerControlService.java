@@ -1,7 +1,10 @@
 package com.mcylm.clay.service.openstackService.service;
 
 import com.mcylm.clay.service.openstackService.model.ucenter.EcsServer;
+import com.mcylm.clay.service.openstackService.model.ucenter.ParameterModel;
+import com.mcylm.clay.service.openstackService.utils.JCloudsNova;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 /**
@@ -18,5 +21,7 @@ public interface ServerControlService {
     List<EcsServer> getServerInfoListByUserUUID(String useruuid);
 
     boolean checkServerOwnedByUserUUID(String uuid,String serUUid);
+
+    String createInstance(String ser_uuid, HttpServletRequest request, ParameterModel parameterModel,JCloudsNova jCloudsNova);
 
 }

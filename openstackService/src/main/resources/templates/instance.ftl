@@ -48,7 +48,15 @@
 						<div class="panel panel-default">
 							<div class="panel-heading">
 								磁盘:${ecsInfo.expand_disk}<br/><br/>
-								状态:${ecsInfo.state}<br/><br/>
+								状态:
+									<#if ecsInfo.state=="1">
+										未支付
+									<#elseif ecsInfo.state=="5">
+										创建完成
+									<#else>
+										未知状态
+									</#if>
+								<br/><br/>
 								网络类型:###<br/><br/>
 								镜像:${ecsInfo.image}<br/><br/>
 							</div>

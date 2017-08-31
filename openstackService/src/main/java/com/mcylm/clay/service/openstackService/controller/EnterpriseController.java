@@ -43,10 +43,9 @@ public class EnterpriseController {
     private ServerControlService serverControlService;
 
     @RequestMapping("/create")
-    public String create(Map<String,Object> map,HttpServletRequest request){
+    public String create(Map<String,Object> map){
         EcsProduce ecsProduce = ecsService.getEcsProduce();
         map.put("ecsProduce",ecsProduce);
-        System.out.println(request.getSession().getId());
         return "create";
     }
 
@@ -99,30 +98,9 @@ public class EnterpriseController {
     @RequestMapping("/createInstance")
     @ResponseBody
     public String initInstance(String ser_uuid,HttpServletRequest request, ParameterModel parameterModel){
-        //检测是否登录
-        String recharge = RedisUtils.checkLogin(parameterModel, "instance");
-        if(recharge.equals("instance")){
-            EcsServer ecsServer = serverControlService.getServerInfo(ser_uuid);
-            if(serverControlService.checkServerOwnedByUserUUID(getUUidByToken(parameterModel.getToken()),ser_uuid)){
-                ecsMapper.updateEcsServerStateBySerUuid(ser_uuid,4);
-                ServerCreated nova = jCloudsNova.createInstance(ecsServer, "nova");
-                if(nova.getId() != null){
-                    ecsMapper.updateEcsServerStateBySerUuid(ser_uuid,4);
-                    return "success";
-                }
-            }else{
-                return "failed";
-            }
-        }
-        return "unlogin";
+        return serverControlService.createInstance(ser_uuid,request,parameterModel,jCloudsNova);
     }
 
-    private String getUUidByToken(String uuid) {
-        String valByKey = RedisUtils.getValByKey(Base64Utils.decodeBase64String(uuid));
-        Gson gson = new Gson();
-        UauthToken uauthToken = gson.fromJson(valByKey, UauthToken.class);
-        return uauthToken.getUuid();
-    }
 
 
 
