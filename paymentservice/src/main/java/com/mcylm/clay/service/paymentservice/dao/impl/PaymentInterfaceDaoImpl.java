@@ -100,8 +100,8 @@ public class PaymentInterfaceDaoImpl implements PaymentInterfaceDao {
 
     //修改服务
     @Override
-    public Integer updateEcsServer(String uuid, String ser_uuid) {
-        return paymentInterfaceMapper.updateEcsServer(uuid, ser_uuid);
+    public Integer updateEcsServer(String uuid, String ser_uuid, Integer month) {
+        return paymentInterfaceMapper.updateEcsServer(uuid, ser_uuid, month);
     }
 
     //查手机号

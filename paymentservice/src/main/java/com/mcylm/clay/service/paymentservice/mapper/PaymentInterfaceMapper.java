@@ -2,7 +2,6 @@ package com.mcylm.clay.service.paymentservice.mapper;
 
 import com.mcylm.clay.service.paymentservice.model.*;
 import org.apache.ibatis.annotations.*;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.Date;
 import java.util.List;
@@ -62,8 +61,8 @@ public interface PaymentInterfaceMapper {
     Integer updateOrdersDetails(@Param("ordersUuid") String ordersUuid, @Param("month") Integer month, @Param("check_val") String check_val);
 
     //修改服务
-    @Update("UPDATE pre_common_ucenter_server SET uuid=#{uuid} WHERE ser_uuid=#{ser_uuid}")
-    Integer updateEcsServer(@Param("uuid") String uuid, @Param("ser_uuid") String ser_uuid);
+    @Update("UPDATE pre_common_ucenter_server SET uuid=#{uuid},days=#{month} WHERE ser_uuid=#{ser_uuid}")
+    Integer updateEcsServer(@Param("uuid") String uuid, @Param("ser_uuid") String ser_uuid, @Param("month") Integer month);
 
     //查手机号
     @Select("SELECT phone FROM pre_common_uauth WHERE uuid = #{uuid}")
