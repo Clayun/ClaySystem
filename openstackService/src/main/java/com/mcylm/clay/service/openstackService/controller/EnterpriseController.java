@@ -55,6 +55,11 @@ public class EnterpriseController {
         return "userInfo";
     }
 
+    @RequestMapping("/404")
+    public String errorpage(){
+        return "404";
+    }
+
     @RequestMapping("/message")
     public String message(){
         return "message";

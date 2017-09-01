@@ -41,7 +41,8 @@ public class PaymentInterfaceServiceImpl implements PaymentInterfaceService {
             //支付成功后修改状态
             if (j > 0 && o > 0 && d > 0) {
                 //修改服务表
-                Integer s = paymentInterfaceDao.updateEcsServer(uuid, ser_uuid);
+                month = (month * 30) + 1;
+                Integer s = paymentInterfaceDao.updateEcsServer(uuid, ser_uuid, month);
                 //修改状态
                 Integer i = paymentInterfaceDao.paymentInterfaceOrders(ordersUuid, uuid, 1);
                 if (s > 0 && i > 0) {

@@ -45,7 +45,7 @@ public interface PaymentInterfaceDao {
     Integer updateOrdersDetails(String ordersUuid, Integer month, String check_val);
 
     //修改服务
-    Integer updateEcsServer(String uuid, String ser_uuid);
+    Integer updateEcsServer(String uuid, String ser_uuid, Integer month);
 
     //查手机号
     Uauth getUserPhone(String uuid);
