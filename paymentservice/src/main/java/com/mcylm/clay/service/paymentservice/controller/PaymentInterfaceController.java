@@ -33,8 +33,16 @@ public class PaymentInterfaceController {
      */
     @RequestMapping(value = "/paymentInterface")
     public String paymentInterface(ParameterModel parameterModel, Model model, HttpServletRequest request, String data) {
+
         boolean flag = false;
         EcsServer ecsServer = null;
+
+        //判断session是否有信息
+        if (parameterModel.getToken() == null || parameterModel.getToken() == "") {
+            if (request.getSession().getAttribute("token") != null) {
+                parameterModel.setToken(String.valueOf(request.getSession().getAttribute("token")));
+            }
+        }
 
         //判断formtoken是否为空
         if (parameterModel.getFormToken() == null || "".equals(parameterModel.getFormToken())) {
@@ -67,7 +75,7 @@ public class PaymentInterfaceController {
             try {
                 RedisUtils.setKey_Val_TimeOut(Base64Utils.decodeBase64String(parameterModel.getFormToken()), data);
             } catch (Exception e) {
-                return "redirect:http://localhost/ecs/enterprise/create?token="+parameterModel.getToken();
+                return "redirect:http://localhost/ecs/enterprise/create?token=" + parameterModel.getToken();
             }
             //信息添加
             Integer i = paymentInterfaceService.paymentInterfaceAdd(data);
