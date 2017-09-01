@@ -23,14 +23,15 @@
         <div class="container-fluid">
             <div class="info-center">
                 <div class="row clearfix ">
-                    <div class="text-center" style="margin-top: 210px;">
+                    <div class="text-center" style="margin-top: 170px;">
                         <span>
-                            <h3>
+                            <a href="/ecs/label/labellist"><img src="/ecs/img/404.gif" ></a>
+                            <#--<h3>
                                 <strong style="font-size: 40px;">404</strong>  很抱歉,您所访问的页面不存在>_<！
-                            </h3>
+                            </h3>-->
                         </span>
                         <span>
-                            <button class="btn btn-primary">返回首页</button>
+                            <#--<a href="/ecs/label/labellist"><button class="btn btn-primary" >返回首页</button></a>-->
                         </span>
                     </div>
                 </div>
