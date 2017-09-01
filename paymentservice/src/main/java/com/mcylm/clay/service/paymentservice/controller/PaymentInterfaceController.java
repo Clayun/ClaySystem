@@ -44,6 +44,8 @@ public class PaymentInterfaceController {
             }
         }
 
+        System.out.println(parameterModel.getToken());
+
         //判断formtoken是否为空
         if (parameterModel.getFormToken() == null || "".equals(parameterModel.getFormToken())) {
             //赋值  一个加密的formToken

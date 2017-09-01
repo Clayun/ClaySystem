@@ -60,6 +60,15 @@ public interface EcsMapper {
     @Select("select * from pre_common_ucenter_server where ser_uuid = #{uuid}")
     EcsServer getEcsServerByUUID(String uuid);
 
+    @Select("select * from pre_common_ucenter_server where ser_name = #{name}")
+    EcsServer getEcsServerByName(String name);
+
     @Update("update pre_common_ucenter_server set state = #{state} where ser_uuid = #{servuuid}")
     void updateEcsServerStateBySerUuid(@Param("servuuid") String servuuid, @Param("state") int state);
+
+    @Select("select * from pre_common_ucenter_server where uuid = #{uuid}")
+    List<EcsServer> getEcsServersByUserUUID(String uuid);
+
+    @Update("update pre_common_ucenter_server set ser_uuid = #{seruuid} where ser_name = #{sername}")
+    void updateServerUUIDbyName(@Param("seruuid") String seruuid,@Param("sername") String sername);
 }

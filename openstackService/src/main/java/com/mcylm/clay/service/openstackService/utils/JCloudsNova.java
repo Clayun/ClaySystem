@@ -2,27 +2,37 @@ package com.mcylm.clay.service.openstackService.utils;
 
 import java.io.Closeable;
 import java.io.IOException;
+import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 import com.google.common.base.Optional;
 import com.google.common.collect.FluentIterable;
+import com.google.gson.Gson;
+import com.mcylm.clay.service.openstackService.mapper.EcsMapper;
 import com.mcylm.clay.service.openstackService.model.ucenter.EcsServer;
+import com.mcylm.clay.service.openstackService.model.ucenter.UauthToken;
 import org.jclouds.ContextBuilder;
 import org.jclouds.logging.slf4j.config.SLF4JLoggingModule;
 import org.jclouds.openstack.nova.v2_0.NovaApi;
 import org.jclouds.openstack.nova.v2_0.domain.*;
+import org.jclouds.openstack.nova.v2_0.extensions.ConsolesApi;
 import org.jclouds.openstack.nova.v2_0.extensions.FloatingIPApi;
+import org.jclouds.openstack.nova.v2_0.extensions.VolumeApi;
 import org.jclouds.openstack.nova.v2_0.features.FlavorApi;
 import org.jclouds.openstack.nova.v2_0.features.ImageApi;
 import org.jclouds.openstack.nova.v2_0.features.ServerApi;
+
 
 import com.google.common.collect.ImmutableSet;
 import com.google.common.io.Closeables;
 import com.google.inject.Module;
 import org.jclouds.openstack.nova.v2_0.options.CreateServerOptions;
-import org.jclouds.openstack.v2_0.domain.Link;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import javax.servlet.http.HttpServletRequest;
 
 /**
  *
@@ -72,12 +82,12 @@ public class JCloudsNova implements Closeable {
      * @param serverCreated
      * @param floatingIPs
      */
-    public void addIptoServer(ServerCreated serverCreated,List<FloatingIP> floatingIPs){
+    public void addIptoServer(ServerCreated serverCreated,List<FloatingIP> floatingIPs,String uuid,List<EcsServer> ecsServerList){
         Optional<FloatingIPApi> floatingIPApi = null;
         for (String region : regions) {
             floatingIPApi = novaApi.getFloatingIPApi(region);
         }
-        for(Server server : getListServers()){
+        for(Server server : getListServers(uuid,ecsServerList)){
             if(serverCreated.getId().equals(server.getId())){
                 for(FloatingIP floatingIP : floatingIPs){
                     floatingIPApi.get().addToServer(floatingIP.getIp(),serverCreated.getId());
@@ -88,20 +98,31 @@ public class JCloudsNova implements Closeable {
     }
 
     /**
-     * 获取公网IP类型
-     *
+     * 获取用户的所有云主机
+     *  @param uuid 用户的UUID
      * @return
      */
-    public List<Server> getListServers() {
+    public List<Server> getListServers(String uuid,List<EcsServer> ecsServerList) {
         List<Server> list = new ArrayList<Server>();
-        for (String region : regions) {
-            ServerApi serverApi = novaApi.getServerApi(region);
-            for (Server server : serverApi.listInDetail().concat()) {
-                list.add(server);
+        ServerApi serverApi = getServerApi();
+        for (Server server : serverApi.listInDetail().concat()) {
+            for(EcsServer ecsServer :ecsServerList){
+                if(ecsServer.getSer_uuid().equals(server.getId())){
+                    list.add(server);
+                    break;
+                }
             }
         }
         return list;
     }
+
+    public Server getServerById(String id){
+        for (String region : regions) {
+            return novaApi.getServerApi(region).get(id);
+        }
+        return null;
+    }
+
 
     /**
      * 获取云主机类型
@@ -141,9 +162,7 @@ public class JCloudsNova implements Closeable {
      */
     public String getImageIdByName(String name){
         for(Image image : getListImages()){
-            System.out.println(image.getName()+"    "+name);
             if(image.getName().equals(name)){
-                System.out.println("配对成功");
                 return image.getId();
             }
         }
@@ -163,7 +182,7 @@ public class JCloudsNova implements Closeable {
             flavorApi.create(Flavor.builder()
                     .disk(Integer.valueOf(ecsServer.getOs_disk()))
                     .ram(Integer.valueOf(ecsServer.getMemory())*1024)
-                    .swap(String.valueOf(Integer.valueOf(ecsServer.getMemory())*1024*2))
+                    .swap(String.valueOf(Integer.valueOf(ecsServer.getMemory())*1024))
                     .rxtxFactor(1.0)
                     .vcpus(Integer.valueOf(ecsServer.getCpu()))
                     .id(flavorId)
@@ -181,22 +200,21 @@ public class JCloudsNova implements Closeable {
      * @param id
      */
     public void stopInstanceById(String id) {
-        for (String region : regions) {
-            ServerApi serverApi = novaApi.getServerApi(region);
-            for (Server server : serverApi.listInDetail().concat()) {
-                if (server.getId().equals(id)) {
-                    System.out.println("即将关闭ID为" + id + "的主机，当前状态为：" + server.getStatus());
-                    if (server.getStatus() == Server.Status.SHUTOFF) {
-                        System.out.println("目标服务器已关闭！");
-                        return;
-                    }
-                    serverApi.stop(id);
-                    System.out.println("已关闭ID为" + id + "的主机，当前状态为：" + server.getStatus());
-                }
-            }
+        Server server = getServerById(id);
+        if (server.getStatus() == Server.Status.SHUTOFF) {
+            return;
         }
+        getServerApi().stop(id);
 
     }
+
+    public ServerApi getServerApi(){
+        for (String region : regions) {
+            return novaApi.getServerApi(region);
+        }
+        return null;
+    }
+
 
     /**
      * 开机指令
@@ -204,21 +222,32 @@ public class JCloudsNova implements Closeable {
      * @param id
      */
     public void startInstanceById(String id) {
-        for (String region : regions) {
-            ServerApi serverApi = novaApi.getServerApi(region);
-            for (Server server : serverApi.listInDetail().concat()) {
-                if (server.getId().equals(id)) {
-                    System.out.println("即将开启ID为" + id + "的主机，当前状态为：" + server.getStatus());
-                    if (server.getStatus() == Server.Status.ACTIVE) {
-                        System.out.println("目标服务器已启动！无需重复启动");
-                        return;
-                    }
-                    serverApi.start(id);
-                    System.out.println("已开启ID为" + id + "的主机，当前状态为：" + server.getStatus());
-                }
-            }
+        Server server = getServerById(id);
+        if (server.getStatus() == Server.Status.ACTIVE) {
+            return;
         }
+        getServerApi().start(id);
     }
+
+    /**
+     * 检查服务器是否属于用户
+     * @param uuid
+     * @param ser_uuid
+     * @param ecsServerList
+     * @return
+     */
+//    public boolean checkServerBelongToUser(String uuid,String ser_uuid,List<EcsServer> ecsServerList){
+//        List<Server> list = getListServers(uuid,ecsServerList);
+//        for(Server server :list){
+//            System.out.println(server.getId()+"========"+ser_uuid);
+//            if(server.getId().equals(ser_uuid)){
+//                System.out.println("配对成功！！！");
+//                return true;
+//            }
+//        }
+//        return false;
+//    }
+
 
     /**
      * 创建镜像操作
@@ -226,16 +255,7 @@ public class JCloudsNova implements Closeable {
      * @param id
      */
     public void createInstanceSnapeShotById(String id) {
-        for (String region : regions) {
-            ServerApi serverApi = novaApi.getServerApi(region);
-            for (Server server : serverApi.listInDetail().concat()) {
-                if (server.getId().equals(id)) {
-                    serverApi.createImageFromServer(id + "的快照", id);
-                    System.out.println("正在创建ID为" + id + "的主机的快照");
-
-                }
-            }
-        }
+        getServerApi().createImageFromServer(id, id);
     }
 
     /**
@@ -244,18 +264,69 @@ public class JCloudsNova implements Closeable {
      * @param id
      */
     public void deleteInstanceById(String id) {
+        getServerApi().delete(id);
+    }
+
+    public Map<String,String> getMetadataById(String id){
+        return getServerApi().getMetadata(id);
+    }
+
+    public void rebootSoftInstanceById(String id){
+        getServerApi().reboot(id,RebootType.SOFT);
+    }
+
+    public void rebootHardInstanceById(String id){
+        getServerApi().reboot(id,RebootType.HARD);
+    }
+
+    private String getUUidByToken(String uuid) {
+        String valByKey = RedisUtils.getValByKey(Base64Utils.decodeBase64String(uuid));
+        Gson gson = new Gson();
+        UauthToken uauthToken = gson.fromJson(valByKey, UauthToken.class);
+        return uauthToken.getUuid();
+    }
+
+    public String getConsoleUrl(String id,HttpServletRequest request,boolean belong){
+
+        String token = (String) request.getSession().getAttribute("token");
+        String uuid = getUUidByToken(token);
+        if(!belong){
+            System.out.println("服务器不属于该用户");
+            return null;
+        }
+
         for (String region : regions) {
-            ServerApi serverApi = novaApi.getServerApi(region);
-            for (Server server : serverApi.listInDetail().concat()) {
-                if (server.getId().equals(id)) {
-                    boolean b = serverApi.delete(id);
-                    System.out.println("正在删除ID为" + id + "的主机的快照");
-                    if (b) System.out.println("删除成功");
-                    else System.out.println("删除失败");
-                }
-            }
+            Optional<ConsolesApi> consolesApi = novaApi.getConsolesApi(region);
+            Console console = consolesApi.get().getConsole(id, Console.Type.NOVNC);
+            URI url = console.getUrl();
+            String uri = url.getScheme()+":"+url.getSchemeSpecificPart();
+            return uri;
+        }
+        System.out.println("服务器未找到");
+        return null;
+    }
+
+    public static void main(String[] args) {
+        JCloudsNova jCloudsNova = new JCloudsNova("admin","admin","admin");
+//        System.out.println(jCloudsNova.getConsoleUrl("0e4033d3-fe5a-408a-8357-6ed8ea931c9e"));
+//        jCloudsNova.rebootSoftInstanceById("0e4033d3-fe5a-408a-8357-6ed8ea931c9e");
+    }
+
+
+
+    /**
+     * 修改密码
+     * @param newPassword
+     * @param ser_uuid
+     * @param user_uuid
+     * @param ecsServerList
+     */
+    public void changeAdminPasswordById(String newPassword,String ser_uuid,boolean belong){
+        if (belong) {
+            getServerApi().changeAdminPass(ser_uuid, newPassword);
         }
     }
+
     /**
      * 创建云主机实例
      * @param ecsServer
@@ -273,19 +344,16 @@ public class JCloudsNova implements Closeable {
             System.out.println("镜像文件不存在");
             return null;
         }
-
-        for (String region : regions) {
-            ServerApi serverApi = novaApi.getServerApi(region);
-
-            try{
-                List<FloatingIP> floatingIPs = getListFloatingIPs(Integer.valueOf(ecsServer.getIps()));
-                serverCreated = serverApi.create(ecsServer.getSer_name(), imageId, createFlavor(ecsServer), createServerOptions);
-                addIptoServer(serverCreated,floatingIPs);
-            }catch (Exception ex){
-                ex.printStackTrace();
-                System.out.println("创建失败");
-            }
+        try{
+            ServerApi serverApi = getServerApi();
+            List<FloatingIP> floatingIPs = getListFloatingIPs(Integer.valueOf(ecsServer.getIps()));
+            serverCreated = serverApi.create(ecsServer.getSer_name(), imageId, createFlavor(ecsServer), createServerOptions);
+//                addIptoServer(serverCreated,floatingIPs);
+        }catch (Exception ex) {
+            ex.printStackTrace();
+            System.out.println("创建失败");
         }
+
         return serverCreated;
     }
 

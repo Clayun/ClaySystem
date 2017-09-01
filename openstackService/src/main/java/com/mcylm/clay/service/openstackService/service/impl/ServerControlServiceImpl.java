@@ -15,6 +15,7 @@ import org.springframework.stereotype.Service;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by Mikesam on 2017/8/29.
@@ -40,7 +41,10 @@ public class ServerControlServiceImpl implements ServerControlService {
     }
 
     @Override
-    public List<EcsServer> getServerInfoListByUserUUID(String useruuid) {
+    public List<EcsServer> getServerInfoListByUserUUID(HttpServletRequest request) {
+        if(request.getSession().getAttribute("token") != null){
+            return ecsMapper.getEcsServersByUserUUID(getUUidByToken(String.valueOf(request.getSession().getAttribute("token"))));
+        }
         return null;
     }
 
@@ -65,10 +69,11 @@ public class ServerControlServiceImpl implements ServerControlService {
         if(recharge.equals("instance")){
             EcsServer ecsServer = getServerInfo(ser_uuid);
             if(checkServerOwnedByUserUUID(getUUidByToken(parameterModel.getToken()),ser_uuid)){
-                ecsMapper.updateEcsServerStateBySerUuid(ser_uuid,4);
+                ecsMapper.updateEcsServerStateBySerUuid(ser_uuid,5);
                 ServerCreated nova = jCloudsNova.createInstance(ecsServer, "nova");
                 if(nova.getId() != null){
-                    ecsMapper.updateEcsServerStateBySerUuid(ser_uuid,4);
+                    ecsMapper.updateEcsServerStateBySerUuid(ser_uuid,5);
+                    ecsMapper.updateServerUUIDbyName(nova.getId(),ecsServer.getSer_name());
                     return "success";
                 }
             }else{
@@ -76,6 +81,41 @@ public class ServerControlServiceImpl implements ServerControlService {
             }
         }
         return "unlogin";
+    }
+
+    @Override
+    public String showInstanceById(String name, HttpServletRequest request, ParameterModel parameterModel, Map<String, Object> map) {
+
+        if(parameterModel.getToken() == null || parameterModel.getToken() == ""){
+            if(request.getSession().getAttribute("token") != null){
+                parameterModel.setToken(String.valueOf(request.getSession().getAttribute("token")));
+            }
+        }
+
+        System.out.println(parameterModel.getToken());
+
+        EcsServer ecsServer = ecsMapper.getEcsServerByName(name);
+        map.put("ecsInfo",ecsServer);
+        StringBuffer url = request.getRequestURL();
+        url.replace(16, 22, "/ecs/");
+        parameterModel.setRedirectUrl(url.toString());
+        //检测是否登录
+        String recharge = RedisUtils.checkLogin(parameterModel, "instance");
+        if(recharge.equals("instance")){
+            return recharge;
+        }
+        return recharge;
+    }
+
+    @Override
+    public boolean checkServerBelongToUser(String ser_uuid, HttpServletRequest request) {
+
+        String uuid = getUUidByToken(String.valueOf(request.getSession().getAttribute("token")));
+        if(ecsMapper.getEcsServerByUUID(ser_uuid).getUuid().equals(uuid)){
+            return true;
+        }
+
+        return false;
     }
 
     private String getUUidByToken(String uuid) {

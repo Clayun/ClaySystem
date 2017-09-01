@@ -20,87 +20,10 @@
 			<div class="right-product view-product right-full">
 				<div class="container-fluid">
 					<div class="info-center">
-					<h3>${ecsInfo.ser_name}</h3>
 					<div class="row clearfix">
-					<div class="col-md-6 column">
-						<div class="panel panel-default">
-							<div class="panel-heading">
-								<span class="panel-title">
-									基本信息
-									<button class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" style="float: right;">
-										更多<span class="caret"></span>
-									</button>
-									<button class="btn btn-default btn-sm" style="float: right;" onclick="window.location.href='console?id=${ecsInfo.ser_uuid}'">远程连接</button>
-								</span>
-								
-							</div>
-							<div class="panel-body">
-								ID:${ecsInfo.ser_uuid}<br/><br/>
-								所在可用区:默认<br/><br/>
-								名称:${ecsInfo.ser_name}<br/><br/>
-								实例规格:企业级<br/><br/>
-								密钥对名称:#####<br/><br/>
-							</div>
-						</div>
-					</div>
-					
-					<div class="col-md-6 column">
-						<div class="panel panel-default">
-							<div class="panel-heading">
-								磁盘:${ecsInfo.expand_disk}<br/><br/>
-								状态:
-									<#if ecsInfo.state=="1">
-										未支付
-									<#elseif ecsInfo.state=="5">
-										创建完成
-									<#else>
-										未知状态
-									</#if>
-								<br/><br/>
-								网络类型:###<br/><br/>
-								镜像:${ecsInfo.image}<br/><br/>
-							</div>
-						</div>
-					</div>
-				</div>
-				
-				<div class="row clearfix">
-					<div class="col-md-6 column">
-						<div class="panel panel-default">
-							<div class="panel-heading">
-								<span class="panel-title">
-									配置信息
-									<button class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" style="float: right;">
-										更多<span class="caret"></span>
-									</button>
-									<button disabled="disabled" class="btn btn-default btn-sm" style="float: right;">更换系统盘</button>
-								</span>
-							</div>
-							<div class="panel-body">
-								CPU:${ecsInfo.cpu}核心<br/><br/>
-								内存:${ecsInfo.memory}Gb<br/><br/>
-								实例类型:弹性云ECS服务器<br/><br/>
-								操作系统:${ecsInfo.image}<br/><br/>
-								公网IP：##<br/><br/>
-								弹性公网IP：##<br/><br/>
-								私有IP：##<br/><br/>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-6 column">
-						<div class="panel panel-default">
-							<div class="panel-heading">
-								<h3 class="panel-title">
-									Panel title
-								</h3>
-							</div>
-							<div class="panel-body">
-								Panel content
-							</div>
-							<div class="panel-footer">
-								Panel footer
-							</div>
-						</div>
+					<div class="col-md-12 column">
+                            <iframe border=0 frameborder=0 width=725 height=450 marginheight=0 marginwidth=0 scrolling=no src="${url}">
+                            </iframe>
 					</div>
 				</div>
 			</div>
@@ -109,7 +32,9 @@
 		<div>
 	</body>
     <script type="text/javascript">
+
         $(function(){
+
             /*换肤*/
             $(".dropdown .changecolor li").click(function(){
                 var style = $(this).attr("id");

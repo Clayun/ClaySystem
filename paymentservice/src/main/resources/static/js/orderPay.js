@@ -102,6 +102,7 @@ $("#submitphone").click(function () {
                 var month = $(".single-slider").val();
                 var pricePerMonth = $("#pricePerMonth").html();
                 var ser_uuid = $("#ser_uuid").val();
+                var ser_name = $("#ser_name").html();
                 var check_val = "";
                 $("input:checkbox[name='ids']:checked").each(function () {
                     check_val += "," + $(this).val();
@@ -129,14 +130,14 @@ $("#submitphone").click(function () {
                                 dataType:'text',
                                 type:'post',
                                 success:function(msg){
-                                    window.location.href = "http://localhost/ecs/enterprise/instance?token="+uuid+"&ser_uuid="+ser_uuid;
+                                    window.location.href = "http://localhost/ecs/enterprise/instance?token="+uuid+"&ser_uuid="+ser_name;
                                 }
 
                             });
                         } else {
                             alert("支付失败！余额不足！")
                         }
-                        window.location.href = "http://localhost/ecs/enterprise/instance?token="+uuid+"&ser_uuid="+ser_uuid;
+                        window.location.href = "http://localhost/ecs/enterprise/instance?token="+uuid+"&ser_uuid="+ser_name;
                     }
                 });
                 check = 1;

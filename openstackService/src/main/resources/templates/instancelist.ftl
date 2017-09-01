@@ -82,42 +82,31 @@
 								<p></p>
 								<table class="table table-striped table-bordered text-center">
 									<tr>
-										<td><input type="checkbox">&nbsp;快照ID/名称</td>
-										<td>磁盘ID</td>
-										<td>磁盘容量</td>
-										<td>磁盘属性(全部)</td>
-										<td>创建时间</td>
-										<td>进度</td>
-										<td>状态</td>
+										<td><input type="checkbox">&nbsp;实例ID/名称</td>
+										<td>实例CPU核心</td>
+										<td>实例内存</td>
+										<td>系统盘</td>
+										<td>带宽</td>
+										<td>镜像</td>
+                                        <td>剩余天数</td>
+                                        <td>月/费用</td>
 										<td>操作</td>
 									</tr>
-									<tr>
-										<td>
-											快照一
-										</td>
-										<td>
-											<!--<p style="text-align: center; margin-top: 110px;"><span class="glyphicon glyphicon-question-sign"></span>没有查询到符合条件的记录</p>-->
-											1
-										</td>
-										<td>
-											100
-										</td>
-										<td>
-											1TB
-										</td>
-										<td>
-											2017年6月23日 13:23
-										</td>
-										<td>
-											50%
-										</td>
-										<td>
-											使用中
-										</td>
-										<td>
-											<a>修改</a>
-										</td>
-									</tr>
+
+										<#list list as l>
+                                            <tr>
+												<td>${l.ser_uuid?if_exists}</td>
+												<td>${l.cpu?if_exists}个</td>
+												<td>${l.memory?if_exists}Gb</td>
+												<td>${l.os_disk?if_exists}Gb</td>
+												<td>${l.tape?if_exists}Mb</td>
+												<td>${l.image?if_exists}</td>
+												<td>${l.days?if_exists}天</td>
+												<td>${l.pricePerMonth?if_exists}元/月</td>
+												<td><a href="instance?ser_uuid=${l.ser_name?if_exists}">详情</a></td>
+											</tr>
+										</#list>
+
 								</table>
 						</div>
 					</div>

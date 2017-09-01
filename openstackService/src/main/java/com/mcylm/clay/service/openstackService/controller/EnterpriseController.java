@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 import java.util.Map;
 
@@ -70,7 +71,12 @@ public class EnterpriseController {
     }
 
     @RequestMapping("/instanceList")
-    public String instanceList(){
+    public String instanceList(HttpServletRequest request,Map<String,Object> map){
+        List<EcsServer> list = serverControlService.getServerInfoListByUserUUID(request);
+        map.put("list",list);
+        if(list == null){
+            return "404";
+        }
         return "instancelist";
     }
 
@@ -81,18 +87,17 @@ public class EnterpriseController {
 
     @RequestMapping("/instance")
     public String instance(String ser_uuid,HttpServletRequest request, ParameterModel parameterModel,Map<String,Object> map){
+        return serverControlService.showInstanceById(ser_uuid,request,parameterModel,map);
+    }
 
-        StringBuffer url = request.getRequestURL();
-        url.replace(16, 22, "/ecs/");
-        parameterModel.setRedirectUrl(url.toString());
-        //检测是否登录
-        String recharge = RedisUtils.checkLogin(parameterModel, "instance");
-        if(recharge.equals("instance")){
-            EcsServer ecsServer = serverControlService.getServerInfo(ser_uuid);
-            map.put("ecsInfo",ecsServer);
-            return recharge;
+    @RequestMapping("/console")
+    public String console(String id,Map<String,Object> map,HttpServletRequest request){
+        if(id == null || id == ""){
+            return "404";
         }
-        return recharge;
+        boolean belong = serverControlService.checkServerBelongToUser(id,request);
+        map.put("url",jCloudsNova.getConsoleUrl(id,request,belong));
+        return "console";
     }
 
     @RequestMapping("/createInstance")
