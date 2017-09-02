@@ -37,11 +37,8 @@ public class PaymentInterfaceController {
         boolean flag = false;
         EcsServer ecsServer = null;
 
-        //判断session是否有信息
-        if (parameterModel.getToken() == null || parameterModel.getToken() == "") {
-            if (request.getSession().getAttribute("token") != null) {
-                parameterModel.setToken(String.valueOf(request.getSession().getAttribute("token")));
-            }
+        if (request.getSession().getAttribute("token") != null) {
+            parameterModel.setToken(String.valueOf(request.getSession().getAttribute("token")));
         }
 
         System.out.println(parameterModel.getToken());
@@ -76,6 +73,13 @@ public class PaymentInterfaceController {
             //信息存入redis
             try {
                 RedisUtils.setKey_Val_TimeOut(Base64Utils.decodeBase64String(parameterModel.getFormToken()), data);
+                flag = true;
+                //信息解密
+                valByKey = RedisUtils.getValByKey(Base64Utils.decodeBase64String(parameterModel.getFormToken()));
+                String s = Base64Utils.decodeBase64String(valByKey);
+                Gson gd = new Gson();
+                //String数据转换ecsServer
+                ecsServer = gd.fromJson(s, EcsServer.class);
             } catch (Exception e) {
                 return "redirect:http://localhost/ecs/enterprise/create?token=" + parameterModel.getToken();
             }
@@ -87,7 +91,7 @@ public class PaymentInterfaceController {
             //查询优惠信息回显
             List<ActivityDetails> detail = paymentInterfaceService.getDetails();
             List<ActivityDetails> details = paymentInterfaceService.getDetailsSelected();
-            System.out.println(parameterModel.getToken());
+            System.out.println("查询优惠信息回显："+parameterModel.getToken());
             model.addAttribute("id", parameterModel.getToken());
             model.addAttribute("ecsServer", ecsServer);
             model.addAttribute("detail", detail);
@@ -201,7 +205,7 @@ public class PaymentInterfaceController {
         SMSMessageLib.send(phone, request);
         String phonever1 = (String) request.getSession().getAttribute("phonever");
         phonever = phonever1;
-        //System.out.println("phonever1 = " + phonever1);
+        System.out.println("phonever1 = " + phonever1);
         return "success";
     }
 }
