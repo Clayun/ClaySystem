@@ -23,8 +23,6 @@ import java.util.List;
 public class MessageInterfaceController {
     @Autowired
     private MessageInterfaceService messageInterfaceService;
-
-
     /***
      * 全部信息查询
      * @param //uuid

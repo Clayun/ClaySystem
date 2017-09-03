@@ -22,7 +22,7 @@
 			<div class="info-center">
 			<div class="row clearfix">
 				<br/>
-				<div class="col-md-8 column">
+				<div class="col-md-8 column" style="border-right:groove;">
 					<h4><span style="font-size:20px; color:blue;">|</span>综述</h4>
 					<table class="table table-striped text-center">
 						<tr>
@@ -44,20 +44,21 @@
 					</table>
 					<div>
 						<span style="font-size: 18px;"><span style="font-size:20px; color:blue;">|</span>我的资源</span>
-						<input type="text" placeholder="请输入要搜索的内容" style="height: 32px; margin-left: 208px;">
+						<input type="text" placeholder="请输入要搜索的内容" style="height: 32px; margin-left: 310px;">
 						<button class="btn btn-primary">搜索</button>
 						<button class="btn btn-primary">创建实例</button>
 						<button class="btn btn-default"><span class="glyphicon glyphicon-refresh"><span></span></button>
 						<button class="btn btn-default">显示全部地域</button>
 					</div>
 					<br/>
-					<table class="table table-striped"  style="width:370px; height: 80px; float: left;">
+				<div>
+					<table class="table table-striped"  style="width:49%; height: 80px;float: left;">
 						<tr>
 							<td>
 								华北2
 							</td>
 							<td colspan="3">
-								<span class="glyphicon glyphicon-shopping-cart" style="font-size: 20px; "></span>
+								<span class="glyphicon glyphicon-shopping-cart" style="font-size: 20px; margin-left: 203px;"></span>
 							</td>
 						</tr>
 						<tr colspan="3"  style="height: 180px;">
@@ -80,13 +81,13 @@
 							<td>镜像  1</td>
 						</tr>
 					</table>
-					<table class="table table-striped"  style="width:370px; height: 80px;float: right;">
+					<table class="table table-striped"  style="width:49%; height: 80px;float: right;">
 						<tr>
 							<td>
 								华北2
 							</td>
 							<td colspan="3">
-								<span class="glyphicon glyphicon-shopping-cart" style="font-size: 20px;float: right;"></span>
+								<span class="glyphicon glyphicon-shopping-cart" style="font-size: 20px; margin-left: 203px;"></span>
 							</td>
 						</tr>
 						<tr colspan="3"  style="height:180px;">
@@ -109,9 +110,67 @@
 							<td>镜像  1</td>
 						</tr>
 					</table>
-					
+                    <table class="table table-striped"  style="width:49%; height: 80px;float: left;">
+                        <tr>
+                            <td>
+                                华北2
+                            </td>
+                            <td colspan="3">
+                                <span class="glyphicon glyphicon-shopping-cart" style="font-size: 20px; margin-left: 203px;"></span>
+                            </td>
+                        </tr>
+                        <tr colspan="3"  style="height:180px;">
+                            <td>
+                                <p style="margin-top:60px;">云服务器<span style="font-size: 40px; color:blue;">   1</span>
+                                </p>
+                            </td>
+                            <td>
+                                <div style="margin-top: 30px;">
+                                    <input type="radio" checked="checked" style="color:green;">运行中  <span style="color: green;">1</span><br/>
+                                    <input type="radio" checked="checked" style="color:green;">近期创建  <span>0</span><br/>
+                                    <input type="radio" checked="checked" style="color:green;">即将过期  <span style="color: red;">0</span><br/>
+                                    <input type="radio" checked="checked" style="color:green;">已过期  <span style="color: red;">0</span><br/>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>磁盘  1</td>
+                            <td>快照  0</td>
+                            <td>镜像  1</td>
+                        </tr>
+                    </table>
+                    <table class="table table-striped"  style="width:49%; height: 80px;float: right;">
+                        <tr>
+                            <td>
+                                华北2
+                            </td>
+                            <td colspan="3">
+                                <span class="glyphicon glyphicon-shopping-cart" style="font-size: 20px; margin-left: 203px;"></span>
+                            </td>
+                        </tr>
+                        <tr colspan="3"  style="height:180px;">
+                            <td>
+                                <p style="margin-top:60px;">云服务器<span style="font-size: 40px; color:blue;">   1</span>
+                                </p>
+                            </td>
+                            <td>
+                                <div style="margin-top: 30px;">
+                                    <input type="radio" checked="checked" style="color:green;">运行中  <span style="color: green;">1</span><br/>
+                                    <input type="radio" checked="checked" style="color:green;">近期创建  <span>0</span><br/>
+                                    <input type="radio" checked="checked" style="color:green;">即将过期  <span style="color: red;">0</span><br/>
+                                    <input type="radio" checked="checked" style="color:green;">已过期  <span style="color: red;">0</span><br/>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>磁盘  1</td>
+                            <td>快照  0</td>
+                            <td>镜像  1</td>
+                        </tr>
+                    </table>
 				</div>
-				<div class="col-md-4 column" style="border-left:groove;">
+				</div>
+				<div class="col-md-4 column">
 					<h4><span style="font-size:20px; color:blue;">|</span>常用操作</h4>
 					<div style="width: 440px;">
 						 <button type="button" style="width:210px;" class="btn btn-default">续费管理</button>

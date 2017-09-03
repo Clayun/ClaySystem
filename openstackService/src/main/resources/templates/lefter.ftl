@@ -52,12 +52,12 @@
                 <ul class="navContent" style="display:none">
                     <li>
                         <div class="showtitle" style="width:100px;">
-                            <img src="/ecs/img/leftimg.png" />添加新闻
+                            <img src="/ecs/img/leftimg.png" />服务器信息
                         </div><a href="/ecs/enterprise/instance"><span class="sublist-icon glyphicon glyphicon-user"></span><span class="sub-title">服务器信息</span></a></li>
                     <li>
                         <div class="showtitle" style="width:100px;">
-                            <img src="/ecs/img/leftimg.png" />添加新闻
-                        </div><a href="#"><span class="sublist-icon glyphicon glyphicon-user"></span><span class="sub-title">新闻管理</span></a></li>
+                            <img src="/ecs/img/leftimg.png" />服务器实例
+                        </div><a href="/ecs/enterprise/instanceList"><span class="sublist-icon glyphicon glyphicon-user"></span><span class="sub-title">服务器实例</span></a></li>
                     <li>
                         <div class="showtitle" style="width:100px;">
                             <img src="/ecs/img/leftimg.png" />添加新闻
